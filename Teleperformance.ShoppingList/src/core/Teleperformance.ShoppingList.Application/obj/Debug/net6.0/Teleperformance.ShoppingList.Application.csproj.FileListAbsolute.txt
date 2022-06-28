@@ -1,0 +1,15 @@
+C:\Users\sercan\Desktop\Bootcamp\BootcampProject\Teleperformance.ShoppingList\src\core\Teleperformance.ShoppingList.Application\bin\Debug\net6.0\Teleperformance.ShoppingList.Application.deps.json
+C:\Users\sercan\Desktop\Bootcamp\BootcampProject\Teleperformance.ShoppingList\src\core\Teleperformance.ShoppingList.Application\bin\Debug\net6.0\Teleperformance.ShoppingList.Application.dll
+C:\Users\sercan\Desktop\Bootcamp\BootcampProject\Teleperformance.ShoppingList\src\core\Teleperformance.ShoppingList.Application\bin\Debug\net6.0\Teleperformance.ShoppingList.Application.pdb
+C:\Users\sercan\Desktop\Bootcamp\BootcampProject\Teleperformance.ShoppingList\src\core\Teleperformance.ShoppingList.Application\bin\Debug\net6.0\Teleperformance.ShoppingList.Domain.dll
+C:\Users\sercan\Desktop\Bootcamp\BootcampProject\Teleperformance.ShoppingList\src\core\Teleperformance.ShoppingList.Application\bin\Debug\net6.0\Teleperformance.ShoppingList.Domain.pdb
+C:\Users\sercan\Desktop\Bootcamp\BootcampProject\Teleperformance.ShoppingList\src\core\Teleperformance.ShoppingList.Application\obj\Debug\net6.0\Teleperformance.ShoppingList.Application.csproj.AssemblyReference.cache
+C:\Users\sercan\Desktop\Bootcamp\BootcampProject\Teleperformance.ShoppingList\src\core\Teleperformance.ShoppingList.Application\obj\Debug\net6.0\Teleperformance.ShoppingList.Application.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\sercan\Desktop\Bootcamp\BootcampProject\Teleperformance.ShoppingList\src\core\Teleperformance.ShoppingList.Application\obj\Debug\net6.0\Teleperformance.ShoppingList.Application.AssemblyInfoInputs.cache
+C:\Users\sercan\Desktop\Bootcamp\BootcampProject\Teleperformance.ShoppingList\src\core\Teleperformance.ShoppingList.Application\obj\Debug\net6.0\Teleperformance.ShoppingList.Application.AssemblyInfo.cs
+C:\Users\sercan\Desktop\Bootcamp\BootcampProject\Teleperformance.ShoppingList\src\core\Teleperformance.ShoppingList.Application\obj\Debug\net6.0\Teleperformance.ShoppingList.Application.csproj.CoreCompileInputs.cache
+C:\Users\sercan\Desktop\Bootcamp\BootcampProject\Teleperformance.ShoppingList\src\core\Teleperformance.ShoppingList.Application\obj\Debug\net6.0\Teleperformance.ShoppingList.Application.csproj.CopyComplete
+C:\Users\sercan\Desktop\Bootcamp\BootcampProject\Teleperformance.ShoppingList\src\core\Teleperformance.ShoppingList.Application\obj\Debug\net6.0\Teleperformance.ShoppingList.Application.dll
+C:\Users\sercan\Desktop\Bootcamp\BootcampProject\Teleperformance.ShoppingList\src\core\Teleperformance.ShoppingList.Application\obj\Debug\net6.0\refint\Teleperformance.ShoppingList.Application.dll
+C:\Users\sercan\Desktop\Bootcamp\BootcampProject\Teleperformance.ShoppingList\src\core\Teleperformance.ShoppingList.Application\obj\Debug\net6.0\Teleperformance.ShoppingList.Application.pdb
+C:\Users\sercan\Desktop\Bootcamp\BootcampProject\Teleperformance.ShoppingList\src\core\Teleperformance.ShoppingList.Application\obj\Debug\net6.0\ref\Teleperformance.ShoppingList.Application.dll
