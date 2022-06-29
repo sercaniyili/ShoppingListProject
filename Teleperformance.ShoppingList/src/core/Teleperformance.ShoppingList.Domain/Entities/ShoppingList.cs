@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Teleperformance.Bootcamp.Domain.Common;
+using Teleperformance.Bootcamp.Domain.Entities.Identity;
 
 namespace Teleperformance.Bootcamp.Domain.Entities
 {

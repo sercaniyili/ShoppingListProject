@@ -6,9 +6,9 @@ using System.Text;
 using System.Threading.Tasks;
 using Teleperformance.Bootcamp.Domain.Common;
 
-namespace Teleperformance.Bootcamp.Domain.Entities
+namespace Teleperformance.Bootcamp.Domain.Entities.Identity
 {
-    public class AppUser:IdentityUser, IBaseEntity
+    public class AppUser : IdentityUser, IBaseEntity
     {
         public int Id { get; set; }
         public DateTime CreateDate { get; set; }

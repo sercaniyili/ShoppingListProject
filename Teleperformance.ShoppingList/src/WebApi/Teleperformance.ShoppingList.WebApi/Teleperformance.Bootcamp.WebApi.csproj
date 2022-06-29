@@ -19,8 +19,4 @@
     <ProjectReference Include="..\..\Infrastructure\Teleperformance.ShoppingList.Persistence\Teleperformance.Bootcamp.Persistence.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Controllers\" />
-  </ItemGroup>
-
 </Project>

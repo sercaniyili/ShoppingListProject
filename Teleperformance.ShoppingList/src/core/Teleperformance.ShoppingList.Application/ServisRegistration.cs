@@ -20,6 +20,7 @@ namespace Teleperformance.Bootcamp.Application
             services.AddValidatorsFromAssembly(Assembly.GetExecutingAssembly());
             services.AddMediatR(Assembly.GetExecutingAssembly());
 
+
             return services;
         }
 
