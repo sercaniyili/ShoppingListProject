@@ -18,41 +18,47 @@ namespace Teleperformance.Bootcamp.Persistence.Repositories
         public GenericRepository(AppDbContext appDbContext) => (_appDbContext, _dbSet) 
             = (appDbContext, _appDbContext.Set<T>());
       
-        public async Task Add(T entity)
+        //Write
+        public async Task AddAsync(T entity)
         {
             await _dbSet.AddAsync(entity);
             await _appDbContext.SaveChangesAsync();
         }
-
-        public void Delete(int id)
+        public async Task AddRangeAsync(IEnumerable<T> entities)
         {
-            var current = _dbSet.FirstOrDefault(x => x.Id == id);
-            if (current == null) throw new Exception("");
-
-            _dbSet.Remove(current);
-            _appDbContext.SaveChanges();
+            await _dbSet.AddRangeAsync(entities);
+            await _appDbContext.SaveChangesAsync();
         }
 
-        public void Update(T entity)
+        public async Task DeleteAsync(int id)
+        {
+            var current = await _dbSet.FindAsync(id);
+
+             _dbSet.Remove(current);
+            await _appDbContext.SaveChangesAsync();
+        }
+
+        public async Task UpdateAsync(T entity)
         {
             _appDbContext.Entry<T>(entity).State = EntityState.Modified;
-            _appDbContext.SaveChanges();
+           await _appDbContext.SaveChangesAsync();
         }
 
-        public async Task<IEnumerable<T>> GetAllAsync()
+
+        //Read
+        public IQueryable<T> GetAll()
         {
-            return await _dbSet.ToListAsync();
+            return _dbSet.AsQueryable();
         }
         public IEnumerable<T> GetByCondition(Expression<Func<T, bool>> expression)
         {
-            return _dbSet.Where(expression).ToList();
+            return _dbSet.Where(expression);
         }
 
         public async Task<T> GetByIdAsync(int id)
         {
-            if (_dbSet == null) throw new Exception("");
-            return await _dbSet.FindAsync();
+            return await _dbSet.FindAsync(id);
         }
-
+    
     }
 }

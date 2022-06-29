@@ -9,9 +9,10 @@ namespace Teleperformance.Bootcamp.Application.Interfaces.Repositories
 {
     public interface IGenericCommandRepository<T> where T : class, IBaseEntity
     {
-        Task Add(T entity);
-        void Update(T entity);
-        void Delete(int id);
+        Task AddAsync(T entity);
+        Task AddRangeAsync(IEnumerable<T> entity);
+        Task UpdateAsync(T entity);
+        Task DeleteAsync(int id);
     }
     
     

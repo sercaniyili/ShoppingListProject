@@ -10,7 +10,7 @@ namespace Teleperformance.Bootcamp.Application.Interfaces.Repositories
 {
     public interface IGenericQueryRepository<T> where T : class, IBaseEntity
     {
-        Task<IEnumerable<T>> GetAllAsync();
+        IQueryable<T> GetAll();
         Task<T> GetByIdAsync(int id);
         IEnumerable<T> GetByCondition(Expression<Func<T, bool>> expression);
 
