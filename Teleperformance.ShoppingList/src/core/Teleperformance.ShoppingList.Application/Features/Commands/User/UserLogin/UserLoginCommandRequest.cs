@@ -6,13 +6,10 @@ using System.Text;
 using System.Threading.Tasks;
 using Teleperformance.Bootcamp.Domain.Common.Response;
 
-namespace Teleperformance.Bootcamp.Application.Features.Commands.User
+namespace Teleperformance.Bootcamp.Application.Features.Commands.User.UserLogin
 {
-    public class UserCreateCommandRequest: IRequest<BaseResponse>
+    public class UserLoginCommandRequest: IRequest<BaseResponse>
     {
-        public string FirstName { get; set; }
-        public string LastName { get; set; }
-        public string Username { get; set; }
         public string Password { get; set; }
         public string Email { get; set; }
     }
