@@ -16,14 +16,14 @@ namespace Teleperformance.Bootcamp.Domain.Entities
         public string Description { get; set; }
         public bool IsComplete { get; set; }
         public DateTime CompleteDate { get; set; }
-        public List<Product> Products { get; set; }
+        public virtual List<Product> Products { get; set; }
 
         //nav prop
         public string CategoryId { get; set; }
-        public Category Category { get; set; }
+        public virtual Category Category { get; set; }
 
         public string AppUserId { get; set; }
-        public AppUser AppUser { get; set; }
+        public virtual AppUser AppUser { get; set; }
       
     }
 }

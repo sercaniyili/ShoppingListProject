@@ -22,15 +22,14 @@ namespace Teleperformance.Bootcamp.Application.Features.Commands.User.UserCreate
             _mapper = mapper;
         }
 
-
         public async Task<BaseResponse> Handle(UserCreateCommandRequest request, CancellationToken cancellationToken)
         {
             var user = await _userManager.FindByNameAsync(request.Username);
+
             if (user != null)
                 return new BaseResponse("Kullanıcı bulunamadı", false);
 
             var newUser = _mapper.Map<AppUser>(request);
-
 
             var result = await _userManager.CreateAsync(newUser, request.Password);
             if (!result.Succeeded)

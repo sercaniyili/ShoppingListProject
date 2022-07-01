@@ -3,6 +3,8 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Teleperformance.Bootcamp.Application.Features.Commands.User.UserCreate;
 using Teleperformance.Bootcamp.Application.Features.Commands.User.UserLogin;
+using Teleperformance.Bootcamp.Application.Interfaces.Repositories;
+using Teleperformance.Bootcamp.Persistence.Repositories;
 
 namespace Teleperformance.Bootcamp.WebApi.Controllers
 {
@@ -10,13 +12,16 @@ namespace Teleperformance.Bootcamp.WebApi.Controllers
     [ApiController]
     public class UserController : ControllerBase
     {
+        private readonly IAppUserRepository _appUserRepository;
         private readonly IMediator _mediator;
-        public UserController(IMediator mediator) => _mediator = mediator;
+        public UserController(IMediator mediator, IAppUserRepository appUserRepository) =>(_mediator, _appUserRepository) = (mediator, appUserRepository);
+
 
         [HttpPost]
-        public async Task<IActionResult> Register(UserCreateCommandRequest request)
+        [Route("Register")]
+        public async Task<IActionResult> Register([FromBody] UserCreateCommandRequest request)
         {
-             var result =  await _mediator.Send(request);
+             var result = await _mediator.Send(request);
             if (result.IsSuccess)
                 return Ok(result);
             else
@@ -24,7 +29,8 @@ namespace Teleperformance.Bootcamp.WebApi.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Login(UserLoginCommandRequest request)
+        [Route("Login")]
+        public async Task<IActionResult> Login([FromBody] UserLoginCommandRequest request)
         {
             var result = await _mediator.Send(request);
             if (result.IsSuccess)
@@ -32,5 +38,6 @@ namespace Teleperformance.Bootcamp.WebApi.Controllers
             else
                 return BadRequest(result);
         }
+
     }
 }

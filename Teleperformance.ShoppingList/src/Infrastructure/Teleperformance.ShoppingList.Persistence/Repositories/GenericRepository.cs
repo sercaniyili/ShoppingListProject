@@ -14,10 +14,11 @@ namespace Teleperformance.Bootcamp.Persistence.Repositories
     public class GenericRepository<T> : IGenericRepository<T> where T : class,IBaseEntity
     {
         protected readonly AppDbContext _appDbContext;
-        protected readonly DbSet<T> _dbSet;
-        public GenericRepository(AppDbContext appDbContext) => (_appDbContext, _dbSet) 
-            = (appDbContext, _appDbContext.Set<T>());
-      
+        
+        public GenericRepository(AppDbContext appDbContext) => (_appDbContext) = (appDbContext );
+
+        protected DbSet<T> _dbSet => _appDbContext.Set<T>();
+
         //Write
         public async Task AddAsync(T entity)
         {
@@ -46,9 +47,9 @@ namespace Teleperformance.Bootcamp.Persistence.Repositories
 
 
         //Read
-        public IQueryable<T> GetAll()
+        public IEnumerable<T> GetAll()
         {
-            return _dbSet.AsQueryable();
+            return _dbSet.ToList();
         }
         public IEnumerable<T> GetByCondition(Expression<Func<T, bool>> expression)
         {

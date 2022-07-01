@@ -10,3 +10,8 @@ C:\Users\sercan\Desktop\Bootcamp\BootcampProject\Teleperformance.ShoppingList\sr
 C:\Users\sercan\Desktop\Bootcamp\BootcampProject\Teleperformance.ShoppingList\src\Infrastructure\Teleperformance.ShoppingList.Infrastructure\obj\Debug\net6.0\refint\Teleperformance.Bootcamp.Infrastructure.dll
 C:\Users\sercan\Desktop\Bootcamp\BootcampProject\Teleperformance.ShoppingList\src\Infrastructure\Teleperformance.ShoppingList.Infrastructure\obj\Debug\net6.0\Teleperformance.Bootcamp.Infrastructure.pdb
 C:\Users\sercan\Desktop\Bootcamp\BootcampProject\Teleperformance.ShoppingList\src\Infrastructure\Teleperformance.ShoppingList.Infrastructure\obj\Debug\net6.0\ref\Teleperformance.Bootcamp.Infrastructure.dll
+C:\Users\sercan\Desktop\Bootcamp\BootcampProject\Teleperformance.ShoppingList\src\Infrastructure\Teleperformance.ShoppingList.Infrastructure\bin\Debug\net6.0\Teleperformance.Bootcamp.Application.dll
+C:\Users\sercan\Desktop\Bootcamp\BootcampProject\Teleperformance.ShoppingList\src\Infrastructure\Teleperformance.ShoppingList.Infrastructure\bin\Debug\net6.0\Teleperformance.Bootcamp.Domain.dll
+C:\Users\sercan\Desktop\Bootcamp\BootcampProject\Teleperformance.ShoppingList\src\Infrastructure\Teleperformance.ShoppingList.Infrastructure\bin\Debug\net6.0\Teleperformance.Bootcamp.Application.pdb
+C:\Users\sercan\Desktop\Bootcamp\BootcampProject\Teleperformance.ShoppingList\src\Infrastructure\Teleperformance.ShoppingList.Infrastructure\bin\Debug\net6.0\Teleperformance.Bootcamp.Domain.pdb
+C:\Users\sercan\Desktop\Bootcamp\BootcampProject\Teleperformance.ShoppingList\src\Infrastructure\Teleperformance.ShoppingList.Infrastructure\obj\Debug\net6.0\Teleperformance.Bootcamp.Infrastructure.csproj.CopyComplete

@@ -27,12 +27,9 @@ namespace Teleperformance.Bootcamp.Application.Features.Commands.User.UserLogin
             _tokenGenerator = tokenGenerator;
         }
 
-
         public async Task<BaseResponse> Handle(UserLoginCommandRequest request, CancellationToken cancellationToken)
         {
-            //if (!ModelState.IsValid) return BadRequest(ModelState);
-
-            var user = await _userManager.FindByNameAsync(request.Email);
+            var user = await _userManager.FindByEmailAsync(request.Email);
 
             if (user == null) new BaseResponse("Kullanıcı bulunamadı", false);
 
