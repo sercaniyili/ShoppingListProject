@@ -1,4 +1,5 @@
-﻿using Microsoft.Extensions.Configuration;
+﻿using Microsoft.AspNetCore.Identity;
+using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
 using System;
 using System.Collections.Generic;
@@ -15,14 +16,15 @@ namespace Teleperformance.Bootcamp.Infrastructure.Services.Token
     public class TokenGenerator : ITokenGenerator
     {
         private readonly IConfiguration _configuration;
-        public TokenGenerator(IConfiguration configuration)
+        private readonly UserManager<AppUser> _userManager;
+        public TokenGenerator(IConfiguration configuration, UserManager<AppUser> UserManager)
         {
             _configuration = configuration;
+            _userManager = UserManager;
         }
 
-        public string GenerateToken(AppUser user)
-        {
-            var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_configuration["JWT:Secret"]));
+        public async Task<string> GenerateToken(AppUser user)
+        {                      
 
             var userClaims = new List<Claim>
             {
@@ -32,7 +34,16 @@ namespace Teleperformance.Bootcamp.Infrastructure.Services.Token
                 new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString())
             };
 
-           var token = new JwtSecurityToken(
+            var roles = await _userManager.GetRolesAsync(user);
+
+            foreach (var role in roles)
+            {
+                userClaims.Add(new Claim(ClaimTypes.Role, role));
+            }
+
+            var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_configuration["JWT:Secret"]));
+
+            var token = new JwtSecurityToken(
            issuer: _configuration["JWT:ValidIssuer"],
            audience: _configuration["JWT:ValidAudience"],
            expires: DateTime.Now.AddHours(1),

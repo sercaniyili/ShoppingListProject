@@ -47,9 +47,9 @@ namespace Teleperformance.Bootcamp.Persistence.Repositories
 
 
         //Read
-        public IEnumerable<T> GetAll()
+        public IQueryable<T> GetAll()
         {
-            return _dbSet.ToList();
+            return _dbSet.AsQueryable();
         }
         public IEnumerable<T> GetByCondition(Expression<Func<T, bool>> expression)
         {

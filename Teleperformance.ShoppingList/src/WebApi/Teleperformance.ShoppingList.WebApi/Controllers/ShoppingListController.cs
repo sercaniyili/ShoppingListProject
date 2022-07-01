@@ -1,4 +1,5 @@
 ﻿using MediatR;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Teleperformance.Bootcamp.Application.Features.Queries.ShoppingList;
@@ -16,6 +17,7 @@ namespace Teleperformance.Bootcamp.WebApi.Controllers
 
 
         [HttpGet]
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> GetAllShoppingLists([FromQuery]GetAllShoppingListQuery request)
         {
             var result = await _mediator.Send(request);

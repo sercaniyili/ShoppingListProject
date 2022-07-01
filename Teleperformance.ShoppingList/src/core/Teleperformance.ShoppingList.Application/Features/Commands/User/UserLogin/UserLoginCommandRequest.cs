@@ -8,7 +8,7 @@ using Teleperformance.Bootcamp.Domain.Common.Response;
 
 namespace Teleperformance.Bootcamp.Application.Features.Commands.User.UserLogin
 {
-    public class UserLoginCommandRequest: IRequest<BaseResponse>
+    public class UserLoginCommandRequest: IRequest<ServiceResponse<string>>
     {
         public string Password { get; set; }
         public string Email { get; set; }

@@ -1,9 +1,11 @@
 ﻿using MediatR;
 using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Teleperformance.Bootcamp.Application.Features.Commands.User.UserCreate;
 using Teleperformance.Bootcamp.Application.Features.Commands.User.UserLogin;
 using Teleperformance.Bootcamp.Application.Interfaces.Repositories;
+using Teleperformance.Bootcamp.Domain.Entities.Identity;
 using Teleperformance.Bootcamp.Persistence.Repositories;
 
 namespace Teleperformance.Bootcamp.WebApi.Controllers
@@ -12,9 +14,9 @@ namespace Teleperformance.Bootcamp.WebApi.Controllers
     [ApiController]
     public class UserController : ControllerBase
     {
-        private readonly IAppUserRepository _appUserRepository;
+        private readonly UserManager<AppUser> _userManager;
         private readonly IMediator _mediator;
-        public UserController(IMediator mediator, IAppUserRepository appUserRepository) =>(_mediator, _appUserRepository) = (mediator, appUserRepository);
+        public UserController(IMediator mediator, UserManager<AppUser> userManager) =>(_mediator, _userManager) = (mediator, userManager);
 
 
         [HttpPost]

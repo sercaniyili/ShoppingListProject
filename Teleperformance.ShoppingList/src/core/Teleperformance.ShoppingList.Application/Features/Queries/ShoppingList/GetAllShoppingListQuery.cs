@@ -10,5 +10,7 @@ namespace Teleperformance.Bootcamp.Application.Features.Queries.ShoppingList
 {
     public class GetAllShoppingListQuery : IRequest<List<GelAllShoppingListDto>>
     {
+        public int PageNumber { get; set; }
+        public int PageSize { get; set; }
     }
 }

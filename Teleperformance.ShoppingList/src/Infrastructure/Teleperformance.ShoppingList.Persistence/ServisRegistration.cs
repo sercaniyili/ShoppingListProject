@@ -22,7 +22,7 @@ namespace Teleperformance.Bootcamp.Persistence
             services.AddDbContext<AppDbContext>(options =>
             {
                 options.UseSqlServer(configuration.GetConnectionString("DefaultConnection"));
-                options.UseLazyLoadingProxies();
+               //options.UseLazyLoadingProxies();
             });
 
 

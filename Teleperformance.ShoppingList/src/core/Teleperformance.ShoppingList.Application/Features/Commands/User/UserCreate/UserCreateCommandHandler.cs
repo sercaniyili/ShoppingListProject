@@ -27,11 +27,14 @@ namespace Teleperformance.Bootcamp.Application.Features.Commands.User.UserCreate
             var user = await _userManager.FindByNameAsync(request.Username);
 
             if (user != null)
-                return new BaseResponse("Kullanıcı bulunamadı", false);
+                return new BaseResponse("Kullanıcı zaten kayıtlı", false);
 
             var newUser = _mapper.Map<AppUser>(request);
 
             var result = await _userManager.CreateAsync(newUser, request.Password);
+
+            await _userManager.AddToRoleAsync(newUser, "User");
+
             if (!result.Succeeded)
                 return new BaseResponse("Kullanıcı oluşturulamadı", false);
             else

@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using MediatR;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -23,7 +24,11 @@ namespace Teleperformance.Bootcamp.Application.Features.Queries.ShoppingList
 
         public async Task<List<GelAllShoppingListDto>> Handle(GetAllShoppingListQuery request, CancellationToken cancellationToken)
         {
-            var result =  _shoppingListRepository.GetAll();
+            var result = await _shoppingListRepository.GetAll().Skip((request.PageNumber - 1) * request.PageSize)
+                .Take(request.PageSize)
+                .Include(x=> x.Products)
+                .Include(y=> y.AppUser)
+                .ToListAsync();
 
             return _mapper.Map<List<GelAllShoppingListDto>>(result);
 

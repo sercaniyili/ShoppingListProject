@@ -9,6 +9,6 @@ namespace Teleperformance.Bootcamp.Application.Interfaces.Token
 {
     public interface ITokenGenerator
     {
-        string GenerateToken(AppUser user);
+        Task<string> GenerateToken(AppUser user);
     }
 }
