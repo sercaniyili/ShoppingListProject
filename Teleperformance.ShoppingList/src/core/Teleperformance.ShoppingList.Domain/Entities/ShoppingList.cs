@@ -11,7 +11,7 @@ namespace Teleperformance.Bootcamp.Domain.Entities
     public class ShoppingList: IBaseEntity
     {
         public int Id { get; set; }
-        public DateTime CreateDate { get; set; }
+        public DateTime CreateDate { get; set; }=DateTime.Now;
         public string Title { get; set; }
         public string Description { get; set; }
         public bool IsComplete { get; set; }
