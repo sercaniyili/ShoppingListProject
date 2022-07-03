@@ -11,7 +11,7 @@ using Teleperformance.Bootcamp.Application.Interfaces.Repositories;
 
 namespace Teleperformance.Bootcamp.Application.Features.Queries.ShoppingList.GetAllShoppingList
 {
-    public class GetAllShoppingListQueryHandler : IRequestHandler<GetAllShoppingListQueryRequest, List<GelAllShoppingListDto>>
+    public class GetAllShoppingListQueryHandler : IRequestHandler<GetAllShoppingListQueryRequest, List<GetAllShoppingListDto>>
     {
         private readonly IShoppingListRepository _shoppingListRepository;
         private readonly IMapper _mapper;
@@ -22,7 +22,7 @@ namespace Teleperformance.Bootcamp.Application.Features.Queries.ShoppingList.Get
             _mapper = mapper;
         }
 
-        public async Task<List<GelAllShoppingListDto>> Handle(GetAllShoppingListQueryRequest request, CancellationToken cancellationToken)
+        public async Task<List<GetAllShoppingListDto>> Handle(GetAllShoppingListQueryRequest request, CancellationToken cancellationToken)
         {
             var result = await _shoppingListRepository.GetAll().Skip((request.PageNumber - 1) * request.PageSize)
                 .Take(request.PageSize)
@@ -30,7 +30,7 @@ namespace Teleperformance.Bootcamp.Application.Features.Queries.ShoppingList.Get
                 .Include(y => y.AppUser)
                 .ToListAsync();
 
-            return _mapper.Map<List<GelAllShoppingListDto>>(result);
+            return _mapper.Map<List<GetAllShoppingListDto>>(result);
 
         }
     }

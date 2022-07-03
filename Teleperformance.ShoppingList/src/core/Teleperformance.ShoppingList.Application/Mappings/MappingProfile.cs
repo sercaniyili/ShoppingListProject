@@ -19,24 +19,24 @@ namespace Teleperformance.Bootcamp.Application.Mappings
             #endregion
 
             #region ShoppingList
-            CreateMap<ShoppingList, GelAllShoppingListDto>()
+            CreateMap<ShoppingList, GetAllShoppingListDto>()
                 .ForMember(dest => dest.CategoryName, opt => opt.MapFrom(src => src.Category.Name))
                 .ForMember(dest => dest.Email, opt => opt.MapFrom(src => src.AppUser.Email))
-                .ForMember(dest => dest.Products, opt => opt.MapFrom(src => src.Products));
+                .ForMember(dest => dest.Products, opt => opt.MapFrom(src => src.Products)).ReverseMap();
 
 
             CreateMap<ShoppingList, GetByParameterShoppingListDto>()
                 .ForMember(dest => dest.CategoryName, opt => opt.MapFrom(src => src.Category.Name))
                 .ForMember(dest => dest.Email, opt => opt.MapFrom(src => src.AppUser.Email))
-                .ForMember(dest => dest.Products, opt => opt.MapFrom(src => src.Products));
+                .ForMember(dest => dest.Products, opt => opt.MapFrom(src => src.Products)).ReverseMap();
 
 
             CreateMap<ShoppingList, CreateShoppingListDto>()
-            .ForMember(dest => dest.CategoryId, opt => opt.MapFrom(src => src.Category.Id));
+            .ForMember(dest => dest.CategoryId, opt => opt.MapFrom(src => src.Category.Id)).ReverseMap();
             //.ForMember(dest => dest.AppUserId, opt => opt.MapFrom(src => src.AppUser.Id));
 
             CreateMap<ShoppingList, UpdateShoppingListDto>()
-            .ForMember(dest => dest.CategoryId, opt => opt.MapFrom(src => src.Category.Id));
+            .ForMember(dest => dest.CategoryId, opt => opt.MapFrom(src => src.Category.Id)).ReverseMap();
 
 
             #endregion

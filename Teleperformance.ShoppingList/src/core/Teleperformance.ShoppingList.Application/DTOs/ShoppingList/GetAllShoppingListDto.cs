@@ -7,7 +7,7 @@ using Teleperformance.Bootcamp.Domain.Entities;
 
 namespace Teleperformance.Bootcamp.Application.DTOs.ShoppingList
 {
-    public class GelAllShoppingListDto
+    public class GetAllShoppingListDto
     {
         public int Id { get; set; }
         public string CategoryName { get; set; }

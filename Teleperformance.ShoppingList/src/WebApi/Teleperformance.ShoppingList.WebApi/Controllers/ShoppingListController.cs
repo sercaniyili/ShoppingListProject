@@ -6,6 +6,7 @@ using Teleperformance.Bootcamp.Application.Features.Commands.ShoppingList.Shoppi
 using Teleperformance.Bootcamp.Application.Features.Commands.ShoppingList.ShoppingListDelete;
 using Teleperformance.Bootcamp.Application.Features.Commands.ShoppingList.ShoppinListUpdate;
 using Teleperformance.Bootcamp.Application.Features.Queries.ShoppingList.GetAllShoppingList;
+using Teleperformance.Bootcamp.Application.Features.Queries.ShoppingList.GetShoppingListById;
 using Teleperformance.Bootcamp.Application.Features.Queries.ShoppingList.SearchInShoppingList;
 using Teleperformance.Bootcamp.Application.Interfaces.Cache;
 using Teleperformance.Bootcamp.Application.Interfaces.Repositories;
@@ -49,6 +50,18 @@ namespace Teleperformance.Bootcamp.WebApi.Controllers
                 return BadRequest(result);
         }
 
+        [HttpGet("{id}")]
+        public async Task<IActionResult> GetShoppingListById([FromQuery] GetShoppingListByIdRequest request)
+        {
+
+            var result = await _mediator.Send(request);
+
+            if (result != null)
+                return Ok(result);
+            else
+                return BadRequest(result);
+        }
+
 
 
         //[HttpPost]
@@ -86,6 +99,7 @@ namespace Teleperformance.Bootcamp.WebApi.Controllers
             else
                 return BadRequest(result);
         }
+
 
         [HttpPut("{id}")]
         public async Task<IActionResult> UpdateShoppingList([FromBody] ShoppingListUpdateCommandRequest request)
