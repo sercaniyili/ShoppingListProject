@@ -11,6 +11,7 @@ namespace Teleperformance.Bootcamp.Application.Mappings
     {
         public MappingProfile()
         {
+            
 
             #region User
             CreateMap<AppUser, UserCreateCommandRequest>().ReverseMap();
@@ -23,9 +24,21 @@ namespace Teleperformance.Bootcamp.Application.Mappings
                 .ForMember(dest => dest.Email, opt => opt.MapFrom(src => src.AppUser.Email))
                 .ForMember(dest => dest.Products, opt => opt.MapFrom(src => src.Products));
 
-            //CreateMap<ShoppingList, CreateShoppingListDto>();
-            //.ForMember(dest => dest.CategoryId, opt => opt.MapFrom(src => src.Category.Id));
+
+            CreateMap<ShoppingList, GetByParameterShoppingListDto>()
+                .ForMember(dest => dest.CategoryName, opt => opt.MapFrom(src => src.Category.Name))
+                .ForMember(dest => dest.Email, opt => opt.MapFrom(src => src.AppUser.Email))
+                .ForMember(dest => dest.Products, opt => opt.MapFrom(src => src.Products));
+
+
+            CreateMap<ShoppingList, CreateShoppingListDto>()
+            .ForMember(dest => dest.CategoryId, opt => opt.MapFrom(src => src.Category.Id));
             //.ForMember(dest => dest.AppUserId, opt => opt.MapFrom(src => src.AppUser.Id));
+
+            CreateMap<ShoppingList, UpdateShoppingListDto>()
+            .ForMember(dest => dest.CategoryId, opt => opt.MapFrom(src => src.Category.Id));
+
+
             #endregion
         }
     }

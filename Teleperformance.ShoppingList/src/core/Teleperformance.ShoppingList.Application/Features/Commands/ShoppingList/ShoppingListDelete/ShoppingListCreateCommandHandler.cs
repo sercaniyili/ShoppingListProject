@@ -18,7 +18,7 @@ namespace Teleperformance.Bootcamp.Application.Features.Commands.ShoppingList.Sh
 
         public async Task<BaseResponse> Handle(ShoppingListDeleteCommandRequest request, CancellationToken cancellationToken)
         {
-            await _shoppingListRepsitory.DeleteAsync(request.Id);
+             await _shoppingListRepsitory.DeleteAsync(request.Id);
 
             return new BaseResponse("Silme işlemi başarılı", true); 
         }

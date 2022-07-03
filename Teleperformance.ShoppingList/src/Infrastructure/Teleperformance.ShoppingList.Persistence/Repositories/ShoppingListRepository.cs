@@ -20,7 +20,7 @@ namespace Teleperformance.Bootcamp.Persistence.Repositories
 
         public async Task<IEnumerable<ShoppingList>> Search(SearchQueryParameters parameters)
         {
-            IQueryable<ShoppingList> query = _appDbContext.ShoppingLists ;
+            IQueryable<ShoppingList> query = _appDbContext.ShoppingLists.AsQueryable();
 
             if (!string.IsNullOrWhiteSpace(parameters.ListName))
             {

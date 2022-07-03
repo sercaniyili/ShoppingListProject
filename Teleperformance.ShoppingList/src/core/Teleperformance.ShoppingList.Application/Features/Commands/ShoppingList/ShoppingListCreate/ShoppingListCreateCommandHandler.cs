@@ -27,7 +27,7 @@ namespace Teleperformance.Bootcamp.Application.Features.Commands.ShoppingList.Sh
         public async Task<BaseResponse> Handle(ShoppingListCreateCommandRequest request, CancellationToken cancellationToken)
         {
 
-            var result = _mapper.Map<Teleperformance.Bootcamp.Domain.Entities.ShoppingList>(request.CreateShoppingListDto);
+            var result =  _mapper.Map<Teleperformance.Bootcamp.Domain.Entities.ShoppingList>(request.CreateShoppingListDto);
             
             if (result != null)
             {

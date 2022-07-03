@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Teleperformance.Bootcamp.Application.Features.Commands.ShoppingList.ShoppingListCreate;
 using Teleperformance.Bootcamp.Application.Features.Commands.ShoppingList.ShoppingListDelete;
+using Teleperformance.Bootcamp.Application.Features.Commands.ShoppingList.ShoppinListUpdate;
 using Teleperformance.Bootcamp.Application.Features.Queries.ShoppingList.GetAllShoppingList;
 using Teleperformance.Bootcamp.Application.Features.Queries.ShoppingList.SearchInShoppingList;
 using Teleperformance.Bootcamp.Application.Interfaces.Cache;
@@ -49,6 +50,19 @@ namespace Teleperformance.Bootcamp.WebApi.Controllers
         }
 
 
+
+        //[HttpPost]
+        //public async Task<IActionResult> CreateShoppingList([FromBody] CreateShoppingListDto CreateShoppingListDto)
+        //{
+        //    var command = new ShoppingListCreateCommandRequest { CreateShoppingListDto = CreateShoppingListDto };
+        //    var result = await _mediator.Send(command);
+
+        //    if (result.IsSuccess)
+        //        return Ok(result);
+        //    else
+        //        return BadRequest(result);
+        //}
+
         [HttpPost]
         public async Task<IActionResult> CreateShoppingList([FromBody] ShoppingListCreateCommandRequest request)
         {
@@ -72,6 +86,19 @@ namespace Teleperformance.Bootcamp.WebApi.Controllers
             else
                 return BadRequest(result);
         }
+
+        [HttpPut("{id}")]
+        public async Task<IActionResult> UpdateShoppingList([FromBody] ShoppingListUpdateCommandRequest request)
+        {
+
+            var result = await _mediator.Send(request);
+                
+            return Ok(result);
+          
+        }
+
+
+
 
     }
 }

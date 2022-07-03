@@ -1,9 +1,10 @@
 ﻿using MediatR;
+using Teleperformance.Bootcamp.Application.DTOs.ShoppingList;
 using Teleperformance.Bootcamp.Domain.Common;
 
 namespace Teleperformance.Bootcamp.Application.Features.Queries.ShoppingList.SearchInShoppingList
 {
-    public class SearchInShoppingListQueryRequest : IRequest<IEnumerable<Teleperformance.Bootcamp.Domain.Entities.ShoppingList>>
+    public class SearchInShoppingListQueryRequest : IRequest<IEnumerable<GetByParameterShoppingListDto>>
     {
         public SearchQueryParameters parameters { get; set; }
     }
