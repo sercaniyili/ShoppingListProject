@@ -17,8 +17,23 @@ namespace Teleperformance.Bootcamp.Persistence.Context
 
         //protected override void OnModelCreating(ModelBuilder builder)
         //{
-        //    builder.Entity<AppUser>().Property(x => x.CreateDate).HasDefaultValueSql("getdate()");
-        //}
+        //    base.OnModelCreating(builder);
 
+        //    //Remove cascade delete unless explicit set below
+
+        //    //var cascadeFKs = builder.Model
+        //    //    .GetEntityTypes()
+        //    //    .SelectMany(t => t.GetForeignKeys())
+        //    //    .Where(fk => !fk.IsOwnership && fk.DeleteBehavior == DeleteBehavior.Cascade);
+        //    //foreach (var fk in cascadeFKs)
+        //    //{
+        //    //    fk.DeleteBehavior = DeleteBehavior.Restrict;
+        //    //}
+
+        //    // explicit set cascade delete
+        //    // Remove security assignments when group deleted
+        //    //builder.Entity<ShoppingList>().HasMany(x => x.Products).WithOne(x => x.Id).HasForeignKey(x => x.).OnDelete(DeleteBehavior.Cascade);
+
+        //}
     }
 }

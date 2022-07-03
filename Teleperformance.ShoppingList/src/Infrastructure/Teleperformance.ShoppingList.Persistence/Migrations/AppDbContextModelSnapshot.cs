@@ -172,7 +172,7 @@ namespace Teleperformance.Bootcamp.Persistence.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Categories");
+                    b.ToTable("Categories", (string)null);
                 });
 
             modelBuilder.Entity("Teleperformance.Bootcamp.Domain.Entities.Identity.AppUser", b =>
@@ -280,7 +280,7 @@ namespace Teleperformance.Bootcamp.Persistence.Migrations
 
                     b.HasIndex("ShoppingListId");
 
-                    b.ToTable("Products");
+                    b.ToTable("Products", (string)null);
                 });
 
             modelBuilder.Entity("Teleperformance.Bootcamp.Domain.Entities.ShoppingList", b =>
@@ -325,7 +325,7 @@ namespace Teleperformance.Bootcamp.Persistence.Migrations
 
                     b.HasIndex("CategoryId1");
 
-                    b.ToTable("ShoppingLists");
+                    b.ToTable("ShoppingLists", (string)null);
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>

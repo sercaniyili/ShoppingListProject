@@ -7,7 +7,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Teleperformance.Bootcamp.Application.Interfaces.Cache;
 using Teleperformance.Bootcamp.Application.Interfaces.Token;
+using Teleperformance.Bootcamp.Infrastructure.Services.Cache;
 using Teleperformance.Bootcamp.Infrastructure.Services.Token;
 
 namespace Teleperformance.Bootcamp.Infrastructure
@@ -16,10 +18,18 @@ namespace Teleperformance.Bootcamp.Infrastructure
     {
         public static IServiceCollection AddInfrastructureServices(this IServiceCollection services, IConfiguration configuration)
         {
+            //Redis configuration
+            services.AddStackExchangeRedisCache(options =>
+            {
+                options.Configuration = "localhost:6379";
+            });
+            
 
-
+            //Add Ioc
             services.AddScoped<ITokenGenerator,TokenGenerator>();
+            services.AddSingleton<IRedisDistrubutedCache, RedisDistrubutedCacheService>();
 
+            //Auth configuration
             services.AddAuthentication(options =>
             {
                 options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;

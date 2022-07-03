@@ -13,12 +13,12 @@ using Teleperformance.Bootcamp.Domain.Common.Response;
 
 namespace Teleperformance.Bootcamp.Application.Features.Commands.ShoppingList.ShoppingListCreate
 {
-    public class ShoppingListCommandHandler : IRequestHandler<ShoppingListCreateCommandRequest, BaseResponse>
+    public class ShoppingListCreateCommandHandler : IRequestHandler<ShoppingListCreateCommandRequest, BaseResponse>
     {
 
         private readonly IMapper _mapper;
         private readonly IShoppingListRepository _shoppingListRepsitory;
-        public ShoppingListCommandHandler(IShoppingListRepository shoppingListRepsitory, IMapper mapper)
+        public ShoppingListCreateCommandHandler(IShoppingListRepository shoppingListRepsitory, IMapper mapper)
         {
             _shoppingListRepsitory = shoppingListRepsitory;
             _mapper = mapper;
