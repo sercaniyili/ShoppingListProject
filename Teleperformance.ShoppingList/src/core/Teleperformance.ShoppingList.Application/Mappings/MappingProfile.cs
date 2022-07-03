@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using Teleperformance.Bootcamp.Application.DTOs.Products;
 using Teleperformance.Bootcamp.Application.DTOs.ShoppingList;
 using Teleperformance.Bootcamp.Application.Features.Commands.User.UserCreate;
 using Teleperformance.Bootcamp.Application.Features.Commands.User.UserLogin;
@@ -40,6 +41,14 @@ namespace Teleperformance.Bootcamp.Application.Mappings
 
 
             #endregion
+
+            #region Product
+
+            //CreateMap<Product, AddProductDto>()
+            //    .ForMember(dest => dest.ShoppingListId, opt => opt.MapFrom(src => src.));
+
+            #endregion
+
         }
     }
 }

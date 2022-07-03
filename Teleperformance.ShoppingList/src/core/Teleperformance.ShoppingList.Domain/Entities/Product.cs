@@ -13,11 +13,15 @@ namespace Teleperformance.Bootcamp.Domain.Entities
     public class Product : IBaseEntity
     {
         public int Id { get; set; }
-        public DateTime CreateDate { get; set; }
         public string Name { get; set; }
-        public bool IsBuy { get; set; }
-        public int Quantity { get; set; }
-        public Unit Unit { get; set; }
+        public bool? IsBuy { get; set; }
+        public int? Quantity { get; set; }
+        public Unit? Unit { get; set; }
+        public DateTime CreateDate { get; set; }= DateTime.Now;
+
+        //nav props
+        public int ShoppingListId { get; set; }
+        public virtual ShoppingList  ShoppingList { get; set; }
 
     }
 }

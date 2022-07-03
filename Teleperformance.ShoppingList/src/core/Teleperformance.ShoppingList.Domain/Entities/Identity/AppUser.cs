@@ -11,11 +11,9 @@ namespace Teleperformance.Bootcamp.Domain.Entities.Identity
     public class AppUser : IdentityUser, IBaseEntity
     {
         public int Id { get; set; }
-        public DateTime CreateDate { get; set; }
         public string? Name { get; set; }
         public string? Surname { get; set; }
-
-
-        //public ICollection<ShoppingList> ShoppingLists { get; set; }
+        public DateTime CreateDate { get; set; } = DateTime.Now;
+        public ICollection<ShoppingList> ShoppingLists { get; set; }
     }
 }
