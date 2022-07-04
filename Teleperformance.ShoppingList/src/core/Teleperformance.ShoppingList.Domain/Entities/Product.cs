@@ -21,7 +21,7 @@ namespace Teleperformance.Bootcamp.Domain.Entities
 
         //nav props
         public string ShoppingListId { get; set; }
-        public virtual ShoppingList ShoppingList { get; set; }
+        //public ShoppingList ShoppingList { get; set; }
 
     }
 }

@@ -1,6 +1,8 @@
+using Serilog;
 using Teleperformance.Bootcamp.Application;
 using Teleperformance.Bootcamp.Infrastructure;
 using Teleperformance.Bootcamp.Persistence;
+using Teleperformance.Bootcamp.WebApi.Extension;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -9,8 +11,13 @@ builder.Services.AddPersistenceServices(builder.Configuration);
 builder.Services.AddApplicationServices(builder.Configuration);
 builder.Services.AddInfrastructureServices(builder.Configuration);
 
+//Logging conf.
+builder.Logging.AddSerilog();
 
-
+builder.Host.UseSerilog((hostContext, services, configuration) =>
+{
+    configuration.ReadFrom.Configuration(hostContext.Configuration);
+});
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
@@ -32,6 +39,8 @@ app.UseHttpsRedirection();
 app.UseAuthentication();
 
 app.UseAuthorization();
+
+app.UseCustomExceptionMiddleware();
 
 app.MapControllers();
 

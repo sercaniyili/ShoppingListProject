@@ -11,7 +11,7 @@ namespace Teleperformance.Bootcamp.Application.Interfaces.Repositories
     {
         Task AddAsync(T entity);
         Task AddRangeAsync(IEnumerable<T> entity);
-        Task UpdateAsync(T entity);
+        void Update(T entity);
         Task DeleteAsync(string id);
     }
     

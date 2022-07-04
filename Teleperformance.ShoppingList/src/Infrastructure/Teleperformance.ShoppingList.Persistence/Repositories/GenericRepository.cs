@@ -39,10 +39,10 @@ namespace Teleperformance.Bootcamp.Persistence.Repositories
             await _appDbContext.SaveChangesAsync();
         }
 
-        public async Task UpdateAsync(T entity)
+        public void Update(T entity)
         {
-            _appDbContext.Entry<T>(entity).State = EntityState.Modified;
-           await _appDbContext.SaveChangesAsync();
+            _dbSet.Update(entity);
+            _appDbContext.SaveChanges();
         }
 
 

@@ -23,7 +23,7 @@ namespace Teleperformance.Bootcamp.Domain.Entities
         public Category Category { get; set; }
 
         public string AppUserId { get; set; }
-        public virtual AppUser AppUser { get; set; }
+        public AppUser AppUser { get; set; }
       
     }
 }

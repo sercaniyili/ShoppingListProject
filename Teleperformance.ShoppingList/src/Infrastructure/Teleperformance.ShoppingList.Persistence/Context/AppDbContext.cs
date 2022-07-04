@@ -22,18 +22,9 @@ namespace Teleperformance.Bootcamp.Persistence.Context
             builder.Entity<ShoppingList>().Property(x => x.Id).HasDefaultValueSql("NEWID()");
             builder.Entity<Product>().Property(x => x.Id).HasDefaultValueSql("NEWID()");
 
-            //builder.Entity<ShoppingList>()
-            //.HasOne(e => e.Products)
-            //.WithMany(e => e.)
-            //.HasForeignKey(e => e.BId)
-            //.OnDelete(DeleteBehavior.Restrict);
-
-
-            builder.Entity<ShoppingList>().HasMany(b => b.Products).WithOne(p => p.ShoppingList)
-            .HasForeignKey(p => p.ShoppingListId)
-            .OnDelete(DeleteBehavior.Cascade);
-
-
+            //builder.Entity<ShoppingList>().HasMany(b => b.Products).WithOne(p => p.ShoppingList)
+            //.HasForeignKey(p => p.Id)
+            //.OnDelete(DeleteBehavior.Cascade);
 
             base.OnModelCreating(builder);
         }    

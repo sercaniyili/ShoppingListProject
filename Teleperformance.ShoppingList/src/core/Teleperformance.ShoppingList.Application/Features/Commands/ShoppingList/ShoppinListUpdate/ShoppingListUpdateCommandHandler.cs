@@ -24,15 +24,19 @@ namespace Teleperformance.Bootcamp.Application.Features.Commands.ShoppingList.Sh
 
         public async Task<BaseResponse> Handle(ShoppingListUpdateCommandRequest request, CancellationToken cancellationToken)
         {
-            var result = _mapper.Map<Teleperformance.Bootcamp.Domain.Entities.ShoppingList>(request.updateShoppingListDto);
+            var entity = await _shoppingListRepsitory.GetByIdAsync(request.UpdateShoppingListDto.Id);
 
-            var category = await _categoryRepository.GetByIdAsync(request.updateShoppingListDto.CategoryId);
-           
-            result.Category = category;
+            entity = _mapper.Map(request.UpdateShoppingListDto, entity);
 
-            if (result != null)
+            var category = await _categoryRepository.GetByIdAsync(request.UpdateShoppingListDto.CategoryId);
+
+            entity.Category = category;
+
+
+
+            if (entity != null)
             {
-                await _shoppingListRepsitory.UpdateAsync(result);
+                _shoppingListRepsitory.Update(entity);
                 return new BaseResponse("Liste başarıyla eklendi", true);
             }
             else

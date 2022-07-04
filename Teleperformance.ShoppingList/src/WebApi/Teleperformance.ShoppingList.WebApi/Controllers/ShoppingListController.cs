@@ -32,15 +32,14 @@ namespace Teleperformance.Bootcamp.WebApi.Controllers
 
             var result = await _mediator.Send(request);
 
-            var cachedResult = await _redisDistrubutedCache.GetObjectAsync<GetAllShoppingListQueryRequest>(key);
+          //  var cachedResult = await _redisDistrubutedCache.GetObjectAsync<GetAllShoppingListQueryRequest>(key);
 
-            await _redisDistrubutedCache.SetObjectAsync(key, result,2,60);             
+           // await _redisDistrubutedCache.SetObjectAsync(key, result,2,60);             
 
             return Ok(result);
         }
 
-        [HttpGet]
-        [Route("search")]
+        [HttpGet("search")]
         public async Task<IActionResult> Search([FromQuery] SearchInShoppingListQueryRequest request)
         {
             var result = await _mediator.Send(request);
@@ -52,9 +51,9 @@ namespace Teleperformance.Bootcamp.WebApi.Controllers
         }
 
         [HttpGet("{id}")]
-        public async Task<IActionResult> GetShoppingListById([FromQuery] GetShoppingListByIdRequest request)
+        public async Task<IActionResult> GetShoppingListById( string id)
         {
-
+            var request = new GetShoppingListByIdRequest { Id = id };
             var result = await _mediator.Send(request);
 
             if (result != null)
@@ -101,7 +100,7 @@ namespace Teleperformance.Bootcamp.WebApi.Controllers
         }
 
 
-        [HttpPut("{id}")]
+        [HttpPut]
         public async Task<IActionResult> UpdateShoppingList([FromBody] ShoppingListUpdateCommandRequest request)
         {
 

@@ -1,10 +1,13 @@
 ﻿using Newtonsoft.Json;
+using Serilog;
 using System.Net;
 
 namespace Teleperformance.Bootcamp.WebApi.Middlewares
 {
     public class CustomExceptionMiddleware
     {
+
+        private static readonly Serilog.ILogger _logger = Log.ForContext<CustomExceptionMiddleware>();
         private readonly RequestDelegate _next;
         public CustomExceptionMiddleware(RequestDelegate next) => _next = next;
             
@@ -15,11 +18,12 @@ namespace Teleperformance.Bootcamp.WebApi.Middlewares
             try
             {
                 string message = "[Request] HTTP " + httpContext.Request.Method + " " + httpContext.Request.Path;
+                _logger.Error(message);
 
                 await _next(httpContext);
 
                 message = "[Request] HTTP " + httpContext.Request.Method + " " + " reponded " + httpContext.Response.StatusCode;
-
+                _logger.Error(message);
             }
             catch (Exception ex )
             {
@@ -35,6 +39,8 @@ namespace Teleperformance.Bootcamp.WebApi.Middlewares
             httpContext.Response.StatusCode = (int)HttpStatusCode.InternalServerError;
 
             string message = "[ERROR] HTTP " + httpContext.Request.Method + " - " + httpContext.Response.StatusCode + " - " + " Error Messsage " + ex.Message;
+
+            _logger.Error(message);
 
             var result = JsonConvert.SerializeObject(new { error = ex.Message }, Formatting.None);
             return httpContext.Response.WriteAsync(result);

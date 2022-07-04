@@ -9,7 +9,7 @@ namespace Teleperformance.Bootcamp.Application.DTOs.Products
 {
     public class AddProductDto
     {
-        public int ShoppingListId { get; set; }
+        public string ShoppingListId { get; set; }
         public string Name { get; set; }
         public int Quantity { get; set; }
         public Unit Unit { get; set; }

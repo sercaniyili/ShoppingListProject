@@ -33,8 +33,8 @@ namespace Teleperformance.Bootcamp.Application.Features.Commands.ShoppingList.Sh
         public async Task<BaseResponse> Handle(ShoppingListCreateCommandRequest request, CancellationToken cancellationToken)
         {
 
-
                 var result =  _mapper.Map<Teleperformance.Bootcamp.Domain.Entities.ShoppingList>(request.CreateShoppingListDto);
+
                 CreateShoppingListDtoValidation validation = new CreateShoppingListDtoValidation();
                 validation.ValidateAndThrow(request.CreateShoppingListDto);
 
@@ -43,8 +43,8 @@ namespace Teleperformance.Bootcamp.Application.Features.Commands.ShoppingList.Sh
 
                 result.Category = category;
                 result.AppUser = user;
-                await _shoppingListRepsitory.AddAsync(result);
 
+                await _shoppingListRepsitory.AddAsync(result);
 
                 return new BaseResponse("Liste başarıyla eklendi", true);                                  
 

@@ -11,6 +11,6 @@ namespace Teleperformance.Bootcamp.Application.Features.Commands.ShoppingList.Sh
 {
     public class ShoppingListUpdateCommandRequest :IRequest<BaseResponse>
     {
-        public UpdateShoppingListDto updateShoppingListDto { get; set; }
+        public UpdateShoppingListDto UpdateShoppingListDto { get; set; }
     }
 }
