@@ -31,7 +31,7 @@ namespace Teleperformance.Bootcamp.Persistence.Repositories
             await _appDbContext.SaveChangesAsync();
         }
 
-        public async Task DeleteAsync(int id)
+        public async Task DeleteAsync(string id)
         {
             var current = await _dbSet.FindAsync(id);
 
@@ -56,7 +56,7 @@ namespace Teleperformance.Bootcamp.Persistence.Repositories
             return _dbSet.Where(expression);
         }
 
-        public async Task<T> GetByIdAsync(int id)
+        public async Task<T> GetByIdAsync(string id)
         {
             return await _dbSet.FindAsync(id);
         }

@@ -157,11 +157,10 @@ namespace Teleperformance.Bootcamp.Persistence.Migrations
 
             modelBuilder.Entity("Teleperformance.Bootcamp.Domain.Entities.Category", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<string>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+                        .HasColumnType("nvarchar(450)")
+                        .HasDefaultValueSql("NEWID()");
 
                     b.Property<DateTime>("CreateDate")
                         .HasColumnType("datetime2");
@@ -251,11 +250,10 @@ namespace Teleperformance.Bootcamp.Persistence.Migrations
 
             modelBuilder.Entity("Teleperformance.Bootcamp.Domain.Entities.Product", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<string>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+                        .HasColumnType("nvarchar(450)")
+                        .HasDefaultValueSql("NEWID()");
 
                     b.Property<DateTime>("CreateDate")
                         .HasColumnType("datetime2");
@@ -270,8 +268,9 @@ namespace Teleperformance.Bootcamp.Persistence.Migrations
                     b.Property<int?>("Quantity")
                         .HasColumnType("int");
 
-                    b.Property<int>("ShoppingListId")
-                        .HasColumnType("int");
+                    b.Property<string>("ShoppingListId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<int?>("Unit")
                         .HasColumnType("int");
@@ -285,18 +284,18 @@ namespace Teleperformance.Bootcamp.Persistence.Migrations
 
             modelBuilder.Entity("Teleperformance.Bootcamp.Domain.Entities.ShoppingList", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<string>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+                        .HasColumnType("nvarchar(450)")
+                        .HasDefaultValueSql("NEWID()");
 
                     b.Property<string>("AppUserId")
                         .IsRequired()
                         .HasColumnType("nvarchar(450)");
 
-                    b.Property<int>("CategoryId")
-                        .HasColumnType("int");
+                    b.Property<string>("CategoryId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<DateTime?>("CompleteDate")
                         .HasColumnType("datetime2");

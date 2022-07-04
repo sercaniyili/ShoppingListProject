@@ -12,7 +12,7 @@ namespace Teleperformance.Bootcamp.Application.Interfaces.Repositories
         Task AddAsync(T entity);
         Task AddRangeAsync(IEnumerable<T> entity);
         Task UpdateAsync(T entity);
-        Task DeleteAsync(int id);
+        Task DeleteAsync(string id);
     }
     
     

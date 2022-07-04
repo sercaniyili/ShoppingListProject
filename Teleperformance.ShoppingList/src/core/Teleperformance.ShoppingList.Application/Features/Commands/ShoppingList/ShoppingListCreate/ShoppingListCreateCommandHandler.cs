@@ -18,17 +18,27 @@ namespace Teleperformance.Bootcamp.Application.Features.Commands.ShoppingList.Sh
 
         private readonly IMapper _mapper;
         private readonly IShoppingListRepository _shoppingListRepsitory;
-        public ShoppingListCreateCommandHandler(IShoppingListRepository shoppingListRepsitory, IMapper mapper)
+        private readonly ICategoryRepository _categoryRepository ;
+        private readonly IAppUserRepository  _appUserRepository;
+        public ShoppingListCreateCommandHandler(IShoppingListRepository shoppingListRepsitory, IMapper mapper, ICategoryRepository categoryRepository, IAppUserRepository appUserRepository)
         {
-            _shoppingListRepsitory = shoppingListRepsitory;
             _mapper = mapper;
+            _shoppingListRepsitory = shoppingListRepsitory;
+            _categoryRepository = categoryRepository;
+            _appUserRepository = appUserRepository;
         }
 
         public async Task<BaseResponse> Handle(ShoppingListCreateCommandRequest request, CancellationToken cancellationToken)
         {
 
             var result =  _mapper.Map<Teleperformance.Bootcamp.Domain.Entities.ShoppingList>(request.CreateShoppingListDto);
-            
+
+            var category = await _categoryRepository.GetByIdAsync(request.CreateShoppingListDto.CategoryId);
+            var user = await _appUserRepository.GetByIdAsync(request.CreateShoppingListDto.AppUserId);
+
+            result.Category = category;
+            result.AppUser = user;
+
             if (result != null)
             {
                 await _shoppingListRepsitory.AddAsync(result);

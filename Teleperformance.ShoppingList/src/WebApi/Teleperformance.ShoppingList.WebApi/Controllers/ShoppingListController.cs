@@ -32,9 +32,10 @@ namespace Teleperformance.Bootcamp.WebApi.Controllers
 
             var result = await _mediator.Send(request);
 
-            _redisDistrubutedCache.SetObjectAsync(key, result,2,60);
-         
-           // var cachedResult = _redisDistrubutedCache.GetObjectAsync<GetAllShoppingListQueryRequest>(key);
+            var cachedResult = await _redisDistrubutedCache.GetObjectAsync<GetAllShoppingListQueryRequest>(key);
+
+            await _redisDistrubutedCache.SetObjectAsync(key, result,2,60);             
+
             return Ok(result);
         }
 
@@ -61,7 +62,6 @@ namespace Teleperformance.Bootcamp.WebApi.Controllers
             else
                 return BadRequest(result);
         }
-
 
 
         //[HttpPost]

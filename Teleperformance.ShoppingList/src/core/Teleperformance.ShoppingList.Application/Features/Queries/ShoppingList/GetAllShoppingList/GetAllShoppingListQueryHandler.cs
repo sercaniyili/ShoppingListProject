@@ -28,6 +28,7 @@ namespace Teleperformance.Bootcamp.Application.Features.Queries.ShoppingList.Get
                 .Take(request.PageSize)
                 .Include(x => x.Products)
                 .Include(y => y.AppUser)
+                .Include(z=>z.Category)
                 .ToListAsync();
 
             return _mapper.Map<List<GetAllShoppingListDto>>(result);

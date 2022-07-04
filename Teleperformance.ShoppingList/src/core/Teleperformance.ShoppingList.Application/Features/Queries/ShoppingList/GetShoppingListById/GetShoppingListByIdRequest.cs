@@ -10,6 +10,6 @@ namespace Teleperformance.Bootcamp.Application.Features.Queries.ShoppingList.Get
 {
     public class GetShoppingListByIdRequest : IRequest<GetAllShoppingListDto>
     {
-        public int Id { get; set; }
+        public string Id { get; set; }
     }
 }

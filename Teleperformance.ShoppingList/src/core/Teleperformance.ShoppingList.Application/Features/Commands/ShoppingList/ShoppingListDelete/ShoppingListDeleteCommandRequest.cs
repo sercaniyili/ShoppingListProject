@@ -10,6 +10,6 @@ namespace Teleperformance.Bootcamp.Application.Features.Commands.ShoppingList.Sh
 {
     public class ShoppingListDeleteCommandRequest : IRequest<BaseResponse>
     {
-        public int Id { get; set; }
+        public string Id { get; set; }
     }
 }

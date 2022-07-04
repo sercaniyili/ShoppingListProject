@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using Teleperformance.Bootcamp.Domain.Entities;
 using Teleperformance.Bootcamp.Domain.Entities.Identity;
@@ -15,25 +16,26 @@ namespace Teleperformance.Bootcamp.Persistence.Context
         public DbSet<Product> Products { get; set; }
 
 
-        //protected override void OnModelCreating(ModelBuilder builder)
-        //{
-        //    base.OnModelCreating(builder);
+        protected override void OnModelCreating(ModelBuilder builder)
+        {
+            builder.Entity<Category>().Property(x => x.Id).HasDefaultValueSql("NEWID()");
+            builder.Entity<ShoppingList>().Property(x => x.Id).HasDefaultValueSql("NEWID()");
+            builder.Entity<Product>().Property(x => x.Id).HasDefaultValueSql("NEWID()");
 
-        //    //Remove cascade delete unless explicit set below
+            //builder.Entity<ShoppingList>()
+            //.HasOne(e => e.Products)
+            //.WithMany(e => e.)
+            //.HasForeignKey(e => e.BId)
+            //.OnDelete(DeleteBehavior.Restrict);
 
-        //    //var cascadeFKs = builder.Model
-        //    //    .GetEntityTypes()
-        //    //    .SelectMany(t => t.GetForeignKeys())
-        //    //    .Where(fk => !fk.IsOwnership && fk.DeleteBehavior == DeleteBehavior.Cascade);
-        //    //foreach (var fk in cascadeFKs)
-        //    //{
-        //    //    fk.DeleteBehavior = DeleteBehavior.Restrict;
-        //    //}
 
-        //    // explicit set cascade delete
-        //    // Remove security assignments when group deleted
-        //    //builder.Entity<ShoppingList>().HasMany(x => x.Products).WithOne(x => x.Id).HasForeignKey(x => x.).OnDelete(DeleteBehavior.Cascade);
+            builder.Entity<ShoppingList>().HasMany(b => b.Products).WithOne(p => p.ShoppingList)
+            .HasForeignKey(p => p.ShoppingListId)
+            .OnDelete(DeleteBehavior.Cascade);
 
-        //}
+
+
+            base.OnModelCreating(builder);
+        }    
     }
 }

@@ -9,7 +9,7 @@ namespace Teleperformance.Bootcamp.Application.DTOs.ShoppingList
 {
     public class GetAllShoppingListDto
     {
-        public int Id { get; set; }
+        public string Id { get; set; }
         public string CategoryName { get; set; }
         public string Email { get; set; }
         public string Title { get; set; }

@@ -12,8 +12,8 @@ using Teleperformance.Bootcamp.Persistence.Context;
 namespace Teleperformance.Bootcamp.Persistence.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20220703201800_relations-edit")]
-    partial class relationsedit
+    [Migration("20220703221632_oto-identity")]
+    partial class otoidentity
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -159,11 +159,10 @@ namespace Teleperformance.Bootcamp.Persistence.Migrations
 
             modelBuilder.Entity("Teleperformance.Bootcamp.Domain.Entities.Category", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<string>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+                        .HasColumnType("nvarchar(450)")
+                        .HasDefaultValueSql("NEWID()");
 
                     b.Property<DateTime>("CreateDate")
                         .HasColumnType("datetime2");
@@ -253,11 +252,10 @@ namespace Teleperformance.Bootcamp.Persistence.Migrations
 
             modelBuilder.Entity("Teleperformance.Bootcamp.Domain.Entities.Product", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<string>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+                        .HasColumnType("nvarchar(450)")
+                        .HasDefaultValueSql("NEWID()");
 
                     b.Property<DateTime>("CreateDate")
                         .HasColumnType("datetime2");
@@ -273,39 +271,35 @@ namespace Teleperformance.Bootcamp.Persistence.Migrations
                         .HasColumnType("int");
 
                     b.Property<string>("ShoppingListId")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("ShoppingListId1")
-                        .HasColumnType("int");
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<int?>("Unit")
                         .HasColumnType("int");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("ShoppingListId1");
+                    b.HasIndex("ShoppingListId");
 
                     b.ToTable("Products");
                 });
 
             modelBuilder.Entity("Teleperformance.Bootcamp.Domain.Entities.ShoppingList", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<string>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
+                        .HasColumnType("nvarchar(450)")
+                        .HasDefaultValueSql("NEWID()");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
-
-                    b.Property<int>("AppUserId")
-                        .HasColumnType("int");
-
-                    b.Property<string>("AppUserId1")
+                    b.Property<string>("AppUserId")
                         .IsRequired()
                         .HasColumnType("nvarchar(450)");
 
                     b.Property<int>("CategoryId")
                         .HasColumnType("int");
+
+                    b.Property<string>("CategoryId1")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<DateTime?>("CompleteDate")
                         .HasColumnType("datetime2");
@@ -325,9 +319,9 @@ namespace Teleperformance.Bootcamp.Persistence.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("AppUserId1");
+                    b.HasIndex("AppUserId");
 
-                    b.HasIndex("CategoryId");
+                    b.HasIndex("CategoryId1");
 
                     b.ToTable("ShoppingLists");
                 });
@@ -385,26 +379,22 @@ namespace Teleperformance.Bootcamp.Persistence.Migrations
 
             modelBuilder.Entity("Teleperformance.Bootcamp.Domain.Entities.Product", b =>
                 {
-                    b.HasOne("Teleperformance.Bootcamp.Domain.Entities.ShoppingList", "ShoppingList")
+                    b.HasOne("Teleperformance.Bootcamp.Domain.Entities.ShoppingList", null)
                         .WithMany("Products")
-                        .HasForeignKey("ShoppingListId1")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("ShoppingList");
+                        .HasForeignKey("ShoppingListId");
                 });
 
             modelBuilder.Entity("Teleperformance.Bootcamp.Domain.Entities.ShoppingList", b =>
                 {
                     b.HasOne("Teleperformance.Bootcamp.Domain.Entities.Identity.AppUser", "AppUser")
                         .WithMany("ShoppingLists")
-                        .HasForeignKey("AppUserId1")
+                        .HasForeignKey("AppUserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.HasOne("Teleperformance.Bootcamp.Domain.Entities.Category", "Category")
                         .WithMany("ShoppingLists")
-                        .HasForeignKey("CategoryId")
+                        .HasForeignKey("CategoryId1")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 

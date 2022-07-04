@@ -23,7 +23,11 @@ namespace Teleperformance.Bootcamp.Persistence
             {
                 options.UseSqlServer(configuration.GetConnectionString("DefaultConnection"));
                //options.UseLazyLoadingProxies();
+
+
             });
+
+            
 
 
             services.AddIdentity<AppUser, IdentityRole>()

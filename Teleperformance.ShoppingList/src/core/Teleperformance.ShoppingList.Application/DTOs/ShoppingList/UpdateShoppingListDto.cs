@@ -8,9 +8,9 @@ namespace Teleperformance.Bootcamp.Application.DTOs.ShoppingList
 {
     public class UpdateShoppingListDto
     {
-        public int Id { get; set; }
+        public string Id { get; set; }
         public string Title { get; set; }
         public string Description { get; set; }
-        public int CategoryId { get; set; }
+        public string CategoryId { get; set; }
     }
 }

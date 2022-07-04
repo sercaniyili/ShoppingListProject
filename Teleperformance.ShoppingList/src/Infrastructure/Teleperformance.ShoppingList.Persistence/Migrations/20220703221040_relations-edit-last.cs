@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace Teleperformance.Bootcamp.Persistence.Migrations
 {
-    public partial class relationsedit : Migration
+    public partial class relationseditlast : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -55,8 +55,7 @@ namespace Teleperformance.Bootcamp.Persistence.Migrations
                 name: "Categories",
                 columns: table => new
                 {
-                    Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Id = table.Column<string>(type: "nvarchar(450)", nullable: false),
                     Name = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     CreateDate = table.Column<DateTime>(type: "datetime2", nullable: false)
                 },
@@ -175,29 +174,28 @@ namespace Teleperformance.Bootcamp.Persistence.Migrations
                 name: "ShoppingLists",
                 columns: table => new
                 {
-                    Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Id = table.Column<string>(type: "nvarchar(450)", nullable: false),
                     Title = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Description = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     IsComplete = table.Column<bool>(type: "bit", nullable: false),
                     CreateDate = table.Column<DateTime>(type: "datetime2", nullable: false),
                     CompleteDate = table.Column<DateTime>(type: "datetime2", nullable: true),
                     CategoryId = table.Column<int>(type: "int", nullable: false),
-                    AppUserId = table.Column<int>(type: "int", nullable: false),
-                    AppUserId1 = table.Column<string>(type: "nvarchar(450)", nullable: false)
+                    CategoryId1 = table.Column<string>(type: "nvarchar(450)", nullable: false),
+                    AppUserId = table.Column<string>(type: "nvarchar(450)", nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_ShoppingLists", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_ShoppingLists_AspNetUsers_AppUserId1",
-                        column: x => x.AppUserId1,
+                        name: "FK_ShoppingLists_AspNetUsers_AppUserId",
+                        column: x => x.AppUserId,
                         principalTable: "AspNetUsers",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
-                        name: "FK_ShoppingLists_Categories_CategoryId",
-                        column: x => x.CategoryId,
+                        name: "FK_ShoppingLists_Categories_CategoryId1",
+                        column: x => x.CategoryId1,
                         principalTable: "Categories",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
@@ -207,25 +205,22 @@ namespace Teleperformance.Bootcamp.Persistence.Migrations
                 name: "Products",
                 columns: table => new
                 {
-                    Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Id = table.Column<string>(type: "nvarchar(450)", nullable: false),
                     Name = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     IsBuy = table.Column<bool>(type: "bit", nullable: true),
                     Quantity = table.Column<int>(type: "int", nullable: true),
                     Unit = table.Column<int>(type: "int", nullable: true),
                     CreateDate = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    ShoppingListId = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    ShoppingListId1 = table.Column<int>(type: "int", nullable: false)
+                    ShoppingListId = table.Column<string>(type: "nvarchar(450)", nullable: true)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Products", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_Products_ShoppingLists_ShoppingListId1",
-                        column: x => x.ShoppingListId1,
+                        name: "FK_Products_ShoppingLists_ShoppingListId",
+                        column: x => x.ShoppingListId,
                         principalTable: "ShoppingLists",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                        principalColumn: "Id");
                 });
 
             migrationBuilder.CreateIndex(
@@ -268,19 +263,19 @@ namespace Teleperformance.Bootcamp.Persistence.Migrations
                 filter: "[NormalizedUserName] IS NOT NULL");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Products_ShoppingListId1",
+                name: "IX_Products_ShoppingListId",
                 table: "Products",
-                column: "ShoppingListId1");
+                column: "ShoppingListId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_ShoppingLists_AppUserId1",
+                name: "IX_ShoppingLists_AppUserId",
                 table: "ShoppingLists",
-                column: "AppUserId1");
+                column: "AppUserId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_ShoppingLists_CategoryId",
+                name: "IX_ShoppingLists_CategoryId1",
                 table: "ShoppingLists",
-                column: "CategoryId");
+                column: "CategoryId1");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)

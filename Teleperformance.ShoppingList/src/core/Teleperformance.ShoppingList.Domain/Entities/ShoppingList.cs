@@ -10,7 +10,7 @@ namespace Teleperformance.Bootcamp.Domain.Entities
 {
     public class ShoppingList: IBaseEntity
     {
-        public int Id { get; set; }
+        public string Id { get; set; }
         public string Title { get; set; }
         public string? Description { get; set; }
         public bool IsComplete { get; set; }
@@ -19,8 +19,8 @@ namespace Teleperformance.Bootcamp.Domain.Entities
         public virtual List<Product> Products { get; set; }
 
         //nav prop
-        public int CategoryId { get; set; }
-        public virtual Category Category { get; set; }
+        public string CategoryId { get; set; }
+        public Category Category { get; set; }
 
         public string AppUserId { get; set; }
         public virtual AppUser AppUser { get; set; }
