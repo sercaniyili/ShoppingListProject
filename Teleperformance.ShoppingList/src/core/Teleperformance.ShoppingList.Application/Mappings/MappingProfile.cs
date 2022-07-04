@@ -44,8 +44,8 @@ namespace Teleperformance.Bootcamp.Application.Mappings
 
             #region Product
 
-            //CreateMap<Product, AddProductDto>()
-            //    .ForMember(dest => dest.ShoppingListId, opt => opt.MapFrom(src => src.));
+            CreateMap<Product, AddProductDto>()
+             .ForMember(dest => dest.ShoppingListId, opt => opt.MapFrom(src => src.ShoppingList.Id));
 
             #endregion
 

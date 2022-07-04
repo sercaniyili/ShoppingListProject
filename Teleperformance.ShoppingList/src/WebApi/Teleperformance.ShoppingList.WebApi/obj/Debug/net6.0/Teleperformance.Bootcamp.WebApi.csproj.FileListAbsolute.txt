@@ -89,3 +89,13 @@ C:\Users\sercan\Desktop\Bootcamp\BootcampProject\Teleperformance.ShoppingList\sr
 C:\Users\sercan\Desktop\Bootcamp\BootcampProject\Teleperformance.ShoppingList\src\WebApi\Teleperformance.ShoppingList.WebApi\bin\Debug\net6.0\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
 C:\Users\sercan\Desktop\Bootcamp\BootcampProject\Teleperformance.ShoppingList\src\WebApi\Teleperformance.ShoppingList.WebApi\bin\Debug\net6.0\Newtonsoft.Json.dll
 C:\Users\sercan\Desktop\Bootcamp\BootcampProject\Teleperformance.ShoppingList\src\WebApi\Teleperformance.ShoppingList.WebApi\bin\Debug\net6.0\Newtonsoft.Json.Bson.dll
+C:\Users\sercan\Desktop\Bootcamp\BootcampProject\Teleperformance.ShoppingList\src\WebApi\Teleperformance.ShoppingList.WebApi\bin\Debug\net6.0\Microsoft.Extensions.DependencyModel.dll
+C:\Users\sercan\Desktop\Bootcamp\BootcampProject\Teleperformance.ShoppingList\src\WebApi\Teleperformance.ShoppingList.WebApi\bin\Debug\net6.0\Serilog.dll
+C:\Users\sercan\Desktop\Bootcamp\BootcampProject\Teleperformance.ShoppingList\src\WebApi\Teleperformance.ShoppingList.WebApi\bin\Debug\net6.0\Serilog.AspNetCore.dll
+C:\Users\sercan\Desktop\Bootcamp\BootcampProject\Teleperformance.ShoppingList\src\WebApi\Teleperformance.ShoppingList.WebApi\bin\Debug\net6.0\Serilog.Extensions.Hosting.dll
+C:\Users\sercan\Desktop\Bootcamp\BootcampProject\Teleperformance.ShoppingList\src\WebApi\Teleperformance.ShoppingList.WebApi\bin\Debug\net6.0\Serilog.Extensions.Logging.dll
+C:\Users\sercan\Desktop\Bootcamp\BootcampProject\Teleperformance.ShoppingList\src\WebApi\Teleperformance.ShoppingList.WebApi\bin\Debug\net6.0\Serilog.Formatting.Compact.dll
+C:\Users\sercan\Desktop\Bootcamp\BootcampProject\Teleperformance.ShoppingList\src\WebApi\Teleperformance.ShoppingList.WebApi\bin\Debug\net6.0\Serilog.Settings.Configuration.dll
+C:\Users\sercan\Desktop\Bootcamp\BootcampProject\Teleperformance.ShoppingList\src\WebApi\Teleperformance.ShoppingList.WebApi\bin\Debug\net6.0\Serilog.Sinks.Console.dll
+C:\Users\sercan\Desktop\Bootcamp\BootcampProject\Teleperformance.ShoppingList\src\WebApi\Teleperformance.ShoppingList.WebApi\bin\Debug\net6.0\Serilog.Sinks.Debug.dll
+C:\Users\sercan\Desktop\Bootcamp\BootcampProject\Teleperformance.ShoppingList\src\WebApi\Teleperformance.ShoppingList.WebApi\bin\Debug\net6.0\Serilog.Sinks.File.dll
