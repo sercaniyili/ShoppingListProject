@@ -8,9 +8,7 @@ namespace Teleperformance.Bootcamp.Domain.Common
 {
     public class SearchQueryParameters
     {
-        public string? ListName { get; set; }
-        public string? CategoryName { get; set; }
-        public DateTime? CreateDate { get; set; }
-        public DateTime? CompleteDate { get; set; }
+        public string? Keyword { get; set; }
+        public DateTime? Date { get; set; }
     }
 }

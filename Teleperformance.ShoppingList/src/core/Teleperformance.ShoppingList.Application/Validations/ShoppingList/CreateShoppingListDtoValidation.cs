@@ -17,6 +17,10 @@ namespace Teleperformance.Bootcamp.Application.Validations.ShoppingList
                 .NotEmpty().WithMessage("Başlık boş geçilemez");
             RuleFor(x => x.Description)
                 .MaximumLength(100).WithMessage("Açıklama 100 karakterden uzun olamaz");
+            RuleFor(x => x.AppUserId)
+                .NotEmpty().WithMessage("Kullanıcı Id boş geçilemez");
+            RuleFor(x => x.CategoryId)
+                .NotEmpty().WithMessage("Kategori Id boş geçilemez");
         }
     
     }

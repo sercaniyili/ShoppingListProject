@@ -6,6 +6,6 @@ namespace Teleperformance.Bootcamp.Application.Features.Queries.ShoppingList.Sea
 {
     public class SearchInShoppingListQueryRequest : IRequest<IEnumerable<GetByParameterShoppingListDto>>
     {
-        public SearchQueryParameters parameters { get; set; }
+        public SearchQueryParameters Parameters { get; set; }
     }
 }

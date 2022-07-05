@@ -17,8 +17,8 @@ namespace Teleperformance.Bootcamp.WebApi.Controllers
     [ApiController]
     public class ShoppingListController : ControllerBase
     {
-        private readonly IShoppingListRepository _shoppingListRepository;
         private readonly IMediator _mediator;
+        private readonly IShoppingListRepository _shoppingListRepository;
         private readonly IRedisDistrubutedCache _redisDistrubutedCache;
         public ShoppingListController(IMediator mediator, IShoppingListRepository shoppingListRepository, IRedisDistrubutedCache redisDistrubutedCache) => 
             (_mediator, _shoppingListRepository, _redisDistrubutedCache) = (mediator, shoppingListRepository, redisDistrubutedCache);
@@ -51,7 +51,7 @@ namespace Teleperformance.Bootcamp.WebApi.Controllers
         }
 
         [HttpGet("{id}")]
-        public async Task<IActionResult> GetShoppingListById( string id)
+        public async Task<IActionResult> GetShoppingListById(string id)
         {
             var request = new GetShoppingListByIdRequest { Id = id };
             var result = await _mediator.Send(request);
@@ -62,18 +62,6 @@ namespace Teleperformance.Bootcamp.WebApi.Controllers
                 return BadRequest(result);
         }
 
-
-        //[HttpPost]
-        //public async Task<IActionResult> CreateShoppingList([FromBody] CreateShoppingListDto CreateShoppingListDto)
-        //{
-        //    var command = new ShoppingListCreateCommandRequest { CreateShoppingListDto = CreateShoppingListDto };
-        //    var result = await _mediator.Send(command);
-
-        //    if (result.IsSuccess)
-        //        return Ok(result);
-        //    else
-        //        return BadRequest(result);
-        //}
 
         [HttpPost]
         public async Task<IActionResult> CreateShoppingList([FromBody] ShoppingListCreateCommandRequest request)

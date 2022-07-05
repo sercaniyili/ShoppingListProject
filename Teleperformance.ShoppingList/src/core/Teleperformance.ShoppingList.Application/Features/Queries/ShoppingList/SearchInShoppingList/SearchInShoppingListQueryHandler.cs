@@ -23,7 +23,7 @@ namespace Teleperformance.Bootcamp.Application.Features.Queries.ShoppingList.Sea
 
         public async Task<IEnumerable<GetByParameterShoppingListDto>> Handle(SearchInShoppingListQueryRequest request, CancellationToken cancellationToken)
         {
-           var result= await _shoppingListRepository.Search(request.parameters);               
+           var result= await _shoppingListRepository.Search(request.Parameters);               
        
            return _mapper.Map<List<GetByParameterShoppingListDto>>(result);
 

@@ -12,7 +12,7 @@ namespace Teleperformance.Bootcamp.Application.DTOs.Products
         public string ShoppingListId { get; set; }
         public string Name { get; set; }
         public int Quantity { get; set; }
-        public Unit Unit { get; set; }
+        public Unit? Unit { get; set; }
         public bool IsBuy { get; set; }
         public DateTime CreateDate { get; set; } = DateTime.Now;
 

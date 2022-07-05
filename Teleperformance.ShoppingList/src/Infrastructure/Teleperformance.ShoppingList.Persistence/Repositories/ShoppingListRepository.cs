@@ -20,26 +20,32 @@ namespace Teleperformance.Bootcamp.Persistence.Repositories
 
         public async Task<IEnumerable<ShoppingList>> Search(SearchQueryParameters parameters)
         {
-            IQueryable<ShoppingList> query = _appDbContext.ShoppingLists.AsQueryable()
-                ;
+            IQueryable<ShoppingList> query =  _appDbContext.ShoppingLists.AsQueryable();
 
-            if (!string.IsNullOrWhiteSpace(parameters.ListName))
+            if (!string.IsNullOrWhiteSpace(parameters.Keyword))
             {
-                query = query.Where(x => x.Title.Contains(parameters.ListName.ToLower()));
+                query = query.Where(x => x.Title.Contains(parameters.Keyword.ToLower())
+                ||  x.Category.Name.Contains(parameters.Keyword.ToLower()));
             }
 
-            if (!string.IsNullOrWhiteSpace(parameters.CategoryName))
+            if (parameters.Date.HasValue || parameters.Date.HasValue)
             {
-                query = query.Where(x => x.Category.Name.Contains(parameters.CategoryName.ToLower()));
-            }
-
-            if (parameters.CreateDate.HasValue || parameters.CompleteDate.HasValue)
-            {
-                query = query.Where(x => x.CreateDate.Equals(parameters.CreateDate.HasValue) 
-                || x.CompleteDate.Equals(parameters.CompleteDate.Value));
+                query = query.Where(x => x.CreateDate.Equals(parameters.Date.HasValue) 
+                || x.CompleteDate.Equals(parameters.Date.Value));
             }
 
             return query.ToList();
         }
+
+
+
+
+
+
+
+
+
+
+
     }
 }

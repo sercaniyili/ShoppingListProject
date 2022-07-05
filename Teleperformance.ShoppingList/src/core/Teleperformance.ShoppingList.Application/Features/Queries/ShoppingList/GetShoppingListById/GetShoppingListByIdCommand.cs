@@ -22,7 +22,7 @@ namespace Teleperformance.Bootcamp.Application.Features.Queries.ShoppingList.Get
             _mapper = mapper;
         }
 
-        public  Task<GetAllShoppingListDto> Handle(GetShoppingListByIdRequest request, CancellationToken cancellationToken)
+        public Task<GetAllShoppingListDto> Handle(GetShoppingListByIdRequest request, CancellationToken cancellationToken)
         {
             var result = _shoppingListRepository.GetAll().Where(x => x.Id == request.Id)
                 .Include(x => x.Products)
