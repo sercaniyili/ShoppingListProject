@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Teleperformance.Bootcamp.Application.Interfaces.MessageBrokers;
 using Teleperformance.Bootcamp.Application.Interfaces.Repositories;
 using Teleperformance.Bootcamp.Application.Validations.ShoppingList;
 using Teleperformance.Bootcamp.Domain.Common.Response;
@@ -16,10 +17,12 @@ namespace Teleperformance.Bootcamp.Application.Features.Commands.ShoppingList.Sh
     {
         private readonly IMapper _mapper;
         private readonly IShoppingListRepository _shoppingListRepsitory;
-        public ShoppingListUpdateIsCompleteCommandHandler(IShoppingListRepository shoppingListRepsitory, IMapper mapper)
+        private readonly IRabbitmqService _rabbitmqService;
+        public ShoppingListUpdateIsCompleteCommandHandler(IShoppingListRepository shoppingListRepsitory, IMapper mapper, IRabbitmqService rabbitmqService)
         {
-            _shoppingListRepsitory = shoppingListRepsitory;
             _mapper = mapper;
+            _shoppingListRepsitory = shoppingListRepsitory;
+            _rabbitmqService = rabbitmqService;
         }
 
         public async Task<BaseResponse> Handle(ShoppingListUpdateIsCompleteCommandRequest request, CancellationToken cancellationToken)
@@ -34,6 +37,7 @@ namespace Teleperformance.Bootcamp.Application.Features.Commands.ShoppingList.Sh
             if (entity != null)
             {
                 _shoppingListRepsitory.Update(entity);
+                _rabbitmqService.Publish(entity, "direct", "direct.test", "direct.queuName", "direct.test.key");
                 return new BaseResponse("liste başarıyla tamalandı", true);
             }
             else

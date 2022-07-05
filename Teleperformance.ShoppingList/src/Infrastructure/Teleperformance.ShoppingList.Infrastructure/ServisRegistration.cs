@@ -8,8 +8,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Teleperformance.Bootcamp.Application.Interfaces.Cache;
+using Teleperformance.Bootcamp.Application.Interfaces.MessageBrokers;
 using Teleperformance.Bootcamp.Application.Interfaces.Token;
 using Teleperformance.Bootcamp.Infrastructure.Services.Cache;
+using Teleperformance.Bootcamp.Infrastructure.Services.MessageBrokers;
 using Teleperformance.Bootcamp.Infrastructure.Services.Token;
 
 namespace Teleperformance.Bootcamp.Infrastructure
@@ -27,7 +29,13 @@ namespace Teleperformance.Bootcamp.Infrastructure
 
             //Add Ioc
             services.AddScoped<ITokenGenerator,TokenGenerator>();
+
             services.AddSingleton<IRedisDistrubutedCache, RedisDistrubutedCacheService>();
+
+            services.AddScoped<IRabbitmqConnection, RabbitmqConnection>();
+            services.AddScoped<IRabbitmqService, RabbitmqService>();
+
+
 
             //Auth configuration
             services.AddAuthentication(options =>

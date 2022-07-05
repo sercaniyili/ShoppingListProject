@@ -99,3 +99,4 @@ C:\Users\sercan\Desktop\Bootcamp\BootcampProject\Teleperformance.ShoppingList\sr
 C:\Users\sercan\Desktop\Bootcamp\BootcampProject\Teleperformance.ShoppingList\src\WebApi\Teleperformance.ShoppingList.WebApi\bin\Debug\net6.0\Serilog.Sinks.Console.dll
 C:\Users\sercan\Desktop\Bootcamp\BootcampProject\Teleperformance.ShoppingList\src\WebApi\Teleperformance.ShoppingList.WebApi\bin\Debug\net6.0\Serilog.Sinks.Debug.dll
 C:\Users\sercan\Desktop\Bootcamp\BootcampProject\Teleperformance.ShoppingList\src\WebApi\Teleperformance.ShoppingList.WebApi\bin\Debug\net6.0\Serilog.Sinks.File.dll
+C:\Users\sercan\Desktop\Bootcamp\BootcampProject\Teleperformance.ShoppingList\src\WebApi\Teleperformance.ShoppingList.WebApi\bin\Debug\net6.0\RabbitMQ.Client.dll

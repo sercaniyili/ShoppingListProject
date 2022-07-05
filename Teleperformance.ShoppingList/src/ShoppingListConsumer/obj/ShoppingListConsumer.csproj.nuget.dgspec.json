@@ -1,0 +1,296 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\Users\\sercan\\Desktop\\Bootcamp\\BootcampProject\\Teleperformance.ShoppingList\\src\\ShoppingListConsumer\\ShoppingListConsumer.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\sercan\\Desktop\\Bootcamp\\BootcampProject\\Teleperformance.ShoppingList\\src\\core\\Teleperformance.ShoppingList.Application\\Teleperformance.Bootcamp.Application.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\sercan\\Desktop\\Bootcamp\\BootcampProject\\Teleperformance.ShoppingList\\src\\core\\Teleperformance.ShoppingList.Application\\Teleperformance.Bootcamp.Application.csproj",
+        "projectName": "Teleperformance.Bootcamp.Application",
+        "projectPath": "C:\\Users\\sercan\\Desktop\\Bootcamp\\BootcampProject\\Teleperformance.ShoppingList\\src\\core\\Teleperformance.ShoppingList.Application\\Teleperformance.Bootcamp.Application.csproj",
+        "packagesPath": "C:\\Users\\sercan\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\sercan\\Desktop\\Bootcamp\\BootcampProject\\Teleperformance.ShoppingList\\src\\core\\Teleperformance.ShoppingList.Application\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\sercan\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "C:\\Users\\sercan\\Desktop\\Bootcamp\\BootcampProject\\Teleperformance.ShoppingList\\src\\core\\Teleperformance.ShoppingList.Domain\\Teleperformance.Bootcamp.Domain.csproj": {
+                "projectPath": "C:\\Users\\sercan\\Desktop\\Bootcamp\\BootcampProject\\Teleperformance.ShoppingList\\src\\core\\Teleperformance.ShoppingList.Domain\\Teleperformance.Bootcamp.Domain.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "AutoMapper": {
+              "target": "Package",
+              "version": "[11.0.1, )"
+            },
+            "AutoMapper.Extensions.Microsoft.DependencyInjection": {
+              "target": "Package",
+              "version": "[11.0.0, )"
+            },
+            "FluentValidation": {
+              "target": "Package",
+              "version": "[11.1.0, )"
+            },
+            "FluentValidation.DependencyInjectionExtensions": {
+              "target": "Package",
+              "version": "[11.1.0, )"
+            },
+            "MediatR": {
+              "target": "Package",
+              "version": "[10.0.1, )"
+            },
+            "MediatR.Extensions.Microsoft.DependencyInjection": {
+              "target": "Package",
+              "version": "[10.0.1, )"
+            },
+            "Microsoft.Extensions.Caching.StackExchangeRedis": {
+              "target": "Package",
+              "version": "[6.0.6, )"
+            },
+            "RabbitMQ.Client": {
+              "target": "Package",
+              "version": "[6.4.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.301\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\sercan\\Desktop\\Bootcamp\\BootcampProject\\Teleperformance.ShoppingList\\src\\core\\Teleperformance.ShoppingList.Domain\\Teleperformance.Bootcamp.Domain.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\sercan\\Desktop\\Bootcamp\\BootcampProject\\Teleperformance.ShoppingList\\src\\core\\Teleperformance.ShoppingList.Domain\\Teleperformance.Bootcamp.Domain.csproj",
+        "projectName": "Teleperformance.Bootcamp.Domain",
+        "projectPath": "C:\\Users\\sercan\\Desktop\\Bootcamp\\BootcampProject\\Teleperformance.ShoppingList\\src\\core\\Teleperformance.ShoppingList.Domain\\Teleperformance.Bootcamp.Domain.csproj",
+        "packagesPath": "C:\\Users\\sercan\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\sercan\\Desktop\\Bootcamp\\BootcampProject\\Teleperformance.ShoppingList\\src\\core\\Teleperformance.ShoppingList.Domain\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\sercan\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[6.0.6, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.301\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\sercan\\Desktop\\Bootcamp\\BootcampProject\\Teleperformance.ShoppingList\\src\\Infrastructure\\Teleperformance.ShoppingList.Infrastructure\\Teleperformance.Bootcamp.Infrastructure.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\sercan\\Desktop\\Bootcamp\\BootcampProject\\Teleperformance.ShoppingList\\src\\Infrastructure\\Teleperformance.ShoppingList.Infrastructure\\Teleperformance.Bootcamp.Infrastructure.csproj",
+        "projectName": "Teleperformance.Bootcamp.Infrastructure",
+        "projectPath": "C:\\Users\\sercan\\Desktop\\Bootcamp\\BootcampProject\\Teleperformance.ShoppingList\\src\\Infrastructure\\Teleperformance.ShoppingList.Infrastructure\\Teleperformance.Bootcamp.Infrastructure.csproj",
+        "packagesPath": "C:\\Users\\sercan\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\sercan\\Desktop\\Bootcamp\\BootcampProject\\Teleperformance.ShoppingList\\src\\Infrastructure\\Teleperformance.ShoppingList.Infrastructure\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\sercan\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "C:\\Users\\sercan\\Desktop\\Bootcamp\\BootcampProject\\Teleperformance.ShoppingList\\src\\core\\Teleperformance.ShoppingList.Application\\Teleperformance.Bootcamp.Application.csproj": {
+                "projectPath": "C:\\Users\\sercan\\Desktop\\Bootcamp\\BootcampProject\\Teleperformance.ShoppingList\\src\\core\\Teleperformance.ShoppingList.Application\\Teleperformance.Bootcamp.Application.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "Microsoft.AspNetCore.Authentication.JwtBearer": {
+              "target": "Package",
+              "version": "[6.0.6, )"
+            },
+            "RabbitMQ.Client": {
+              "target": "Package",
+              "version": "[6.4.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.301\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\sercan\\Desktop\\Bootcamp\\BootcampProject\\Teleperformance.ShoppingList\\src\\ShoppingListConsumer\\ShoppingListConsumer.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\sercan\\Desktop\\Bootcamp\\BootcampProject\\Teleperformance.ShoppingList\\src\\ShoppingListConsumer\\ShoppingListConsumer.csproj",
+        "projectName": "ShoppingListConsumer",
+        "projectPath": "C:\\Users\\sercan\\Desktop\\Bootcamp\\BootcampProject\\Teleperformance.ShoppingList\\src\\ShoppingListConsumer\\ShoppingListConsumer.csproj",
+        "packagesPath": "C:\\Users\\sercan\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\sercan\\Desktop\\Bootcamp\\BootcampProject\\Teleperformance.ShoppingList\\src\\ShoppingListConsumer\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\sercan\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "C:\\Users\\sercan\\Desktop\\Bootcamp\\BootcampProject\\Teleperformance.ShoppingList\\src\\Infrastructure\\Teleperformance.ShoppingList.Infrastructure\\Teleperformance.Bootcamp.Infrastructure.csproj": {
+                "projectPath": "C:\\Users\\sercan\\Desktop\\Bootcamp\\BootcampProject\\Teleperformance.ShoppingList\\src\\Infrastructure\\Teleperformance.ShoppingList.Infrastructure\\Teleperformance.Bootcamp.Infrastructure.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "Microsoft.Extensions.Hosting": {
+              "target": "Package",
+              "version": "[6.0.1, )"
+            },
+            "RabbitMQ.Client": {
+              "target": "Package",
+              "version": "[6.4.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.301\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}
