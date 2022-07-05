@@ -45,6 +45,8 @@ namespace Teleperformance.Bootcamp.Application.Mappings
             CreateMap<ShoppingList, UpdateShoppingListDto>()
             .ForMember(dest => dest.CategoryId, opt => opt.MapFrom(src => src.Category.Id)).ReverseMap();
 
+            CreateMap<ShoppingList, UpdateIsCompleteDto>().ReverseMap();
+
             #endregion
 
 

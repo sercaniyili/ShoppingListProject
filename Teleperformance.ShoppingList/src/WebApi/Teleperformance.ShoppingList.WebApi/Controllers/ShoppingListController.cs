@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Teleperformance.Bootcamp.Application.Features.Commands.ShoppingList.ShoppingListCreate;
 using Teleperformance.Bootcamp.Application.Features.Commands.ShoppingList.ShoppingListDelete;
+using Teleperformance.Bootcamp.Application.Features.Commands.ShoppingList.ShoppingListUpdateIsComplete;
 using Teleperformance.Bootcamp.Application.Features.Commands.ShoppingList.ShoppinListUpdate;
 using Teleperformance.Bootcamp.Application.Features.Queries.ShoppingList.GetAllShoppingList;
 using Teleperformance.Bootcamp.Application.Features.Queries.ShoppingList.GetShoppingListById;
@@ -20,12 +21,12 @@ namespace Teleperformance.Bootcamp.WebApi.Controllers
         private readonly IMediator _mediator;
         private readonly IShoppingListRepository _shoppingListRepository;
         private readonly IRedisDistrubutedCache _redisDistrubutedCache;
-        public ShoppingListController(IMediator mediator, IShoppingListRepository shoppingListRepository, IRedisDistrubutedCache redisDistrubutedCache) => 
-            (_mediator, _shoppingListRepository, _redisDistrubutedCache) = (mediator, shoppingListRepository, redisDistrubutedCache);
+        public ShoppingListController(IMediator mediator, IShoppingListRepository shoppingListRepository, IRedisDistrubutedCache redisDistrubutedCache) 
+            => (_mediator, _shoppingListRepository, _redisDistrubutedCache) = (mediator, shoppingListRepository, redisDistrubutedCache);
 
 
         [HttpGet]
-        [Authorize(Roles = "Admin")]
+        //[Authorize(Roles = "Admin")]
         public async Task<IActionResult> GetAllShoppingLists([FromQuery] GetAllShoppingListQueryRequest request)
         {
             const string key = "shoppingList";
@@ -40,7 +41,7 @@ namespace Teleperformance.Bootcamp.WebApi.Controllers
         }
 
         [HttpGet("search")]
-        public async Task<IActionResult> Search([FromQuery] SearchInShoppingListQueryRequest request)
+        public async Task<IActionResult> SearchInShoppingList([FromQuery] SearchInShoppingListQueryRequest request)
         {
             var result = await _mediator.Send(request);
 
@@ -91,15 +92,18 @@ namespace Teleperformance.Bootcamp.WebApi.Controllers
         [HttpPut]
         public async Task<IActionResult> UpdateShoppingList([FromBody] ShoppingListUpdateCommandRequest request)
         {
-
             var result = await _mediator.Send(request);
                 
-            return Ok(result);
-          
+            return Ok(result);         
         }
 
+        [HttpPut("ısComplete")]
+        public async Task<IActionResult> UpdateShoppingListIsComplete([FromBody] ShoppingListUpdateIsCompleteCommandRequest request)
+        {
+            var result = await _mediator.Send(request);
 
-
+            return Ok(result);
+        }
 
     }
 }
