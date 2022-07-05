@@ -8,8 +8,8 @@ namespace Teleperformance.Bootcamp.Application.Interfaces.Cache
 {
     public interface IRedisDistrubutedCache
     {
-        Task<TEntity> GetObjectAsync<TEntity>(string key);
-        Task SetObjectAsync<TEntity>(string key, TEntity value, int absoluteExpirationMinute = 1,
+        Task<T> GetObjectAsync<T>(string key);
+        Task SetObjectAsync<T>(string key, T value, int absoluteExpirationMinute = 1,
             int slidingExpirationSecond = 10);
 
     }

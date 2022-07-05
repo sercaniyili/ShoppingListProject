@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using FluentValidation;
 using MediatR;
 using System;
 using System.Collections.Generic;
@@ -6,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Teleperformance.Bootcamp.Application.Interfaces.Repositories;
+using Teleperformance.Bootcamp.Application.Validations.ShoppingList;
 using Teleperformance.Bootcamp.Domain.Common.Response;
 
 namespace Teleperformance.Bootcamp.Application.Features.Commands.ShoppingList.ShoppinListUpdate
@@ -28,11 +30,12 @@ namespace Teleperformance.Bootcamp.Application.Features.Commands.ShoppingList.Sh
 
             entity = _mapper.Map(request.UpdateShoppingListDto, entity);
 
+            UpdateShoppingListDtoValidation validation = new UpdateShoppingListDtoValidation();
+            validation.ValidateAndThrow(request.UpdateShoppingListDto);
+
             var category = await _categoryRepository.GetByIdAsync(request.UpdateShoppingListDto.CategoryId);
 
             entity.Category = category;
-
-
 
             if (entity != null)
             {

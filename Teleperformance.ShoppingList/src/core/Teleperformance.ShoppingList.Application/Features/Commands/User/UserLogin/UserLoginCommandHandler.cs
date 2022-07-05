@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using FluentValidation;
 using MediatR;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.Configuration;
@@ -8,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Teleperformance.Bootcamp.Application.Interfaces.Token;
+using Teleperformance.Bootcamp.Application.Validations.User;
 using Teleperformance.Bootcamp.Domain.Common.Response;
 using Teleperformance.Bootcamp.Domain.Entities.Identity;
 
@@ -21,21 +23,24 @@ namespace Teleperformance.Bootcamp.Application.Features.Commands.User.UserLogin
         private readonly ITokenGenerator _tokenGenerator;
         public UserLoginCommandHandler(UserManager<AppUser> userManager, IMapper mapper, IConfiguration configuration, ITokenGenerator tokenGenerator)
         {
-            _userManager = userManager;
             _mapper = mapper;
+            _userManager = userManager;
             _configuration = configuration;
             _tokenGenerator = tokenGenerator;
         }
 
         public async Task<ServiceResponse<string>> Handle(UserLoginCommandRequest request, CancellationToken cancellationToken)
         {
-            var user = await _userManager.FindByEmailAsync(request.Email);
+            var user = await _userManager.FindByEmailAsync(request.UserLoginDto.Email);
 
             if (user == null) new ServiceResponse<string>(string.Empty, "Kullanıcı bulunamadı", false);
 
-            var result = await _userManager.CheckPasswordAsync(user, request.Password.Trim());
+            var result = await _userManager.CheckPasswordAsync(user, request.UserLoginDto.Password.Trim());
 
-            var newUser = _mapper.Map<AppUser>(request);
+            var newUser = _mapper.Map<AppUser>(request.UserLoginDto);
+
+            UserLoginDtoValidation validation = new UserLoginDtoValidation();
+            validation.ValidateAndThrow(request.UserLoginDto);
 
             if (result)
             {

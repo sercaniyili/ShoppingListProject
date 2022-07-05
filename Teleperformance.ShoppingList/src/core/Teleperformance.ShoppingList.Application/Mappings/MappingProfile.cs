@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using Teleperformance.Bootcamp.Application.DTOs.Products;
 using Teleperformance.Bootcamp.Application.DTOs.ShoppingList;
+using Teleperformance.Bootcamp.Application.DTOs.User;
 using Teleperformance.Bootcamp.Application.Features.Commands.User.UserCreate;
 using Teleperformance.Bootcamp.Application.Features.Commands.User.UserLogin;
 using Teleperformance.Bootcamp.Domain.Entities;
@@ -16,8 +17,8 @@ namespace Teleperformance.Bootcamp.Application.Mappings
 
             #region User
 
-            CreateMap<AppUser, UserCreateCommandRequest>().ReverseMap();
-            CreateMap<AppUser, UserLoginCommandRequest>().ReverseMap();
+            CreateMap<AppUser, UserCreateDto>().ReverseMap();
+            CreateMap<AppUser, UserLoginDto>().ReverseMap();
 
             #endregion
 

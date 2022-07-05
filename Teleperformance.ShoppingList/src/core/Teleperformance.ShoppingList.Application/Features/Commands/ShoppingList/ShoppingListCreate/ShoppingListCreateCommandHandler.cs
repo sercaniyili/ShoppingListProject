@@ -47,8 +47,8 @@ namespace Teleperformance.Bootcamp.Application.Features.Commands.ShoppingList.Sh
                 await _shoppingListRepsitory.AddAsync(result);
 
                 return new BaseResponse("Liste başarıyla eklendi", true);                                  
-
-
         }
     }
 }
+
+

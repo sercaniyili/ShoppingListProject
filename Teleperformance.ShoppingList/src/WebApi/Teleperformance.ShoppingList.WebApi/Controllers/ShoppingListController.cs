@@ -25,7 +25,7 @@ namespace Teleperformance.Bootcamp.WebApi.Controllers
 
 
         [HttpGet]
-       // [Authorize(Roles = "Admin")]
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> GetAllShoppingLists([FromQuery] GetAllShoppingListQueryRequest request)
         {
             const string key = "shoppingList";

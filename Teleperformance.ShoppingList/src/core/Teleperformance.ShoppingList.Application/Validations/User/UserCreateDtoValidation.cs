@@ -12,9 +12,9 @@ namespace Teleperformance.Bootcamp.Application.Validations.User
     {
         public UserCreateDtoValidation()
         {
-            RuleFor(x => x.FirstName)
+            RuleFor(x => x.Name)
                 .Length(2,30);
-            RuleFor(x => x.LastName)
+            RuleFor(x => x.Surname)
                 .Length(2, 30);
             RuleFor(x => x.Username)
                 .Length(2, 30)
@@ -22,8 +22,7 @@ namespace Teleperformance.Bootcamp.Application.Validations.User
                 .WithMessage("Kullanıcı adını lütfen kurallara uygun giriniz");
             RuleFor(x => x.Email)
                 .EmailAddress()
-                .MinimumLength(3)
-                .MaximumLength(30)
+                .Length(10, 40)
                 .WithMessage("Kullanıcı adını lütfen kurallara uygun giriniz");
             RuleFor(x => x.Password)
                 .NotEmpty()

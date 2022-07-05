@@ -1,7 +1,7 @@
 ﻿using MediatR;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using Teleperformance.Bootcamp.Application.Features.Commands.Products;
+using Teleperformance.Bootcamp.Application.Features.Commands.Products.AddProduct;
 using Teleperformance.Bootcamp.Application.Interfaces.Repositories;
 
 namespace Teleperformance.Bootcamp.WebApi.Controllers
