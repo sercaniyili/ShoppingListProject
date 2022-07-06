@@ -14,7 +14,6 @@ namespace Teleperformance.Bootcamp.Infrastructure.Services.MessageBrokers
         {
             using var connection = _connection.GetRabbitMqConnection();
 
-
             using var channel = connection.CreateModel();
 
             channel.ExchangeDeclare(exchangeName, exchangeType, false, false);

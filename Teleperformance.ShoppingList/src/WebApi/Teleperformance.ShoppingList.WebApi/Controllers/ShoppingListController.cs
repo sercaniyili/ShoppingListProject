@@ -1,7 +1,6 @@
 ﻿using MediatR;
-using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Teleperformance.Bootcamp.Application.DTOs.ShoppingList;
 using Teleperformance.Bootcamp.Application.Features.Commands.ShoppingList.ShoppingListCreate;
 using Teleperformance.Bootcamp.Application.Features.Commands.ShoppingList.ShoppingListDelete;
 using Teleperformance.Bootcamp.Application.Features.Commands.ShoppingList.ShoppingListUpdateIsComplete;
@@ -10,6 +9,7 @@ using Teleperformance.Bootcamp.Application.Features.Queries.ShoppingList.GetAllS
 using Teleperformance.Bootcamp.Application.Features.Queries.ShoppingList.GetShoppingListById;
 using Teleperformance.Bootcamp.Application.Features.Queries.ShoppingList.SearchInShoppingList;
 using Teleperformance.Bootcamp.Application.Interfaces.Cache;
+using Teleperformance.Bootcamp.Application.Interfaces.Contract;
 using Teleperformance.Bootcamp.Application.Interfaces.Repositories;
 
 namespace Teleperformance.Bootcamp.WebApi.Controllers
@@ -18,24 +18,30 @@ namespace Teleperformance.Bootcamp.WebApi.Controllers
     [ApiController]
     public class ShoppingListController : ControllerBase
     {
+        const string key = "shoppingList";
+
         private readonly IMediator _mediator;
         private readonly IShoppingListRepository _shoppingListRepository;
         private readonly IRedisDistrubutedCache _redisDistrubutedCache;
-        public ShoppingListController(IMediator mediator, IShoppingListRepository shoppingListRepository, IRedisDistrubutedCache redisDistrubutedCache) 
-            => (_mediator, _shoppingListRepository, _redisDistrubutedCache) = (mediator, shoppingListRepository, redisDistrubutedCache);
+        private readonly IMongoConnect _mongoDbConnect;
+
+        public ShoppingListController(IMediator mediator, IShoppingListRepository shoppingListRepository, IRedisDistrubutedCache redisDistrubutedCache, IMongoConnect mongoDbConnect)
+
+            => (_mediator, _shoppingListRepository, _redisDistrubutedCache, _mongoDbConnect)
+            = (mediator, shoppingListRepository, redisDistrubutedCache, mongoDbConnect);
 
 
         [HttpGet]
         //[Authorize(Roles = "Admin")]
         public async Task<IActionResult> GetAllShoppingLists([FromQuery] GetAllShoppingListQueryRequest request)
         {
-            const string key = "shoppingList";
+          
 
             var result = await _mediator.Send(request);
 
-          //  var cachedResult = await _redisDistrubutedCache.GetObjectAsync<GetAllShoppingListQueryRequest>(key);
+            //  var cachedResult = await _redisDistrubutedCache.GetObjectAsync<GetAllShoppingListQueryRequest>(key);
 
-           // await _redisDistrubutedCache.SetObjectAsync(key, result,2,60);             
+            // await _redisDistrubutedCache.SetObjectAsync(key, result,2,60);             
 
             return Ok(result);
         }
@@ -67,7 +73,7 @@ namespace Teleperformance.Bootcamp.WebApi.Controllers
         [HttpPost]
         public async Task<IActionResult> CreateShoppingList([FromBody] ShoppingListCreateCommandRequest request)
         {
-           
+
             var result = await _mediator.Send(request);
 
             if (result.IsSuccess)
@@ -93,8 +99,8 @@ namespace Teleperformance.Bootcamp.WebApi.Controllers
         public async Task<IActionResult> UpdateShoppingList([FromBody] ShoppingListUpdateCommandRequest request)
         {
             var result = await _mediator.Send(request);
-                
-            return Ok(result);         
+
+            return Ok(result);
         }
 
         [HttpPut("ısComplete")]
@@ -104,6 +110,15 @@ namespace Teleperformance.Bootcamp.WebApi.Controllers
 
             return Ok(result);
         }
+        public const string ShoppingListCollection = "CompletedLists";
+
+        //[HttpGet]
+        //public async Task<IActionResult> GetAllComletedShoppingList()
+        //{
+        //    var collection = _mongoDbConnect.ConnectToMongo<ShoppingListToBsonDto>(ShoppingListCollection);
+        //    var result = await collection.Fi
+        //    return result.ToList();
+        //}
 
     }
 }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.EntityFrameworkCore;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -17,21 +18,30 @@ namespace Teleperformance.Bootcamp.Persistence.Repositories
         { 
             _appDbContext = appDbContext;   
         }
+        protected DbSet<ShoppingList> _dbSet => _appDbContext.Set<ShoppingList>();
 
         public async Task<IEnumerable<ShoppingList>> Search(SearchQueryParameters parameters)
         {
-            IQueryable<ShoppingList> query =  _appDbContext.ShoppingLists.AsQueryable();
+            IQueryable<ShoppingList> query =  _dbSet.AsQueryable();
+
 
             if (!string.IsNullOrWhiteSpace(parameters.Keyword))
             {
-                query = query.Where(x => x.Title.Contains(parameters.Keyword.ToLower())
-                ||  x.Category.Name.Contains(parameters.Keyword.ToLower()));
+                var result = query.Where(x => x.Title.Contains(parameters.Keyword.ToLower())
+                ||  x.Category.Name.Contains(parameters.Keyword.ToLower()))
+                .Include(x => x.Products)
+                .Include(y => y.AppUser)
+                .Include(z => z.Category)
+                .FirstOrDefault(); 
             }
 
             if (parameters.Date.HasValue || parameters.Date.HasValue)
             {
-                query = query.Where(x => x.CreateDate.Equals(parameters.Date.HasValue) 
-                || x.CompleteDate.Equals(parameters.Date.Value));
+               var result = query.Where(x => x.CreateDate.Equals(parameters.Date.HasValue) 
+                || x.CompleteDate.Equals(parameters.Date.Value)).Include(x => x.Products)
+                .Include(y => y.AppUser)
+                .Include(z => z.Category)
+                .FirstOrDefault(); 
             }
 
             return query.ToList();

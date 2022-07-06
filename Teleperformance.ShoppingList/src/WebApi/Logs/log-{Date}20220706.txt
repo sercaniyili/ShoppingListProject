@@ -79,3 +79,1030 @@ SELECT @@ROWCOUNT;
 [2022-07-06 03:02:26.196 +03:00  INF]  Executed endpoint 'Teleperformance.Bootcamp.WebApi.Controllers.ShoppingListController.UpdateShoppingListIsComplete (Teleperformance.Bootcamp.WebApi)'
 [2022-07-06 03:02:26.196 +03:00  ERR]  [Request] HTTP PUT  reponded 200
 [2022-07-06 03:02:26.196 +03:00  INF]  Request finished HTTP/2 PUT https://localhost:7121/api/ShoppingList/ısComplete application/json 155 - 200 - application/json;+charset=utf-8 24.8252ms
+[2022-07-06 12:20:11.769 +03:00  INF]  User profile is available. Using 'C:\Users\sercan\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+[2022-07-06 12:20:12.101 +03:00  INF]  Now listening on: https://localhost:7121
+[2022-07-06 12:20:12.102 +03:00  INF]  Now listening on: http://localhost:5121
+[2022-07-06 12:20:12.105 +03:00  INF]  Application started. Press Ctrl+C to shut down.
+[2022-07-06 12:20:12.105 +03:00  INF]  Hosting environment: Development
+[2022-07-06 12:20:12.105 +03:00  INF]  Content root path: C:\Users\sercan\Desktop\Bootcamp\BootcampProject\Teleperformance.ShoppingList\src\WebApi\Teleperformance.ShoppingList.WebApi\
+[2022-07-06 12:20:12.744 +03:00  INF]  Request starting HTTP/2 GET https://localhost:7121/swagger/index.html - -
+[2022-07-06 12:20:13.092 +03:00  INF]  Request starting HTTP/2 GET https://localhost:7121/_framework/aspnetcore-browser-refresh.js - -
+[2022-07-06 12:20:13.098 +03:00  INF]  Request finished HTTP/2 GET https://localhost:7121/swagger/index.html - - - 200 - text/html;charset=utf-8 359.0208ms
+[2022-07-06 12:20:13.098 +03:00  INF]  Request finished HTTP/2 GET https://localhost:7121/_framework/aspnetcore-browser-refresh.js - - - 200 12032 application/javascript;+charset=utf-8 5.2566ms
+[2022-07-06 12:20:13.125 +03:00  INF]  Request starting HTTP/2 GET https://localhost:7121/_vs/browserLink - -
+[2022-07-06 12:20:13.174 +03:00  INF]  Request finished HTTP/2 GET https://localhost:7121/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 48.6726ms
+[2022-07-06 12:20:13.255 +03:00  INF]  Request starting HTTP/2 GET https://localhost:7121/swagger/v1/swagger.json - -
+[2022-07-06 12:20:13.367 +03:00  INF]  Request finished HTTP/2 GET https://localhost:7121/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 112.4253ms
+[2022-07-06 12:21:35.466 +03:00  INF]  Request starting HTTP/2 PUT https://localhost:7121/api/ShoppingList/ısComplete application/json 155
+[2022-07-06 12:21:35.757 +03:00  ERR]  [Request] HTTP PUT /api/ShoppingList/%C4%B1sComplete
+[2022-07-06 12:21:35.760 +03:00  INF]  Executing endpoint 'Teleperformance.Bootcamp.WebApi.Controllers.ShoppingListController.UpdateShoppingListIsComplete (Teleperformance.Bootcamp.WebApi)'
+[2022-07-06 12:21:35.785 +03:00  INF]  Route matched with {action = "UpdateShoppingListIsComplete", controller = "ShoppingList"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] UpdateShoppingListIsComplete(Teleperformance.Bootcamp.Application.Features.Commands.ShoppingList.ShoppingListUpdateIsComplete.ShoppingListUpdateIsCompleteCommandRequest) on controller Teleperformance.Bootcamp.WebApi.Controllers.ShoppingListController (Teleperformance.Bootcamp.WebApi).
+[2022-07-06 12:21:37.161 +03:00  INF]  Entity Framework Core 6.0.6 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.6' with options: None
+[2022-07-06 12:21:38.230 +03:00  INF]  Executed DbCommand (65ms) [Parameters=[@__p_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [s].[Id], [s].[AppUserId], [s].[CategoryId], [s].[CompleteDate], [s].[CreateDate], [s].[Description], [s].[IsComplete], [s].[Title]
+FROM [ShoppingLists] AS [s]
+WHERE [s].[Id] = @__p_0
+[2022-07-06 12:21:38.472 +03:00  INF]  Executed DbCommand (8ms) [Parameters=[@p7='?' (Size = 450), @p0='?' (Size = 450), @p1='?' (Size = 450), @p2='?' (DbType = DateTime2), @p3='?' (DbType = DateTime2), @p4='?' (Size = 4000), @p5='?' (DbType = Boolean), @p6='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+UPDATE [ShoppingLists] SET [AppUserId] = @p0, [CategoryId] = @p1, [CompleteDate] = @p2, [CreateDate] = @p3, [Description] = @p4, [IsComplete] = @p5, [Title] = @p6
+WHERE [Id] = @p7;
+SELECT @@ROWCOUNT;
+[2022-07-06 12:21:38.660 +03:00  INF]  Executing OkObjectResult, writing value of type 'Teleperformance.Bootcamp.Domain.Common.Response.BaseResponse'.
+[2022-07-06 12:21:38.667 +03:00  INF]  Executed action Teleperformance.Bootcamp.WebApi.Controllers.ShoppingListController.UpdateShoppingListIsComplete (Teleperformance.Bootcamp.WebApi) in 2877.6382ms
+[2022-07-06 12:21:38.668 +03:00  INF]  Executed endpoint 'Teleperformance.Bootcamp.WebApi.Controllers.ShoppingListController.UpdateShoppingListIsComplete (Teleperformance.Bootcamp.WebApi)'
+[2022-07-06 12:21:38.668 +03:00  ERR]  [Request] HTTP PUT  reponded 200
+[2022-07-06 12:21:38.677 +03:00  INF]  Request finished HTTP/2 PUT https://localhost:7121/api/ShoppingList/ısComplete application/json 155 - 200 - application/json;+charset=utf-8 3211.6166ms
+[2022-07-06 17:18:33.698 +03:00  INF]  User profile is available. Using 'C:\Users\sercan\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+[2022-07-06 17:18:33.964 +03:00  INF]  Now listening on: https://localhost:7121
+[2022-07-06 17:18:33.964 +03:00  INF]  Now listening on: http://localhost:5121
+[2022-07-06 17:18:33.966 +03:00  INF]  Application started. Press Ctrl+C to shut down.
+[2022-07-06 17:18:33.966 +03:00  INF]  Hosting environment: Development
+[2022-07-06 17:18:33.966 +03:00  INF]  Content root path: C:\Users\sercan\Desktop\Bootcamp\BootcampProject\Teleperformance.ShoppingList\src\WebApi\Teleperformance.ShoppingList.WebApi\
+[2022-07-06 17:18:34.387 +03:00  INF]  Request starting HTTP/2 GET https://localhost:7121/swagger/index.html - -
+[2022-07-06 17:18:34.636 +03:00  INF]  Request starting HTTP/2 GET https://localhost:7121/_framework/aspnetcore-browser-refresh.js - -
+[2022-07-06 17:18:34.642 +03:00  INF]  Request finished HTTP/2 GET https://localhost:7121/swagger/index.html - - - 200 - text/html;charset=utf-8 258.2826ms
+[2022-07-06 17:18:34.642 +03:00  INF]  Request finished HTTP/2 GET https://localhost:7121/_framework/aspnetcore-browser-refresh.js - - - 200 12032 application/javascript;+charset=utf-8 5.0438ms
+[2022-07-06 17:18:34.665 +03:00  INF]  Request starting HTTP/2 GET https://localhost:7121/_vs/browserLink - -
+[2022-07-06 17:18:34.685 +03:00  INF]  Request finished HTTP/2 GET https://localhost:7121/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 19.0920ms
+[2022-07-06 17:18:34.797 +03:00  INF]  Request starting HTTP/2 GET https://localhost:7121/swagger/v1/swagger.json - -
+[2022-07-06 17:18:34.911 +03:00  INF]  Request finished HTTP/2 GET https://localhost:7121/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 113.3960ms
+[2022-07-06 17:18:55.971 +03:00  INF]  Request starting HTTP/2 PUT https://localhost:7121/api/ShoppingList/ısComplete application/json 155
+[2022-07-06 17:18:56.035 +03:00  ERR]  [Request] HTTP PUT /api/ShoppingList/%C4%B1sComplete
+[2022-07-06 17:18:56.038 +03:00  INF]  Executing endpoint 'Teleperformance.Bootcamp.WebApi.Controllers.ShoppingListController.UpdateShoppingListIsComplete (Teleperformance.Bootcamp.WebApi)'
+[2022-07-06 17:18:56.059 +03:00  INF]  Route matched with {action = "UpdateShoppingListIsComplete", controller = "ShoppingList"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] UpdateShoppingListIsComplete(Teleperformance.Bootcamp.Application.Features.Commands.ShoppingList.ShoppingListUpdateIsComplete.ShoppingListUpdateIsCompleteCommandRequest) on controller Teleperformance.Bootcamp.WebApi.Controllers.ShoppingListController (Teleperformance.Bootcamp.WebApi).
+[2022-07-06 17:18:57.125 +03:00  INF]  Entity Framework Core 6.0.6 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.6' with options: None
+[2022-07-06 17:18:57.827 +03:00  INF]  Executed DbCommand (62ms) [Parameters=[@__p_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [s].[Id], [s].[AppUserId], [s].[CategoryId], [s].[CompleteDate], [s].[CreateDate], [s].[Description], [s].[IsComplete], [s].[Title]
+FROM [ShoppingLists] AS [s]
+WHERE [s].[Id] = @__p_0
+[2022-07-06 17:18:58.067 +03:00  INF]  Executed DbCommand (9ms) [Parameters=[@p7='?' (Size = 450), @p0='?' (Size = 450), @p1='?' (Size = 450), @p2='?' (DbType = DateTime2), @p3='?' (DbType = DateTime2), @p4='?' (Size = 4000), @p5='?' (DbType = Boolean), @p6='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+UPDATE [ShoppingLists] SET [AppUserId] = @p0, [CategoryId] = @p1, [CompleteDate] = @p2, [CreateDate] = @p3, [Description] = @p4, [IsComplete] = @p5, [Title] = @p6
+WHERE [Id] = @p7;
+SELECT @@ROWCOUNT;
+[2022-07-06 17:18:58.256 +03:00  INF]  Executing OkObjectResult, writing value of type 'Teleperformance.Bootcamp.Domain.Common.Response.BaseResponse'.
+[2022-07-06 17:18:58.267 +03:00  INF]  Executed action Teleperformance.Bootcamp.WebApi.Controllers.ShoppingListController.UpdateShoppingListIsComplete (Teleperformance.Bootcamp.WebApi) in 2200.2431ms
+[2022-07-06 17:18:58.268 +03:00  INF]  Executed endpoint 'Teleperformance.Bootcamp.WebApi.Controllers.ShoppingListController.UpdateShoppingListIsComplete (Teleperformance.Bootcamp.WebApi)'
+[2022-07-06 17:18:58.268 +03:00  ERR]  [Request] HTTP PUT  reponded 200
+[2022-07-06 17:18:58.275 +03:00  INF]  Request finished HTTP/2 PUT https://localhost:7121/api/ShoppingList/ısComplete application/json 155 - 200 - application/json;+charset=utf-8 2304.0180ms
+[2022-07-06 17:19:59.783 +03:00  INF]  Request starting HTTP/2 PUT https://localhost:7121/api/ShoppingList/ısComplete application/json 155
+[2022-07-06 17:19:59.793 +03:00  ERR]  [Request] HTTP PUT /api/ShoppingList/%C4%B1sComplete
+[2022-07-06 17:19:59.793 +03:00  INF]  Executing endpoint 'Teleperformance.Bootcamp.WebApi.Controllers.ShoppingListController.UpdateShoppingListIsComplete (Teleperformance.Bootcamp.WebApi)'
+[2022-07-06 17:19:59.793 +03:00  INF]  Route matched with {action = "UpdateShoppingListIsComplete", controller = "ShoppingList"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] UpdateShoppingListIsComplete(Teleperformance.Bootcamp.Application.Features.Commands.ShoppingList.ShoppingListUpdateIsComplete.ShoppingListUpdateIsCompleteCommandRequest) on controller Teleperformance.Bootcamp.WebApi.Controllers.ShoppingListController (Teleperformance.Bootcamp.WebApi).
+[2022-07-06 17:19:59.827 +03:00  INF]  Entity Framework Core 6.0.6 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.6' with options: None
+[2022-07-06 17:19:59.833 +03:00  INF]  Executed DbCommand (3ms) [Parameters=[@__p_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [s].[Id], [s].[AppUserId], [s].[CategoryId], [s].[CompleteDate], [s].[CreateDate], [s].[Description], [s].[IsComplete], [s].[Title]
+FROM [ShoppingLists] AS [s]
+WHERE [s].[Id] = @__p_0
+[2022-07-06 17:19:59.840 +03:00  INF]  Executed DbCommand (4ms) [Parameters=[@p7='?' (Size = 450), @p0='?' (Size = 450), @p1='?' (Size = 450), @p2='?' (DbType = DateTime2), @p3='?' (DbType = DateTime2), @p4='?' (Size = 4000), @p5='?' (DbType = Boolean), @p6='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+UPDATE [ShoppingLists] SET [AppUserId] = @p0, [CategoryId] = @p1, [CompleteDate] = @p2, [CreateDate] = @p3, [Description] = @p4, [IsComplete] = @p5, [Title] = @p6
+WHERE [Id] = @p7;
+SELECT @@ROWCOUNT;
+[2022-07-06 17:19:59.856 +03:00  INF]  Executing OkObjectResult, writing value of type 'Teleperformance.Bootcamp.Domain.Common.Response.BaseResponse'.
+[2022-07-06 17:19:59.857 +03:00  INF]  Executed action Teleperformance.Bootcamp.WebApi.Controllers.ShoppingListController.UpdateShoppingListIsComplete (Teleperformance.Bootcamp.WebApi) in 63.3413ms
+[2022-07-06 17:19:59.857 +03:00  INF]  Executed endpoint 'Teleperformance.Bootcamp.WebApi.Controllers.ShoppingListController.UpdateShoppingListIsComplete (Teleperformance.Bootcamp.WebApi)'
+[2022-07-06 17:19:59.857 +03:00  ERR]  [Request] HTTP PUT  reponded 200
+[2022-07-06 17:19:59.857 +03:00  INF]  Request finished HTTP/2 PUT https://localhost:7121/api/ShoppingList/ısComplete application/json 155 - 200 - application/json;+charset=utf-8 74.5517ms
+[2022-07-06 17:20:16.150 +03:00  INF]  Request starting HTTP/2 PUT https://localhost:7121/api/ShoppingList/ısComplete application/json 155
+[2022-07-06 17:20:16.152 +03:00  ERR]  [Request] HTTP PUT /api/ShoppingList/%C4%B1sComplete
+[2022-07-06 17:20:16.152 +03:00  INF]  Executing endpoint 'Teleperformance.Bootcamp.WebApi.Controllers.ShoppingListController.UpdateShoppingListIsComplete (Teleperformance.Bootcamp.WebApi)'
+[2022-07-06 17:20:16.152 +03:00  INF]  Route matched with {action = "UpdateShoppingListIsComplete", controller = "ShoppingList"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] UpdateShoppingListIsComplete(Teleperformance.Bootcamp.Application.Features.Commands.ShoppingList.ShoppingListUpdateIsComplete.ShoppingListUpdateIsCompleteCommandRequest) on controller Teleperformance.Bootcamp.WebApi.Controllers.ShoppingListController (Teleperformance.Bootcamp.WebApi).
+[2022-07-06 17:20:16.160 +03:00  INF]  Entity Framework Core 6.0.6 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.6' with options: None
+[2022-07-06 17:20:16.164 +03:00  INF]  Executed DbCommand (2ms) [Parameters=[@__p_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [s].[Id], [s].[AppUserId], [s].[CategoryId], [s].[CompleteDate], [s].[CreateDate], [s].[Description], [s].[IsComplete], [s].[Title]
+FROM [ShoppingLists] AS [s]
+WHERE [s].[Id] = @__p_0
+[2022-07-06 17:20:16.168 +03:00  INF]  Executed DbCommand (3ms) [Parameters=[@p7='?' (Size = 450), @p0='?' (Size = 450), @p1='?' (Size = 450), @p2='?' (DbType = DateTime2), @p3='?' (DbType = DateTime2), @p4='?' (Size = 4000), @p5='?' (DbType = Boolean), @p6='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+UPDATE [ShoppingLists] SET [AppUserId] = @p0, [CategoryId] = @p1, [CompleteDate] = @p2, [CreateDate] = @p3, [Description] = @p4, [IsComplete] = @p5, [Title] = @p6
+WHERE [Id] = @p7;
+SELECT @@ROWCOUNT;
+[2022-07-06 17:20:16.183 +03:00  INF]  Executing OkObjectResult, writing value of type 'Teleperformance.Bootcamp.Domain.Common.Response.BaseResponse'.
+[2022-07-06 17:20:16.183 +03:00  INF]  Executed action Teleperformance.Bootcamp.WebApi.Controllers.ShoppingListController.UpdateShoppingListIsComplete (Teleperformance.Bootcamp.WebApi) in 30.6821ms
+[2022-07-06 17:20:16.183 +03:00  INF]  Executed endpoint 'Teleperformance.Bootcamp.WebApi.Controllers.ShoppingListController.UpdateShoppingListIsComplete (Teleperformance.Bootcamp.WebApi)'
+[2022-07-06 17:20:16.183 +03:00  ERR]  [Request] HTTP PUT  reponded 200
+[2022-07-06 17:20:16.183 +03:00  INF]  Request finished HTTP/2 PUT https://localhost:7121/api/ShoppingList/ısComplete application/json 155 - 200 - application/json;+charset=utf-8 32.8425ms
+[2022-07-06 17:21:15.064 +03:00  INF]  User profile is available. Using 'C:\Users\sercan\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+[2022-07-06 17:21:15.377 +03:00  INF]  Now listening on: https://localhost:7121
+[2022-07-06 17:21:15.377 +03:00  INF]  Now listening on: http://localhost:5121
+[2022-07-06 17:21:15.380 +03:00  INF]  Application started. Press Ctrl+C to shut down.
+[2022-07-06 17:21:15.380 +03:00  INF]  Hosting environment: Development
+[2022-07-06 17:21:15.380 +03:00  INF]  Content root path: C:\Users\sercan\Desktop\Bootcamp\BootcampProject\Teleperformance.ShoppingList\src\WebApi\Teleperformance.ShoppingList.WebApi\
+[2022-07-06 17:21:15.810 +03:00  INF]  Request starting HTTP/2 GET https://localhost:7121/swagger/index.html - -
+[2022-07-06 17:21:16.046 +03:00  INF]  Request starting HTTP/2 GET https://localhost:7121/_framework/aspnetcore-browser-refresh.js - -
+[2022-07-06 17:21:16.051 +03:00  INF]  Request finished HTTP/2 GET https://localhost:7121/_framework/aspnetcore-browser-refresh.js - - - 200 12032 application/javascript;+charset=utf-8 3.9745ms
+[2022-07-06 17:21:16.051 +03:00  INF]  Request finished HTTP/2 GET https://localhost:7121/swagger/index.html - - - 200 - text/html;charset=utf-8 243.8897ms
+[2022-07-06 17:21:16.075 +03:00  INF]  Request starting HTTP/2 GET https://localhost:7121/_vs/browserLink - -
+[2022-07-06 17:21:16.092 +03:00  INF]  Request finished HTTP/2 GET https://localhost:7121/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 16.4080ms
+[2022-07-06 17:21:16.227 +03:00  INF]  Request starting HTTP/2 GET https://localhost:7121/swagger/v1/swagger.json - -
+[2022-07-06 17:21:16.356 +03:00  INF]  Request finished HTTP/2 GET https://localhost:7121/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 128.9452ms
+[2022-07-06 17:21:42.819 +03:00  INF]  Request starting HTTP/2 POST https://localhost:7121/api/User/Register application/json 175
+[2022-07-06 17:21:42.885 +03:00  ERR]  [Request] HTTP POST /api/User/Register
+[2022-07-06 17:21:42.889 +03:00  INF]  Executing endpoint 'Teleperformance.Bootcamp.WebApi.Controllers.UserController.Register (Teleperformance.Bootcamp.WebApi)'
+[2022-07-06 17:21:42.911 +03:00  INF]  Route matched with {action = "Register", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Register(Teleperformance.Bootcamp.Application.Features.Commands.User.UserCreate.UserCreateCommandRequest) on controller Teleperformance.Bootcamp.WebApi.Controllers.UserController (Teleperformance.Bootcamp.WebApi).
+[2022-07-06 17:21:43.970 +03:00  INF]  Entity Framework Core 6.0.6 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.6' with options: None
+[2022-07-06 17:21:44.692 +03:00  INF]  Executed DbCommand (63ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[CreateDate], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[Name], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[Surname], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0
+[2022-07-06 17:21:44.815 +03:00  INF]  Executing BadRequestObjectResult, writing value of type 'Teleperformance.Bootcamp.Domain.Common.Response.BaseResponse'.
+[2022-07-06 17:21:44.822 +03:00  INF]  Executed action Teleperformance.Bootcamp.WebApi.Controllers.UserController.Register (Teleperformance.Bootcamp.WebApi) in 1906.5872ms
+[2022-07-06 17:21:44.824 +03:00  INF]  Executed endpoint 'Teleperformance.Bootcamp.WebApi.Controllers.UserController.Register (Teleperformance.Bootcamp.WebApi)'
+[2022-07-06 17:21:44.824 +03:00  ERR]  [Request] HTTP POST  reponded 400
+[2022-07-06 17:21:44.831 +03:00  INF]  Request finished HTTP/2 POST https://localhost:7121/api/User/Register application/json 175 - 400 - application/json;+charset=utf-8 2012.0084ms
+[2022-07-06 17:21:51.105 +03:00  INF]  Request starting HTTP/2 POST https://localhost:7121/api/User/Register application/json 179
+[2022-07-06 17:21:51.107 +03:00  ERR]  [Request] HTTP POST /api/User/Register
+[2022-07-06 17:21:51.107 +03:00  INF]  Executing endpoint 'Teleperformance.Bootcamp.WebApi.Controllers.UserController.Register (Teleperformance.Bootcamp.WebApi)'
+[2022-07-06 17:21:51.107 +03:00  INF]  Route matched with {action = "Register", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Register(Teleperformance.Bootcamp.Application.Features.Commands.User.UserCreate.UserCreateCommandRequest) on controller Teleperformance.Bootcamp.WebApi.Controllers.UserController (Teleperformance.Bootcamp.WebApi).
+[2022-07-06 17:21:51.154 +03:00  INF]  Entity Framework Core 6.0.6 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.6' with options: None
+[2022-07-06 17:21:51.163 +03:00  INF]  Executed DbCommand (4ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[CreateDate], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[Name], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[Surname], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0
+[2022-07-06 17:21:51.164 +03:00  INF]  Executing BadRequestObjectResult, writing value of type 'Teleperformance.Bootcamp.Domain.Common.Response.BaseResponse'.
+[2022-07-06 17:21:51.164 +03:00  INF]  Executed action Teleperformance.Bootcamp.WebApi.Controllers.UserController.Register (Teleperformance.Bootcamp.WebApi) in 57.1564ms
+[2022-07-06 17:21:51.164 +03:00  INF]  Executed endpoint 'Teleperformance.Bootcamp.WebApi.Controllers.UserController.Register (Teleperformance.Bootcamp.WebApi)'
+[2022-07-06 17:21:51.164 +03:00  ERR]  [Request] HTTP POST  reponded 400
+[2022-07-06 17:21:51.164 +03:00  INF]  Request finished HTTP/2 POST https://localhost:7121/api/User/Register application/json 179 - 400 - application/json;+charset=utf-8 59.9015ms
+[2022-07-06 17:22:02.865 +03:00  INF]  Request starting HTTP/2 POST https://localhost:7121/api/User/Register application/json 188
+[2022-07-06 17:22:02.867 +03:00  ERR]  [Request] HTTP POST /api/User/Register
+[2022-07-06 17:22:02.867 +03:00  INF]  Executing endpoint 'Teleperformance.Bootcamp.WebApi.Controllers.UserController.Register (Teleperformance.Bootcamp.WebApi)'
+[2022-07-06 17:22:02.867 +03:00  INF]  Route matched with {action = "Register", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Register(Teleperformance.Bootcamp.Application.Features.Commands.User.UserCreate.UserCreateCommandRequest) on controller Teleperformance.Bootcamp.WebApi.Controllers.UserController (Teleperformance.Bootcamp.WebApi).
+[2022-07-06 17:22:02.879 +03:00  INF]  Entity Framework Core 6.0.6 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.6' with options: None
+[2022-07-06 17:22:02.882 +03:00  INF]  Executed DbCommand (1ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[CreateDate], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[Name], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[Surname], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0
+[2022-07-06 17:22:02.957 +03:00  INF]  Executed DbCommand (1ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[CreateDate], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[Name], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[Surname], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0
+[2022-07-06 17:22:03.093 +03:00  INF]  Executed DbCommand (6ms) [Parameters=[@p0='?' (Size = 450), @p1='?' (DbType = Int32), @p2='?' (Size = 4000), @p3='?' (DbType = DateTime2), @p4='?' (Size = 256), @p5='?' (DbType = Boolean), @p6='?' (DbType = Boolean), @p7='?' (DbType = DateTimeOffset), @p8='?' (Size = 4000), @p9='?' (Size = 256), @p10='?' (Size = 256), @p11='?' (Size = 4000), @p12='?' (Size = 4000), @p13='?' (DbType = Boolean), @p14='?' (Size = 4000), @p15='?' (Size = 4000), @p16='?' (DbType = Boolean), @p17='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [AspNetUsers] ([Id], [AccessFailedCount], [ConcurrencyStamp], [CreateDate], [Email], [EmailConfirmed], [LockoutEnabled], [LockoutEnd], [Name], [NormalizedEmail], [NormalizedUserName], [PasswordHash], [PhoneNumber], [PhoneNumberConfirmed], [SecurityStamp], [Surname], [TwoFactorEnabled], [UserName])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12, @p13, @p14, @p15, @p16, @p17);
+[2022-07-06 17:22:03.137 +03:00  INF]  Executed DbCommand (3ms) [Parameters=[@__normalizedRoleName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedRoleName_0
+[2022-07-06 17:22:03.166 +03:00  INF]  Executed DbCommand (1ms) [Parameters=[@__p_0='?' (Size = 450), @__p_1='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[UserId], [a].[RoleId]
+FROM [AspNetUserRoles] AS [a]
+WHERE ([a].[UserId] = @__p_0) AND ([a].[RoleId] = @__p_1)
+[2022-07-06 17:22:03.170 +03:00  INF]  Executed DbCommand (0ms) [Parameters=[@__normalizedRoleName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedRoleName_0
+[2022-07-06 17:22:03.185 +03:00  INF]  Executed DbCommand (1ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[CreateDate], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[Name], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[Surname], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0
+[2022-07-06 17:22:03.202 +03:00  INF]  Executed DbCommand (2ms) [Parameters=[@p0='?' (Size = 450), @p1='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [AspNetUserRoles] ([RoleId], [UserId])
+VALUES (@p0, @p1);
+[2022-07-06 17:22:03.209 +03:00  INF]  Executed DbCommand (3ms) [Parameters=[@p17='?' (Size = 450), @p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p18='?' (Size = 4000), @p2='?' (DbType = DateTime2), @p3='?' (Size = 256), @p4='?' (DbType = Boolean), @p5='?' (DbType = Boolean), @p6='?' (DbType = DateTimeOffset), @p7='?' (Size = 4000), @p8='?' (Size = 256), @p9='?' (Size = 256), @p10='?' (Size = 4000), @p11='?' (Size = 4000), @p12='?' (DbType = Boolean), @p13='?' (Size = 4000), @p14='?' (Size = 4000), @p15='?' (DbType = Boolean), @p16='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+UPDATE [AspNetUsers] SET [AccessFailedCount] = @p0, [ConcurrencyStamp] = @p1, [CreateDate] = @p2, [Email] = @p3, [EmailConfirmed] = @p4, [LockoutEnabled] = @p5, [LockoutEnd] = @p6, [Name] = @p7, [NormalizedEmail] = @p8, [NormalizedUserName] = @p9, [PasswordHash] = @p10, [PhoneNumber] = @p11, [PhoneNumberConfirmed] = @p12, [SecurityStamp] = @p13, [Surname] = @p14, [TwoFactorEnabled] = @p15, [UserName] = @p16
+WHERE [Id] = @p17 AND [ConcurrencyStamp] = @p18;
+SELECT @@ROWCOUNT;
+[2022-07-06 17:22:03.213 +03:00  INF]  Executing OkObjectResult, writing value of type 'Teleperformance.Bootcamp.Domain.Common.Response.BaseResponse'.
+[2022-07-06 17:22:03.213 +03:00  INF]  Executed action Teleperformance.Bootcamp.WebApi.Controllers.UserController.Register (Teleperformance.Bootcamp.WebApi) in 345.7185ms
+[2022-07-06 17:22:03.213 +03:00  INF]  Executed endpoint 'Teleperformance.Bootcamp.WebApi.Controllers.UserController.Register (Teleperformance.Bootcamp.WebApi)'
+[2022-07-06 17:22:03.213 +03:00  ERR]  [Request] HTTP POST  reponded 200
+[2022-07-06 17:22:03.213 +03:00  INF]  Request finished HTTP/2 POST https://localhost:7121/api/User/Register application/json 188 - 200 - application/json;+charset=utf-8 347.8077ms
+[2022-07-06 17:22:42.798 +03:00  INF]  Request starting HTTP/2 POST https://localhost:7121/api/User/Login application/json 95
+[2022-07-06 17:22:42.802 +03:00  ERR]  [Request] HTTP POST /api/User/Login
+[2022-07-06 17:22:42.803 +03:00  INF]  Executing endpoint 'Teleperformance.Bootcamp.WebApi.Controllers.UserController.Login (Teleperformance.Bootcamp.WebApi)'
+[2022-07-06 17:22:42.806 +03:00  INF]  Route matched with {action = "Login", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(Teleperformance.Bootcamp.Application.Features.Commands.User.UserLogin.UserLoginCommandRequest) on controller Teleperformance.Bootcamp.WebApi.Controllers.UserController (Teleperformance.Bootcamp.WebApi).
+[2022-07-06 17:22:42.813 +03:00  INF]  Entity Framework Core 6.0.6 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.6' with options: None
+[2022-07-06 17:22:42.819 +03:00  INF]  Executed DbCommand (3ms) [Parameters=[@__normalizedEmail_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[CreateDate], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[Name], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[Surname], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @__normalizedEmail_0
+[2022-07-06 17:22:42.889 +03:00  INF]  Executed DbCommand (3ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a0].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetRoles] AS [a0] ON [a].[RoleId] = [a0].[Id]
+WHERE [a].[UserId] = @__userId_0
+[2022-07-06 17:22:43.133 +03:00  INF]  Executing OkObjectResult, writing value of type 'Teleperformance.Bootcamp.Domain.Common.Response.ServiceResponse`1[[System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+[2022-07-06 17:22:43.134 +03:00  INF]  Executed action Teleperformance.Bootcamp.WebApi.Controllers.UserController.Login (Teleperformance.Bootcamp.WebApi) in 327.9596ms
+[2022-07-06 17:22:43.134 +03:00  INF]  Executed endpoint 'Teleperformance.Bootcamp.WebApi.Controllers.UserController.Login (Teleperformance.Bootcamp.WebApi)'
+[2022-07-06 17:22:43.134 +03:00  ERR]  [Request] HTTP POST  reponded 200
+[2022-07-06 17:22:43.134 +03:00  INF]  Request finished HTTP/2 POST https://localhost:7121/api/User/Login application/json 95 - 200 - application/json;+charset=utf-8 336.0332ms
+[2022-07-06 17:23:02.652 +03:00  INF]  Request starting HTTP/2 GET https://localhost:7121/api/ShoppingList?PageNumber=1&PageSize=4 - -
+[2022-07-06 17:23:02.652 +03:00  ERR]  [Request] HTTP GET /api/ShoppingList
+[2022-07-06 17:23:02.652 +03:00  INF]  Executing endpoint 'Teleperformance.Bootcamp.WebApi.Controllers.ShoppingListController.GetAllShoppingLists (Teleperformance.Bootcamp.WebApi)'
+[2022-07-06 17:23:02.656 +03:00  INF]  Route matched with {action = "GetAllShoppingLists", controller = "ShoppingList"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllShoppingLists(Teleperformance.Bootcamp.Application.Features.Queries.ShoppingList.GetAllShoppingList.GetAllShoppingListQueryRequest) on controller Teleperformance.Bootcamp.WebApi.Controllers.ShoppingListController (Teleperformance.Bootcamp.WebApi).
+[2022-07-06 17:23:02.670 +03:00  INF]  Entity Framework Core 6.0.6 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.6' with options: None
+[2022-07-06 17:23:02.699 +03:00  WRN]  The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+[2022-07-06 17:23:02.700 +03:00  WRN]  The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+[2022-07-06 17:23:02.764 +03:00  INF]  Executed DbCommand (10ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[AppUserId], [t].[CategoryId], [t].[CompleteDate], [t].[CreateDate], [t].[Description], [t].[IsComplete], [t].[Title], [a].[Id], [c].[Id], [p].[Id], [p].[CreateDate], [p].[IsBuy], [p].[Name], [p].[Quantity], [p].[ShoppingListId], [p].[Unit], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[CreateDate], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[Name], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[Surname], [a].[TwoFactorEnabled], [a].[UserName], [c].[CreateDate], [c].[Name]
+FROM (
+    SELECT [s].[Id], [s].[AppUserId], [s].[CategoryId], [s].[CompleteDate], [s].[CreateDate], [s].[Description], [s].[IsComplete], [s].[Title]
+    FROM [ShoppingLists] AS [s]
+    ORDER BY (SELECT 1)
+    OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+) AS [t]
+INNER JOIN [AspNetUsers] AS [a] ON [t].[AppUserId] = [a].[Id]
+INNER JOIN [Categories] AS [c] ON [t].[CategoryId] = [c].[Id]
+LEFT JOIN [Products] AS [p] ON [t].[Id] = [p].[ShoppingListId]
+ORDER BY [t].[Id], [a].[Id], [c].[Id]
+[2022-07-06 17:23:02.818 +03:00  INF]  Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Teleperformance.Bootcamp.Application.DTOs.ShoppingList.GetAllShoppingListDto, Teleperformance.Bootcamp.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+[2022-07-06 17:23:02.830 +03:00  INF]  Executed action Teleperformance.Bootcamp.WebApi.Controllers.ShoppingListController.GetAllShoppingLists (Teleperformance.Bootcamp.WebApi) in 174.2402ms
+[2022-07-06 17:23:02.830 +03:00  INF]  Executed endpoint 'Teleperformance.Bootcamp.WebApi.Controllers.ShoppingListController.GetAllShoppingLists (Teleperformance.Bootcamp.WebApi)'
+[2022-07-06 17:23:02.830 +03:00  ERR]  [Request] HTTP GET  reponded 200
+[2022-07-06 17:23:02.831 +03:00  INF]  Request finished HTTP/2 GET https://localhost:7121/api/ShoppingList?PageNumber=1&PageSize=4 - - - 200 - application/json;+charset=utf-8 178.5693ms
+[2022-07-06 17:23:51.236 +03:00  INF]  Request starting HTTP/2 POST https://localhost:7121/api/ShoppingList application/json 257
+[2022-07-06 17:23:51.241 +03:00  ERR]  [Request] HTTP POST /api/ShoppingList
+[2022-07-06 17:23:51.242 +03:00  INF]  Executing endpoint 'Teleperformance.Bootcamp.WebApi.Controllers.ShoppingListController.CreateShoppingList (Teleperformance.Bootcamp.WebApi)'
+[2022-07-06 17:23:51.245 +03:00  INF]  Route matched with {action = "CreateShoppingList", controller = "ShoppingList"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CreateShoppingList(Teleperformance.Bootcamp.Application.Features.Commands.ShoppingList.ShoppingListCreate.ShoppingListCreateCommandRequest) on controller Teleperformance.Bootcamp.WebApi.Controllers.ShoppingListController (Teleperformance.Bootcamp.WebApi).
+[2022-07-06 17:23:51.258 +03:00  INF]  Entity Framework Core 6.0.6 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.6' with options: None
+[2022-07-06 17:23:51.263 +03:00  INF]  Executed DbCommand (2ms) [Parameters=[@__p_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [c].[Id], [c].[CreateDate], [c].[Name]
+FROM [Categories] AS [c]
+WHERE [c].[Id] = @__p_0
+[2022-07-06 17:23:51.302 +03:00  INF]  Executed DbCommand (3ms) [Parameters=[@__p_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[CreateDate], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[Name], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[Surname], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[Id] = @__p_0
+[2022-07-06 17:23:51.346 +03:00  INF]  Executed DbCommand (8ms) [Parameters=[@p0='?' (Size = 450), @p1='?' (Size = 450), @p2='?' (DbType = DateTime2), @p3='?' (DbType = DateTime2), @p4='?' (Size = 4000), @p5='?' (DbType = Boolean), @p6='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+DECLARE @inserted0 TABLE ([Id] nvarchar(450));
+INSERT INTO [ShoppingLists] ([AppUserId], [CategoryId], [CompleteDate], [CreateDate], [Description], [IsComplete], [Title])
+OUTPUT INSERTED.[Id]
+INTO @inserted0
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6);
+SELECT [i].[Id] FROM @inserted0 i;
+[2022-07-06 17:23:51.369 +03:00  INF]  Executing OkObjectResult, writing value of type 'Teleperformance.Bootcamp.Domain.Common.Response.BaseResponse'.
+[2022-07-06 17:23:51.369 +03:00  INF]  Executed action Teleperformance.Bootcamp.WebApi.Controllers.ShoppingListController.CreateShoppingList (Teleperformance.Bootcamp.WebApi) in 124.4768ms
+[2022-07-06 17:23:51.369 +03:00  INF]  Executed endpoint 'Teleperformance.Bootcamp.WebApi.Controllers.ShoppingListController.CreateShoppingList (Teleperformance.Bootcamp.WebApi)'
+[2022-07-06 17:23:51.369 +03:00  ERR]  [Request] HTTP POST  reponded 200
+[2022-07-06 17:23:51.369 +03:00  INF]  Request finished HTTP/2 POST https://localhost:7121/api/ShoppingList application/json 257 - 200 - application/json;+charset=utf-8 133.6241ms
+[2022-07-06 17:24:35.778 +03:00  INF]  Request starting HTTP/2 POST https://localhost:7121/api/Product application/json 217
+[2022-07-06 17:24:35.779 +03:00  ERR]  [Request] HTTP POST /api/Product
+[2022-07-06 17:24:35.780 +03:00  INF]  Executing endpoint 'Teleperformance.Bootcamp.WebApi.Controllers.ProductController.CreateShoppingList (Teleperformance.Bootcamp.WebApi)'
+[2022-07-06 17:24:35.787 +03:00  INF]  Route matched with {action = "CreateShoppingList", controller = "Product"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CreateShoppingList(Teleperformance.Bootcamp.Application.Features.Commands.Products.AddProduct.AddProductCommandRequest) on controller Teleperformance.Bootcamp.WebApi.Controllers.ProductController (Teleperformance.Bootcamp.WebApi).
+[2022-07-06 17:24:35.809 +03:00  INF]  Entity Framework Core 6.0.6 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.6' with options: None
+[2022-07-06 17:24:35.815 +03:00  INF]  Executed DbCommand (2ms) [Parameters=[@__p_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [s].[Id], [s].[AppUserId], [s].[CategoryId], [s].[CompleteDate], [s].[CreateDate], [s].[Description], [s].[IsComplete], [s].[Title]
+FROM [ShoppingLists] AS [s]
+WHERE [s].[Id] = @__p_0
+[2022-07-06 17:24:35.831 +03:00  INF]  Executed DbCommand (7ms) [Parameters=[@p0='?' (DbType = DateTime2), @p1='?' (DbType = Boolean), @p2='?' (Size = 4000), @p3='?' (DbType = Int32), @p4='?' (Size = 450), @p5='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+DECLARE @inserted0 TABLE ([Id] nvarchar(450));
+INSERT INTO [Products] ([CreateDate], [IsBuy], [Name], [Quantity], [ShoppingListId], [Unit])
+OUTPUT INSERTED.[Id]
+INTO @inserted0
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);
+SELECT [i].[Id] FROM @inserted0 i;
+[2022-07-06 17:24:35.833 +03:00  INF]  Executing OkObjectResult, writing value of type 'Teleperformance.Bootcamp.Domain.Common.Response.BaseResponse'.
+[2022-07-06 17:24:35.834 +03:00  INF]  Executed action Teleperformance.Bootcamp.WebApi.Controllers.ProductController.CreateShoppingList (Teleperformance.Bootcamp.WebApi) in 46.1526ms
+[2022-07-06 17:24:35.834 +03:00  INF]  Executed endpoint 'Teleperformance.Bootcamp.WebApi.Controllers.ProductController.CreateShoppingList (Teleperformance.Bootcamp.WebApi)'
+[2022-07-06 17:24:35.834 +03:00  ERR]  [Request] HTTP POST  reponded 200
+[2022-07-06 17:24:35.834 +03:00  INF]  Request finished HTTP/2 POST https://localhost:7121/api/Product application/json 217 - 200 - application/json;+charset=utf-8 55.7897ms
+[2022-07-06 17:24:52.657 +03:00  INF]  Request starting HTTP/2 POST https://localhost:7121/api/Product application/json 223
+[2022-07-06 17:24:52.657 +03:00  ERR]  [Request] HTTP POST /api/Product
+[2022-07-06 17:24:52.657 +03:00  INF]  Executing endpoint 'Teleperformance.Bootcamp.WebApi.Controllers.ProductController.CreateShoppingList (Teleperformance.Bootcamp.WebApi)'
+[2022-07-06 17:24:52.657 +03:00  INF]  Route matched with {action = "CreateShoppingList", controller = "Product"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CreateShoppingList(Teleperformance.Bootcamp.Application.Features.Commands.Products.AddProduct.AddProductCommandRequest) on controller Teleperformance.Bootcamp.WebApi.Controllers.ProductController (Teleperformance.Bootcamp.WebApi).
+[2022-07-06 17:24:52.659 +03:00  INF]  Entity Framework Core 6.0.6 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.6' with options: None
+[2022-07-06 17:24:52.661 +03:00  INF]  Executed DbCommand (1ms) [Parameters=[@__p_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [s].[Id], [s].[AppUserId], [s].[CategoryId], [s].[CompleteDate], [s].[CreateDate], [s].[Description], [s].[IsComplete], [s].[Title]
+FROM [ShoppingLists] AS [s]
+WHERE [s].[Id] = @__p_0
+[2022-07-06 17:24:52.665 +03:00  INF]  Executed DbCommand (3ms) [Parameters=[@p0='?' (DbType = DateTime2), @p1='?' (DbType = Boolean), @p2='?' (Size = 4000), @p3='?' (DbType = Int32), @p4='?' (Size = 450), @p5='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+DECLARE @inserted0 TABLE ([Id] nvarchar(450));
+INSERT INTO [Products] ([CreateDate], [IsBuy], [Name], [Quantity], [ShoppingListId], [Unit])
+OUTPUT INSERTED.[Id]
+INTO @inserted0
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);
+SELECT [i].[Id] FROM @inserted0 i;
+[2022-07-06 17:24:52.667 +03:00  INF]  Executing OkObjectResult, writing value of type 'Teleperformance.Bootcamp.Domain.Common.Response.BaseResponse'.
+[2022-07-06 17:24:52.667 +03:00  INF]  Executed action Teleperformance.Bootcamp.WebApi.Controllers.ProductController.CreateShoppingList (Teleperformance.Bootcamp.WebApi) in 9.3899ms
+[2022-07-06 17:24:52.667 +03:00  INF]  Executed endpoint 'Teleperformance.Bootcamp.WebApi.Controllers.ProductController.CreateShoppingList (Teleperformance.Bootcamp.WebApi)'
+[2022-07-06 17:24:52.667 +03:00  ERR]  [Request] HTTP POST  reponded 200
+[2022-07-06 17:24:52.667 +03:00  INF]  Request finished HTTP/2 POST https://localhost:7121/api/Product application/json 223 - 200 - application/json;+charset=utf-8 9.9619ms
+[2022-07-06 17:25:27.376 +03:00  INF]  Request starting HTTP/2 PUT https://localhost:7121/api/ShoppingList application/json 162
+[2022-07-06 17:25:27.382 +03:00  ERR]  [Request] HTTP PUT /api/ShoppingList
+[2022-07-06 17:25:27.382 +03:00  INF]  Executing endpoint 'Teleperformance.Bootcamp.WebApi.Controllers.ShoppingListController.UpdateShoppingList (Teleperformance.Bootcamp.WebApi)'
+[2022-07-06 17:25:27.387 +03:00  INF]  Route matched with {action = "UpdateShoppingList", controller = "ShoppingList"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] UpdateShoppingList(Teleperformance.Bootcamp.Application.Features.Commands.ShoppingList.ShoppinListUpdate.ShoppingListUpdateCommandRequest) on controller Teleperformance.Bootcamp.WebApi.Controllers.ShoppingListController (Teleperformance.Bootcamp.WebApi).
+[2022-07-06 17:25:27.392 +03:00  INF]  Entity Framework Core 6.0.6 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.6' with options: None
+[2022-07-06 17:25:27.396 +03:00  INF]  Executed DbCommand (3ms) [Parameters=[@__p_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [s].[Id], [s].[AppUserId], [s].[CategoryId], [s].[CompleteDate], [s].[CreateDate], [s].[Description], [s].[IsComplete], [s].[Title]
+FROM [ShoppingLists] AS [s]
+WHERE [s].[Id] = @__p_0
+[2022-07-06 17:25:27.407 +03:00  INF]  Executed DbCommand (1ms) [Parameters=[@__p_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [c].[Id], [c].[CreateDate], [c].[Name]
+FROM [Categories] AS [c]
+WHERE [c].[Id] = @__p_0
+[2022-07-06 17:25:27.427 +03:00  INF]  Executed DbCommand (5ms) [Parameters=[@p7='?' (Size = 450), @p0='?' (Size = 450), @p1='?' (Size = 450), @p2='?' (DbType = DateTime2), @p3='?' (DbType = DateTime2), @p4='?' (Size = 4000), @p5='?' (DbType = Boolean), @p6='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+UPDATE [ShoppingLists] SET [AppUserId] = @p0, [CategoryId] = @p1, [CompleteDate] = @p2, [CreateDate] = @p3, [Description] = @p4, [IsComplete] = @p5, [Title] = @p6
+WHERE [Id] = @p7;
+SELECT @@ROWCOUNT;
+[2022-07-06 17:25:27.521 +03:00  INF]  Executed action Teleperformance.Bootcamp.WebApi.Controllers.ShoppingListController.UpdateShoppingList (Teleperformance.Bootcamp.WebApi) in 133.4714ms
+[2022-07-06 17:25:27.521 +03:00  INF]  Executed endpoint 'Teleperformance.Bootcamp.WebApi.Controllers.ShoppingListController.UpdateShoppingList (Teleperformance.Bootcamp.WebApi)'
+[2022-07-06 17:25:27.647 +03:00  ERR]  [ERROR] HTTP PUT - 500 -  Error Messsage The database operation was expected to affect 1 row(s), but actually affected 0 row(s); data may have been modified or deleted since entities were loaded. See http://go.microsoft.com/fwlink/?LinkId=527962 for information on understanding and handling optimistic concurrency exceptions.
+[2022-07-06 17:25:27.733 +03:00  INF]  Request finished HTTP/2 PUT https://localhost:7121/api/ShoppingList application/json 162 - 500 - application/json 357.7761ms
+[2022-07-06 17:26:18.637 +03:00  INF]  Request starting HTTP/2 PUT https://localhost:7121/api/ShoppingList application/json 162
+[2022-07-06 17:26:18.642 +03:00  ERR]  [Request] HTTP PUT /api/ShoppingList
+[2022-07-06 17:26:18.642 +03:00  INF]  Executing endpoint 'Teleperformance.Bootcamp.WebApi.Controllers.ShoppingListController.UpdateShoppingList (Teleperformance.Bootcamp.WebApi)'
+[2022-07-06 17:26:18.642 +03:00  INF]  Route matched with {action = "UpdateShoppingList", controller = "ShoppingList"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] UpdateShoppingList(Teleperformance.Bootcamp.Application.Features.Commands.ShoppingList.ShoppinListUpdate.ShoppingListUpdateCommandRequest) on controller Teleperformance.Bootcamp.WebApi.Controllers.ShoppingListController (Teleperformance.Bootcamp.WebApi).
+[2022-07-06 17:26:18.643 +03:00  INF]  Entity Framework Core 6.0.6 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.6' with options: None
+[2022-07-06 17:26:18.647 +03:00  INF]  Executed DbCommand (2ms) [Parameters=[@__p_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [s].[Id], [s].[AppUserId], [s].[CategoryId], [s].[CompleteDate], [s].[CreateDate], [s].[Description], [s].[IsComplete], [s].[Title]
+FROM [ShoppingLists] AS [s]
+WHERE [s].[Id] = @__p_0
+[2022-07-06 17:26:18.649 +03:00  INF]  Executed DbCommand (1ms) [Parameters=[@__p_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [c].[Id], [c].[CreateDate], [c].[Name]
+FROM [Categories] AS [c]
+WHERE [c].[Id] = @__p_0
+[2022-07-06 17:26:18.655 +03:00  INF]  Executed DbCommand (4ms) [Parameters=[@p7='?' (Size = 450), @p0='?' (Size = 450), @p1='?' (Size = 450), @p2='?' (DbType = DateTime2), @p3='?' (DbType = DateTime2), @p4='?' (Size = 4000), @p5='?' (DbType = Boolean), @p6='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+UPDATE [ShoppingLists] SET [AppUserId] = @p0, [CategoryId] = @p1, [CompleteDate] = @p2, [CreateDate] = @p3, [Description] = @p4, [IsComplete] = @p5, [Title] = @p6
+WHERE [Id] = @p7;
+SELECT @@ROWCOUNT;
+[2022-07-06 17:26:18.659 +03:00  INF]  Executing OkObjectResult, writing value of type 'Teleperformance.Bootcamp.Domain.Common.Response.BaseResponse'.
+[2022-07-06 17:26:18.659 +03:00  INF]  Executed action Teleperformance.Bootcamp.WebApi.Controllers.ShoppingListController.UpdateShoppingList (Teleperformance.Bootcamp.WebApi) in 16.5575ms
+[2022-07-06 17:26:18.659 +03:00  INF]  Executed endpoint 'Teleperformance.Bootcamp.WebApi.Controllers.ShoppingListController.UpdateShoppingList (Teleperformance.Bootcamp.WebApi)'
+[2022-07-06 17:26:18.659 +03:00  ERR]  [Request] HTTP PUT  reponded 200
+[2022-07-06 17:26:18.659 +03:00  INF]  Request finished HTTP/2 PUT https://localhost:7121/api/ShoppingList application/json 162 - 200 - application/json;+charset=utf-8 24.4938ms
+[2022-07-06 17:26:36.198 +03:00  INF]  Request starting HTTP/2 GET https://localhost:7121/api/ShoppingList/search?Parameters.Keyword=zurnac%C4%B1 - -
+[2022-07-06 17:26:36.198 +03:00  ERR]  [Request] HTTP GET /api/ShoppingList/search
+[2022-07-06 17:26:36.198 +03:00  INF]  Executing endpoint 'Teleperformance.Bootcamp.WebApi.Controllers.ShoppingListController.SearchInShoppingList (Teleperformance.Bootcamp.WebApi)'
+[2022-07-06 17:26:36.202 +03:00  INF]  Route matched with {action = "SearchInShoppingList", controller = "ShoppingList"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] SearchInShoppingList(Teleperformance.Bootcamp.Application.Features.Queries.ShoppingList.SearchInShoppingList.SearchInShoppingListQueryRequest) on controller Teleperformance.Bootcamp.WebApi.Controllers.ShoppingListController (Teleperformance.Bootcamp.WebApi).
+[2022-07-06 17:26:36.208 +03:00  INF]  Entity Framework Core 6.0.6 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.6' with options: None
+[2022-07-06 17:26:36.234 +03:00  INF]  Executed DbCommand (4ms) [Parameters=[@__ToLower_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[AppUserId], [s].[CategoryId], [s].[CompleteDate], [s].[CreateDate], [s].[Description], [s].[IsComplete], [s].[Title]
+FROM [ShoppingLists] AS [s]
+INNER JOIN [Categories] AS [c] ON [s].[CategoryId] = [c].[Id]
+WHERE ((@__ToLower_0 LIKE N'') OR (CHARINDEX(@__ToLower_0, [s].[Title]) > 0)) OR ((@__ToLower_0 LIKE N'') OR (CHARINDEX(@__ToLower_0, [c].[Name]) > 0))
+[2022-07-06 17:26:36.239 +03:00  INF]  Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Teleperformance.Bootcamp.Application.DTOs.ShoppingList.GetByParameterShoppingListDto, Teleperformance.Bootcamp.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+[2022-07-06 17:26:36.241 +03:00  INF]  Executed action Teleperformance.Bootcamp.WebApi.Controllers.ShoppingListController.SearchInShoppingList (Teleperformance.Bootcamp.WebApi) in 38.1569ms
+[2022-07-06 17:26:36.241 +03:00  INF]  Executed endpoint 'Teleperformance.Bootcamp.WebApi.Controllers.ShoppingListController.SearchInShoppingList (Teleperformance.Bootcamp.WebApi)'
+[2022-07-06 17:26:36.241 +03:00  ERR]  [Request] HTTP GET  reponded 200
+[2022-07-06 17:26:36.241 +03:00  INF]  Request finished HTTP/2 GET https://localhost:7121/api/ShoppingList/search?Parameters.Keyword=zurnac%C4%B1 - - - 200 - application/json;+charset=utf-8 43.3138ms
+[2022-07-06 17:26:52.202 +03:00  INF]  Request starting HTTP/2 GET https://localhost:7121/api/ShoppingList/276403AF-CA56-4FCB-B17A-278F61E0F038 - -
+[2022-07-06 17:26:52.203 +03:00  ERR]  [Request] HTTP GET /api/ShoppingList/276403AF-CA56-4FCB-B17A-278F61E0F038
+[2022-07-06 17:26:52.203 +03:00  INF]  Executing endpoint 'Teleperformance.Bootcamp.WebApi.Controllers.ShoppingListController.GetShoppingListById (Teleperformance.Bootcamp.WebApi)'
+[2022-07-06 17:26:52.206 +03:00  INF]  Route matched with {action = "GetShoppingListById", controller = "ShoppingList"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetShoppingListById(System.String) on controller Teleperformance.Bootcamp.WebApi.Controllers.ShoppingListController (Teleperformance.Bootcamp.WebApi).
+[2022-07-06 17:26:52.209 +03:00  INF]  Entity Framework Core 6.0.6 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.6' with options: None
+[2022-07-06 17:26:52.228 +03:00  INF]  Executed DbCommand (7ms) [Parameters=[@__request_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[AppUserId], [t].[CategoryId], [t].[CompleteDate], [t].[CreateDate], [t].[Description], [t].[IsComplete], [t].[Title], [t].[Id0], [t].[Id1], [p].[Id], [p].[CreateDate], [p].[IsBuy], [p].[Name], [p].[Quantity], [p].[ShoppingListId], [p].[Unit], [t].[AccessFailedCount], [t].[ConcurrencyStamp], [t].[CreateDate0], [t].[Email], [t].[EmailConfirmed], [t].[LockoutEnabled], [t].[LockoutEnd], [t].[Name], [t].[NormalizedEmail], [t].[NormalizedUserName], [t].[PasswordHash], [t].[PhoneNumber], [t].[PhoneNumberConfirmed], [t].[SecurityStamp], [t].[Surname], [t].[TwoFactorEnabled], [t].[UserName], [t].[CreateDate1], [t].[Name0]
+FROM (
+    SELECT TOP(1) [s].[Id], [s].[AppUserId], [s].[CategoryId], [s].[CompleteDate], [s].[CreateDate], [s].[Description], [s].[IsComplete], [s].[Title], [a].[Id] AS [Id0], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[CreateDate] AS [CreateDate0], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[Name], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[Surname], [a].[TwoFactorEnabled], [a].[UserName], [c].[Id] AS [Id1], [c].[CreateDate] AS [CreateDate1], [c].[Name] AS [Name0]
+    FROM [ShoppingLists] AS [s]
+    INNER JOIN [AspNetUsers] AS [a] ON [s].[AppUserId] = [a].[Id]
+    INNER JOIN [Categories] AS [c] ON [s].[CategoryId] = [c].[Id]
+    WHERE [s].[Id] = @__request_Id_0
+) AS [t]
+LEFT JOIN [Products] AS [p] ON [t].[Id] = [p].[ShoppingListId]
+ORDER BY [t].[Id], [t].[Id0], [t].[Id1]
+[2022-07-06 17:26:52.232 +03:00  INF]  Executing OkObjectResult, writing value of type 'Teleperformance.Bootcamp.Application.DTOs.ShoppingList.GetAllShoppingListDto'.
+[2022-07-06 17:26:52.232 +03:00  INF]  Executed action Teleperformance.Bootcamp.WebApi.Controllers.ShoppingListController.GetShoppingListById (Teleperformance.Bootcamp.WebApi) in 26.0991ms
+[2022-07-06 17:26:52.232 +03:00  INF]  Executed endpoint 'Teleperformance.Bootcamp.WebApi.Controllers.ShoppingListController.GetShoppingListById (Teleperformance.Bootcamp.WebApi)'
+[2022-07-06 17:26:52.232 +03:00  ERR]  [Request] HTTP GET  reponded 200
+[2022-07-06 17:26:52.232 +03:00  INF]  Request finished HTTP/2 GET https://localhost:7121/api/ShoppingList/276403AF-CA56-4FCB-B17A-278F61E0F038 - - - 200 - application/json;+charset=utf-8 30.4054ms
+[2022-07-06 17:27:10.010 +03:00  INF]  Request starting HTTP/2 PUT https://localhost:7121/api/ShoppingList/ısComplete application/json 155
+[2022-07-06 17:27:10.010 +03:00  ERR]  [Request] HTTP PUT /api/ShoppingList/%C4%B1sComplete
+[2022-07-06 17:27:10.010 +03:00  INF]  Executing endpoint 'Teleperformance.Bootcamp.WebApi.Controllers.ShoppingListController.UpdateShoppingListIsComplete (Teleperformance.Bootcamp.WebApi)'
+[2022-07-06 17:27:10.012 +03:00  INF]  Route matched with {action = "UpdateShoppingListIsComplete", controller = "ShoppingList"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] UpdateShoppingListIsComplete(Teleperformance.Bootcamp.Application.Features.Commands.ShoppingList.ShoppingListUpdateIsComplete.ShoppingListUpdateIsCompleteCommandRequest) on controller Teleperformance.Bootcamp.WebApi.Controllers.ShoppingListController (Teleperformance.Bootcamp.WebApi).
+[2022-07-06 17:27:10.019 +03:00  INF]  Entity Framework Core 6.0.6 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.6' with options: None
+[2022-07-06 17:27:10.022 +03:00  INF]  Executed DbCommand (2ms) [Parameters=[@__p_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [s].[Id], [s].[AppUserId], [s].[CategoryId], [s].[CompleteDate], [s].[CreateDate], [s].[Description], [s].[IsComplete], [s].[Title]
+FROM [ShoppingLists] AS [s]
+WHERE [s].[Id] = @__p_0
+[2022-07-06 17:27:10.049 +03:00  INF]  Executed DbCommand (2ms) [Parameters=[@p7='?' (Size = 450), @p0='?' (Size = 450), @p1='?' (Size = 450), @p2='?' (DbType = DateTime2), @p3='?' (DbType = DateTime2), @p4='?' (Size = 4000), @p5='?' (DbType = Boolean), @p6='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+UPDATE [ShoppingLists] SET [AppUserId] = @p0, [CategoryId] = @p1, [CompleteDate] = @p2, [CreateDate] = @p3, [Description] = @p4, [IsComplete] = @p5, [Title] = @p6
+WHERE [Id] = @p7;
+SELECT @@ROWCOUNT;
+[2022-07-06 17:27:10.214 +03:00  INF]  Executing OkObjectResult, writing value of type 'Teleperformance.Bootcamp.Domain.Common.Response.BaseResponse'.
+[2022-07-06 17:27:10.215 +03:00  INF]  Executed action Teleperformance.Bootcamp.WebApi.Controllers.ShoppingListController.UpdateShoppingListIsComplete (Teleperformance.Bootcamp.WebApi) in 202.4868ms
+[2022-07-06 17:27:10.215 +03:00  INF]  Executed endpoint 'Teleperformance.Bootcamp.WebApi.Controllers.ShoppingListController.UpdateShoppingListIsComplete (Teleperformance.Bootcamp.WebApi)'
+[2022-07-06 17:27:10.215 +03:00  ERR]  [Request] HTTP PUT  reponded 200
+[2022-07-06 17:27:10.215 +03:00  INF]  Request finished HTTP/2 PUT https://localhost:7121/api/ShoppingList/ısComplete application/json 155 - 200 - application/json;+charset=utf-8 205.5214ms
+[2022-07-06 17:27:35.060 +03:00  INF]  Request starting HTTP/2 DELETE https://localhost:7121/api/ShoppingList?Id=276403AF-CA56-4FCB-B17A-278F61E0F038 - -
+[2022-07-06 17:27:35.063 +03:00  ERR]  [Request] HTTP DELETE /api/ShoppingList
+[2022-07-06 17:27:35.064 +03:00  INF]  Executing endpoint 'Teleperformance.Bootcamp.WebApi.Controllers.ShoppingListController.DeleteShoppingList (Teleperformance.Bootcamp.WebApi)'
+[2022-07-06 17:27:35.069 +03:00  INF]  Route matched with {action = "DeleteShoppingList", controller = "ShoppingList"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] DeleteShoppingList(Teleperformance.Bootcamp.Application.Features.Commands.ShoppingList.ShoppingListDelete.ShoppingListDeleteCommandRequest) on controller Teleperformance.Bootcamp.WebApi.Controllers.ShoppingListController (Teleperformance.Bootcamp.WebApi).
+[2022-07-06 17:27:35.073 +03:00  INF]  Entity Framework Core 6.0.6 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.6' with options: None
+[2022-07-06 17:27:35.074 +03:00  INF]  Executed DbCommand (1ms) [Parameters=[@__p_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [s].[Id], [s].[AppUserId], [s].[CategoryId], [s].[CompleteDate], [s].[CreateDate], [s].[Description], [s].[IsComplete], [s].[Title]
+FROM [ShoppingLists] AS [s]
+WHERE [s].[Id] = @__p_0
+[2022-07-06 17:27:35.090 +03:00  INF]  Executed DbCommand (5ms) [Parameters=[@p0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+DELETE FROM [ShoppingLists]
+WHERE [Id] = @p0;
+SELECT @@ROWCOUNT;
+[2022-07-06 17:27:35.095 +03:00  INF]  Executing OkObjectResult, writing value of type 'Teleperformance.Bootcamp.Domain.Common.Response.BaseResponse'.
+[2022-07-06 17:27:35.095 +03:00  INF]  Executed action Teleperformance.Bootcamp.WebApi.Controllers.ShoppingListController.DeleteShoppingList (Teleperformance.Bootcamp.WebApi) in 25.8342ms
+[2022-07-06 17:27:35.095 +03:00  INF]  Executed endpoint 'Teleperformance.Bootcamp.WebApi.Controllers.ShoppingListController.DeleteShoppingList (Teleperformance.Bootcamp.WebApi)'
+[2022-07-06 17:27:35.095 +03:00  ERR]  [Request] HTTP DELETE  reponded 200
+[2022-07-06 17:27:35.095 +03:00  INF]  Request finished HTTP/2 DELETE https://localhost:7121/api/ShoppingList?Id=276403AF-CA56-4FCB-B17A-278F61E0F038 - - - 200 - application/json;+charset=utf-8 35.8486ms
+[2022-07-06 17:29:41.738 +03:00  INF]  User profile is available. Using 'C:\Users\sercan\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+[2022-07-06 17:29:41.967 +03:00  INF]  Now listening on: https://localhost:7121
+[2022-07-06 17:29:41.967 +03:00  INF]  Now listening on: http://localhost:5121
+[2022-07-06 17:29:41.969 +03:00  INF]  Application started. Press Ctrl+C to shut down.
+[2022-07-06 17:29:41.970 +03:00  INF]  Hosting environment: Development
+[2022-07-06 17:29:41.970 +03:00  INF]  Content root path: C:\Users\sercan\Desktop\Bootcamp\BootcampProject\Teleperformance.ShoppingList\src\WebApi\Teleperformance.ShoppingList.WebApi\
+[2022-07-06 17:29:42.379 +03:00  INF]  Request starting HTTP/2 GET https://localhost:7121/swagger/index.html - -
+[2022-07-06 17:29:42.718 +03:00  INF]  Request starting HTTP/2 GET https://localhost:7121/_framework/aspnetcore-browser-refresh.js - -
+[2022-07-06 17:29:42.726 +03:00  INF]  Request finished HTTP/2 GET https://localhost:7121/_framework/aspnetcore-browser-refresh.js - - - 200 12032 application/javascript;+charset=utf-8 6.1655ms
+[2022-07-06 17:29:42.726 +03:00  INF]  Request finished HTTP/2 GET https://localhost:7121/swagger/index.html - - - 200 - text/html;charset=utf-8 350.9453ms
+[2022-07-06 17:29:42.760 +03:00  INF]  Request starting HTTP/2 GET https://localhost:7121/_vs/browserLink - -
+[2022-07-06 17:29:42.782 +03:00  INF]  Request finished HTTP/2 GET https://localhost:7121/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 22.0154ms
+[2022-07-06 17:29:42.979 +03:00  INF]  Request starting HTTP/2 GET https://localhost:7121/swagger/v1/swagger.json - -
+[2022-07-06 17:29:43.115 +03:00  INF]  Request finished HTTP/2 GET https://localhost:7121/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 137.0469ms
+[2022-07-06 17:30:03.245 +03:00  INF]  Request starting HTTP/2 PUT https://localhost:7121/api/ShoppingList/ısComplete application/json 155
+[2022-07-06 17:30:03.321 +03:00  ERR]  [Request] HTTP PUT /api/ShoppingList/%C4%B1sComplete
+[2022-07-06 17:30:03.326 +03:00  INF]  Executing endpoint 'Teleperformance.Bootcamp.WebApi.Controllers.ShoppingListController.UpdateShoppingListIsComplete (Teleperformance.Bootcamp.WebApi)'
+[2022-07-06 17:30:03.351 +03:00  INF]  Route matched with {action = "UpdateShoppingListIsComplete", controller = "ShoppingList"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] UpdateShoppingListIsComplete(Teleperformance.Bootcamp.Application.Features.Commands.ShoppingList.ShoppingListUpdateIsComplete.ShoppingListUpdateIsCompleteCommandRequest) on controller Teleperformance.Bootcamp.WebApi.Controllers.ShoppingListController (Teleperformance.Bootcamp.WebApi).
+[2022-07-06 17:30:04.587 +03:00  INF]  Entity Framework Core 6.0.6 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.6' with options: None
+[2022-07-06 17:30:05.541 +03:00  INF]  Executed DbCommand (105ms) [Parameters=[@__p_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [s].[Id], [s].[AppUserId], [s].[CategoryId], [s].[CompleteDate], [s].[CreateDate], [s].[Description], [s].[IsComplete], [s].[Title]
+FROM [ShoppingLists] AS [s]
+WHERE [s].[Id] = @__p_0
+[2022-07-06 17:30:05.829 +03:00  INF]  Executed DbCommand (6ms) [Parameters=[@p7='?' (Size = 450), @p0='?' (Size = 450), @p1='?' (Size = 450), @p2='?' (DbType = DateTime2), @p3='?' (DbType = DateTime2), @p4='?' (Size = 4000), @p5='?' (DbType = Boolean), @p6='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+UPDATE [ShoppingLists] SET [AppUserId] = @p0, [CategoryId] = @p1, [CompleteDate] = @p2, [CreateDate] = @p3, [Description] = @p4, [IsComplete] = @p5, [Title] = @p6
+WHERE [Id] = @p7;
+SELECT @@ROWCOUNT;
+[2022-07-06 17:30:06.210 +03:00  INF]  Executing OkObjectResult, writing value of type 'Teleperformance.Bootcamp.Domain.Common.Response.BaseResponse'.
+[2022-07-06 17:30:06.220 +03:00  INF]  Executed action Teleperformance.Bootcamp.WebApi.Controllers.ShoppingListController.UpdateShoppingListIsComplete (Teleperformance.Bootcamp.WebApi) in 2863.6776ms
+[2022-07-06 17:30:06.222 +03:00  INF]  Executed endpoint 'Teleperformance.Bootcamp.WebApi.Controllers.ShoppingListController.UpdateShoppingListIsComplete (Teleperformance.Bootcamp.WebApi)'
+[2022-07-06 17:30:06.222 +03:00  ERR]  [Request] HTTP PUT  reponded 200
+[2022-07-06 17:30:06.231 +03:00  INF]  Request finished HTTP/2 PUT https://localhost:7121/api/ShoppingList/ısComplete application/json 155 - 200 - application/json;+charset=utf-8 2986.7132ms
+[2022-07-06 17:31:04.699 +03:00  INF]  Request starting HTTP/2 POST https://localhost:7121/api/ShoppingList application/json 214
+[2022-07-06 17:31:04.710 +03:00  ERR]  [Request] HTTP POST /api/ShoppingList
+[2022-07-06 17:31:04.710 +03:00  INF]  Executing endpoint 'Teleperformance.Bootcamp.WebApi.Controllers.ShoppingListController.CreateShoppingList (Teleperformance.Bootcamp.WebApi)'
+[2022-07-06 17:31:04.714 +03:00  INF]  Route matched with {action = "CreateShoppingList", controller = "ShoppingList"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CreateShoppingList(Teleperformance.Bootcamp.Application.Features.Commands.ShoppingList.ShoppingListCreate.ShoppingListCreateCommandRequest) on controller Teleperformance.Bootcamp.WebApi.Controllers.ShoppingListController (Teleperformance.Bootcamp.WebApi).
+[2022-07-06 17:31:04.806 +03:00  INF]  Entity Framework Core 6.0.6 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.6' with options: None
+[2022-07-06 17:31:04.821 +03:00  INF]  Executed DbCommand (5ms) [Parameters=[@__p_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [c].[Id], [c].[CreateDate], [c].[Name]
+FROM [Categories] AS [c]
+WHERE [c].[Id] = @__p_0
+[2022-07-06 17:31:04.838 +03:00  INF]  Executed DbCommand (2ms) [Parameters=[@__p_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[CreateDate], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[Name], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[Surname], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[Id] = @__p_0
+[2022-07-06 17:31:05.055 +03:00  INF]  Executed DbCommand (11ms) [Parameters=[@p0='?' (Size = 450), @p1='?' (Size = 450), @p2='?' (DbType = DateTime2), @p3='?' (DbType = DateTime2), @p4='?' (Size = 4000), @p5='?' (DbType = Boolean), @p6='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+DECLARE @inserted0 TABLE ([Id] nvarchar(450));
+INSERT INTO [ShoppingLists] ([AppUserId], [CategoryId], [CompleteDate], [CreateDate], [Description], [IsComplete], [Title])
+OUTPUT INSERTED.[Id]
+INTO @inserted0
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6);
+SELECT [i].[Id] FROM @inserted0 i;
+[2022-07-06 17:31:05.119 +03:00  INF]  Executing OkObjectResult, writing value of type 'Teleperformance.Bootcamp.Domain.Common.Response.BaseResponse'.
+[2022-07-06 17:31:05.119 +03:00  INF]  Executed action Teleperformance.Bootcamp.WebApi.Controllers.ShoppingListController.CreateShoppingList (Teleperformance.Bootcamp.WebApi) in 404.6574ms
+[2022-07-06 17:31:05.119 +03:00  INF]  Executed endpoint 'Teleperformance.Bootcamp.WebApi.Controllers.ShoppingListController.CreateShoppingList (Teleperformance.Bootcamp.WebApi)'
+[2022-07-06 17:31:05.119 +03:00  ERR]  [Request] HTTP POST  reponded 200
+[2022-07-06 17:31:05.119 +03:00  INF]  Request finished HTTP/2 POST https://localhost:7121/api/ShoppingList application/json 214 - 200 - application/json;+charset=utf-8 421.2305ms
+[2022-07-06 17:31:28.570 +03:00  INF]  Request starting HTTP/2 PUT https://localhost:7121/api/ShoppingList/ısComplete application/json 155
+[2022-07-06 17:31:28.578 +03:00  ERR]  [Request] HTTP PUT /api/ShoppingList/%C4%B1sComplete
+[2022-07-06 17:31:28.578 +03:00  INF]  Executing endpoint 'Teleperformance.Bootcamp.WebApi.Controllers.ShoppingListController.UpdateShoppingListIsComplete (Teleperformance.Bootcamp.WebApi)'
+[2022-07-06 17:31:28.579 +03:00  INF]  Route matched with {action = "UpdateShoppingListIsComplete", controller = "ShoppingList"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] UpdateShoppingListIsComplete(Teleperformance.Bootcamp.Application.Features.Commands.ShoppingList.ShoppingListUpdateIsComplete.ShoppingListUpdateIsCompleteCommandRequest) on controller Teleperformance.Bootcamp.WebApi.Controllers.ShoppingListController (Teleperformance.Bootcamp.WebApi).
+[2022-07-06 17:31:28.587 +03:00  INF]  Entity Framework Core 6.0.6 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.6' with options: None
+[2022-07-06 17:31:28.593 +03:00  INF]  Executed DbCommand (2ms) [Parameters=[@__p_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [s].[Id], [s].[AppUserId], [s].[CategoryId], [s].[CompleteDate], [s].[CreateDate], [s].[Description], [s].[IsComplete], [s].[Title]
+FROM [ShoppingLists] AS [s]
+WHERE [s].[Id] = @__p_0
+[2022-07-06 17:31:28.600 +03:00  INF]  Executed DbCommand (2ms) [Parameters=[@p7='?' (Size = 450), @p0='?' (Size = 450), @p1='?' (Size = 450), @p2='?' (DbType = DateTime2), @p3='?' (DbType = DateTime2), @p4='?' (Size = 4000), @p5='?' (DbType = Boolean), @p6='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+UPDATE [ShoppingLists] SET [AppUserId] = @p0, [CategoryId] = @p1, [CompleteDate] = @p2, [CreateDate] = @p3, [Description] = @p4, [IsComplete] = @p5, [Title] = @p6
+WHERE [Id] = @p7;
+SELECT @@ROWCOUNT;
+[2022-07-06 17:31:28.614 +03:00  INF]  Executing OkObjectResult, writing value of type 'Teleperformance.Bootcamp.Domain.Common.Response.BaseResponse'.
+[2022-07-06 17:31:28.614 +03:00  INF]  Executed action Teleperformance.Bootcamp.WebApi.Controllers.ShoppingListController.UpdateShoppingListIsComplete (Teleperformance.Bootcamp.WebApi) in 35.6583ms
+[2022-07-06 17:31:28.614 +03:00  INF]  Executed endpoint 'Teleperformance.Bootcamp.WebApi.Controllers.ShoppingListController.UpdateShoppingListIsComplete (Teleperformance.Bootcamp.WebApi)'
+[2022-07-06 17:31:28.614 +03:00  ERR]  [Request] HTTP PUT  reponded 200
+[2022-07-06 17:31:28.615 +03:00  INF]  Request finished HTTP/2 PUT https://localhost:7121/api/ShoppingList/ısComplete application/json 155 - 200 - application/json;+charset=utf-8 45.4090ms
+[2022-07-06 17:33:33.892 +03:00  INF]  User profile is available. Using 'C:\Users\sercan\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+[2022-07-06 17:33:34.102 +03:00  INF]  Now listening on: https://localhost:7121
+[2022-07-06 17:33:34.102 +03:00  INF]  Now listening on: http://localhost:5121
+[2022-07-06 17:33:34.104 +03:00  INF]  Application started. Press Ctrl+C to shut down.
+[2022-07-06 17:33:34.104 +03:00  INF]  Hosting environment: Development
+[2022-07-06 17:33:34.104 +03:00  INF]  Content root path: C:\Users\sercan\Desktop\Bootcamp\BootcampProject\Teleperformance.ShoppingList\src\WebApi\Teleperformance.ShoppingList.WebApi\
+[2022-07-06 17:33:34.553 +03:00  INF]  Request starting HTTP/2 GET https://localhost:7121/swagger/index.html - -
+[2022-07-06 17:33:34.801 +03:00  INF]  Request starting HTTP/2 GET https://localhost:7121/_framework/aspnetcore-browser-refresh.js - -
+[2022-07-06 17:33:34.804 +03:00  INF]  Request finished HTTP/2 GET https://localhost:7121/swagger/index.html - - - 200 - text/html;charset=utf-8 254.0174ms
+[2022-07-06 17:33:34.805 +03:00  INF]  Request finished HTTP/2 GET https://localhost:7121/_framework/aspnetcore-browser-refresh.js - - - 200 12032 application/javascript;+charset=utf-8 4.0330ms
+[2022-07-06 17:33:34.827 +03:00  INF]  Request starting HTTP/2 GET https://localhost:7121/_vs/browserLink - -
+[2022-07-06 17:33:34.842 +03:00  INF]  Request finished HTTP/2 GET https://localhost:7121/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 14.6675ms
+[2022-07-06 17:33:34.950 +03:00  INF]  Request starting HTTP/2 GET https://localhost:7121/swagger/v1/swagger.json - -
+[2022-07-06 17:33:35.061 +03:00  INF]  Request finished HTTP/2 GET https://localhost:7121/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 111.7564ms
+[2022-07-06 17:33:57.477 +03:00  INF]  Request starting HTTP/2 PUT https://localhost:7121/api/ShoppingList/ısComplete application/json 155
+[2022-07-06 17:33:57.542 +03:00  ERR]  [Request] HTTP PUT /api/ShoppingList/%C4%B1sComplete
+[2022-07-06 17:33:57.545 +03:00  INF]  Executing endpoint 'Teleperformance.Bootcamp.WebApi.Controllers.ShoppingListController.UpdateShoppingListIsComplete (Teleperformance.Bootcamp.WebApi)'
+[2022-07-06 17:33:57.566 +03:00  INF]  Route matched with {action = "UpdateShoppingListIsComplete", controller = "ShoppingList"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] UpdateShoppingListIsComplete(Teleperformance.Bootcamp.Application.Features.Commands.ShoppingList.ShoppingListUpdateIsComplete.ShoppingListUpdateIsCompleteCommandRequest) on controller Teleperformance.Bootcamp.WebApi.Controllers.ShoppingListController (Teleperformance.Bootcamp.WebApi).
+[2022-07-06 17:33:58.664 +03:00  INF]  Entity Framework Core 6.0.6 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.6' with options: None
+[2022-07-06 17:33:59.397 +03:00  INF]  Executed DbCommand (65ms) [Parameters=[@__p_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [s].[Id], [s].[AppUserId], [s].[CategoryId], [s].[CompleteDate], [s].[CreateDate], [s].[Description], [s].[IsComplete], [s].[Title]
+FROM [ShoppingLists] AS [s]
+WHERE [s].[Id] = @__p_0
+[2022-07-06 17:33:59.644 +03:00  INF]  Executed DbCommand (8ms) [Parameters=[@p7='?' (Size = 450), @p0='?' (Size = 450), @p1='?' (Size = 450), @p2='?' (DbType = DateTime2), @p3='?' (DbType = DateTime2), @p4='?' (Size = 4000), @p5='?' (DbType = Boolean), @p6='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+UPDATE [ShoppingLists] SET [AppUserId] = @p0, [CategoryId] = @p1, [CompleteDate] = @p2, [CreateDate] = @p3, [Description] = @p4, [IsComplete] = @p5, [Title] = @p6
+WHERE [Id] = @p7;
+SELECT @@ROWCOUNT;
+[2022-07-06 17:33:59.835 +03:00  INF]  Executing OkObjectResult, writing value of type 'Teleperformance.Bootcamp.Domain.Common.Response.BaseResponse'.
+[2022-07-06 17:33:59.843 +03:00  INF]  Executed action Teleperformance.Bootcamp.WebApi.Controllers.ShoppingListController.UpdateShoppingListIsComplete (Teleperformance.Bootcamp.WebApi) in 2273.1296ms
+[2022-07-06 17:33:59.844 +03:00  INF]  Executed endpoint 'Teleperformance.Bootcamp.WebApi.Controllers.ShoppingListController.UpdateShoppingListIsComplete (Teleperformance.Bootcamp.WebApi)'
+[2022-07-06 17:33:59.844 +03:00  ERR]  [Request] HTTP PUT  reponded 200
+[2022-07-06 17:33:59.852 +03:00  INF]  Request finished HTTP/2 PUT https://localhost:7121/api/ShoppingList/ısComplete application/json 155 - 200 - application/json;+charset=utf-8 2374.2069ms
+[2022-07-06 17:35:28.052 +03:00  INF]  Request starting HTTP/2 PUT https://localhost:7121/api/ShoppingList/ısComplete application/json 155
+[2022-07-06 17:35:28.061 +03:00  ERR]  [Request] HTTP PUT /api/ShoppingList/%C4%B1sComplete
+[2022-07-06 17:35:28.061 +03:00  INF]  Executing endpoint 'Teleperformance.Bootcamp.WebApi.Controllers.ShoppingListController.UpdateShoppingListIsComplete (Teleperformance.Bootcamp.WebApi)'
+[2022-07-06 17:35:28.061 +03:00  INF]  Route matched with {action = "UpdateShoppingListIsComplete", controller = "ShoppingList"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] UpdateShoppingListIsComplete(Teleperformance.Bootcamp.Application.Features.Commands.ShoppingList.ShoppingListUpdateIsComplete.ShoppingListUpdateIsCompleteCommandRequest) on controller Teleperformance.Bootcamp.WebApi.Controllers.ShoppingListController (Teleperformance.Bootcamp.WebApi).
+[2022-07-06 17:35:28.091 +03:00  INF]  Entity Framework Core 6.0.6 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.6' with options: None
+[2022-07-06 17:35:28.098 +03:00  INF]  Executed DbCommand (3ms) [Parameters=[@__p_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [s].[Id], [s].[AppUserId], [s].[CategoryId], [s].[CompleteDate], [s].[CreateDate], [s].[Description], [s].[IsComplete], [s].[Title]
+FROM [ShoppingLists] AS [s]
+WHERE [s].[Id] = @__p_0
+[2022-07-06 17:35:28.102 +03:00  INF]  Executed DbCommand (2ms) [Parameters=[@p7='?' (Size = 450), @p0='?' (Size = 450), @p1='?' (Size = 450), @p2='?' (DbType = DateTime2), @p3='?' (DbType = DateTime2), @p4='?' (Size = 4000), @p5='?' (DbType = Boolean), @p6='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+UPDATE [ShoppingLists] SET [AppUserId] = @p0, [CategoryId] = @p1, [CompleteDate] = @p2, [CreateDate] = @p3, [Description] = @p4, [IsComplete] = @p5, [Title] = @p6
+WHERE [Id] = @p7;
+SELECT @@ROWCOUNT;
+[2022-07-06 17:35:28.118 +03:00  INF]  Executing OkObjectResult, writing value of type 'Teleperformance.Bootcamp.Domain.Common.Response.BaseResponse'.
+[2022-07-06 17:35:28.118 +03:00  INF]  Executed action Teleperformance.Bootcamp.WebApi.Controllers.ShoppingListController.UpdateShoppingListIsComplete (Teleperformance.Bootcamp.WebApi) in 56.4006ms
+[2022-07-06 17:35:28.118 +03:00  INF]  Executed endpoint 'Teleperformance.Bootcamp.WebApi.Controllers.ShoppingListController.UpdateShoppingListIsComplete (Teleperformance.Bootcamp.WebApi)'
+[2022-07-06 17:35:28.118 +03:00  ERR]  [Request] HTTP PUT  reponded 200
+[2022-07-06 17:35:28.118 +03:00  INF]  Request finished HTTP/2 PUT https://localhost:7121/api/ShoppingList/ısComplete application/json 155 - 200 - application/json;+charset=utf-8 66.5010ms
+[2022-07-06 17:35:34.334 +03:00  INF]  Request starting HTTP/2 PUT https://localhost:7121/api/ShoppingList/ısComplete application/json 155
+[2022-07-06 17:35:34.335 +03:00  ERR]  [Request] HTTP PUT /api/ShoppingList/%C4%B1sComplete
+[2022-07-06 17:35:34.335 +03:00  INF]  Executing endpoint 'Teleperformance.Bootcamp.WebApi.Controllers.ShoppingListController.UpdateShoppingListIsComplete (Teleperformance.Bootcamp.WebApi)'
+[2022-07-06 17:35:34.335 +03:00  INF]  Route matched with {action = "UpdateShoppingListIsComplete", controller = "ShoppingList"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] UpdateShoppingListIsComplete(Teleperformance.Bootcamp.Application.Features.Commands.ShoppingList.ShoppingListUpdateIsComplete.ShoppingListUpdateIsCompleteCommandRequest) on controller Teleperformance.Bootcamp.WebApi.Controllers.ShoppingListController (Teleperformance.Bootcamp.WebApi).
+[2022-07-06 17:35:34.343 +03:00  INF]  Entity Framework Core 6.0.6 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.6' with options: None
+[2022-07-06 17:35:34.345 +03:00  INF]  Executed DbCommand (1ms) [Parameters=[@__p_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [s].[Id], [s].[AppUserId], [s].[CategoryId], [s].[CompleteDate], [s].[CreateDate], [s].[Description], [s].[IsComplete], [s].[Title]
+FROM [ShoppingLists] AS [s]
+WHERE [s].[Id] = @__p_0
+[2022-07-06 17:35:34.347 +03:00  INF]  Executed DbCommand (0ms) [Parameters=[@p7='?' (Size = 450), @p0='?' (Size = 450), @p1='?' (Size = 450), @p2='?' (DbType = DateTime2), @p3='?' (DbType = DateTime2), @p4='?' (Size = 4000), @p5='?' (DbType = Boolean), @p6='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+UPDATE [ShoppingLists] SET [AppUserId] = @p0, [CategoryId] = @p1, [CompleteDate] = @p2, [CreateDate] = @p3, [Description] = @p4, [IsComplete] = @p5, [Title] = @p6
+WHERE [Id] = @p7;
+SELECT @@ROWCOUNT;
+[2022-07-06 17:35:34.361 +03:00  INF]  Executing OkObjectResult, writing value of type 'Teleperformance.Bootcamp.Domain.Common.Response.BaseResponse'.
+[2022-07-06 17:35:34.362 +03:00  INF]  Executed action Teleperformance.Bootcamp.WebApi.Controllers.ShoppingListController.UpdateShoppingListIsComplete (Teleperformance.Bootcamp.WebApi) in 26.3567ms
+[2022-07-06 17:35:34.362 +03:00  INF]  Executed endpoint 'Teleperformance.Bootcamp.WebApi.Controllers.ShoppingListController.UpdateShoppingListIsComplete (Teleperformance.Bootcamp.WebApi)'
+[2022-07-06 17:35:34.362 +03:00  ERR]  [Request] HTTP PUT  reponded 200
+[2022-07-06 17:35:34.362 +03:00  INF]  Request finished HTTP/2 PUT https://localhost:7121/api/ShoppingList/ısComplete application/json 155 - 200 - application/json;+charset=utf-8 28.2242ms
+[2022-07-06 17:35:42.098 +03:00  INF]  Request starting HTTP/2 PUT https://localhost:7121/api/ShoppingList/ısComplete application/json 156
+[2022-07-06 17:35:42.099 +03:00  ERR]  [Request] HTTP PUT /api/ShoppingList/%C4%B1sComplete
+[2022-07-06 17:35:42.099 +03:00  INF]  Executing endpoint 'Teleperformance.Bootcamp.WebApi.Controllers.ShoppingListController.UpdateShoppingListIsComplete (Teleperformance.Bootcamp.WebApi)'
+[2022-07-06 17:35:42.099 +03:00  INF]  Route matched with {action = "UpdateShoppingListIsComplete", controller = "ShoppingList"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] UpdateShoppingListIsComplete(Teleperformance.Bootcamp.Application.Features.Commands.ShoppingList.ShoppingListUpdateIsComplete.ShoppingListUpdateIsCompleteCommandRequest) on controller Teleperformance.Bootcamp.WebApi.Controllers.ShoppingListController (Teleperformance.Bootcamp.WebApi).
+[2022-07-06 17:35:42.099 +03:00  INF]  Entity Framework Core 6.0.6 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.6' with options: None
+[2022-07-06 17:35:42.101 +03:00  INF]  Executed DbCommand (1ms) [Parameters=[@__p_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [s].[Id], [s].[AppUserId], [s].[CategoryId], [s].[CompleteDate], [s].[CreateDate], [s].[Description], [s].[IsComplete], [s].[Title]
+FROM [ShoppingLists] AS [s]
+WHERE [s].[Id] = @__p_0
+[2022-07-06 17:35:42.181 +03:00  INF]  Executed action Teleperformance.Bootcamp.WebApi.Controllers.ShoppingListController.UpdateShoppingListIsComplete (Teleperformance.Bootcamp.WebApi) in 82.1439ms
+[2022-07-06 17:35:42.181 +03:00  INF]  Executed endpoint 'Teleperformance.Bootcamp.WebApi.Controllers.ShoppingListController.UpdateShoppingListIsComplete (Teleperformance.Bootcamp.WebApi)'
+[2022-07-06 17:35:42.242 +03:00  ERR]  [ERROR] HTTP PUT - 500 -  Error Messsage Validation failed: 
+ -- IsComplete: Tamamlanma alanı boş geçilemez Severity: Error
+[2022-07-06 17:35:42.337 +03:00  INF]  Request finished HTTP/2 PUT https://localhost:7121/api/ShoppingList/ısComplete application/json 156 - 500 - application/json 238.9950ms
+[2022-07-06 17:35:50.190 +03:00  INF]  Request starting HTTP/2 PUT https://localhost:7121/api/ShoppingList/ısComplete application/json 155
+[2022-07-06 17:35:50.190 +03:00  ERR]  [Request] HTTP PUT /api/ShoppingList/%C4%B1sComplete
+[2022-07-06 17:35:50.190 +03:00  INF]  Executing endpoint 'Teleperformance.Bootcamp.WebApi.Controllers.ShoppingListController.UpdateShoppingListIsComplete (Teleperformance.Bootcamp.WebApi)'
+[2022-07-06 17:35:50.191 +03:00  INF]  Route matched with {action = "UpdateShoppingListIsComplete", controller = "ShoppingList"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] UpdateShoppingListIsComplete(Teleperformance.Bootcamp.Application.Features.Commands.ShoppingList.ShoppingListUpdateIsComplete.ShoppingListUpdateIsCompleteCommandRequest) on controller Teleperformance.Bootcamp.WebApi.Controllers.ShoppingListController (Teleperformance.Bootcamp.WebApi).
+[2022-07-06 17:35:50.191 +03:00  INF]  Entity Framework Core 6.0.6 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.6' with options: None
+[2022-07-06 17:35:50.194 +03:00  INF]  Executed DbCommand (1ms) [Parameters=[@__p_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [s].[Id], [s].[AppUserId], [s].[CategoryId], [s].[CompleteDate], [s].[CreateDate], [s].[Description], [s].[IsComplete], [s].[Title]
+FROM [ShoppingLists] AS [s]
+WHERE [s].[Id] = @__p_0
+[2022-07-06 17:35:50.197 +03:00  INF]  Executed DbCommand (0ms) [Parameters=[@p7='?' (Size = 450), @p0='?' (Size = 450), @p1='?' (Size = 450), @p2='?' (DbType = DateTime2), @p3='?' (DbType = DateTime2), @p4='?' (Size = 4000), @p5='?' (DbType = Boolean), @p6='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+UPDATE [ShoppingLists] SET [AppUserId] = @p0, [CategoryId] = @p1, [CompleteDate] = @p2, [CreateDate] = @p3, [Description] = @p4, [IsComplete] = @p5, [Title] = @p6
+WHERE [Id] = @p7;
+SELECT @@ROWCOUNT;
+[2022-07-06 17:35:50.217 +03:00  INF]  Executing OkObjectResult, writing value of type 'Teleperformance.Bootcamp.Domain.Common.Response.BaseResponse'.
+[2022-07-06 17:35:50.217 +03:00  INF]  Executed action Teleperformance.Bootcamp.WebApi.Controllers.ShoppingListController.UpdateShoppingListIsComplete (Teleperformance.Bootcamp.WebApi) in 26.7581ms
+[2022-07-06 17:35:50.217 +03:00  INF]  Executed endpoint 'Teleperformance.Bootcamp.WebApi.Controllers.ShoppingListController.UpdateShoppingListIsComplete (Teleperformance.Bootcamp.WebApi)'
+[2022-07-06 17:35:50.217 +03:00  ERR]  [Request] HTTP PUT  reponded 200
+[2022-07-06 17:35:50.218 +03:00  INF]  Request finished HTTP/2 PUT https://localhost:7121/api/ShoppingList/ısComplete application/json 155 - 200 - application/json;+charset=utf-8 27.4556ms
+[2022-07-06 17:38:00.748 +03:00  INF]  Request starting HTTP/2 PUT https://localhost:7121/api/ShoppingList/ısComplete application/json 155
+[2022-07-06 17:38:00.749 +03:00  ERR]  [Request] HTTP PUT /api/ShoppingList/%C4%B1sComplete
+[2022-07-06 17:38:00.749 +03:00  INF]  Executing endpoint 'Teleperformance.Bootcamp.WebApi.Controllers.ShoppingListController.UpdateShoppingListIsComplete (Teleperformance.Bootcamp.WebApi)'
+[2022-07-06 17:38:00.749 +03:00  INF]  Route matched with {action = "UpdateShoppingListIsComplete", controller = "ShoppingList"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] UpdateShoppingListIsComplete(Teleperformance.Bootcamp.Application.Features.Commands.ShoppingList.ShoppingListUpdateIsComplete.ShoppingListUpdateIsCompleteCommandRequest) on controller Teleperformance.Bootcamp.WebApi.Controllers.ShoppingListController (Teleperformance.Bootcamp.WebApi).
+[2022-07-06 17:38:00.758 +03:00  INF]  Entity Framework Core 6.0.6 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.6' with options: None
+[2022-07-06 17:38:00.761 +03:00  INF]  Executed DbCommand (2ms) [Parameters=[@__p_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [s].[Id], [s].[AppUserId], [s].[CategoryId], [s].[CompleteDate], [s].[CreateDate], [s].[Description], [s].[IsComplete], [s].[Title]
+FROM [ShoppingLists] AS [s]
+WHERE [s].[Id] = @__p_0
+[2022-07-06 17:38:00.764 +03:00  INF]  Executed DbCommand (2ms) [Parameters=[@p7='?' (Size = 450), @p0='?' (Size = 450), @p1='?' (Size = 450), @p2='?' (DbType = DateTime2), @p3='?' (DbType = DateTime2), @p4='?' (Size = 4000), @p5='?' (DbType = Boolean), @p6='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+UPDATE [ShoppingLists] SET [AppUserId] = @p0, [CategoryId] = @p1, [CompleteDate] = @p2, [CreateDate] = @p3, [Description] = @p4, [IsComplete] = @p5, [Title] = @p6
+WHERE [Id] = @p7;
+SELECT @@ROWCOUNT;
+[2022-07-06 17:38:00.777 +03:00  INF]  Executing OkObjectResult, writing value of type 'Teleperformance.Bootcamp.Domain.Common.Response.BaseResponse'.
+[2022-07-06 17:38:00.777 +03:00  INF]  Executed action Teleperformance.Bootcamp.WebApi.Controllers.ShoppingListController.UpdateShoppingListIsComplete (Teleperformance.Bootcamp.WebApi) in 27.3875ms
+[2022-07-06 17:38:00.777 +03:00  INF]  Executed endpoint 'Teleperformance.Bootcamp.WebApi.Controllers.ShoppingListController.UpdateShoppingListIsComplete (Teleperformance.Bootcamp.WebApi)'
+[2022-07-06 17:38:00.777 +03:00  ERR]  [Request] HTTP PUT  reponded 200
+[2022-07-06 17:38:00.777 +03:00  INF]  Request finished HTTP/2 PUT https://localhost:7121/api/ShoppingList/ısComplete application/json 155 - 200 - application/json;+charset=utf-8 29.1054ms
+[2022-07-06 17:40:44.423 +03:00  INF]  User profile is available. Using 'C:\Users\sercan\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+[2022-07-06 17:40:44.613 +03:00  INF]  Now listening on: https://localhost:7121
+[2022-07-06 17:40:44.613 +03:00  INF]  Now listening on: http://localhost:5121
+[2022-07-06 17:40:44.615 +03:00  INF]  Application started. Press Ctrl+C to shut down.
+[2022-07-06 17:40:44.615 +03:00  INF]  Hosting environment: Development
+[2022-07-06 17:40:44.615 +03:00  INF]  Content root path: C:\Users\sercan\Desktop\Bootcamp\BootcampProject\Teleperformance.ShoppingList\src\WebApi\Teleperformance.ShoppingList.WebApi\
+[2022-07-06 17:40:45.296 +03:00  INF]  Request starting HTTP/2 GET https://localhost:7121/swagger/index.html - -
+[2022-07-06 17:40:45.641 +03:00  INF]  Request starting HTTP/2 GET https://localhost:7121/_framework/aspnetcore-browser-refresh.js - -
+[2022-07-06 17:40:45.648 +03:00  INF]  Request finished HTTP/2 GET https://localhost:7121/_framework/aspnetcore-browser-refresh.js - - - 200 12032 application/javascript;+charset=utf-8 5.5681ms
+[2022-07-06 17:40:45.648 +03:00  INF]  Request finished HTTP/2 GET https://localhost:7121/swagger/index.html - - - 200 - text/html;charset=utf-8 360.0938ms
+[2022-07-06 17:40:45.671 +03:00  INF]  Request starting HTTP/2 GET https://localhost:7121/_vs/browserLink - -
+[2022-07-06 17:40:45.698 +03:00  INF]  Request finished HTTP/2 GET https://localhost:7121/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 27.9086ms
+[2022-07-06 17:40:45.812 +03:00  INF]  Request starting HTTP/2 GET https://localhost:7121/swagger/v1/swagger.json - -
+[2022-07-06 17:40:45.935 +03:00  INF]  Request finished HTTP/2 GET https://localhost:7121/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 123.3954ms
+[2022-07-06 17:41:15.032 +03:00  INF]  Request starting HTTP/2 PUT https://localhost:7121/api/ShoppingList/ısComplete application/json 155
+[2022-07-06 17:41:15.088 +03:00  ERR]  [Request] HTTP PUT /api/ShoppingList/%C4%B1sComplete
+[2022-07-06 17:41:15.091 +03:00  INF]  Executing endpoint 'Teleperformance.Bootcamp.WebApi.Controllers.ShoppingListController.UpdateShoppingListIsComplete (Teleperformance.Bootcamp.WebApi)'
+[2022-07-06 17:41:15.112 +03:00  INF]  Route matched with {action = "UpdateShoppingListIsComplete", controller = "ShoppingList"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] UpdateShoppingListIsComplete(Teleperformance.Bootcamp.Application.Features.Commands.ShoppingList.ShoppingListUpdateIsComplete.ShoppingListUpdateIsCompleteCommandRequest) on controller Teleperformance.Bootcamp.WebApi.Controllers.ShoppingListController (Teleperformance.Bootcamp.WebApi).
+[2022-07-06 17:41:16.146 +03:00  INF]  Entity Framework Core 6.0.6 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.6' with options: None
+[2022-07-06 17:41:16.865 +03:00  INF]  Executed DbCommand (62ms) [Parameters=[@__p_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [s].[Id], [s].[AppUserId], [s].[CategoryId], [s].[CompleteDate], [s].[CreateDate], [s].[Description], [s].[IsComplete], [s].[Title]
+FROM [ShoppingLists] AS [s]
+WHERE [s].[Id] = @__p_0
+[2022-07-06 17:41:17.117 +03:00  INF]  Executed DbCommand (6ms) [Parameters=[@p7='?' (Size = 450), @p0='?' (Size = 450), @p1='?' (Size = 450), @p2='?' (DbType = DateTime2), @p3='?' (DbType = DateTime2), @p4='?' (Size = 4000), @p5='?' (DbType = Boolean), @p6='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+UPDATE [ShoppingLists] SET [AppUserId] = @p0, [CategoryId] = @p1, [CompleteDate] = @p2, [CreateDate] = @p3, [Description] = @p4, [IsComplete] = @p5, [Title] = @p6
+WHERE [Id] = @p7;
+SELECT @@ROWCOUNT;
+[2022-07-06 17:41:17.306 +03:00  INF]  Executing OkObjectResult, writing value of type 'Teleperformance.Bootcamp.Domain.Common.Response.BaseResponse'.
+[2022-07-06 17:41:17.315 +03:00  INF]  Executed action Teleperformance.Bootcamp.WebApi.Controllers.ShoppingListController.UpdateShoppingListIsComplete (Teleperformance.Bootcamp.WebApi) in 2198.1977ms
+[2022-07-06 17:41:17.316 +03:00  INF]  Executed endpoint 'Teleperformance.Bootcamp.WebApi.Controllers.ShoppingListController.UpdateShoppingListIsComplete (Teleperformance.Bootcamp.WebApi)'
+[2022-07-06 17:41:17.316 +03:00  ERR]  [Request] HTTP PUT  reponded 200
+[2022-07-06 17:41:17.324 +03:00  INF]  Request finished HTTP/2 PUT https://localhost:7121/api/ShoppingList/ısComplete application/json 155 - 200 - application/json;+charset=utf-8 2326.3798ms
+[2022-07-06 17:42:29.073 +03:00  INF]  Request starting HTTP/2 PUT https://localhost:7121/api/ShoppingList/ısComplete application/json 155
+[2022-07-06 17:42:29.083 +03:00  ERR]  [Request] HTTP PUT /api/ShoppingList/%C4%B1sComplete
+[2022-07-06 17:42:29.083 +03:00  INF]  Executing endpoint 'Teleperformance.Bootcamp.WebApi.Controllers.ShoppingListController.UpdateShoppingListIsComplete (Teleperformance.Bootcamp.WebApi)'
+[2022-07-06 17:42:29.083 +03:00  INF]  Route matched with {action = "UpdateShoppingListIsComplete", controller = "ShoppingList"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] UpdateShoppingListIsComplete(Teleperformance.Bootcamp.Application.Features.Commands.ShoppingList.ShoppingListUpdateIsComplete.ShoppingListUpdateIsCompleteCommandRequest) on controller Teleperformance.Bootcamp.WebApi.Controllers.ShoppingListController (Teleperformance.Bootcamp.WebApi).
+[2022-07-06 17:42:29.113 +03:00  INF]  Entity Framework Core 6.0.6 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.6' with options: None
+[2022-07-06 17:42:29.119 +03:00  INF]  Executed DbCommand (3ms) [Parameters=[@__p_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [s].[Id], [s].[AppUserId], [s].[CategoryId], [s].[CompleteDate], [s].[CreateDate], [s].[Description], [s].[IsComplete], [s].[Title]
+FROM [ShoppingLists] AS [s]
+WHERE [s].[Id] = @__p_0
+[2022-07-06 17:42:29.124 +03:00  INF]  Executed DbCommand (3ms) [Parameters=[@p7='?' (Size = 450), @p0='?' (Size = 450), @p1='?' (Size = 450), @p2='?' (DbType = DateTime2), @p3='?' (DbType = DateTime2), @p4='?' (Size = 4000), @p5='?' (DbType = Boolean), @p6='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+UPDATE [ShoppingLists] SET [AppUserId] = @p0, [CategoryId] = @p1, [CompleteDate] = @p2, [CreateDate] = @p3, [Description] = @p4, [IsComplete] = @p5, [Title] = @p6
+WHERE [Id] = @p7;
+SELECT @@ROWCOUNT;
+[2022-07-06 17:42:29.135 +03:00  INF]  Executing OkObjectResult, writing value of type 'Teleperformance.Bootcamp.Domain.Common.Response.BaseResponse'.
+[2022-07-06 17:42:29.136 +03:00  INF]  Executed action Teleperformance.Bootcamp.WebApi.Controllers.ShoppingListController.UpdateShoppingListIsComplete (Teleperformance.Bootcamp.WebApi) in 52.3693ms
+[2022-07-06 17:42:29.136 +03:00  INF]  Executed endpoint 'Teleperformance.Bootcamp.WebApi.Controllers.ShoppingListController.UpdateShoppingListIsComplete (Teleperformance.Bootcamp.WebApi)'
+[2022-07-06 17:42:29.136 +03:00  ERR]  [Request] HTTP PUT  reponded 200
+[2022-07-06 17:42:29.136 +03:00  INF]  Request finished HTTP/2 PUT https://localhost:7121/api/ShoppingList/ısComplete application/json 155 - 200 - application/json;+charset=utf-8 63.6498ms
+[2022-07-06 17:43:33.210 +03:00  INF]  Request starting HTTP/2 PUT https://localhost:7121/api/ShoppingList/ısComplete application/json 155
+[2022-07-06 17:43:33.217 +03:00  ERR]  [Request] HTTP PUT /api/ShoppingList/%C4%B1sComplete
+[2022-07-06 17:43:33.217 +03:00  INF]  Executing endpoint 'Teleperformance.Bootcamp.WebApi.Controllers.ShoppingListController.UpdateShoppingListIsComplete (Teleperformance.Bootcamp.WebApi)'
+[2022-07-06 17:43:33.217 +03:00  INF]  Route matched with {action = "UpdateShoppingListIsComplete", controller = "ShoppingList"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] UpdateShoppingListIsComplete(Teleperformance.Bootcamp.Application.Features.Commands.ShoppingList.ShoppingListUpdateIsComplete.ShoppingListUpdateIsCompleteCommandRequest) on controller Teleperformance.Bootcamp.WebApi.Controllers.ShoppingListController (Teleperformance.Bootcamp.WebApi).
+[2022-07-06 17:43:33.226 +03:00  INF]  Entity Framework Core 6.0.6 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.6' with options: None
+[2022-07-06 17:43:33.229 +03:00  INF]  Executed DbCommand (2ms) [Parameters=[@__p_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [s].[Id], [s].[AppUserId], [s].[CategoryId], [s].[CompleteDate], [s].[CreateDate], [s].[Description], [s].[IsComplete], [s].[Title]
+FROM [ShoppingLists] AS [s]
+WHERE [s].[Id] = @__p_0
+[2022-07-06 17:43:33.232 +03:00  INF]  Executed DbCommand (2ms) [Parameters=[@p7='?' (Size = 450), @p0='?' (Size = 450), @p1='?' (Size = 450), @p2='?' (DbType = DateTime2), @p3='?' (DbType = DateTime2), @p4='?' (Size = 4000), @p5='?' (DbType = Boolean), @p6='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+UPDATE [ShoppingLists] SET [AppUserId] = @p0, [CategoryId] = @p1, [CompleteDate] = @p2, [CreateDate] = @p3, [Description] = @p4, [IsComplete] = @p5, [Title] = @p6
+WHERE [Id] = @p7;
+SELECT @@ROWCOUNT;
+[2022-07-06 17:43:33.247 +03:00  INF]  Executing OkObjectResult, writing value of type 'Teleperformance.Bootcamp.Domain.Common.Response.BaseResponse'.
+[2022-07-06 17:43:33.248 +03:00  INF]  Executed action Teleperformance.Bootcamp.WebApi.Controllers.ShoppingListController.UpdateShoppingListIsComplete (Teleperformance.Bootcamp.WebApi) in 30.3696ms
+[2022-07-06 17:43:33.248 +03:00  INF]  Executed endpoint 'Teleperformance.Bootcamp.WebApi.Controllers.ShoppingListController.UpdateShoppingListIsComplete (Teleperformance.Bootcamp.WebApi)'
+[2022-07-06 17:43:33.248 +03:00  ERR]  [Request] HTTP PUT  reponded 200
+[2022-07-06 17:43:33.248 +03:00  INF]  Request finished HTTP/2 PUT https://localhost:7121/api/ShoppingList/ısComplete application/json 155 - 200 - application/json;+charset=utf-8 38.6246ms
+[2022-07-06 17:44:14.724 +03:00  INF]  Request starting HTTP/2 PUT https://localhost:7121/api/ShoppingList/ısComplete application/json 155
+[2022-07-06 17:44:14.725 +03:00  ERR]  [Request] HTTP PUT /api/ShoppingList/%C4%B1sComplete
+[2022-07-06 17:44:14.725 +03:00  INF]  Executing endpoint 'Teleperformance.Bootcamp.WebApi.Controllers.ShoppingListController.UpdateShoppingListIsComplete (Teleperformance.Bootcamp.WebApi)'
+[2022-07-06 17:44:14.725 +03:00  INF]  Route matched with {action = "UpdateShoppingListIsComplete", controller = "ShoppingList"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] UpdateShoppingListIsComplete(Teleperformance.Bootcamp.Application.Features.Commands.ShoppingList.ShoppingListUpdateIsComplete.ShoppingListUpdateIsCompleteCommandRequest) on controller Teleperformance.Bootcamp.WebApi.Controllers.ShoppingListController (Teleperformance.Bootcamp.WebApi).
+[2022-07-06 17:44:14.726 +03:00  INF]  Entity Framework Core 6.0.6 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.6' with options: None
+[2022-07-06 17:44:14.728 +03:00  INF]  Executed DbCommand (2ms) [Parameters=[@__p_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [s].[Id], [s].[AppUserId], [s].[CategoryId], [s].[CompleteDate], [s].[CreateDate], [s].[Description], [s].[IsComplete], [s].[Title]
+FROM [ShoppingLists] AS [s]
+WHERE [s].[Id] = @__p_0
+[2022-07-06 17:44:14.731 +03:00  INF]  Executed DbCommand (2ms) [Parameters=[@p7='?' (Size = 450), @p0='?' (Size = 450), @p1='?' (Size = 450), @p2='?' (DbType = DateTime2), @p3='?' (DbType = DateTime2), @p4='?' (Size = 4000), @p5='?' (DbType = Boolean), @p6='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+UPDATE [ShoppingLists] SET [AppUserId] = @p0, [CategoryId] = @p1, [CompleteDate] = @p2, [CreateDate] = @p3, [Description] = @p4, [IsComplete] = @p5, [Title] = @p6
+WHERE [Id] = @p7;
+SELECT @@ROWCOUNT;
+[2022-07-06 17:44:14.749 +03:00  INF]  Executing OkObjectResult, writing value of type 'Teleperformance.Bootcamp.Domain.Common.Response.BaseResponse'.
+[2022-07-06 17:44:14.749 +03:00  INF]  Executed action Teleperformance.Bootcamp.WebApi.Controllers.ShoppingListController.UpdateShoppingListIsComplete (Teleperformance.Bootcamp.WebApi) in 24.2082ms
+[2022-07-06 17:44:14.749 +03:00  INF]  Executed endpoint 'Teleperformance.Bootcamp.WebApi.Controllers.ShoppingListController.UpdateShoppingListIsComplete (Teleperformance.Bootcamp.WebApi)'
+[2022-07-06 17:44:14.749 +03:00  ERR]  [Request] HTTP PUT  reponded 200
+[2022-07-06 17:44:14.750 +03:00  INF]  Request finished HTTP/2 PUT https://localhost:7121/api/ShoppingList/ısComplete application/json 155 - 200 - application/json;+charset=utf-8 25.2689ms
+[2022-07-06 17:44:54.267 +03:00  INF]  User profile is available. Using 'C:\Users\sercan\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+[2022-07-06 17:44:54.513 +03:00  INF]  Now listening on: https://localhost:7121
+[2022-07-06 17:44:54.513 +03:00  INF]  Now listening on: http://localhost:5121
+[2022-07-06 17:44:54.515 +03:00  INF]  Application started. Press Ctrl+C to shut down.
+[2022-07-06 17:44:54.515 +03:00  INF]  Hosting environment: Development
+[2022-07-06 17:44:54.515 +03:00  INF]  Content root path: C:\Users\sercan\Desktop\Bootcamp\BootcampProject\Teleperformance.ShoppingList\src\WebApi\Teleperformance.ShoppingList.WebApi\
+[2022-07-06 17:44:54.941 +03:00  INF]  Request starting HTTP/2 GET https://localhost:7121/swagger/index.html - -
+[2022-07-06 17:44:55.186 +03:00  INF]  Request starting HTTP/2 GET https://localhost:7121/_framework/aspnetcore-browser-refresh.js - -
+[2022-07-06 17:44:55.190 +03:00  INF]  Request finished HTTP/2 GET https://localhost:7121/_framework/aspnetcore-browser-refresh.js - - - 200 12032 application/javascript;+charset=utf-8 4.2248ms
+[2022-07-06 17:44:55.190 +03:00  INF]  Request finished HTTP/2 GET https://localhost:7121/swagger/index.html - - - 200 - text/html;charset=utf-8 253.0043ms
+[2022-07-06 17:44:55.214 +03:00  INF]  Request starting HTTP/2 GET https://localhost:7121/_vs/browserLink - -
+[2022-07-06 17:44:55.231 +03:00  INF]  Request finished HTTP/2 GET https://localhost:7121/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 16.2561ms
+[2022-07-06 17:44:55.345 +03:00  INF]  Request starting HTTP/2 GET https://localhost:7121/swagger/v1/swagger.json - -
+[2022-07-06 17:44:55.470 +03:00  INF]  Request finished HTTP/2 GET https://localhost:7121/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 124.4438ms
+[2022-07-06 17:45:23.436 +03:00  INF]  User profile is available. Using 'C:\Users\sercan\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+[2022-07-06 17:45:23.701 +03:00  INF]  Now listening on: https://localhost:7121
+[2022-07-06 17:45:23.701 +03:00  INF]  Now listening on: http://localhost:5121
+[2022-07-06 17:45:23.703 +03:00  INF]  Application started. Press Ctrl+C to shut down.
+[2022-07-06 17:45:23.703 +03:00  INF]  Hosting environment: Development
+[2022-07-06 17:45:23.703 +03:00  INF]  Content root path: C:\Users\sercan\Desktop\Bootcamp\BootcampProject\Teleperformance.ShoppingList\src\WebApi\Teleperformance.ShoppingList.WebApi\
+[2022-07-06 17:45:24.260 +03:00  INF]  Request starting HTTP/2 GET https://localhost:7121/swagger/index.html - -
+[2022-07-06 17:45:24.537 +03:00  INF]  Request starting HTTP/2 GET https://localhost:7121/_framework/aspnetcore-browser-refresh.js - -
+[2022-07-06 17:45:24.542 +03:00  INF]  Request finished HTTP/2 GET https://localhost:7121/_framework/aspnetcore-browser-refresh.js - - - 200 12032 application/javascript;+charset=utf-8 3.7045ms
+[2022-07-06 17:45:24.542 +03:00  INF]  Request finished HTTP/2 GET https://localhost:7121/swagger/index.html - - - 200 - text/html;charset=utf-8 285.0247ms
+[2022-07-06 17:45:24.567 +03:00  INF]  Request starting HTTP/2 GET https://localhost:7121/_vs/browserLink - -
+[2022-07-06 17:45:24.582 +03:00  INF]  Request finished HTTP/2 GET https://localhost:7121/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 14.9031ms
+[2022-07-06 17:45:24.697 +03:00  INF]  Request starting HTTP/2 GET https://localhost:7121/swagger/v1/swagger.json - -
+[2022-07-06 17:45:24.817 +03:00  INF]  Request finished HTTP/2 GET https://localhost:7121/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 120.4365ms
+[2022-07-06 17:45:44.624 +03:00  INF]  Request starting HTTP/2 PUT https://localhost:7121/api/ShoppingList/ısComplete application/json 155
+[2022-07-06 17:45:44.688 +03:00  ERR]  [Request] HTTP PUT /api/ShoppingList/%C4%B1sComplete
+[2022-07-06 17:45:44.691 +03:00  INF]  Executing endpoint 'Teleperformance.Bootcamp.WebApi.Controllers.ShoppingListController.UpdateShoppingListIsComplete (Teleperformance.Bootcamp.WebApi)'
+[2022-07-06 17:45:44.712 +03:00  INF]  Route matched with {action = "UpdateShoppingListIsComplete", controller = "ShoppingList"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] UpdateShoppingListIsComplete(Teleperformance.Bootcamp.Application.Features.Commands.ShoppingList.ShoppingListUpdateIsComplete.ShoppingListUpdateIsCompleteCommandRequest) on controller Teleperformance.Bootcamp.WebApi.Controllers.ShoppingListController (Teleperformance.Bootcamp.WebApi).
+[2022-07-06 17:45:45.789 +03:00  INF]  Entity Framework Core 6.0.6 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.6' with options: None
+[2022-07-06 17:45:46.506 +03:00  INF]  Executed DbCommand (67ms) [Parameters=[@__p_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [s].[Id], [s].[AppUserId], [s].[CategoryId], [s].[CompleteDate], [s].[CreateDate], [s].[Description], [s].[IsComplete], [s].[Title]
+FROM [ShoppingLists] AS [s]
+WHERE [s].[Id] = @__p_0
+[2022-07-06 17:45:46.750 +03:00  INF]  Executed DbCommand (5ms) [Parameters=[@p7='?' (Size = 450), @p0='?' (Size = 450), @p1='?' (Size = 450), @p2='?' (DbType = DateTime2), @p3='?' (DbType = DateTime2), @p4='?' (Size = 4000), @p5='?' (DbType = Boolean), @p6='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+UPDATE [ShoppingLists] SET [AppUserId] = @p0, [CategoryId] = @p1, [CompleteDate] = @p2, [CreateDate] = @p3, [Description] = @p4, [IsComplete] = @p5, [Title] = @p6
+WHERE [Id] = @p7;
+SELECT @@ROWCOUNT;
+[2022-07-06 17:45:46.935 +03:00  INF]  Executing OkObjectResult, writing value of type 'Teleperformance.Bootcamp.Domain.Common.Response.BaseResponse'.
+[2022-07-06 17:45:46.944 +03:00  INF]  Executed action Teleperformance.Bootcamp.WebApi.Controllers.ShoppingListController.UpdateShoppingListIsComplete (Teleperformance.Bootcamp.WebApi) in 2226.126ms
+[2022-07-06 17:45:46.946 +03:00  INF]  Executed endpoint 'Teleperformance.Bootcamp.WebApi.Controllers.ShoppingListController.UpdateShoppingListIsComplete (Teleperformance.Bootcamp.WebApi)'
+[2022-07-06 17:45:46.946 +03:00  ERR]  [Request] HTTP PUT  reponded 200
+[2022-07-06 17:45:46.953 +03:00  INF]  Request finished HTTP/2 PUT https://localhost:7121/api/ShoppingList/ısComplete application/json 155 - 200 - application/json;+charset=utf-8 2328.4665ms
+[2022-07-06 17:48:19.283 +03:00  INF]  User profile is available. Using 'C:\Users\sercan\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+[2022-07-06 17:48:19.478 +03:00  INF]  Now listening on: https://localhost:7121
+[2022-07-06 17:48:19.478 +03:00  INF]  Now listening on: http://localhost:5121
+[2022-07-06 17:48:19.480 +03:00  INF]  Application started. Press Ctrl+C to shut down.
+[2022-07-06 17:48:19.480 +03:00  INF]  Hosting environment: Development
+[2022-07-06 17:48:19.480 +03:00  INF]  Content root path: C:\Users\sercan\Desktop\Bootcamp\BootcampProject\Teleperformance.ShoppingList\src\WebApi\Teleperformance.ShoppingList.WebApi\
+[2022-07-06 17:48:20.304 +03:00  INF]  Request starting HTTP/2 GET https://localhost:7121/swagger/index.html - -
+[2022-07-06 17:48:20.574 +03:00  INF]  Request starting HTTP/2 GET https://localhost:7121/_framework/aspnetcore-browser-refresh.js - -
+[2022-07-06 17:48:20.579 +03:00  INF]  Request finished HTTP/2 GET https://localhost:7121/swagger/index.html - - - 200 - text/html;charset=utf-8 279.6619ms
+[2022-07-06 17:48:20.579 +03:00  INF]  Request finished HTTP/2 GET https://localhost:7121/_framework/aspnetcore-browser-refresh.js - - - 200 12032 application/javascript;+charset=utf-8 4.7213ms
+[2022-07-06 17:48:20.604 +03:00  INF]  Request starting HTTP/2 GET https://localhost:7121/_vs/browserLink - -
+[2022-07-06 17:48:20.629 +03:00  INF]  Request finished HTTP/2 GET https://localhost:7121/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 24.7797ms
+[2022-07-06 17:48:20.734 +03:00  INF]  Request starting HTTP/2 GET https://localhost:7121/swagger/v1/swagger.json - -
+[2022-07-06 17:48:20.860 +03:00  INF]  Request finished HTTP/2 GET https://localhost:7121/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 126.3119ms
+[2022-07-06 17:48:46.222 +03:00  INF]  Request starting HTTP/2 GET https://localhost:7121/api/ShoppingList/search?Parameters.Keyword=asasd - -
+[2022-07-06 17:48:46.293 +03:00  ERR]  [Request] HTTP GET /api/ShoppingList/search
+[2022-07-06 17:48:46.296 +03:00  INF]  Executing endpoint 'Teleperformance.Bootcamp.WebApi.Controllers.ShoppingListController.SearchInShoppingList (Teleperformance.Bootcamp.WebApi)'
+[2022-07-06 17:48:46.319 +03:00  INF]  Route matched with {action = "SearchInShoppingList", controller = "ShoppingList"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] SearchInShoppingList(Teleperformance.Bootcamp.Application.Features.Queries.ShoppingList.SearchInShoppingList.SearchInShoppingListQueryRequest) on controller Teleperformance.Bootcamp.WebApi.Controllers.ShoppingListController (Teleperformance.Bootcamp.WebApi).
+[2022-07-06 17:48:47.362 +03:00  INF]  Entity Framework Core 6.0.6 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.6' with options: None
+[2022-07-06 17:48:48.077 +03:00  INF]  Executed DbCommand (46ms) [Parameters=[@__ToLower_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[AppUserId], [s].[CategoryId], [s].[CompleteDate], [s].[CreateDate], [s].[Description], [s].[IsComplete], [s].[Title]
+FROM [ShoppingLists] AS [s]
+INNER JOIN [Categories] AS [c] ON [s].[CategoryId] = [c].[Id]
+WHERE ((@__ToLower_0 LIKE N'') OR (CHARINDEX(@__ToLower_0, [s].[Title]) > 0)) OR ((@__ToLower_0 LIKE N'') OR (CHARINDEX(@__ToLower_0, [c].[Name]) > 0))
+[2022-07-06 17:48:48.115 +03:00  INF]  Executing BadRequestObjectResult, writing value of type 'System.Collections.Generic.List`1[[Teleperformance.Bootcamp.Application.DTOs.ShoppingList.GetByParameterShoppingListDto, Teleperformance.Bootcamp.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+[2022-07-06 17:48:48.122 +03:00  INF]  Executed action Teleperformance.Bootcamp.WebApi.Controllers.ShoppingListController.SearchInShoppingList (Teleperformance.Bootcamp.WebApi) in 1798.9307ms
+[2022-07-06 17:48:48.123 +03:00  INF]  Executed endpoint 'Teleperformance.Bootcamp.WebApi.Controllers.ShoppingListController.SearchInShoppingList (Teleperformance.Bootcamp.WebApi)'
+[2022-07-06 17:48:48.123 +03:00  ERR]  [Request] HTTP GET  reponded 400
+[2022-07-06 17:48:48.129 +03:00  INF]  Request finished HTTP/2 GET https://localhost:7121/api/ShoppingList/search?Parameters.Keyword=asasd - - - 400 - application/json;+charset=utf-8 1906.7877ms
+[2022-07-06 17:48:53.316 +03:00  INF]  Request starting HTTP/2 GET https://localhost:7121/api/ShoppingList/search?Parameters.Keyword=ci - -
+[2022-07-06 17:48:53.318 +03:00  ERR]  [Request] HTTP GET /api/ShoppingList/search
+[2022-07-06 17:48:53.318 +03:00  INF]  Executing endpoint 'Teleperformance.Bootcamp.WebApi.Controllers.ShoppingListController.SearchInShoppingList (Teleperformance.Bootcamp.WebApi)'
+[2022-07-06 17:48:53.318 +03:00  INF]  Route matched with {action = "SearchInShoppingList", controller = "ShoppingList"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] SearchInShoppingList(Teleperformance.Bootcamp.Application.Features.Queries.ShoppingList.SearchInShoppingList.SearchInShoppingListQueryRequest) on controller Teleperformance.Bootcamp.WebApi.Controllers.ShoppingListController (Teleperformance.Bootcamp.WebApi).
+[2022-07-06 17:48:53.324 +03:00  INF]  Entity Framework Core 6.0.6 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.6' with options: None
+[2022-07-06 17:48:53.331 +03:00  INF]  Executed DbCommand (2ms) [Parameters=[@__ToLower_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[AppUserId], [s].[CategoryId], [s].[CompleteDate], [s].[CreateDate], [s].[Description], [s].[IsComplete], [s].[Title]
+FROM [ShoppingLists] AS [s]
+INNER JOIN [Categories] AS [c] ON [s].[CategoryId] = [c].[Id]
+WHERE ((@__ToLower_0 LIKE N'') OR (CHARINDEX(@__ToLower_0, [s].[Title]) > 0)) OR ((@__ToLower_0 LIKE N'') OR (CHARINDEX(@__ToLower_0, [c].[Name]) > 0))
+[2022-07-06 17:48:53.394 +03:00  INF]  Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Teleperformance.Bootcamp.Application.DTOs.ShoppingList.GetByParameterShoppingListDto, Teleperformance.Bootcamp.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+[2022-07-06 17:48:53.400 +03:00  INF]  Executed action Teleperformance.Bootcamp.WebApi.Controllers.ShoppingListController.SearchInShoppingList (Teleperformance.Bootcamp.WebApi) in 81.6595ms
+[2022-07-06 17:48:53.400 +03:00  INF]  Executed endpoint 'Teleperformance.Bootcamp.WebApi.Controllers.ShoppingListController.SearchInShoppingList (Teleperformance.Bootcamp.WebApi)'
+[2022-07-06 17:48:53.400 +03:00  ERR]  [Request] HTTP GET  reponded 200
+[2022-07-06 17:48:53.400 +03:00  INF]  Request finished HTTP/2 GET https://localhost:7121/api/ShoppingList/search?Parameters.Keyword=ci - - - 200 - application/json;+charset=utf-8 83.9093ms
+[2022-07-06 17:49:02.927 +03:00  INF]  Request starting HTTP/2 GET https://localhost:7121/api/ShoppingList/AF9C5EC9-C9F6-4B0B-A2C5-E8F84920C62E - -
+[2022-07-06 17:49:02.929 +03:00  ERR]  [Request] HTTP GET /api/ShoppingList/AF9C5EC9-C9F6-4B0B-A2C5-E8F84920C62E
+[2022-07-06 17:49:02.929 +03:00  INF]  Executing endpoint 'Teleperformance.Bootcamp.WebApi.Controllers.ShoppingListController.GetShoppingListById (Teleperformance.Bootcamp.WebApi)'
+[2022-07-06 17:49:02.931 +03:00  INF]  Route matched with {action = "GetShoppingListById", controller = "ShoppingList"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetShoppingListById(System.String) on controller Teleperformance.Bootcamp.WebApi.Controllers.ShoppingListController (Teleperformance.Bootcamp.WebApi).
+[2022-07-06 17:49:02.968 +03:00  INF]  Entity Framework Core 6.0.6 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.6' with options: None
+[2022-07-06 17:49:03.047 +03:00  INF]  Executed DbCommand (4ms) [Parameters=[@__request_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[AppUserId], [t].[CategoryId], [t].[CompleteDate], [t].[CreateDate], [t].[Description], [t].[IsComplete], [t].[Title], [t].[Id0], [t].[Id1], [p].[Id], [p].[CreateDate], [p].[IsBuy], [p].[Name], [p].[Quantity], [p].[ShoppingListId], [p].[Unit], [t].[AccessFailedCount], [t].[ConcurrencyStamp], [t].[CreateDate0], [t].[Email], [t].[EmailConfirmed], [t].[LockoutEnabled], [t].[LockoutEnd], [t].[Name], [t].[NormalizedEmail], [t].[NormalizedUserName], [t].[PasswordHash], [t].[PhoneNumber], [t].[PhoneNumberConfirmed], [t].[SecurityStamp], [t].[Surname], [t].[TwoFactorEnabled], [t].[UserName], [t].[CreateDate1], [t].[Name0]
+FROM (
+    SELECT TOP(1) [s].[Id], [s].[AppUserId], [s].[CategoryId], [s].[CompleteDate], [s].[CreateDate], [s].[Description], [s].[IsComplete], [s].[Title], [a].[Id] AS [Id0], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[CreateDate] AS [CreateDate0], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[Name], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[Surname], [a].[TwoFactorEnabled], [a].[UserName], [c].[Id] AS [Id1], [c].[CreateDate] AS [CreateDate1], [c].[Name] AS [Name0]
+    FROM [ShoppingLists] AS [s]
+    INNER JOIN [AspNetUsers] AS [a] ON [s].[AppUserId] = [a].[Id]
+    INNER JOIN [Categories] AS [c] ON [s].[CategoryId] = [c].[Id]
+    WHERE [s].[Id] = @__request_Id_0
+) AS [t]
+LEFT JOIN [Products] AS [p] ON [t].[Id] = [p].[ShoppingListId]
+ORDER BY [t].[Id], [t].[Id0], [t].[Id1]
+[2022-07-06 17:49:03.115 +03:00  INF]  Executing OkObjectResult, writing value of type 'Teleperformance.Bootcamp.Application.DTOs.ShoppingList.GetAllShoppingListDto'.
+[2022-07-06 17:49:03.120 +03:00  INF]  Executed action Teleperformance.Bootcamp.WebApi.Controllers.ShoppingListController.GetShoppingListById (Teleperformance.Bootcamp.WebApi) in 188.9575ms
+[2022-07-06 17:49:03.120 +03:00  INF]  Executed endpoint 'Teleperformance.Bootcamp.WebApi.Controllers.ShoppingListController.GetShoppingListById (Teleperformance.Bootcamp.WebApi)'
+[2022-07-06 17:49:03.120 +03:00  ERR]  [Request] HTTP GET  reponded 200
+[2022-07-06 17:49:03.120 +03:00  INF]  Request finished HTTP/2 GET https://localhost:7121/api/ShoppingList/AF9C5EC9-C9F6-4B0B-A2C5-E8F84920C62E - - - 200 - application/json;+charset=utf-8 192.9730ms
+[2022-07-06 18:02:25.508 +03:00  INF]  User profile is available. Using 'C:\Users\sercan\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+[2022-07-06 18:02:25.717 +03:00  INF]  Now listening on: https://localhost:7121
+[2022-07-06 18:02:25.717 +03:00  INF]  Now listening on: http://localhost:5121
+[2022-07-06 18:02:25.719 +03:00  INF]  Application started. Press Ctrl+C to shut down.
+[2022-07-06 18:02:25.719 +03:00  INF]  Hosting environment: Development
+[2022-07-06 18:02:25.720 +03:00  INF]  Content root path: C:\Users\sercan\Desktop\Bootcamp\BootcampProject\Teleperformance.ShoppingList\src\WebApi\Teleperformance.ShoppingList.WebApi\
+[2022-07-06 18:02:26.024 +03:00  INF]  Request starting HTTP/2 GET https://localhost:7121/swagger/index.html - -
+[2022-07-06 18:02:26.278 +03:00  INF]  Request starting HTTP/2 GET https://localhost:7121/_framework/aspnetcore-browser-refresh.js - -
+[2022-07-06 18:02:26.283 +03:00  INF]  Request finished HTTP/2 GET https://localhost:7121/_framework/aspnetcore-browser-refresh.js - - - 200 12032 application/javascript;+charset=utf-8 4.6018ms
+[2022-07-06 18:02:26.283 +03:00  INF]  Request finished HTTP/2 GET https://localhost:7121/swagger/index.html - - - 200 - text/html;charset=utf-8 262.9757ms
+[2022-07-06 18:02:26.306 +03:00  INF]  Request starting HTTP/2 GET https://localhost:7121/_vs/browserLink - -
+[2022-07-06 18:02:26.322 +03:00  INF]  Request finished HTTP/2 GET https://localhost:7121/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 15.4789ms
+[2022-07-06 18:02:26.442 +03:00  INF]  Request starting HTTP/2 GET https://localhost:7121/swagger/v1/swagger.json - -
+[2022-07-06 18:02:26.574 +03:00  INF]  Request finished HTTP/2 GET https://localhost:7121/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 132.6993ms
+[2022-07-06 18:02:43.313 +03:00  INF]  Request starting HTTP/2 GET https://localhost:7121/api/ShoppingList/search?Parameters.Keyword=cihan - -
+[2022-07-06 18:02:43.376 +03:00  ERR]  [Request] HTTP GET /api/ShoppingList/search
+[2022-07-06 18:02:43.379 +03:00  INF]  Executing endpoint 'Teleperformance.Bootcamp.WebApi.Controllers.ShoppingListController.SearchInShoppingList (Teleperformance.Bootcamp.WebApi)'
+[2022-07-06 18:02:43.401 +03:00  INF]  Route matched with {action = "SearchInShoppingList", controller = "ShoppingList"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] SearchInShoppingList(Teleperformance.Bootcamp.Application.Features.Queries.ShoppingList.SearchInShoppingList.SearchInShoppingListQueryRequest) on controller Teleperformance.Bootcamp.WebApi.Controllers.ShoppingListController (Teleperformance.Bootcamp.WebApi).
+[2022-07-06 18:02:44.466 +03:00  INF]  Entity Framework Core 6.0.6 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.6' with options: None
+[2022-07-06 18:02:45.267 +03:00  INF]  Executed DbCommand (55ms) [Parameters=[@__ToLower_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[AppUserId], [t].[CategoryId], [t].[CompleteDate], [t].[CreateDate], [t].[Description], [t].[IsComplete], [t].[Title], [t].[Id1], [t].[Id0], [p].[Id], [p].[CreateDate], [p].[IsBuy], [p].[Name], [p].[Quantity], [p].[ShoppingListId], [p].[Unit], [t].[AccessFailedCount], [t].[ConcurrencyStamp], [t].[CreateDate0], [t].[Email], [t].[EmailConfirmed], [t].[LockoutEnabled], [t].[LockoutEnd], [t].[Name], [t].[NormalizedEmail], [t].[NormalizedUserName], [t].[PasswordHash], [t].[PhoneNumber], [t].[PhoneNumberConfirmed], [t].[SecurityStamp], [t].[Surname], [t].[TwoFactorEnabled], [t].[UserName], [t].[CreateDate1], [t].[Name0]
+FROM (
+    SELECT TOP(1) [s].[Id], [s].[AppUserId], [s].[CategoryId], [s].[CompleteDate], [s].[CreateDate], [s].[Description], [s].[IsComplete], [s].[Title], [a].[Id] AS [Id0], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[CreateDate] AS [CreateDate0], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[Name], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[Surname], [a].[TwoFactorEnabled], [a].[UserName], [c].[Id] AS [Id1], [c].[CreateDate] AS [CreateDate1], [c].[Name] AS [Name0]
+    FROM [ShoppingLists] AS [s]
+    INNER JOIN [Categories] AS [c] ON [s].[CategoryId] = [c].[Id]
+    INNER JOIN [AspNetUsers] AS [a] ON [s].[AppUserId] = [a].[Id]
+    WHERE ((@__ToLower_0 LIKE N'') OR (CHARINDEX(@__ToLower_0, [s].[Title]) > 0)) OR ((@__ToLower_0 LIKE N'') OR (CHARINDEX(@__ToLower_0, [c].[Name]) > 0))
+) AS [t]
+LEFT JOIN [Products] AS [p] ON [t].[Id] = [p].[ShoppingListId]
+ORDER BY [t].[Id], [t].[Id1], [t].[Id0]
+[2022-07-06 18:02:45.429 +03:00  INF]  Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[AppUserId], [s].[CategoryId], [s].[CompleteDate], [s].[CreateDate], [s].[Description], [s].[IsComplete], [s].[Title]
+FROM [ShoppingLists] AS [s]
+[2022-07-06 18:02:45.449 +03:00  INF]  Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Teleperformance.Bootcamp.Application.DTOs.ShoppingList.GetByParameterShoppingListDto, Teleperformance.Bootcamp.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+[2022-07-06 18:02:45.467 +03:00  INF]  Executed action Teleperformance.Bootcamp.WebApi.Controllers.ShoppingListController.SearchInShoppingList (Teleperformance.Bootcamp.WebApi) in 2061.462ms
+[2022-07-06 18:02:45.468 +03:00  INF]  Executed endpoint 'Teleperformance.Bootcamp.WebApi.Controllers.ShoppingListController.SearchInShoppingList (Teleperformance.Bootcamp.WebApi)'
+[2022-07-06 18:02:45.468 +03:00  ERR]  [Request] HTTP GET  reponded 200
+[2022-07-06 18:02:45.475 +03:00  INF]  Request finished HTTP/2 GET https://localhost:7121/api/ShoppingList/search?Parameters.Keyword=cihan - - - 200 - application/json;+charset=utf-8 2161.7496ms
+[2022-07-06 18:03:27.802 +03:00  INF]  Request starting HTTP/2 GET https://localhost:7121/api/ShoppingList/search?Parameters.Keyword=cihan2 - -
+[2022-07-06 18:03:27.812 +03:00  ERR]  [Request] HTTP GET /api/ShoppingList/search
+[2022-07-06 18:03:27.812 +03:00  INF]  Executing endpoint 'Teleperformance.Bootcamp.WebApi.Controllers.ShoppingListController.SearchInShoppingList (Teleperformance.Bootcamp.WebApi)'
+[2022-07-06 18:03:27.812 +03:00  INF]  Route matched with {action = "SearchInShoppingList", controller = "ShoppingList"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] SearchInShoppingList(Teleperformance.Bootcamp.Application.Features.Queries.ShoppingList.SearchInShoppingList.SearchInShoppingListQueryRequest) on controller Teleperformance.Bootcamp.WebApi.Controllers.ShoppingListController (Teleperformance.Bootcamp.WebApi).
+[2022-07-06 18:03:27.840 +03:00  INF]  Entity Framework Core 6.0.6 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.6' with options: None
+[2022-07-06 18:03:27.848 +03:00  INF]  Executed DbCommand (4ms) [Parameters=[@__ToLower_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[AppUserId], [t].[CategoryId], [t].[CompleteDate], [t].[CreateDate], [t].[Description], [t].[IsComplete], [t].[Title], [t].[Id1], [t].[Id0], [p].[Id], [p].[CreateDate], [p].[IsBuy], [p].[Name], [p].[Quantity], [p].[ShoppingListId], [p].[Unit], [t].[AccessFailedCount], [t].[ConcurrencyStamp], [t].[CreateDate0], [t].[Email], [t].[EmailConfirmed], [t].[LockoutEnabled], [t].[LockoutEnd], [t].[Name], [t].[NormalizedEmail], [t].[NormalizedUserName], [t].[PasswordHash], [t].[PhoneNumber], [t].[PhoneNumberConfirmed], [t].[SecurityStamp], [t].[Surname], [t].[TwoFactorEnabled], [t].[UserName], [t].[CreateDate1], [t].[Name0]
+FROM (
+    SELECT TOP(1) [s].[Id], [s].[AppUserId], [s].[CategoryId], [s].[CompleteDate], [s].[CreateDate], [s].[Description], [s].[IsComplete], [s].[Title], [a].[Id] AS [Id0], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[CreateDate] AS [CreateDate0], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[Name], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[Surname], [a].[TwoFactorEnabled], [a].[UserName], [c].[Id] AS [Id1], [c].[CreateDate] AS [CreateDate1], [c].[Name] AS [Name0]
+    FROM [ShoppingLists] AS [s]
+    INNER JOIN [Categories] AS [c] ON [s].[CategoryId] = [c].[Id]
+    INNER JOIN [AspNetUsers] AS [a] ON [s].[AppUserId] = [a].[Id]
+    WHERE ((@__ToLower_0 LIKE N'') OR (CHARINDEX(@__ToLower_0, [s].[Title]) > 0)) OR ((@__ToLower_0 LIKE N'') OR (CHARINDEX(@__ToLower_0, [c].[Name]) > 0))
+) AS [t]
+LEFT JOIN [Products] AS [p] ON [t].[Id] = [p].[ShoppingListId]
+ORDER BY [t].[Id], [t].[Id1], [t].[Id0]
+[2022-07-06 18:03:27.849 +03:00  INF]  Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[AppUserId], [s].[CategoryId], [s].[CompleteDate], [s].[CreateDate], [s].[Description], [s].[IsComplete], [s].[Title]
+FROM [ShoppingLists] AS [s]
+[2022-07-06 18:03:27.849 +03:00  INF]  Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Teleperformance.Bootcamp.Application.DTOs.ShoppingList.GetByParameterShoppingListDto, Teleperformance.Bootcamp.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+[2022-07-06 18:03:27.850 +03:00  INF]  Executed action Teleperformance.Bootcamp.WebApi.Controllers.ShoppingListController.SearchInShoppingList (Teleperformance.Bootcamp.WebApi) in 37.5295ms
+[2022-07-06 18:03:27.850 +03:00  INF]  Executed endpoint 'Teleperformance.Bootcamp.WebApi.Controllers.ShoppingListController.SearchInShoppingList (Teleperformance.Bootcamp.WebApi)'
+[2022-07-06 18:03:27.850 +03:00  ERR]  [Request] HTTP GET  reponded 200
+[2022-07-06 18:03:27.850 +03:00  INF]  Request finished HTTP/2 GET https://localhost:7121/api/ShoppingList/search?Parameters.Keyword=cihan2 - - - 200 - application/json;+charset=utf-8 48.4409ms
+[2022-07-06 18:03:44.573 +03:00  INF]  Request starting HTTP/2 GET https://localhost:7121/api/ShoppingList/search?Parameters.Keyword=saray1 - -
+[2022-07-06 18:03:44.574 +03:00  ERR]  [Request] HTTP GET /api/ShoppingList/search
+[2022-07-06 18:03:44.574 +03:00  INF]  Executing endpoint 'Teleperformance.Bootcamp.WebApi.Controllers.ShoppingListController.SearchInShoppingList (Teleperformance.Bootcamp.WebApi)'
+[2022-07-06 18:03:44.575 +03:00  INF]  Route matched with {action = "SearchInShoppingList", controller = "ShoppingList"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] SearchInShoppingList(Teleperformance.Bootcamp.Application.Features.Queries.ShoppingList.SearchInShoppingList.SearchInShoppingListQueryRequest) on controller Teleperformance.Bootcamp.WebApi.Controllers.ShoppingListController (Teleperformance.Bootcamp.WebApi).
+[2022-07-06 18:03:44.582 +03:00  INF]  Entity Framework Core 6.0.6 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.6' with options: None
+[2022-07-06 18:03:44.584 +03:00  INF]  Executed DbCommand (1ms) [Parameters=[@__ToLower_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[AppUserId], [t].[CategoryId], [t].[CompleteDate], [t].[CreateDate], [t].[Description], [t].[IsComplete], [t].[Title], [t].[Id1], [t].[Id0], [p].[Id], [p].[CreateDate], [p].[IsBuy], [p].[Name], [p].[Quantity], [p].[ShoppingListId], [p].[Unit], [t].[AccessFailedCount], [t].[ConcurrencyStamp], [t].[CreateDate0], [t].[Email], [t].[EmailConfirmed], [t].[LockoutEnabled], [t].[LockoutEnd], [t].[Name], [t].[NormalizedEmail], [t].[NormalizedUserName], [t].[PasswordHash], [t].[PhoneNumber], [t].[PhoneNumberConfirmed], [t].[SecurityStamp], [t].[Surname], [t].[TwoFactorEnabled], [t].[UserName], [t].[CreateDate1], [t].[Name0]
+FROM (
+    SELECT TOP(1) [s].[Id], [s].[AppUserId], [s].[CategoryId], [s].[CompleteDate], [s].[CreateDate], [s].[Description], [s].[IsComplete], [s].[Title], [a].[Id] AS [Id0], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[CreateDate] AS [CreateDate0], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[Name], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[Surname], [a].[TwoFactorEnabled], [a].[UserName], [c].[Id] AS [Id1], [c].[CreateDate] AS [CreateDate1], [c].[Name] AS [Name0]
+    FROM [ShoppingLists] AS [s]
+    INNER JOIN [Categories] AS [c] ON [s].[CategoryId] = [c].[Id]
+    INNER JOIN [AspNetUsers] AS [a] ON [s].[AppUserId] = [a].[Id]
+    WHERE ((@__ToLower_0 LIKE N'') OR (CHARINDEX(@__ToLower_0, [s].[Title]) > 0)) OR ((@__ToLower_0 LIKE N'') OR (CHARINDEX(@__ToLower_0, [c].[Name]) > 0))
+) AS [t]
+LEFT JOIN [Products] AS [p] ON [t].[Id] = [p].[ShoppingListId]
+ORDER BY [t].[Id], [t].[Id1], [t].[Id0]
+[2022-07-06 18:03:44.585 +03:00  INF]  Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[AppUserId], [s].[CategoryId], [s].[CompleteDate], [s].[CreateDate], [s].[Description], [s].[IsComplete], [s].[Title]
+FROM [ShoppingLists] AS [s]
+[2022-07-06 18:03:44.585 +03:00  INF]  Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Teleperformance.Bootcamp.Application.DTOs.ShoppingList.GetByParameterShoppingListDto, Teleperformance.Bootcamp.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+[2022-07-06 18:03:44.585 +03:00  INF]  Executed action Teleperformance.Bootcamp.WebApi.Controllers.ShoppingListController.SearchInShoppingList (Teleperformance.Bootcamp.WebApi) in 10.5954ms
+[2022-07-06 18:03:44.585 +03:00  INF]  Executed endpoint 'Teleperformance.Bootcamp.WebApi.Controllers.ShoppingListController.SearchInShoppingList (Teleperformance.Bootcamp.WebApi)'
+[2022-07-06 18:03:44.585 +03:00  ERR]  [Request] HTTP GET  reponded 200
+[2022-07-06 18:03:44.585 +03:00  INF]  Request finished HTTP/2 GET https://localhost:7121/api/ShoppingList/search?Parameters.Keyword=saray1 - - - 200 - application/json;+charset=utf-8 12.9323ms
+[2022-07-06 18:05:11.076 +03:00  INF]  User profile is available. Using 'C:\Users\sercan\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+[2022-07-06 18:05:11.335 +03:00  INF]  Now listening on: https://localhost:7121
+[2022-07-06 18:05:11.335 +03:00  INF]  Now listening on: http://localhost:5121
+[2022-07-06 18:05:11.337 +03:00  INF]  Application started. Press Ctrl+C to shut down.
+[2022-07-06 18:05:11.338 +03:00  INF]  Hosting environment: Development
+[2022-07-06 18:05:11.338 +03:00  INF]  Content root path: C:\Users\sercan\Desktop\Bootcamp\BootcampProject\Teleperformance.ShoppingList\src\WebApi\Teleperformance.ShoppingList.WebApi\
+[2022-07-06 18:05:11.694 +03:00  INF]  Request starting HTTP/2 GET https://localhost:7121/swagger/index.html - -
+[2022-07-06 18:05:11.979 +03:00  INF]  Request starting HTTP/2 GET https://localhost:7121/_framework/aspnetcore-browser-refresh.js - -
+[2022-07-06 18:05:11.985 +03:00  INF]  Request finished HTTP/2 GET https://localhost:7121/swagger/index.html - - - 200 - text/html;charset=utf-8 294.9624ms
+[2022-07-06 18:05:11.985 +03:00  INF]  Request finished HTTP/2 GET https://localhost:7121/_framework/aspnetcore-browser-refresh.js - - - 200 12032 application/javascript;+charset=utf-8 5.8988ms
+[2022-07-06 18:05:12.013 +03:00  INF]  Request starting HTTP/2 GET https://localhost:7121/_vs/browserLink - -
+[2022-07-06 18:05:12.029 +03:00  INF]  Request finished HTTP/2 GET https://localhost:7121/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 16.2055ms
+[2022-07-06 18:05:12.148 +03:00  INF]  Request starting HTTP/2 GET https://localhost:7121/swagger/v1/swagger.json - -
+[2022-07-06 18:05:12.297 +03:00  INF]  Request finished HTTP/2 GET https://localhost:7121/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 149.6009ms
+[2022-07-06 18:05:20.224 +03:00  INF]  Request starting HTTP/2 GET https://localhost:7121/api/ShoppingList/search?Parameters.Keyword=cihan - -
+[2022-07-06 18:05:20.297 +03:00  ERR]  [Request] HTTP GET /api/ShoppingList/search
+[2022-07-06 18:05:20.301 +03:00  INF]  Executing endpoint 'Teleperformance.Bootcamp.WebApi.Controllers.ShoppingListController.SearchInShoppingList (Teleperformance.Bootcamp.WebApi)'
+[2022-07-06 18:05:20.328 +03:00  INF]  Route matched with {action = "SearchInShoppingList", controller = "ShoppingList"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] SearchInShoppingList(Teleperformance.Bootcamp.Application.Features.Queries.ShoppingList.SearchInShoppingList.SearchInShoppingListQueryRequest) on controller Teleperformance.Bootcamp.WebApi.Controllers.ShoppingListController (Teleperformance.Bootcamp.WebApi).
+[2022-07-06 18:05:21.409 +03:00  INF]  Entity Framework Core 6.0.6 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.6' with options: None
+[2022-07-06 18:05:22.193 +03:00  INF]  Executed DbCommand (46ms) [Parameters=[@__ToLower_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[AppUserId], [t].[CategoryId], [t].[CompleteDate], [t].[CreateDate], [t].[Description], [t].[IsComplete], [t].[Title], [t].[Id1], [t].[Id0], [p].[Id], [p].[CreateDate], [p].[IsBuy], [p].[Name], [p].[Quantity], [p].[ShoppingListId], [p].[Unit], [t].[AccessFailedCount], [t].[ConcurrencyStamp], [t].[CreateDate0], [t].[Email], [t].[EmailConfirmed], [t].[LockoutEnabled], [t].[LockoutEnd], [t].[Name], [t].[NormalizedEmail], [t].[NormalizedUserName], [t].[PasswordHash], [t].[PhoneNumber], [t].[PhoneNumberConfirmed], [t].[SecurityStamp], [t].[Surname], [t].[TwoFactorEnabled], [t].[UserName], [t].[CreateDate1], [t].[Name0]
+FROM (
+    SELECT TOP(1) [s].[Id], [s].[AppUserId], [s].[CategoryId], [s].[CompleteDate], [s].[CreateDate], [s].[Description], [s].[IsComplete], [s].[Title], [a].[Id] AS [Id0], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[CreateDate] AS [CreateDate0], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[Name], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[Surname], [a].[TwoFactorEnabled], [a].[UserName], [c].[Id] AS [Id1], [c].[CreateDate] AS [CreateDate1], [c].[Name] AS [Name0]
+    FROM [ShoppingLists] AS [s]
+    INNER JOIN [Categories] AS [c] ON [s].[CategoryId] = [c].[Id]
+    INNER JOIN [AspNetUsers] AS [a] ON [s].[AppUserId] = [a].[Id]
+    WHERE ((@__ToLower_0 LIKE N'') OR (CHARINDEX(@__ToLower_0, [s].[Title]) > 0)) OR ((@__ToLower_0 LIKE N'') OR (CHARINDEX(@__ToLower_0, [c].[Name]) > 0))
+) AS [t]
+LEFT JOIN [Products] AS [p] ON [t].[Id] = [p].[ShoppingListId]
+ORDER BY [t].[Id], [t].[Id1], [t].[Id0]
+[2022-07-06 18:05:22.342 +03:00  INF]  Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[AppUserId], [s].[CategoryId], [s].[CompleteDate], [s].[CreateDate], [s].[Description], [s].[IsComplete], [s].[Title]
+FROM [ShoppingLists] AS [s]
+[2022-07-06 18:05:22.362 +03:00  INF]  Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Teleperformance.Bootcamp.Application.DTOs.ShoppingList.GetByParameterShoppingListDto, Teleperformance.Bootcamp.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+[2022-07-06 18:05:22.378 +03:00  INF]  Executed action Teleperformance.Bootcamp.WebApi.Controllers.ShoppingListController.SearchInShoppingList (Teleperformance.Bootcamp.WebApi) in 2045.6196ms
+[2022-07-06 18:05:22.378 +03:00  INF]  Executed endpoint 'Teleperformance.Bootcamp.WebApi.Controllers.ShoppingListController.SearchInShoppingList (Teleperformance.Bootcamp.WebApi)'
+[2022-07-06 18:05:22.378 +03:00  ERR]  [Request] HTTP GET  reponded 200
+[2022-07-06 18:05:22.384 +03:00  INF]  Request finished HTTP/2 GET https://localhost:7121/api/ShoppingList/search?Parameters.Keyword=cihan - - - 200 - application/json;+charset=utf-8 2159.9604ms
+[2022-07-06 18:06:04.584 +03:00  INF]  Request starting HTTP/2 GET https://localhost:7121/api/ShoppingList/search?Parameters.Date=2022-07-03%20 - -
+[2022-07-06 18:06:04.593 +03:00  ERR]  [Request] HTTP GET /api/ShoppingList/search
+[2022-07-06 18:06:04.593 +03:00  INF]  Executing endpoint 'Teleperformance.Bootcamp.WebApi.Controllers.ShoppingListController.SearchInShoppingList (Teleperformance.Bootcamp.WebApi)'
+[2022-07-06 18:06:04.594 +03:00  INF]  Route matched with {action = "SearchInShoppingList", controller = "ShoppingList"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] SearchInShoppingList(Teleperformance.Bootcamp.Application.Features.Queries.ShoppingList.SearchInShoppingList.SearchInShoppingListQueryRequest) on controller Teleperformance.Bootcamp.WebApi.Controllers.ShoppingListController (Teleperformance.Bootcamp.WebApi).
+[2022-07-06 18:06:04.625 +03:00  INF]  Entity Framework Core 6.0.6 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.6' with options: None
+[2022-07-06 18:06:04.632 +03:00  WRN]  Possible unintended use of method 'Equals' for arguments 's.CreateDate' and '@__parameters_Date_HasValue_0' of different types in a query. This comparison will always return false.
+[2022-07-06 18:06:04.654 +03:00  INF]  Executed DbCommand (5ms) [Parameters=[@__parameters_Date_Value_1='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[AppUserId], [t].[CategoryId], [t].[CompleteDate], [t].[CreateDate], [t].[Description], [t].[IsComplete], [t].[Title], [t].[Id0], [t].[Id1], [p].[Id], [p].[CreateDate], [p].[IsBuy], [p].[Name], [p].[Quantity], [p].[ShoppingListId], [p].[Unit], [t].[AccessFailedCount], [t].[ConcurrencyStamp], [t].[CreateDate0], [t].[Email], [t].[EmailConfirmed], [t].[LockoutEnabled], [t].[LockoutEnd], [t].[Name], [t].[NormalizedEmail], [t].[NormalizedUserName], [t].[PasswordHash], [t].[PhoneNumber], [t].[PhoneNumberConfirmed], [t].[SecurityStamp], [t].[Surname], [t].[TwoFactorEnabled], [t].[UserName], [t].[CreateDate1], [t].[Name0]
+FROM (
+    SELECT TOP(1) [s].[Id], [s].[AppUserId], [s].[CategoryId], [s].[CompleteDate], [s].[CreateDate], [s].[Description], [s].[IsComplete], [s].[Title], [a].[Id] AS [Id0], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[CreateDate] AS [CreateDate0], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[Name], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[Surname], [a].[TwoFactorEnabled], [a].[UserName], [c].[Id] AS [Id1], [c].[CreateDate] AS [CreateDate1], [c].[Name] AS [Name0]
+    FROM [ShoppingLists] AS [s]
+    INNER JOIN [AspNetUsers] AS [a] ON [s].[AppUserId] = [a].[Id]
+    INNER JOIN [Categories] AS [c] ON [s].[CategoryId] = [c].[Id]
+    WHERE [s].[CompleteDate] = @__parameters_Date_Value_1
+) AS [t]
+LEFT JOIN [Products] AS [p] ON [t].[Id] = [p].[ShoppingListId]
+ORDER BY [t].[Id], [t].[Id0], [t].[Id1]
+[2022-07-06 18:06:04.655 +03:00  INF]  Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[AppUserId], [s].[CategoryId], [s].[CompleteDate], [s].[CreateDate], [s].[Description], [s].[IsComplete], [s].[Title]
+FROM [ShoppingLists] AS [s]
+[2022-07-06 18:06:04.656 +03:00  INF]  Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Teleperformance.Bootcamp.Application.DTOs.ShoppingList.GetByParameterShoppingListDto, Teleperformance.Bootcamp.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+[2022-07-06 18:06:04.656 +03:00  INF]  Executed action Teleperformance.Bootcamp.WebApi.Controllers.ShoppingListController.SearchInShoppingList (Teleperformance.Bootcamp.WebApi) in 62.6461ms
+[2022-07-06 18:06:04.656 +03:00  INF]  Executed endpoint 'Teleperformance.Bootcamp.WebApi.Controllers.ShoppingListController.SearchInShoppingList (Teleperformance.Bootcamp.WebApi)'
+[2022-07-06 18:06:04.656 +03:00  ERR]  [Request] HTTP GET  reponded 200
+[2022-07-06 18:06:04.657 +03:00  INF]  Request finished HTTP/2 GET https://localhost:7121/api/ShoppingList/search?Parameters.Date=2022-07-03%20 - - - 200 - application/json;+charset=utf-8 74.8262ms
+[2022-07-06 18:07:24.665 +03:00  INF]  Request starting HTTP/2 POST https://localhost:7121/api/ShoppingList application/json 212
+[2022-07-06 18:07:24.670 +03:00  ERR]  [Request] HTTP POST /api/ShoppingList
+[2022-07-06 18:07:24.670 +03:00  INF]  Executing endpoint 'Teleperformance.Bootcamp.WebApi.Controllers.ShoppingListController.CreateShoppingList (Teleperformance.Bootcamp.WebApi)'
+[2022-07-06 18:07:24.673 +03:00  INF]  Route matched with {action = "CreateShoppingList", controller = "ShoppingList"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CreateShoppingList(Teleperformance.Bootcamp.Application.Features.Commands.ShoppingList.ShoppingListCreate.ShoppingListCreateCommandRequest) on controller Teleperformance.Bootcamp.WebApi.Controllers.ShoppingListController (Teleperformance.Bootcamp.WebApi).
+[2022-07-06 18:07:24.726 +03:00  INF]  Entity Framework Core 6.0.6 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.6' with options: None
+[2022-07-06 18:07:24.783 +03:00  INF]  Executed DbCommand (21ms) [Parameters=[@__p_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [c].[Id], [c].[CreateDate], [c].[Name]
+FROM [Categories] AS [c]
+WHERE [c].[Id] = @__p_0
+[2022-07-06 18:07:24.809 +03:00  INF]  Executed DbCommand (2ms) [Parameters=[@__p_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[CreateDate], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[Name], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[Surname], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[Id] = @__p_0
+[2022-07-06 18:07:24.971 +03:00  INF]  Executed DbCommand (8ms) [Parameters=[@p0='?' (Size = 450), @p1='?' (Size = 450), @p2='?' (DbType = DateTime2), @p3='?' (DbType = DateTime2), @p4='?' (Size = 4000), @p5='?' (DbType = Boolean), @p6='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+DECLARE @inserted0 TABLE ([Id] nvarchar(450));
+INSERT INTO [ShoppingLists] ([AppUserId], [CategoryId], [CompleteDate], [CreateDate], [Description], [IsComplete], [Title])
+OUTPUT INSERTED.[Id]
+INTO @inserted0
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6);
+SELECT [i].[Id] FROM @inserted0 i;
+[2022-07-06 18:07:25.031 +03:00  INF]  Executing OkObjectResult, writing value of type 'Teleperformance.Bootcamp.Domain.Common.Response.BaseResponse'.
+[2022-07-06 18:07:25.033 +03:00  INF]  Executed action Teleperformance.Bootcamp.WebApi.Controllers.ShoppingListController.CreateShoppingList (Teleperformance.Bootcamp.WebApi) in 359.8943ms
+[2022-07-06 18:07:25.034 +03:00  INF]  Executed endpoint 'Teleperformance.Bootcamp.WebApi.Controllers.ShoppingListController.CreateShoppingList (Teleperformance.Bootcamp.WebApi)'
+[2022-07-06 18:07:25.034 +03:00  ERR]  [Request] HTTP POST  reponded 200
+[2022-07-06 18:07:25.036 +03:00  INF]  Request finished HTTP/2 POST https://localhost:7121/api/ShoppingList application/json 212 - 200 - application/json;+charset=utf-8 370.1846ms
+[2022-07-06 18:07:45.833 +03:00  INF]  Request starting HTTP/2 GET https://localhost:7121/api/ShoppingList/search?Parameters.Date=2002-01-01%2015%3A06%3A33.9220000 - -
+[2022-07-06 18:07:45.835 +03:00  ERR]  [Request] HTTP GET /api/ShoppingList/search
+[2022-07-06 18:07:45.839 +03:00  INF]  Executing endpoint 'Teleperformance.Bootcamp.WebApi.Controllers.ShoppingListController.SearchInShoppingList (Teleperformance.Bootcamp.WebApi)'
+[2022-07-06 18:07:45.840 +03:00  INF]  Route matched with {action = "SearchInShoppingList", controller = "ShoppingList"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] SearchInShoppingList(Teleperformance.Bootcamp.Application.Features.Queries.ShoppingList.SearchInShoppingList.SearchInShoppingListQueryRequest) on controller Teleperformance.Bootcamp.WebApi.Controllers.ShoppingListController (Teleperformance.Bootcamp.WebApi).
+[2022-07-06 18:07:45.842 +03:00  INF]  Entity Framework Core 6.0.6 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.6' with options: None
+[2022-07-06 18:07:45.848 +03:00  INF]  Executed DbCommand (4ms) [Parameters=[@__parameters_Date_Value_1='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[AppUserId], [t].[CategoryId], [t].[CompleteDate], [t].[CreateDate], [t].[Description], [t].[IsComplete], [t].[Title], [t].[Id0], [t].[Id1], [p].[Id], [p].[CreateDate], [p].[IsBuy], [p].[Name], [p].[Quantity], [p].[ShoppingListId], [p].[Unit], [t].[AccessFailedCount], [t].[ConcurrencyStamp], [t].[CreateDate0], [t].[Email], [t].[EmailConfirmed], [t].[LockoutEnabled], [t].[LockoutEnd], [t].[Name], [t].[NormalizedEmail], [t].[NormalizedUserName], [t].[PasswordHash], [t].[PhoneNumber], [t].[PhoneNumberConfirmed], [t].[SecurityStamp], [t].[Surname], [t].[TwoFactorEnabled], [t].[UserName], [t].[CreateDate1], [t].[Name0]
+FROM (
+    SELECT TOP(1) [s].[Id], [s].[AppUserId], [s].[CategoryId], [s].[CompleteDate], [s].[CreateDate], [s].[Description], [s].[IsComplete], [s].[Title], [a].[Id] AS [Id0], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[CreateDate] AS [CreateDate0], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[Name], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[Surname], [a].[TwoFactorEnabled], [a].[UserName], [c].[Id] AS [Id1], [c].[CreateDate] AS [CreateDate1], [c].[Name] AS [Name0]
+    FROM [ShoppingLists] AS [s]
+    INNER JOIN [AspNetUsers] AS [a] ON [s].[AppUserId] = [a].[Id]
+    INNER JOIN [Categories] AS [c] ON [s].[CategoryId] = [c].[Id]
+    WHERE [s].[CompleteDate] = @__parameters_Date_Value_1
+) AS [t]
+LEFT JOIN [Products] AS [p] ON [t].[Id] = [p].[ShoppingListId]
+ORDER BY [t].[Id], [t].[Id0], [t].[Id1]
+[2022-07-06 18:07:45.849 +03:00  INF]  Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[AppUserId], [s].[CategoryId], [s].[CompleteDate], [s].[CreateDate], [s].[Description], [s].[IsComplete], [s].[Title]
+FROM [ShoppingLists] AS [s]
+[2022-07-06 18:07:45.849 +03:00  INF]  Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Teleperformance.Bootcamp.Application.DTOs.ShoppingList.GetByParameterShoppingListDto, Teleperformance.Bootcamp.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+[2022-07-06 18:07:45.850 +03:00  INF]  Executed action Teleperformance.Bootcamp.WebApi.Controllers.ShoppingListController.SearchInShoppingList (Teleperformance.Bootcamp.WebApi) in 9.1063ms
+[2022-07-06 18:07:45.850 +03:00  INF]  Executed endpoint 'Teleperformance.Bootcamp.WebApi.Controllers.ShoppingListController.SearchInShoppingList (Teleperformance.Bootcamp.WebApi)'
+[2022-07-06 18:07:45.850 +03:00  ERR]  [Request] HTTP GET  reponded 200
+[2022-07-06 18:07:45.850 +03:00  INF]  Request finished HTTP/2 GET https://localhost:7121/api/ShoppingList/search?Parameters.Date=2002-01-01%2015%3A06%3A33.9220000 - - - 200 - application/json;+charset=utf-8 16.4040ms

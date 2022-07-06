@@ -32,8 +32,8 @@ namespace Teleperformance.Bootcamp.Infrastructure
 
             services.AddSingleton<IRedisDistrubutedCache, RedisDistrubutedCacheService>();
 
-            services.AddScoped<IRabbitmqConnection, RabbitmqConnection>();
-            services.AddScoped<IRabbitmqService, RabbitmqService>();
+            services.AddTransient<IRabbitmqConnection, RabbitmqConnection>();
+            services.AddTransient<IRabbitmqService, RabbitmqService>();
 
 
 
