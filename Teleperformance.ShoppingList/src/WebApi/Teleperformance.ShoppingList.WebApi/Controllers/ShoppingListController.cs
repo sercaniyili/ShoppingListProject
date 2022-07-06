@@ -1,4 +1,5 @@
 ﻿using MediatR;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Teleperformance.Bootcamp.Application.DTOs.ShoppingList;
 using Teleperformance.Bootcamp.Application.Features.Commands.ShoppingList.ShoppingListCreate;
@@ -32,7 +33,7 @@ namespace Teleperformance.Bootcamp.WebApi.Controllers
 
 
         [HttpGet]
-        //[Authorize(Roles = "Admin")]
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> GetAllShoppingLists([FromQuery] GetAllShoppingListQueryRequest request)
         {
           
@@ -116,7 +117,7 @@ namespace Teleperformance.Bootcamp.WebApi.Controllers
         //public async Task<IActionResult> GetAllComletedShoppingList()
         //{
         //    var collection = _mongoDbConnect.ConnectToMongo<ShoppingListToBsonDto>(ShoppingListCollection);
-        //    var result = await collection.Fi
+        //    var result = await collection.FindAsync( _ => true);
         //    return result.ToList();
         //}
 

@@ -58,7 +58,10 @@ namespace ShoppingListConsumer
                 consumer.Received += async (sender, args) =>
                 {
                     var message = JsonSerializer.Deserialize<ShoppingListToBsonDto>(Encoding.UTF8.GetString(args.Body.ToArray()));
-                    
+                    foreach (PropertyInfo p in message.GetType().GetProperties())
+                        Console.WriteLine(p.Name + " : " + p.GetValue(message));
+                    Console.WriteLine();
+
                     await collection.InsertOneAsync(message);
                 };
 

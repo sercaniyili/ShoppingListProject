@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using FluentValidation;
 using MediatR;
+using Microsoft.EntityFrameworkCore;
 using Teleperformance.Bootcamp.Application.Interfaces.MessageBrokers;
 using Teleperformance.Bootcamp.Application.Interfaces.Repositories;
 using Teleperformance.Bootcamp.Application.Validations.ShoppingList;
@@ -22,7 +23,11 @@ namespace Teleperformance.Bootcamp.Application.Features.Commands.ShoppingList.Sh
 
         public async Task<BaseResponse> Handle(ShoppingListUpdateIsCompleteCommandRequest request, CancellationToken cancellationToken)
         {
-            var entity = await _shoppingListRepsitory.GetByIdAsync(request.UpdateIsCompleteDto.Id);
+            var entity = _shoppingListRepsitory.GetAll().Where(x => x.Id == request.UpdateIsCompleteDto.Id)
+             .Include(x => x.Products)
+             .Include(y => y.AppUser)
+             .Include(z => z.Category)
+             .FirstOrDefault();
 
             var result = _mapper.Map(request.UpdateIsCompleteDto, entity);
 

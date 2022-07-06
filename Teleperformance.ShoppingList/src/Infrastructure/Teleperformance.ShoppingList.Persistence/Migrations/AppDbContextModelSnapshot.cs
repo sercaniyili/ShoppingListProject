@@ -47,6 +47,22 @@ namespace Teleperformance.Bootcamp.Persistence.Migrations
                         .HasFilter("[NormalizedName] IS NOT NULL");
 
                     b.ToTable("AspNetRoles", (string)null);
+
+                    b.HasData(
+                        new
+                        {
+                            Id = "1",
+                            ConcurrencyStamp = "026fd50c-119f-42be-a237-aa5cb4caad84",
+                            Name = "Admin",
+                            NormalizedName = "ADMIN"
+                        },
+                        new
+                        {
+                            Id = "2",
+                            ConcurrencyStamp = "ae07a105-3eea-42a3-825b-097e08f1ee7a",
+                            Name = "User",
+                            NormalizedName = "USER"
+                        });
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
@@ -134,6 +150,13 @@ namespace Teleperformance.Bootcamp.Persistence.Migrations
                     b.HasIndex("RoleId");
 
                     b.ToTable("AspNetUserRoles", (string)null);
+
+                    b.HasData(
+                        new
+                        {
+                            UserId = "8e445865-a24d-4543-a6c6-9443d048cdb9",
+                            RoleId = "1"
+                        });
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserToken<string>", b =>
@@ -246,6 +269,27 @@ namespace Teleperformance.Bootcamp.Persistence.Migrations
                         .HasFilter("[NormalizedUserName] IS NOT NULL");
 
                     b.ToTable("AspNetUsers", (string)null);
+
+                    b.HasData(
+                        new
+                        {
+                            Id = "8e445865-a24d-4543-a6c6-9443d048cdb9",
+                            AccessFailedCount = 0,
+                            ConcurrencyStamp = "bf3f8aee-6181-4ade-a70c-f4a4fa786ecc",
+                            CreateDate = new DateTime(2022, 7, 6, 19, 44, 9, 39, DateTimeKind.Local).AddTicks(6503),
+                            Email = "admin@gmail.com",
+                            EmailConfirmed = false,
+                            LockoutEnabled = false,
+                            Name = "System",
+                            NormalizedEmail = "ADMIN@GMAIL.COM",
+                            NormalizedUserName = "ADMINISTRATOR",
+                            PasswordHash = "AQAAAAEAACcQAAAAEByC4+1c/dz4L4E4H0J2GwKe0c666AyB6rg5YE3PKJ5YVTtYsAOjiGWx7fjcEVUpMg==",
+                            PhoneNumberConfirmed = false,
+                            SecurityStamp = "e0572278-ea8b-4a12-b0b8-91e9574a4781",
+                            Surname = "Admin",
+                            TwoFactorEnabled = false,
+                            UserName = "Admınıstrator"
+                        });
                 });
 
             modelBuilder.Entity("Teleperformance.Bootcamp.Domain.Entities.Product", b =>
@@ -375,13 +419,11 @@ namespace Teleperformance.Bootcamp.Persistence.Migrations
 
             modelBuilder.Entity("Teleperformance.Bootcamp.Domain.Entities.Product", b =>
                 {
-                    b.HasOne("Teleperformance.Bootcamp.Domain.Entities.ShoppingList", "ShoppingList")
+                    b.HasOne("Teleperformance.Bootcamp.Domain.Entities.ShoppingList", null)
                         .WithMany("Products")
                         .HasForeignKey("ShoppingListId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
-
-                    b.Navigation("ShoppingList");
                 });
 
             modelBuilder.Entity("Teleperformance.Bootcamp.Domain.Entities.ShoppingList", b =>

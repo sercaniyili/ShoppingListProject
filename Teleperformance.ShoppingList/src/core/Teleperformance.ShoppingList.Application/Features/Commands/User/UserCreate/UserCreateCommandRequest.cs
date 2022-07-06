@@ -12,5 +12,6 @@ namespace Teleperformance.Bootcamp.Application.Features.Commands.User.UserCreate
     public class UserCreateCommandRequest : IRequest<BaseResponse>
     {
         public UserCreateDto UserCreateDto { get; set; }
-        }
+
     }
+}
