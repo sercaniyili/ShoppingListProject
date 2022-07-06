@@ -1,6 +1,7 @@
 ﻿using MediatR;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using MongoDB.Driver;
 using Teleperformance.Bootcamp.Application.DTOs.ShoppingList;
 using Teleperformance.Bootcamp.Application.Features.Commands.ShoppingList.ShoppingListCreate;
 using Teleperformance.Bootcamp.Application.Features.Commands.ShoppingList.ShoppingListDelete;
@@ -33,16 +34,14 @@ namespace Teleperformance.Bootcamp.WebApi.Controllers
 
 
         [HttpGet]
-        [Authorize(Roles = "Admin")]
+       // [Authorize(Roles = "Admin")]
         public async Task<IActionResult> GetAllShoppingLists([FromQuery] GetAllShoppingListQueryRequest request)
-        {
-          
-
+        {         
             var result = await _mediator.Send(request);
 
-            //  var cachedResult = await _redisDistrubutedCache.GetObjectAsync<GetAllShoppingListQueryRequest>(key);
-
-            // await _redisDistrubutedCache.SetObjectAsync(key, result,2,60);             
+           // var cachedResult = await _redisDistrubutedCache.GetObjectAsync<GetAllShoppingListQueryRequest>(key);
+            await _redisDistrubutedCache.SetObjectAsync(key, result,2,60);      
+            
 
             return Ok(result);
         }
@@ -113,13 +112,14 @@ namespace Teleperformance.Bootcamp.WebApi.Controllers
         }
         public const string ShoppingListCollection = "CompletedLists";
 
-        //[HttpGet]
-        //public async Task<IActionResult> GetAllComletedShoppingList()
-        //{
-        //    var collection = _mongoDbConnect.ConnectToMongo<ShoppingListToBsonDto>(ShoppingListCollection);
-        //    var result = await collection.FindAsync( _ => true);
-        //    return result.ToList();
-        //}
+        [HttpGet("comletedList")]
+        //[Authorize(Roles = "Admin")]
+        public async Task<IActionResult> GetAllComletedShoppingList()
+        {
+            var collection = _mongoDbConnect.ConnectToMongo<ShoppingListToBsonDto>(ShoppingListCollection);
+            var result = await collection.Find(_=>true).ToListAsync();
+            return Ok(result);
+        }
 
     }
 }

@@ -1550,3 +1550,468 @@ ORDER BY [t].[Id], [a].[Id], [c].[Id]
 [2022-07-06 20:03:03.441 +03:00  INF]  Executed endpoint 'Teleperformance.Bootcamp.WebApi.Controllers.ShoppingListController.GetAllShoppingLists (Teleperformance.Bootcamp.WebApi)'
 [2022-07-06 20:03:03.441 +03:00  ERR]  [Request] HTTP GET  reponded 200
 [2022-07-06 20:03:03.443 +03:00  INF]  Request finished HTTP/1.1 GET https://localhost:7121/api/ShoppingList?PageNumber=1&PageSize=5 application/json 161 - 200 - application/json;+charset=utf-8 222.1998ms
+[2022-07-06 20:31:08.219 +03:00  INF]  User profile is available. Using 'C:\Users\sercan\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+[2022-07-06 20:31:08.510 +03:00  INF]  Now listening on: https://localhost:7121
+[2022-07-06 20:31:08.510 +03:00  INF]  Now listening on: http://localhost:5121
+[2022-07-06 20:31:08.513 +03:00  INF]  Application started. Press Ctrl+C to shut down.
+[2022-07-06 20:31:08.513 +03:00  INF]  Hosting environment: Development
+[2022-07-06 20:31:08.513 +03:00  INF]  Content root path: C:\Users\sercan\Desktop\Bootcamp\BootcampProject\Teleperformance.ShoppingList\src\WebApi\Teleperformance.ShoppingList.WebApi\
+[2022-07-06 20:31:09.465 +03:00  INF]  Request starting HTTP/2 GET https://localhost:7121/swagger/index.html - -
+[2022-07-06 20:31:09.759 +03:00  INF]  Request starting HTTP/2 GET https://localhost:7121/_framework/aspnetcore-browser-refresh.js - -
+[2022-07-06 20:31:09.766 +03:00  INF]  Request finished HTTP/2 GET https://localhost:7121/_framework/aspnetcore-browser-refresh.js - - - 200 12032 application/javascript;+charset=utf-8 5.8573ms
+[2022-07-06 20:31:09.766 +03:00  INF]  Request finished HTTP/2 GET https://localhost:7121/swagger/index.html - - - 200 - text/html;charset=utf-8 305.2813ms
+[2022-07-06 20:31:09.791 +03:00  INF]  Request starting HTTP/2 GET https://localhost:7121/_vs/browserLink - -
+[2022-07-06 20:31:09.832 +03:00  INF]  Request finished HTTP/2 GET https://localhost:7121/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 41.5510ms
+[2022-07-06 20:31:09.935 +03:00  INF]  Request starting HTTP/2 GET https://localhost:7121/swagger/v1/swagger.json - -
+[2022-07-06 20:31:10.050 +03:00  INF]  Request finished HTTP/2 GET https://localhost:7121/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 115.7842ms
+[2022-07-06 20:31:17.166 +03:00  INF]  Request starting HTTP/2 GET https://localhost:7121/api/ShoppingList?PageNumber=1&PageSize=3 - -
+[2022-07-06 20:31:17.246 +03:00  ERR]  [Request] HTTP GET /api/ShoppingList
+[2022-07-06 20:31:17.249 +03:00  INF]  Executing endpoint 'Teleperformance.Bootcamp.WebApi.Controllers.ShoppingListController.GetAllShoppingLists (Teleperformance.Bootcamp.WebApi)'
+[2022-07-06 20:31:17.271 +03:00  INF]  Route matched with {action = "GetAllShoppingLists", controller = "ShoppingList"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllShoppingLists(Teleperformance.Bootcamp.Application.Features.Queries.ShoppingList.GetAllShoppingList.GetAllShoppingListQueryRequest) on controller Teleperformance.Bootcamp.WebApi.Controllers.ShoppingListController (Teleperformance.Bootcamp.WebApi).
+[2022-07-06 20:31:18.424 +03:00  INF]  Entity Framework Core 6.0.6 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.6' with options: None
+[2022-07-06 20:31:18.667 +03:00  WRN]  The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+[2022-07-06 20:31:18.669 +03:00  WRN]  The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+[2022-07-06 20:31:19.301 +03:00  INF]  Executed DbCommand (68ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[AppUserId], [t].[CategoryId], [t].[CompleteDate], [t].[CreateDate], [t].[Description], [t].[IsComplete], [t].[Title], [a].[Id], [c].[Id], [p].[Id], [p].[CreateDate], [p].[IsBuy], [p].[Name], [p].[Quantity], [p].[ShoppingListId], [p].[Unit], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[CreateDate], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[Name], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[Surname], [a].[TwoFactorEnabled], [a].[UserName], [c].[CreateDate], [c].[Name]
+FROM (
+    SELECT [s].[Id], [s].[AppUserId], [s].[CategoryId], [s].[CompleteDate], [s].[CreateDate], [s].[Description], [s].[IsComplete], [s].[Title]
+    FROM [ShoppingLists] AS [s]
+    ORDER BY (SELECT 1)
+    OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+) AS [t]
+INNER JOIN [AspNetUsers] AS [a] ON [t].[AppUserId] = [a].[Id]
+INNER JOIN [Categories] AS [c] ON [t].[CategoryId] = [c].[Id]
+LEFT JOIN [Products] AS [p] ON [t].[Id] = [p].[ShoppingListId]
+ORDER BY [t].[Id], [a].[Id], [c].[Id]
+[2022-07-06 20:31:19.852 +03:00  INF]  Executed action Teleperformance.Bootcamp.WebApi.Controllers.ShoppingListController.GetAllShoppingLists (Teleperformance.Bootcamp.WebApi) in 2577.0401ms
+[2022-07-06 20:31:19.854 +03:00  INF]  Executed endpoint 'Teleperformance.Bootcamp.WebApi.Controllers.ShoppingListController.GetAllShoppingLists (Teleperformance.Bootcamp.WebApi)'
+[2022-07-06 20:31:19.899 +03:00  ERR]  [ERROR] HTTP GET - 500 -  Error Messsage The input does not contain any JSON tokens. Expected the input to start with a valid JSON token, when isFinalBlock is true. Path: $ | LineNumber: 0 | BytePositionInLine: 0.
+[2022-07-06 20:31:20.015 +03:00  INF]  Request finished HTTP/2 GET https://localhost:7121/api/ShoppingList?PageNumber=1&PageSize=3 - - - 500 - application/json 2848.4648ms
+[2022-07-06 20:57:00.215 +03:00  INF]  User profile is available. Using 'C:\Users\sercan\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+[2022-07-06 20:57:00.433 +03:00  INF]  Now listening on: https://localhost:7121
+[2022-07-06 20:57:00.433 +03:00  INF]  Now listening on: http://localhost:5121
+[2022-07-06 20:57:00.434 +03:00  INF]  Application started. Press Ctrl+C to shut down.
+[2022-07-06 20:57:00.435 +03:00  INF]  Hosting environment: Development
+[2022-07-06 20:57:00.435 +03:00  INF]  Content root path: C:\Users\sercan\Desktop\Bootcamp\BootcampProject\Teleperformance.ShoppingList\src\WebApi\Teleperformance.ShoppingList.WebApi\
+[2022-07-06 20:57:01.073 +03:00  INF]  Request starting HTTP/2 GET https://localhost:7121/swagger/index.html - -
+[2022-07-06 20:57:01.321 +03:00  INF]  Request starting HTTP/2 GET https://localhost:7121/_framework/aspnetcore-browser-refresh.js - -
+[2022-07-06 20:57:01.324 +03:00  INF]  Request finished HTTP/2 GET https://localhost:7121/swagger/index.html - - - 200 - text/html;charset=utf-8 254.2819ms
+[2022-07-06 20:57:01.325 +03:00  INF]  Request finished HTTP/2 GET https://localhost:7121/_framework/aspnetcore-browser-refresh.js - - - 200 12032 application/javascript;+charset=utf-8 4.3491ms
+[2022-07-06 20:57:01.349 +03:00  INF]  Request starting HTTP/2 GET https://localhost:7121/_vs/browserLink - -
+[2022-07-06 20:57:01.365 +03:00  INF]  Request finished HTTP/2 GET https://localhost:7121/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 15.6486ms
+[2022-07-06 20:57:01.488 +03:00  INF]  Request starting HTTP/2 GET https://localhost:7121/swagger/v1/swagger.json - -
+[2022-07-06 20:57:01.621 +03:00  INF]  Request finished HTTP/2 GET https://localhost:7121/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 132.3821ms
+[2022-07-06 20:57:17.760 +03:00  INF]  Request starting HTTP/2 GET https://localhost:7121/api/ShoppingList?PageNumber=1&PageSize=4 - -
+[2022-07-06 20:57:17.823 +03:00  ERR]  [Request] HTTP GET /api/ShoppingList
+[2022-07-06 20:57:17.826 +03:00  INF]  Executing endpoint 'Teleperformance.Bootcamp.WebApi.Controllers.ShoppingListController.GetAllShoppingLists (Teleperformance.Bootcamp.WebApi)'
+[2022-07-06 20:57:17.847 +03:00  INF]  Route matched with {action = "GetAllShoppingLists", controller = "ShoppingList"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllShoppingLists(Teleperformance.Bootcamp.Application.Features.Queries.ShoppingList.GetAllShoppingList.GetAllShoppingListQueryRequest) on controller Teleperformance.Bootcamp.WebApi.Controllers.ShoppingListController (Teleperformance.Bootcamp.WebApi).
+[2022-07-06 20:57:18.944 +03:00  INF]  Entity Framework Core 6.0.6 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.6' with options: None
+[2022-07-06 20:57:19.174 +03:00  WRN]  The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+[2022-07-06 20:57:19.175 +03:00  WRN]  The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+[2022-07-06 20:57:19.800 +03:00  INF]  Executed DbCommand (74ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[AppUserId], [t].[CategoryId], [t].[CompleteDate], [t].[CreateDate], [t].[Description], [t].[IsComplete], [t].[Title], [a].[Id], [c].[Id], [p].[Id], [p].[CreateDate], [p].[IsBuy], [p].[Name], [p].[Quantity], [p].[ShoppingListId], [p].[Unit], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[CreateDate], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[Name], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[Surname], [a].[TwoFactorEnabled], [a].[UserName], [c].[CreateDate], [c].[Name]
+FROM (
+    SELECT [s].[Id], [s].[AppUserId], [s].[CategoryId], [s].[CompleteDate], [s].[CreateDate], [s].[Description], [s].[IsComplete], [s].[Title]
+    FROM [ShoppingLists] AS [s]
+    ORDER BY (SELECT 1)
+    OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+) AS [t]
+INNER JOIN [AspNetUsers] AS [a] ON [t].[AppUserId] = [a].[Id]
+INNER JOIN [Categories] AS [c] ON [t].[CategoryId] = [c].[Id]
+LEFT JOIN [Products] AS [p] ON [t].[Id] = [p].[ShoppingListId]
+ORDER BY [t].[Id], [a].[Id], [c].[Id]
+[2022-07-06 20:57:20.240 +03:00  INF]  Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Teleperformance.Bootcamp.Application.DTOs.ShoppingList.GetAllShoppingListDto, Teleperformance.Bootcamp.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+[2022-07-06 20:57:20.249 +03:00  INF]  Executed action Teleperformance.Bootcamp.WebApi.Controllers.ShoppingListController.GetAllShoppingLists (Teleperformance.Bootcamp.WebApi) in 2398.6371ms
+[2022-07-06 20:57:20.251 +03:00  INF]  Executed endpoint 'Teleperformance.Bootcamp.WebApi.Controllers.ShoppingListController.GetAllShoppingLists (Teleperformance.Bootcamp.WebApi)'
+[2022-07-06 20:57:20.251 +03:00  ERR]  [Request] HTTP GET  reponded 200
+[2022-07-06 20:57:20.259 +03:00  INF]  Request finished HTTP/2 GET https://localhost:7121/api/ShoppingList?PageNumber=1&PageSize=4 - - - 200 - application/json;+charset=utf-8 2498.6517ms
+[2022-07-06 20:57:54.363 +03:00  INF]  User profile is available. Using 'C:\Users\sercan\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+[2022-07-06 20:57:54.569 +03:00  INF]  Now listening on: https://localhost:7121
+[2022-07-06 20:57:54.569 +03:00  INF]  Now listening on: http://localhost:5121
+[2022-07-06 20:57:54.571 +03:00  INF]  Application started. Press Ctrl+C to shut down.
+[2022-07-06 20:57:54.571 +03:00  INF]  Hosting environment: Development
+[2022-07-06 20:57:54.571 +03:00  INF]  Content root path: C:\Users\sercan\Desktop\Bootcamp\BootcampProject\Teleperformance.ShoppingList\src\WebApi\Teleperformance.ShoppingList.WebApi\
+[2022-07-06 20:57:55.278 +03:00  INF]  Request starting HTTP/2 GET https://localhost:7121/swagger/index.html - -
+[2022-07-06 20:57:55.525 +03:00  INF]  Request starting HTTP/2 GET https://localhost:7121/_framework/aspnetcore-browser-refresh.js - -
+[2022-07-06 20:57:55.531 +03:00  INF]  Request finished HTTP/2 GET https://localhost:7121/_framework/aspnetcore-browser-refresh.js - - - 200 12032 application/javascript;+charset=utf-8 5.4461ms
+[2022-07-06 20:57:55.531 +03:00  INF]  Request finished HTTP/2 GET https://localhost:7121/swagger/index.html - - - 200 - text/html;charset=utf-8 257.3654ms
+[2022-07-06 20:57:55.553 +03:00  INF]  Request starting HTTP/2 GET https://localhost:7121/_vs/browserLink - -
+[2022-07-06 20:57:55.569 +03:00  INF]  Request finished HTTP/2 GET https://localhost:7121/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 15.9003ms
+[2022-07-06 20:57:55.675 +03:00  INF]  Request starting HTTP/2 GET https://localhost:7121/swagger/v1/swagger.json - -
+[2022-07-06 20:57:55.811 +03:00  INF]  Request finished HTTP/2 GET https://localhost:7121/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 135.4171ms
+[2022-07-06 20:57:59.934 +03:00  INF]  Request starting HTTP/2 GET https://localhost:7121/api/ShoppingList?PageNumber=1&PageSize=3 - -
+[2022-07-06 20:58:00.002 +03:00  ERR]  [Request] HTTP GET /api/ShoppingList
+[2022-07-06 20:58:00.005 +03:00  INF]  Executing endpoint 'Teleperformance.Bootcamp.WebApi.Controllers.ShoppingListController.GetAllShoppingLists (Teleperformance.Bootcamp.WebApi)'
+[2022-07-06 20:58:00.036 +03:00  INF]  Route matched with {action = "GetAllShoppingLists", controller = "ShoppingList"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllShoppingLists(Teleperformance.Bootcamp.Application.Features.Queries.ShoppingList.GetAllShoppingList.GetAllShoppingListQueryRequest) on controller Teleperformance.Bootcamp.WebApi.Controllers.ShoppingListController (Teleperformance.Bootcamp.WebApi).
+[2022-07-06 20:58:01.163 +03:00  INF]  Entity Framework Core 6.0.6 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.6' with options: None
+[2022-07-06 20:58:01.437 +03:00  WRN]  The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+[2022-07-06 20:58:01.438 +03:00  WRN]  The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+[2022-07-06 20:58:02.064 +03:00  INF]  Executed DbCommand (67ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[AppUserId], [t].[CategoryId], [t].[CompleteDate], [t].[CreateDate], [t].[Description], [t].[IsComplete], [t].[Title], [a].[Id], [c].[Id], [p].[Id], [p].[CreateDate], [p].[IsBuy], [p].[Name], [p].[Quantity], [p].[ShoppingListId], [p].[Unit], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[CreateDate], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[Name], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[Surname], [a].[TwoFactorEnabled], [a].[UserName], [c].[CreateDate], [c].[Name]
+FROM (
+    SELECT [s].[Id], [s].[AppUserId], [s].[CategoryId], [s].[CompleteDate], [s].[CreateDate], [s].[Description], [s].[IsComplete], [s].[Title]
+    FROM [ShoppingLists] AS [s]
+    ORDER BY (SELECT 1)
+    OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+) AS [t]
+INNER JOIN [AspNetUsers] AS [a] ON [t].[AppUserId] = [a].[Id]
+INNER JOIN [Categories] AS [c] ON [t].[CategoryId] = [c].[Id]
+LEFT JOIN [Products] AS [p] ON [t].[Id] = [p].[ShoppingListId]
+ORDER BY [t].[Id], [a].[Id], [c].[Id]
+[2022-07-06 20:58:02.566 +03:00  INF]  Executed action Teleperformance.Bootcamp.WebApi.Controllers.ShoppingListController.GetAllShoppingLists (Teleperformance.Bootcamp.WebApi) in 2526.0501ms
+[2022-07-06 20:58:02.568 +03:00  INF]  Executed endpoint 'Teleperformance.Bootcamp.WebApi.Controllers.ShoppingListController.GetAllShoppingLists (Teleperformance.Bootcamp.WebApi)'
+[2022-07-06 20:58:02.619 +03:00  ERR]  [ERROR] HTTP GET - 500 -  Error Messsage The JSON value could not be converted to Teleperformance.Bootcamp.Application.Features.Queries.ShoppingList.GetAllShoppingList.GetAllShoppingListQueryRequest. Path: $ | LineNumber: 0 | BytePositionInLine: 1.
+[2022-07-06 20:58:02.725 +03:00  INF]  Request finished HTTP/2 GET https://localhost:7121/api/ShoppingList?PageNumber=1&PageSize=3 - - - 500 - application/json 2791.0799ms
+[2022-07-06 21:33:11.300 +03:00  INF]  User profile is available. Using 'C:\Users\sercan\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+[2022-07-06 21:33:11.495 +03:00  INF]  Now listening on: https://localhost:7121
+[2022-07-06 21:33:11.495 +03:00  INF]  Now listening on: http://localhost:5121
+[2022-07-06 21:33:11.497 +03:00  INF]  Application started. Press Ctrl+C to shut down.
+[2022-07-06 21:33:11.497 +03:00  INF]  Hosting environment: Development
+[2022-07-06 21:33:11.497 +03:00  INF]  Content root path: C:\Users\sercan\Desktop\Bootcamp\BootcampProject\Teleperformance.ShoppingList\src\WebApi\Teleperformance.ShoppingList.WebApi\
+[2022-07-06 21:33:12.017 +03:00  INF]  Request starting HTTP/2 GET https://localhost:7121/swagger/index.html - -
+[2022-07-06 21:33:12.260 +03:00  INF]  Request starting HTTP/2 GET https://localhost:7121/_framework/aspnetcore-browser-refresh.js - -
+[2022-07-06 21:33:12.266 +03:00  INF]  Request finished HTTP/2 GET https://localhost:7121/swagger/index.html - - - 200 - text/html;charset=utf-8 253.1727ms
+[2022-07-06 21:33:12.266 +03:00  INF]  Request finished HTTP/2 GET https://localhost:7121/_framework/aspnetcore-browser-refresh.js - - - 200 12032 application/javascript;+charset=utf-8 4.5030ms
+[2022-07-06 21:33:12.292 +03:00  INF]  Request starting HTTP/2 GET https://localhost:7121/_vs/browserLink - -
+[2022-07-06 21:33:12.311 +03:00  INF]  Request finished HTTP/2 GET https://localhost:7121/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 19.1216ms
+[2022-07-06 21:33:12.410 +03:00  INF]  Request starting HTTP/2 GET https://localhost:7121/swagger/v1/swagger.json - -
+[2022-07-06 21:33:12.546 +03:00  INF]  Request finished HTTP/2 GET https://localhost:7121/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 135.5024ms
+[2022-07-06 21:33:18.651 +03:00  INF]  Request starting HTTP/2 GET https://localhost:7121/api/ShoppingList?PageNumber=1&PageSize=3 - -
+[2022-07-06 21:33:18.717 +03:00  ERR]  [Request] HTTP GET /api/ShoppingList
+[2022-07-06 21:33:18.720 +03:00  INF]  Executing endpoint 'Teleperformance.Bootcamp.WebApi.Controllers.ShoppingListController.GetAllShoppingLists (Teleperformance.Bootcamp.WebApi)'
+[2022-07-06 21:33:18.741 +03:00  INF]  Route matched with {action = "GetAllShoppingLists", controller = "ShoppingList"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllShoppingLists(Teleperformance.Bootcamp.Application.Features.Queries.ShoppingList.GetAllShoppingList.GetAllShoppingListQueryRequest) on controller Teleperformance.Bootcamp.WebApi.Controllers.ShoppingListController (Teleperformance.Bootcamp.WebApi).
+[2022-07-06 21:33:19.800 +03:00  INF]  Entity Framework Core 6.0.6 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.6' with options: None
+[2022-07-06 21:33:20.030 +03:00  WRN]  The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+[2022-07-06 21:33:20.031 +03:00  WRN]  The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+[2022-07-06 21:33:20.621 +03:00  INF]  Executed DbCommand (65ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[AppUserId], [t].[CategoryId], [t].[CompleteDate], [t].[CreateDate], [t].[Description], [t].[IsComplete], [t].[Title], [a].[Id], [c].[Id], [p].[Id], [p].[CreateDate], [p].[IsBuy], [p].[Name], [p].[Quantity], [p].[ShoppingListId], [p].[Unit], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[CreateDate], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[Name], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[Surname], [a].[TwoFactorEnabled], [a].[UserName], [c].[CreateDate], [c].[Name]
+FROM (
+    SELECT [s].[Id], [s].[AppUserId], [s].[CategoryId], [s].[CompleteDate], [s].[CreateDate], [s].[Description], [s].[IsComplete], [s].[Title]
+    FROM [ShoppingLists] AS [s]
+    ORDER BY (SELECT 1)
+    OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+) AS [t]
+INNER JOIN [AspNetUsers] AS [a] ON [t].[AppUserId] = [a].[Id]
+INNER JOIN [Categories] AS [c] ON [t].[CategoryId] = [c].[Id]
+LEFT JOIN [Products] AS [p] ON [t].[Id] = [p].[ShoppingListId]
+ORDER BY [t].[Id], [a].[Id], [c].[Id]
+[2022-07-06 21:33:21.054 +03:00  INF]  Executed action Teleperformance.Bootcamp.WebApi.Controllers.ShoppingListController.GetAllShoppingLists (Teleperformance.Bootcamp.WebApi) in 2308.5214ms
+[2022-07-06 21:33:21.055 +03:00  INF]  Executed endpoint 'Teleperformance.Bootcamp.WebApi.Controllers.ShoppingListController.GetAllShoppingLists (Teleperformance.Bootcamp.WebApi)'
+[2022-07-06 21:33:21.103 +03:00  ERR]  [ERROR] HTTP GET - 500 -  Error Messsage The input does not contain any JSON tokens. Expected the input to start with a valid JSON token, when isFinalBlock is true. Path: $ | LineNumber: 0 | BytePositionInLine: 0.
+[2022-07-06 21:33:21.210 +03:00  INF]  Request finished HTTP/2 GET https://localhost:7121/api/ShoppingList?PageNumber=1&PageSize=3 - - - 500 - application/json 2558.9228ms
+[2022-07-06 21:37:53.722 +03:00  INF]  User profile is available. Using 'C:\Users\sercan\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+[2022-07-06 21:37:53.930 +03:00  INF]  Now listening on: https://localhost:7121
+[2022-07-06 21:37:53.930 +03:00  INF]  Now listening on: http://localhost:5121
+[2022-07-06 21:37:53.932 +03:00  INF]  Application started. Press Ctrl+C to shut down.
+[2022-07-06 21:37:53.932 +03:00  INF]  Hosting environment: Development
+[2022-07-06 21:37:53.932 +03:00  INF]  Content root path: C:\Users\sercan\Desktop\Bootcamp\BootcampProject\Teleperformance.ShoppingList\src\WebApi\Teleperformance.ShoppingList.WebApi\
+[2022-07-06 21:37:54.498 +03:00  INF]  Request starting HTTP/2 GET https://localhost:7121/swagger/index.html - -
+[2022-07-06 21:37:54.753 +03:00  INF]  Request starting HTTP/2 GET https://localhost:7121/_framework/aspnetcore-browser-refresh.js - -
+[2022-07-06 21:37:54.759 +03:00  INF]  Request finished HTTP/2 GET https://localhost:7121/_framework/aspnetcore-browser-refresh.js - - - 200 12032 application/javascript;+charset=utf-8 4.5779ms
+[2022-07-06 21:37:54.759 +03:00  INF]  Request finished HTTP/2 GET https://localhost:7121/swagger/index.html - - - 200 - text/html;charset=utf-8 264.3098ms
+[2022-07-06 21:37:54.783 +03:00  INF]  Request starting HTTP/2 GET https://localhost:7121/_vs/browserLink - -
+[2022-07-06 21:37:54.804 +03:00  INF]  Request finished HTTP/2 GET https://localhost:7121/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 20.8139ms
+[2022-07-06 21:37:54.913 +03:00  INF]  Request starting HTTP/2 GET https://localhost:7121/swagger/v1/swagger.json - -
+[2022-07-06 21:37:55.020 +03:00  INF]  Request finished HTTP/2 GET https://localhost:7121/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 106.7103ms
+[2022-07-06 21:38:06.122 +03:00  INF]  Request starting HTTP/2 GET https://localhost:7121/api/ShoppingList?PageNumber=1&PageSize=4 - -
+[2022-07-06 21:38:06.186 +03:00  ERR]  [Request] HTTP GET /api/ShoppingList
+[2022-07-06 21:38:06.189 +03:00  INF]  Executing endpoint 'Teleperformance.Bootcamp.WebApi.Controllers.ShoppingListController.GetAllShoppingLists (Teleperformance.Bootcamp.WebApi)'
+[2022-07-06 21:38:06.211 +03:00  INF]  Route matched with {action = "GetAllShoppingLists", controller = "ShoppingList"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllShoppingLists(Teleperformance.Bootcamp.Application.Features.Queries.ShoppingList.GetAllShoppingList.GetAllShoppingListQueryRequest) on controller Teleperformance.Bootcamp.WebApi.Controllers.ShoppingListController (Teleperformance.Bootcamp.WebApi).
+[2022-07-06 21:38:07.371 +03:00  INF]  Entity Framework Core 6.0.6 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.6' with options: None
+[2022-07-06 21:38:07.603 +03:00  WRN]  The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+[2022-07-06 21:38:07.604 +03:00  WRN]  The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+[2022-07-06 21:38:08.199 +03:00  INF]  Executed DbCommand (67ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[AppUserId], [t].[CategoryId], [t].[CompleteDate], [t].[CreateDate], [t].[Description], [t].[IsComplete], [t].[Title], [a].[Id], [c].[Id], [p].[Id], [p].[CreateDate], [p].[IsBuy], [p].[Name], [p].[Quantity], [p].[ShoppingListId], [p].[Unit], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[CreateDate], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[Name], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[Surname], [a].[TwoFactorEnabled], [a].[UserName], [c].[CreateDate], [c].[Name]
+FROM (
+    SELECT [s].[Id], [s].[AppUserId], [s].[CategoryId], [s].[CompleteDate], [s].[CreateDate], [s].[Description], [s].[IsComplete], [s].[Title]
+    FROM [ShoppingLists] AS [s]
+    ORDER BY (SELECT 1)
+    OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+) AS [t]
+INNER JOIN [AspNetUsers] AS [a] ON [t].[AppUserId] = [a].[Id]
+INNER JOIN [Categories] AS [c] ON [t].[CategoryId] = [c].[Id]
+LEFT JOIN [Products] AS [p] ON [t].[Id] = [p].[ShoppingListId]
+ORDER BY [t].[Id], [a].[Id], [c].[Id]
+[2022-07-06 22:26:48.211 +03:00  INF]  User profile is available. Using 'C:\Users\sercan\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+[2022-07-06 22:26:48.405 +03:00  INF]  Now listening on: https://localhost:7121
+[2022-07-06 22:26:48.405 +03:00  INF]  Now listening on: http://localhost:5121
+[2022-07-06 22:26:48.406 +03:00  INF]  Application started. Press Ctrl+C to shut down.
+[2022-07-06 22:26:48.407 +03:00  INF]  Hosting environment: Development
+[2022-07-06 22:26:48.407 +03:00  INF]  Content root path: C:\Users\sercan\Desktop\Bootcamp\BootcampProject\Teleperformance.ShoppingList\src\WebApi\Teleperformance.ShoppingList.WebApi\
+[2022-07-06 22:26:48.950 +03:00  INF]  Request starting HTTP/2 GET https://localhost:7121/swagger/index.html - -
+[2022-07-06 22:26:49.190 +03:00  INF]  Request starting HTTP/2 GET https://localhost:7121/_framework/aspnetcore-browser-refresh.js - -
+[2022-07-06 22:26:49.195 +03:00  INF]  Request finished HTTP/2 GET https://localhost:7121/swagger/index.html - - - 200 - text/html;charset=utf-8 248.4580ms
+[2022-07-06 22:26:49.195 +03:00  INF]  Request finished HTTP/2 GET https://localhost:7121/_framework/aspnetcore-browser-refresh.js - - - 200 12032 application/javascript;+charset=utf-8 4.0584ms
+[2022-07-06 22:26:49.230 +03:00  INF]  Request starting HTTP/2 GET https://localhost:7121/_vs/browserLink - -
+[2022-07-06 22:26:49.248 +03:00  INF]  Request finished HTTP/2 GET https://localhost:7121/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 18.0542ms
+[2022-07-06 22:26:49.348 +03:00  INF]  Request starting HTTP/2 GET https://localhost:7121/swagger/v1/swagger.json - -
+[2022-07-06 22:26:49.484 +03:00  INF]  Request finished HTTP/2 GET https://localhost:7121/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 135.8461ms
+[2022-07-06 22:26:54.718 +03:00  INF]  Request starting HTTP/2 GET https://localhost:7121/api/ShoppingList?PageNumber=1&PageSize=3 - -
+[2022-07-06 22:26:54.782 +03:00  ERR]  [Request] HTTP GET /api/ShoppingList
+[2022-07-06 22:26:54.786 +03:00  INF]  Executing endpoint 'Teleperformance.Bootcamp.WebApi.Controllers.ShoppingListController.GetAllShoppingLists (Teleperformance.Bootcamp.WebApi)'
+[2022-07-06 22:26:54.809 +03:00  INF]  Route matched with {action = "GetAllShoppingLists", controller = "ShoppingList"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllShoppingLists(Teleperformance.Bootcamp.Application.Features.Queries.ShoppingList.GetAllShoppingList.GetAllShoppingListQueryRequest) on controller Teleperformance.Bootcamp.WebApi.Controllers.ShoppingListController (Teleperformance.Bootcamp.WebApi).
+[2022-07-06 22:26:55.938 +03:00  INF]  Entity Framework Core 6.0.6 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.6' with options: None
+[2022-07-06 22:26:56.177 +03:00  WRN]  The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+[2022-07-06 22:26:56.177 +03:00  WRN]  The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+[2022-07-06 22:26:56.783 +03:00  INF]  Executed DbCommand (66ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[AppUserId], [t].[CategoryId], [t].[CompleteDate], [t].[CreateDate], [t].[Description], [t].[IsComplete], [t].[Title], [a].[Id], [c].[Id], [p].[Id], [p].[CreateDate], [p].[IsBuy], [p].[Name], [p].[Quantity], [p].[ShoppingListId], [p].[Unit], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[CreateDate], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[Name], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[Surname], [a].[TwoFactorEnabled], [a].[UserName], [c].[CreateDate], [c].[Name]
+FROM (
+    SELECT [s].[Id], [s].[AppUserId], [s].[CategoryId], [s].[CompleteDate], [s].[CreateDate], [s].[Description], [s].[IsComplete], [s].[Title]
+    FROM [ShoppingLists] AS [s]
+    ORDER BY (SELECT 1)
+    OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+) AS [t]
+INNER JOIN [AspNetUsers] AS [a] ON [t].[AppUserId] = [a].[Id]
+INNER JOIN [Categories] AS [c] ON [t].[CategoryId] = [c].[Id]
+LEFT JOIN [Products] AS [p] ON [t].[Id] = [p].[ShoppingListId]
+ORDER BY [t].[Id], [a].[Id], [c].[Id]
+[2022-07-06 22:26:57.206 +03:00  INF]  Executed action Teleperformance.Bootcamp.WebApi.Controllers.ShoppingListController.GetAllShoppingLists (Teleperformance.Bootcamp.WebApi) in 2392.0961ms
+[2022-07-06 22:26:57.207 +03:00  INF]  Executed endpoint 'Teleperformance.Bootcamp.WebApi.Controllers.ShoppingListController.GetAllShoppingLists (Teleperformance.Bootcamp.WebApi)'
+[2022-07-06 22:26:57.259 +03:00  ERR]  [ERROR] HTTP GET - 500 -  Error Messsage The input does not contain any JSON tokens. Expected the input to start with a valid JSON token, when isFinalBlock is true. Path: $ | LineNumber: 0 | BytePositionInLine: 0.
+[2022-07-06 22:26:57.364 +03:00  INF]  Request finished HTTP/2 GET https://localhost:7121/api/ShoppingList?PageNumber=1&PageSize=3 - - - 500 - application/json 2645.5842ms
+[2022-07-06 22:27:25.475 +03:00  INF]  User profile is available. Using 'C:\Users\sercan\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+[2022-07-06 22:27:25.714 +03:00  INF]  Now listening on: https://localhost:7121
+[2022-07-06 22:27:25.714 +03:00  INF]  Now listening on: http://localhost:5121
+[2022-07-06 22:27:25.716 +03:00  INF]  Application started. Press Ctrl+C to shut down.
+[2022-07-06 22:27:25.716 +03:00  INF]  Hosting environment: Development
+[2022-07-06 22:27:25.716 +03:00  INF]  Content root path: C:\Users\sercan\Desktop\Bootcamp\BootcampProject\Teleperformance.ShoppingList\src\WebApi\Teleperformance.ShoppingList.WebApi\
+[2022-07-06 22:27:26.332 +03:00  INF]  Request starting HTTP/2 GET https://localhost:7121/swagger/index.html - -
+[2022-07-06 22:27:26.595 +03:00  INF]  Request starting HTTP/2 GET https://localhost:7121/_framework/aspnetcore-browser-refresh.js - -
+[2022-07-06 22:27:26.599 +03:00  INF]  Request finished HTTP/2 GET https://localhost:7121/swagger/index.html - - - 200 - text/html;charset=utf-8 270.3655ms
+[2022-07-06 22:27:26.599 +03:00  INF]  Request finished HTTP/2 GET https://localhost:7121/_framework/aspnetcore-browser-refresh.js - - - 200 12032 application/javascript;+charset=utf-8 4.0673ms
+[2022-07-06 22:27:26.625 +03:00  INF]  Request starting HTTP/2 GET https://localhost:7121/_vs/browserLink - -
+[2022-07-06 22:27:26.647 +03:00  INF]  Request finished HTTP/2 GET https://localhost:7121/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 21.5082ms
+[2022-07-06 22:27:26.779 +03:00  INF]  Request starting HTTP/2 GET https://localhost:7121/swagger/v1/swagger.json - -
+[2022-07-06 22:27:26.924 +03:00  INF]  Request finished HTTP/2 GET https://localhost:7121/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 145.3018ms
+[2022-07-06 22:27:31.220 +03:00  INF]  Request starting HTTP/2 GET https://localhost:7121/api/ShoppingList?PageNumber=1&PageSize=3 - -
+[2022-07-06 22:27:31.286 +03:00  ERR]  [Request] HTTP GET /api/ShoppingList
+[2022-07-06 22:27:31.289 +03:00  INF]  Executing endpoint 'Teleperformance.Bootcamp.WebApi.Controllers.ShoppingListController.GetAllShoppingLists (Teleperformance.Bootcamp.WebApi)'
+[2022-07-06 22:27:31.310 +03:00  INF]  Route matched with {action = "GetAllShoppingLists", controller = "ShoppingList"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllShoppingLists(Teleperformance.Bootcamp.Application.Features.Queries.ShoppingList.GetAllShoppingList.GetAllShoppingListQueryRequest) on controller Teleperformance.Bootcamp.WebApi.Controllers.ShoppingListController (Teleperformance.Bootcamp.WebApi).
+[2022-07-06 22:27:32.485 +03:00  INF]  Entity Framework Core 6.0.6 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.6' with options: None
+[2022-07-06 22:27:32.726 +03:00  WRN]  The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+[2022-07-06 22:27:32.727 +03:00  WRN]  The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+[2022-07-06 22:27:33.378 +03:00  INF]  Executed DbCommand (62ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[AppUserId], [t].[CategoryId], [t].[CompleteDate], [t].[CreateDate], [t].[Description], [t].[IsComplete], [t].[Title], [a].[Id], [c].[Id], [p].[Id], [p].[CreateDate], [p].[IsBuy], [p].[Name], [p].[Quantity], [p].[ShoppingListId], [p].[Unit], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[CreateDate], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[Name], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[Surname], [a].[TwoFactorEnabled], [a].[UserName], [c].[CreateDate], [c].[Name]
+FROM (
+    SELECT [s].[Id], [s].[AppUserId], [s].[CategoryId], [s].[CompleteDate], [s].[CreateDate], [s].[Description], [s].[IsComplete], [s].[Title]
+    FROM [ShoppingLists] AS [s]
+    ORDER BY (SELECT 1)
+    OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+) AS [t]
+INNER JOIN [AspNetUsers] AS [a] ON [t].[AppUserId] = [a].[Id]
+INNER JOIN [Categories] AS [c] ON [t].[CategoryId] = [c].[Id]
+LEFT JOIN [Products] AS [p] ON [t].[Id] = [p].[ShoppingListId]
+ORDER BY [t].[Id], [a].[Id], [c].[Id]
+[2022-07-06 22:27:33.871 +03:00  INF]  Executed action Teleperformance.Bootcamp.WebApi.Controllers.ShoppingListController.GetAllShoppingLists (Teleperformance.Bootcamp.WebApi) in 2555.5679ms
+[2022-07-06 22:27:33.873 +03:00  INF]  Executed endpoint 'Teleperformance.Bootcamp.WebApi.Controllers.ShoppingListController.GetAllShoppingLists (Teleperformance.Bootcamp.WebApi)'
+[2022-07-06 22:27:33.921 +03:00  ERR]  [ERROR] HTTP GET - 500 -  Error Messsage The JSON value could not be converted to Teleperformance.Bootcamp.Application.Features.Queries.ShoppingList.GetAllShoppingList.GetAllShoppingListQueryRequest. Path: $ | LineNumber: 0 | BytePositionInLine: 1.
+[2022-07-06 22:27:34.030 +03:00  INF]  Request finished HTTP/2 GET https://localhost:7121/api/ShoppingList?PageNumber=1&PageSize=3 - - - 500 - application/json 2810.2950ms
+[2022-07-06 22:30:45.241 +03:00  INF]  User profile is available. Using 'C:\Users\sercan\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+[2022-07-06 22:30:45.458 +03:00  INF]  Now listening on: https://localhost:7121
+[2022-07-06 22:30:45.458 +03:00  INF]  Now listening on: http://localhost:5121
+[2022-07-06 22:30:45.460 +03:00  INF]  Application started. Press Ctrl+C to shut down.
+[2022-07-06 22:30:45.460 +03:00  INF]  Hosting environment: Development
+[2022-07-06 22:30:45.460 +03:00  INF]  Content root path: C:\Users\sercan\Desktop\Bootcamp\BootcampProject\Teleperformance.ShoppingList\src\WebApi\Teleperformance.ShoppingList.WebApi\
+[2022-07-06 22:30:45.978 +03:00  INF]  Request starting HTTP/2 GET https://localhost:7121/swagger/index.html - -
+[2022-07-06 22:30:46.230 +03:00  INF]  Request starting HTTP/2 GET https://localhost:7121/_framework/aspnetcore-browser-refresh.js - -
+[2022-07-06 22:30:46.238 +03:00  INF]  Request finished HTTP/2 GET https://localhost:7121/swagger/index.html - - - 200 - text/html;charset=utf-8 262.3040ms
+[2022-07-06 22:30:46.238 +03:00  INF]  Request finished HTTP/2 GET https://localhost:7121/_framework/aspnetcore-browser-refresh.js - - - 200 12032 application/javascript;+charset=utf-8 5.5275ms
+[2022-07-06 22:30:46.267 +03:00  INF]  Request starting HTTP/2 GET https://localhost:7121/_vs/browserLink - -
+[2022-07-06 22:30:46.284 +03:00  INF]  Request finished HTTP/2 GET https://localhost:7121/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 17.8362ms
+[2022-07-06 22:30:46.385 +03:00  INF]  Request starting HTTP/2 GET https://localhost:7121/swagger/v1/swagger.json - -
+[2022-07-06 22:30:46.552 +03:00  INF]  Request finished HTTP/2 GET https://localhost:7121/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 167.8298ms
+[2022-07-06 22:30:50.574 +03:00  INF]  Request starting HTTP/2 GET https://localhost:7121/api/ShoppingList?PageNumber=1 - -
+[2022-07-06 22:30:50.641 +03:00  ERR]  [Request] HTTP GET /api/ShoppingList
+[2022-07-06 22:30:50.644 +03:00  INF]  Executing endpoint 'Teleperformance.Bootcamp.WebApi.Controllers.ShoppingListController.GetAllShoppingLists (Teleperformance.Bootcamp.WebApi)'
+[2022-07-06 22:30:50.666 +03:00  INF]  Route matched with {action = "GetAllShoppingLists", controller = "ShoppingList"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllShoppingLists(Teleperformance.Bootcamp.Application.Features.Queries.ShoppingList.GetAllShoppingList.GetAllShoppingListQueryRequest) on controller Teleperformance.Bootcamp.WebApi.Controllers.ShoppingListController (Teleperformance.Bootcamp.WebApi).
+[2022-07-06 22:30:51.797 +03:00  INF]  Entity Framework Core 6.0.6 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.6' with options: None
+[2022-07-06 22:30:52.067 +03:00  WRN]  The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+[2022-07-06 22:30:52.068 +03:00  WRN]  The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+[2022-07-06 22:30:52.683 +03:00  INF]  Executed DbCommand (48ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[AppUserId], [t].[CategoryId], [t].[CompleteDate], [t].[CreateDate], [t].[Description], [t].[IsComplete], [t].[Title], [a].[Id], [c].[Id], [p].[Id], [p].[CreateDate], [p].[IsBuy], [p].[Name], [p].[Quantity], [p].[ShoppingListId], [p].[Unit], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[CreateDate], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[Name], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[Surname], [a].[TwoFactorEnabled], [a].[UserName], [c].[CreateDate], [c].[Name]
+FROM (
+    SELECT [s].[Id], [s].[AppUserId], [s].[CategoryId], [s].[CompleteDate], [s].[CreateDate], [s].[Description], [s].[IsComplete], [s].[Title]
+    FROM [ShoppingLists] AS [s]
+    WHERE 0 = 1
+) AS [t]
+INNER JOIN [AspNetUsers] AS [a] ON [t].[AppUserId] = [a].[Id]
+INNER JOIN [Categories] AS [c] ON [t].[CategoryId] = [c].[Id]
+LEFT JOIN [Products] AS [p] ON [t].[Id] = [p].[ShoppingListId]
+ORDER BY [t].[Id], [a].[Id], [c].[Id]
+[2022-07-06 22:30:53.072 +03:00  INF]  Executed action Teleperformance.Bootcamp.WebApi.Controllers.ShoppingListController.GetAllShoppingLists (Teleperformance.Bootcamp.WebApi) in 2401.4534ms
+[2022-07-06 22:30:53.074 +03:00  INF]  Executed endpoint 'Teleperformance.Bootcamp.WebApi.Controllers.ShoppingListController.GetAllShoppingLists (Teleperformance.Bootcamp.WebApi)'
+[2022-07-06 22:30:53.118 +03:00  ERR]  [ERROR] HTTP GET - 500 -  Error Messsage The JSON value could not be converted to Teleperformance.Bootcamp.Application.Features.Queries.ShoppingList.GetAllShoppingList.GetAllShoppingListQueryRequest. Path: $ | LineNumber: 0 | BytePositionInLine: 1.
+[2022-07-06 22:30:53.240 +03:00  INF]  Request finished HTTP/2 GET https://localhost:7121/api/ShoppingList?PageNumber=1 - - - 500 - application/json 2665.7956ms
+[2022-07-06 22:30:56.028 +03:00  INF]  Request starting HTTP/2 GET https://localhost:7121/api/ShoppingList?PageNumber=1&PageSize=3 - -
+[2022-07-06 22:30:56.029 +03:00  ERR]  [Request] HTTP GET /api/ShoppingList
+[2022-07-06 22:30:56.029 +03:00  INF]  Executing endpoint 'Teleperformance.Bootcamp.WebApi.Controllers.ShoppingListController.GetAllShoppingLists (Teleperformance.Bootcamp.WebApi)'
+[2022-07-06 22:30:56.029 +03:00  INF]  Route matched with {action = "GetAllShoppingLists", controller = "ShoppingList"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllShoppingLists(Teleperformance.Bootcamp.Application.Features.Queries.ShoppingList.GetAllShoppingList.GetAllShoppingListQueryRequest) on controller Teleperformance.Bootcamp.WebApi.Controllers.ShoppingListController (Teleperformance.Bootcamp.WebApi).
+[2022-07-06 22:30:56.058 +03:00  INF]  Entity Framework Core 6.0.6 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.6' with options: None
+[2022-07-06 22:30:56.059 +03:00  WRN]  The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+[2022-07-06 22:30:56.059 +03:00  WRN]  The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+[2022-07-06 22:30:56.114 +03:00  INF]  Executed DbCommand (38ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[AppUserId], [t].[CategoryId], [t].[CompleteDate], [t].[CreateDate], [t].[Description], [t].[IsComplete], [t].[Title], [a].[Id], [c].[Id], [p].[Id], [p].[CreateDate], [p].[IsBuy], [p].[Name], [p].[Quantity], [p].[ShoppingListId], [p].[Unit], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[CreateDate], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[Name], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[Surname], [a].[TwoFactorEnabled], [a].[UserName], [c].[CreateDate], [c].[Name]
+FROM (
+    SELECT [s].[Id], [s].[AppUserId], [s].[CategoryId], [s].[CompleteDate], [s].[CreateDate], [s].[Description], [s].[IsComplete], [s].[Title]
+    FROM [ShoppingLists] AS [s]
+    ORDER BY (SELECT 1)
+    OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+) AS [t]
+INNER JOIN [AspNetUsers] AS [a] ON [t].[AppUserId] = [a].[Id]
+INNER JOIN [Categories] AS [c] ON [t].[CategoryId] = [c].[Id]
+LEFT JOIN [Products] AS [p] ON [t].[Id] = [p].[ShoppingListId]
+ORDER BY [t].[Id], [a].[Id], [c].[Id]
+[2022-07-06 22:30:56.265 +03:00  INF]  Executed action Teleperformance.Bootcamp.WebApi.Controllers.ShoppingListController.GetAllShoppingLists (Teleperformance.Bootcamp.WebApi) in 235.1404ms
+[2022-07-06 22:30:56.265 +03:00  INF]  Executed endpoint 'Teleperformance.Bootcamp.WebApi.Controllers.ShoppingListController.GetAllShoppingLists (Teleperformance.Bootcamp.WebApi)'
+[2022-07-06 22:30:56.298 +03:00  ERR]  [ERROR] HTTP GET - 500 -  Error Messsage The JSON value could not be converted to Teleperformance.Bootcamp.Application.Features.Queries.ShoppingList.GetAllShoppingList.GetAllShoppingListQueryRequest. Path: $ | LineNumber: 0 | BytePositionInLine: 1.
+[2022-07-06 22:30:56.298 +03:00  INF]  Request finished HTTP/2 GET https://localhost:7121/api/ShoppingList?PageNumber=1&PageSize=3 - - - 500 - application/json 270.0776ms
+[2022-07-06 22:31:12.759 +03:00  INF]  User profile is available. Using 'C:\Users\sercan\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+[2022-07-06 22:31:12.971 +03:00  INF]  Now listening on: https://localhost:7121
+[2022-07-06 22:31:12.971 +03:00  INF]  Now listening on: http://localhost:5121
+[2022-07-06 22:31:12.973 +03:00  INF]  Application started. Press Ctrl+C to shut down.
+[2022-07-06 22:31:12.973 +03:00  INF]  Hosting environment: Development
+[2022-07-06 22:31:12.973 +03:00  INF]  Content root path: C:\Users\sercan\Desktop\Bootcamp\BootcampProject\Teleperformance.ShoppingList\src\WebApi\Teleperformance.ShoppingList.WebApi\
+[2022-07-06 22:31:13.643 +03:00  INF]  Request starting HTTP/2 GET https://localhost:7121/swagger/index.html - -
+[2022-07-06 22:31:13.896 +03:00  INF]  Request starting HTTP/2 GET https://localhost:7121/_framework/aspnetcore-browser-refresh.js - -
+[2022-07-06 22:31:13.902 +03:00  INF]  Request finished HTTP/2 GET https://localhost:7121/swagger/index.html - - - 200 - text/html;charset=utf-8 262.4967ms
+[2022-07-06 22:31:13.902 +03:00  INF]  Request finished HTTP/2 GET https://localhost:7121/_framework/aspnetcore-browser-refresh.js - - - 200 12032 application/javascript;+charset=utf-8 5.2276ms
+[2022-07-06 22:31:13.929 +03:00  INF]  Request starting HTTP/2 GET https://localhost:7121/_vs/browserLink - -
+[2022-07-06 22:31:13.943 +03:00  INF]  Request finished HTTP/2 GET https://localhost:7121/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 13.9605ms
+[2022-07-06 22:31:14.044 +03:00  INF]  Request starting HTTP/2 GET https://localhost:7121/swagger/v1/swagger.json - -
+[2022-07-06 22:31:14.172 +03:00  INF]  Request finished HTTP/2 GET https://localhost:7121/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 128.3773ms
+[2022-07-06 22:31:42.326 +03:00  INF]  Request starting HTTP/2 GET https://localhost:7121/api/ShoppingList?PageNumber=1&PageSize=3 - -
+[2022-07-06 22:31:42.392 +03:00  ERR]  [Request] HTTP GET /api/ShoppingList
+[2022-07-06 22:31:42.395 +03:00  INF]  Executing endpoint 'Teleperformance.Bootcamp.WebApi.Controllers.ShoppingListController.GetAllShoppingLists (Teleperformance.Bootcamp.WebApi)'
+[2022-07-06 22:31:42.417 +03:00  INF]  Route matched with {action = "GetAllShoppingLists", controller = "ShoppingList"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllShoppingLists(Teleperformance.Bootcamp.Application.Features.Queries.ShoppingList.GetAllShoppingList.GetAllShoppingListQueryRequest) on controller Teleperformance.Bootcamp.WebApi.Controllers.ShoppingListController (Teleperformance.Bootcamp.WebApi).
+[2022-07-06 22:31:43.597 +03:00  INF]  Entity Framework Core 6.0.6 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.6' with options: None
+[2022-07-06 22:31:43.831 +03:00  WRN]  The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+[2022-07-06 22:31:43.832 +03:00  WRN]  The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+[2022-07-06 22:31:44.469 +03:00  INF]  Executed DbCommand (72ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[AppUserId], [t].[CategoryId], [t].[CompleteDate], [t].[CreateDate], [t].[Description], [t].[IsComplete], [t].[Title], [a].[Id], [c].[Id], [p].[Id], [p].[CreateDate], [p].[IsBuy], [p].[Name], [p].[Quantity], [p].[ShoppingListId], [p].[Unit], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[CreateDate], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[Name], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[Surname], [a].[TwoFactorEnabled], [a].[UserName], [c].[CreateDate], [c].[Name]
+FROM (
+    SELECT [s].[Id], [s].[AppUserId], [s].[CategoryId], [s].[CompleteDate], [s].[CreateDate], [s].[Description], [s].[IsComplete], [s].[Title]
+    FROM [ShoppingLists] AS [s]
+    ORDER BY (SELECT 1)
+    OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+) AS [t]
+INNER JOIN [AspNetUsers] AS [a] ON [t].[AppUserId] = [a].[Id]
+INNER JOIN [Categories] AS [c] ON [t].[CategoryId] = [c].[Id]
+LEFT JOIN [Products] AS [p] ON [t].[Id] = [p].[ShoppingListId]
+ORDER BY [t].[Id], [a].[Id], [c].[Id]
+[2022-07-06 22:31:44.923 +03:00  INF]  Executed action Teleperformance.Bootcamp.WebApi.Controllers.ShoppingListController.GetAllShoppingLists (Teleperformance.Bootcamp.WebApi) in 2501.8876ms
+[2022-07-06 22:31:44.924 +03:00  INF]  Executed endpoint 'Teleperformance.Bootcamp.WebApi.Controllers.ShoppingListController.GetAllShoppingLists (Teleperformance.Bootcamp.WebApi)'
+[2022-07-06 22:31:44.970 +03:00  ERR]  [ERROR] HTTP GET - 500 -  Error Messsage The JSON value could not be converted to Teleperformance.Bootcamp.Application.Features.Queries.ShoppingList.GetAllShoppingList.GetAllShoppingListQueryRequest. Path: $ | LineNumber: 0 | BytePositionInLine: 1.
+[2022-07-06 22:31:45.085 +03:00  INF]  Request finished HTTP/2 GET https://localhost:7121/api/ShoppingList?PageNumber=1&PageSize=3 - - - 500 - application/json 2759.1203ms
+[2022-07-06 22:32:05.591 +03:00  INF]  User profile is available. Using 'C:\Users\sercan\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+[2022-07-06 22:32:05.852 +03:00  INF]  Now listening on: https://localhost:7121
+[2022-07-06 22:32:05.852 +03:00  INF]  Now listening on: http://localhost:5121
+[2022-07-06 22:32:05.854 +03:00  INF]  Application started. Press Ctrl+C to shut down.
+[2022-07-06 22:32:05.854 +03:00  INF]  Hosting environment: Development
+[2022-07-06 22:32:05.854 +03:00  INF]  Content root path: C:\Users\sercan\Desktop\Bootcamp\BootcampProject\Teleperformance.ShoppingList\src\WebApi\Teleperformance.ShoppingList.WebApi\
+[2022-07-06 22:32:06.499 +03:00  INF]  Request starting HTTP/2 GET https://localhost:7121/swagger/index.html - -
+[2022-07-06 22:32:06.760 +03:00  INF]  Request starting HTTP/2 GET https://localhost:7121/_framework/aspnetcore-browser-refresh.js - -
+[2022-07-06 22:32:06.766 +03:00  INF]  Request finished HTTP/2 GET https://localhost:7121/swagger/index.html - - - 200 - text/html;charset=utf-8 270.2917ms
+[2022-07-06 22:32:06.766 +03:00  INF]  Request finished HTTP/2 GET https://localhost:7121/_framework/aspnetcore-browser-refresh.js - - - 200 12032 application/javascript;+charset=utf-8 5.5944ms
+[2022-07-06 22:32:06.793 +03:00  INF]  Request starting HTTP/2 GET https://localhost:7121/_vs/browserLink - -
+[2022-07-06 22:32:06.813 +03:00  INF]  Request finished HTTP/2 GET https://localhost:7121/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 19.8529ms
+[2022-07-06 22:32:06.919 +03:00  INF]  Request starting HTTP/2 GET https://localhost:7121/swagger/v1/swagger.json - -
+[2022-07-06 22:32:07.025 +03:00  INF]  Request finished HTTP/2 GET https://localhost:7121/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 105.2935ms
+[2022-07-06 22:32:12.623 +03:00  INF]  Request starting HTTP/2 GET https://localhost:7121/api/ShoppingList?PageNumber=1&PageSize=3 - -
+[2022-07-06 22:32:12.691 +03:00  ERR]  [Request] HTTP GET /api/ShoppingList
+[2022-07-06 22:32:12.694 +03:00  INF]  Executing endpoint 'Teleperformance.Bootcamp.WebApi.Controllers.ShoppingListController.GetAllShoppingLists (Teleperformance.Bootcamp.WebApi)'
+[2022-07-06 22:32:12.717 +03:00  INF]  Route matched with {action = "GetAllShoppingLists", controller = "ShoppingList"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllShoppingLists(Teleperformance.Bootcamp.Application.Features.Queries.ShoppingList.GetAllShoppingList.GetAllShoppingListQueryRequest) on controller Teleperformance.Bootcamp.WebApi.Controllers.ShoppingListController (Teleperformance.Bootcamp.WebApi).
+[2022-07-06 22:32:13.894 +03:00  INF]  Entity Framework Core 6.0.6 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.6' with options: None
+[2022-07-06 22:32:14.133 +03:00  WRN]  The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+[2022-07-06 22:32:14.134 +03:00  WRN]  The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+[2022-07-06 22:32:14.771 +03:00  INF]  Executed DbCommand (86ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[AppUserId], [t].[CategoryId], [t].[CompleteDate], [t].[CreateDate], [t].[Description], [t].[IsComplete], [t].[Title], [a].[Id], [c].[Id], [p].[Id], [p].[CreateDate], [p].[IsBuy], [p].[Name], [p].[Quantity], [p].[ShoppingListId], [p].[Unit], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[CreateDate], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[Name], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[Surname], [a].[TwoFactorEnabled], [a].[UserName], [c].[CreateDate], [c].[Name]
+FROM (
+    SELECT [s].[Id], [s].[AppUserId], [s].[CategoryId], [s].[CompleteDate], [s].[CreateDate], [s].[Description], [s].[IsComplete], [s].[Title]
+    FROM [ShoppingLists] AS [s]
+    ORDER BY (SELECT 1)
+    OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+) AS [t]
+INNER JOIN [AspNetUsers] AS [a] ON [t].[AppUserId] = [a].[Id]
+INNER JOIN [Categories] AS [c] ON [t].[CategoryId] = [c].[Id]
+LEFT JOIN [Products] AS [p] ON [t].[Id] = [p].[ShoppingListId]
+ORDER BY [t].[Id], [a].[Id], [c].[Id]
+[2022-07-06 22:32:15.237 +03:00  INF]  Executed action Teleperformance.Bootcamp.WebApi.Controllers.ShoppingListController.GetAllShoppingLists (Teleperformance.Bootcamp.WebApi) in 2515.9974ms
+[2022-07-06 22:32:15.240 +03:00  INF]  Executed endpoint 'Teleperformance.Bootcamp.WebApi.Controllers.ShoppingListController.GetAllShoppingLists (Teleperformance.Bootcamp.WebApi)'
+[2022-07-06 22:32:15.295 +03:00  ERR]  [ERROR] HTTP GET - 500 -  Error Messsage The JSON value could not be converted to Teleperformance.Bootcamp.Application.Features.Queries.ShoppingList.GetAllShoppingList.GetAllShoppingListQueryRequest. Path: $ | LineNumber: 0 | BytePositionInLine: 1.
+[2022-07-06 22:32:15.420 +03:00  INF]  Request finished HTTP/2 GET https://localhost:7121/api/ShoppingList?PageNumber=1&PageSize=3 - - - 500 - application/json 2796.8319ms
+[2022-07-06 22:33:12.671 +03:00  INF]  User profile is available. Using 'C:\Users\sercan\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+[2022-07-06 22:33:12.869 +03:00  INF]  Now listening on: https://localhost:7121
+[2022-07-06 22:33:12.869 +03:00  INF]  Now listening on: http://localhost:5121
+[2022-07-06 22:33:12.871 +03:00  INF]  Application started. Press Ctrl+C to shut down.
+[2022-07-06 22:33:12.871 +03:00  INF]  Hosting environment: Development
+[2022-07-06 22:33:12.871 +03:00  INF]  Content root path: C:\Users\sercan\Desktop\Bootcamp\BootcampProject\Teleperformance.ShoppingList\src\WebApi\Teleperformance.ShoppingList.WebApi\
+[2022-07-06 22:33:13.487 +03:00  INF]  Request starting HTTP/2 GET https://localhost:7121/swagger/index.html - -
+[2022-07-06 22:33:13.732 +03:00  INF]  Request starting HTTP/2 GET https://localhost:7121/_framework/aspnetcore-browser-refresh.js - -
+[2022-07-06 22:33:13.737 +03:00  INF]  Request finished HTTP/2 GET https://localhost:7121/_framework/aspnetcore-browser-refresh.js - - - 200 12032 application/javascript;+charset=utf-8 3.9966ms
+[2022-07-06 22:33:13.737 +03:00  INF]  Request finished HTTP/2 GET https://localhost:7121/swagger/index.html - - - 200 - text/html;charset=utf-8 252.6913ms
+[2022-07-06 22:33:13.765 +03:00  INF]  Request starting HTTP/2 GET https://localhost:7121/_vs/browserLink - -
+[2022-07-06 22:33:13.783 +03:00  INF]  Request finished HTTP/2 GET https://localhost:7121/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 18.7016ms
+[2022-07-06 22:33:13.889 +03:00  INF]  Request starting HTTP/2 GET https://localhost:7121/swagger/v1/swagger.json - -
+[2022-07-06 22:33:14.024 +03:00  INF]  Request finished HTTP/2 GET https://localhost:7121/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 134.3848ms
+[2022-07-06 22:33:19.433 +03:00  INF]  Request starting HTTP/2 GET https://localhost:7121/api/ShoppingList?PageNumber=1&PageSize=3 - -
+[2022-07-06 22:33:19.500 +03:00  ERR]  [Request] HTTP GET /api/ShoppingList
+[2022-07-06 22:33:19.504 +03:00  INF]  Executing endpoint 'Teleperformance.Bootcamp.WebApi.Controllers.ShoppingListController.GetAllShoppingLists (Teleperformance.Bootcamp.WebApi)'
+[2022-07-06 22:33:19.532 +03:00  INF]  Route matched with {action = "GetAllShoppingLists", controller = "ShoppingList"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllShoppingLists(Teleperformance.Bootcamp.Application.Features.Queries.ShoppingList.GetAllShoppingList.GetAllShoppingListQueryRequest) on controller Teleperformance.Bootcamp.WebApi.Controllers.ShoppingListController (Teleperformance.Bootcamp.WebApi).
+[2022-07-06 22:33:20.725 +03:00  INF]  Entity Framework Core 6.0.6 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.6' with options: None
+[2022-07-06 22:33:20.952 +03:00  WRN]  The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+[2022-07-06 22:33:20.953 +03:00  WRN]  The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+[2022-07-06 22:33:21.570 +03:00  INF]  Executed DbCommand (70ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[AppUserId], [t].[CategoryId], [t].[CompleteDate], [t].[CreateDate], [t].[Description], [t].[IsComplete], [t].[Title], [a].[Id], [c].[Id], [p].[Id], [p].[CreateDate], [p].[IsBuy], [p].[Name], [p].[Quantity], [p].[ShoppingListId], [p].[Unit], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[CreateDate], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[Name], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[Surname], [a].[TwoFactorEnabled], [a].[UserName], [c].[CreateDate], [c].[Name]
+FROM (
+    SELECT [s].[Id], [s].[AppUserId], [s].[CategoryId], [s].[CompleteDate], [s].[CreateDate], [s].[Description], [s].[IsComplete], [s].[Title]
+    FROM [ShoppingLists] AS [s]
+    ORDER BY (SELECT 1)
+    OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+) AS [t]
+INNER JOIN [AspNetUsers] AS [a] ON [t].[AppUserId] = [a].[Id]
+INNER JOIN [Categories] AS [c] ON [t].[CategoryId] = [c].[Id]
+LEFT JOIN [Products] AS [p] ON [t].[Id] = [p].[ShoppingListId]
+ORDER BY [t].[Id], [a].[Id], [c].[Id]
+[2022-07-06 22:33:21.980 +03:00  INF]  Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Teleperformance.Bootcamp.Application.DTOs.ShoppingList.GetAllShoppingListDto, Teleperformance.Bootcamp.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+[2022-07-06 22:33:21.992 +03:00  INF]  Executed action Teleperformance.Bootcamp.WebApi.Controllers.ShoppingListController.GetAllShoppingLists (Teleperformance.Bootcamp.WebApi) in 2454.4912ms
+[2022-07-06 22:33:21.993 +03:00  INF]  Executed endpoint 'Teleperformance.Bootcamp.WebApi.Controllers.ShoppingListController.GetAllShoppingLists (Teleperformance.Bootcamp.WebApi)'
+[2022-07-06 22:33:21.994 +03:00  ERR]  [Request] HTTP GET  reponded 200
+[2022-07-06 22:33:22.003 +03:00  INF]  Request finished HTTP/2 GET https://localhost:7121/api/ShoppingList?PageNumber=1&PageSize=3 - - - 200 - application/json;+charset=utf-8 2570.1949ms
+[2022-07-06 22:33:35.669 +03:00  INF]  User profile is available. Using 'C:\Users\sercan\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+[2022-07-06 22:33:35.882 +03:00  INF]  Now listening on: https://localhost:7121
+[2022-07-06 22:33:35.882 +03:00  INF]  Now listening on: http://localhost:5121
+[2022-07-06 22:33:35.884 +03:00  INF]  Application started. Press Ctrl+C to shut down.
+[2022-07-06 22:33:35.884 +03:00  INF]  Hosting environment: Development
+[2022-07-06 22:33:35.884 +03:00  INF]  Content root path: C:\Users\sercan\Desktop\Bootcamp\BootcampProject\Teleperformance.ShoppingList\src\WebApi\Teleperformance.ShoppingList.WebApi\
+[2022-07-06 22:33:36.505 +03:00  INF]  Request starting HTTP/2 GET https://localhost:7121/swagger/index.html - -
+[2022-07-06 22:33:36.760 +03:00  INF]  Request starting HTTP/2 GET https://localhost:7121/_framework/aspnetcore-browser-refresh.js - -
+[2022-07-06 22:33:36.763 +03:00  INF]  Request finished HTTP/2 GET https://localhost:7121/swagger/index.html - - - 200 - text/html;charset=utf-8 261.6885ms
+[2022-07-06 22:33:36.763 +03:00  INF]  Request finished HTTP/2 GET https://localhost:7121/_framework/aspnetcore-browser-refresh.js - - - 200 12032 application/javascript;+charset=utf-8 3.7608ms
+[2022-07-06 22:33:36.788 +03:00  INF]  Request starting HTTP/2 GET https://localhost:7121/_vs/browserLink - -
+[2022-07-06 22:33:36.802 +03:00  INF]  Request finished HTTP/2 GET https://localhost:7121/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 14.3738ms
+[2022-07-06 22:33:36.907 +03:00  INF]  Request starting HTTP/2 GET https://localhost:7121/swagger/v1/swagger.json - -
+[2022-07-06 22:33:37.041 +03:00  INF]  Request finished HTTP/2 GET https://localhost:7121/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 134.7732ms
+[2022-07-06 22:33:41.372 +03:00  INF]  Request starting HTTP/2 GET https://localhost:7121/api/ShoppingList?PageNumber=1&PageSize=3 - -
+[2022-07-06 22:33:41.441 +03:00  ERR]  [Request] HTTP GET /api/ShoppingList
+[2022-07-06 22:33:41.445 +03:00  INF]  Executing endpoint 'Teleperformance.Bootcamp.WebApi.Controllers.ShoppingListController.GetAllShoppingLists (Teleperformance.Bootcamp.WebApi)'
+[2022-07-06 22:33:41.476 +03:00  INF]  Route matched with {action = "GetAllShoppingLists", controller = "ShoppingList"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllShoppingLists(Teleperformance.Bootcamp.Application.Features.Queries.ShoppingList.GetAllShoppingList.GetAllShoppingListQueryRequest) on controller Teleperformance.Bootcamp.WebApi.Controllers.ShoppingListController (Teleperformance.Bootcamp.WebApi).
+[2022-07-06 22:33:42.632 +03:00  INF]  Entity Framework Core 6.0.6 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.6' with options: None
+[2022-07-06 22:33:42.872 +03:00  WRN]  The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+[2022-07-06 22:33:42.873 +03:00  WRN]  The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+[2022-07-06 22:33:43.500 +03:00  INF]  Executed DbCommand (75ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[AppUserId], [t].[CategoryId], [t].[CompleteDate], [t].[CreateDate], [t].[Description], [t].[IsComplete], [t].[Title], [a].[Id], [c].[Id], [p].[Id], [p].[CreateDate], [p].[IsBuy], [p].[Name], [p].[Quantity], [p].[ShoppingListId], [p].[Unit], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[CreateDate], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[Name], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[Surname], [a].[TwoFactorEnabled], [a].[UserName], [c].[CreateDate], [c].[Name]
+FROM (
+    SELECT [s].[Id], [s].[AppUserId], [s].[CategoryId], [s].[CompleteDate], [s].[CreateDate], [s].[Description], [s].[IsComplete], [s].[Title]
+    FROM [ShoppingLists] AS [s]
+    ORDER BY (SELECT 1)
+    OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+) AS [t]
+INNER JOIN [AspNetUsers] AS [a] ON [t].[AppUserId] = [a].[Id]
+INNER JOIN [Categories] AS [c] ON [t].[CategoryId] = [c].[Id]
+LEFT JOIN [Products] AS [p] ON [t].[Id] = [p].[ShoppingListId]
+ORDER BY [t].[Id], [a].[Id], [c].[Id]
+[2022-07-06 22:33:43.930 +03:00  INF]  Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Teleperformance.Bootcamp.Application.DTOs.ShoppingList.GetAllShoppingListDto, Teleperformance.Bootcamp.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+[2022-07-06 22:33:43.941 +03:00  INF]  Executed action Teleperformance.Bootcamp.WebApi.Controllers.ShoppingListController.GetAllShoppingLists (Teleperformance.Bootcamp.WebApi) in 2459.2661ms
+[2022-07-06 22:33:43.942 +03:00  INF]  Executed endpoint 'Teleperformance.Bootcamp.WebApi.Controllers.ShoppingListController.GetAllShoppingLists (Teleperformance.Bootcamp.WebApi)'
+[2022-07-06 22:33:43.942 +03:00  ERR]  [Request] HTTP GET  reponded 200
+[2022-07-06 22:33:43.951 +03:00  INF]  Request finished HTTP/2 GET https://localhost:7121/api/ShoppingList?PageNumber=1&PageSize=3 - - - 200 - application/json;+charset=utf-8 2578.7573ms

@@ -17,7 +17,7 @@ namespace Teleperformance.Bootcamp.Application.DTOs.ShoppingList
         public string Id { get; set; }
         public string Title { get; set; }
         public string? Description { get; set; }
-        public bool IsComplete { get; set; }
+        public bool IsComplete { get; set; } = true;
         public DateTime CreateDate { get; set; } = DateTime.Now;
         public DateTime? CompleteDate { get; set; }
         public List<Product> Products { get; set; }

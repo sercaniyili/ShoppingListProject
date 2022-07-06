@@ -9,7 +9,7 @@ using Teleperformance.Bootcamp.Application.Interfaces.MessageBrokers;
 
 namespace ShoppingListConsumer
 {
-  
+
 
     public class Worker : BackgroundService
     {
@@ -18,13 +18,12 @@ namespace ShoppingListConsumer
         private readonly ILogger<Worker> _logger;
         private readonly IMongoConnect _mongoDbConnect;
         private readonly IConfiguration _configuration;
-       // private readonly IRabbitmqConnection _connection;
+
         public Worker(ILogger<Worker> logger, IMongoConnect mongoConnect, IConfiguration configuration, IRabbitmqConnection connection)
         {
             _logger = logger;
-           _mongoDbConnect = mongoConnect;
+            _mongoDbConnect = mongoConnect;
             _configuration = configuration;
-          //_connection = connection;
         }
 
 
@@ -36,7 +35,7 @@ namespace ShoppingListConsumer
             while (!stoppingToken.IsCancellationRequested)
             {
 
-                //using var connection = _connection.GetRabbitMqConnection();
+          
 
                 var connectioFactory = new ConnectionFactory()
                 {
