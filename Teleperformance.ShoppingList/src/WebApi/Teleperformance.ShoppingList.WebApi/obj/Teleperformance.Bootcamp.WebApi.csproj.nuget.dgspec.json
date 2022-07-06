@@ -72,6 +72,10 @@
               "target": "Package",
               "version": "[6.0.6, )"
             },
+            "MongoDB.Driver": {
+              "target": "Package",
+              "version": "[2.16.1, )"
+            },
             "RabbitMQ.Client": {
               "target": "Package",
               "version": "[6.4.0, )"
@@ -250,6 +254,9 @@
             "projectReferences": {
               "C:\\Users\\sercan\\Desktop\\Bootcamp\\BootcampProject\\Teleperformance.ShoppingList\\src\\core\\Teleperformance.ShoppingList.Application\\Teleperformance.Bootcamp.Application.csproj": {
                 "projectPath": "C:\\Users\\sercan\\Desktop\\Bootcamp\\BootcampProject\\Teleperformance.ShoppingList\\src\\core\\Teleperformance.ShoppingList.Application\\Teleperformance.Bootcamp.Application.csproj"
+              },
+              "C:\\Users\\sercan\\Desktop\\Bootcamp\\BootcampProject\\Teleperformance.ShoppingList\\src\\Infrastructure\\Teleperformance.ShoppingList.Infrastructure\\Teleperformance.Bootcamp.Infrastructure.csproj": {
+                "projectPath": "C:\\Users\\sercan\\Desktop\\Bootcamp\\BootcampProject\\Teleperformance.ShoppingList\\src\\Infrastructure\\Teleperformance.ShoppingList.Infrastructure\\Teleperformance.Bootcamp.Infrastructure.csproj"
               }
             }
           }

@@ -1,11 +1,6 @@
 ﻿using AutoMapper;
 using FluentValidation;
 using MediatR;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Teleperformance.Bootcamp.Application.Interfaces.MessageBrokers;
 using Teleperformance.Bootcamp.Application.Interfaces.Repositories;
 using Teleperformance.Bootcamp.Application.Validations.ShoppingList;
@@ -29,15 +24,28 @@ namespace Teleperformance.Bootcamp.Application.Features.Commands.ShoppingList.Sh
         {
             var entity = await _shoppingListRepsitory.GetByIdAsync(request.UpdateIsCompleteDto.Id);
 
-            entity = _mapper.Map(request.UpdateIsCompleteDto, entity);
+            var result = _mapper.Map(request.UpdateIsCompleteDto, entity);
+
 
             UpdateIsCompleteDtoValidation validation = new UpdateIsCompleteDtoValidation();
             validation.ValidateAndThrow(request.UpdateIsCompleteDto);
 
-            if (entity != null)
+            if (result != null)
             {
-                _shoppingListRepsitory.Update(entity);
-                _rabbitmqService.Publish(entity, "direct", "direct.test", "direct.queuName", "direct.test.key");
+                _shoppingListRepsitory.Update(result);
+
+                _rabbitmqService.Publish(new
+                {
+                    Title = entity.Title,
+                    Description = entity.Description,
+                    CreateDate = entity.CreateDate,
+                    IsComlete = entity.IsComplete,
+                    CompleteDate = entity.CompleteDate,
+                    CategoryId = entity.CategoryId,
+                    AppUserId = entity.AppUserId,
+                    Products = entity.Products,
+                }, "direct", "direct.test", "direct.queuName", "direct.test.key");
+
                 return new BaseResponse("liste başarıyla tamalandı", true);
             }
             else

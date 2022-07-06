@@ -9,10 +9,12 @@
 
   <ItemGroup>
     <PackageReference Include="Microsoft.Extensions.Hosting" Version="6.0.1" />
+    <PackageReference Include="MongoDB.Driver" Version="2.16.1" />
     <PackageReference Include="RabbitMQ.Client" Version="6.4.0" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\Infrastructure\Teleperformance.ShoppingList.Infrastructure\Teleperformance.Bootcamp.Infrastructure.csproj" />
+    <ProjectReference Include="..\Infrastructure\Teleperformance.ShoppingList.Persistence\Teleperformance.Bootcamp.Persistence.csproj" />
   </ItemGroup>
 </Project>

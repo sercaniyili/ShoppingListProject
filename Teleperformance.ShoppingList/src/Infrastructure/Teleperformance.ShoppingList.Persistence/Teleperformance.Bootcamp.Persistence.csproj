@@ -24,6 +24,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\core\Teleperformance.ShoppingList.Application\Teleperformance.Bootcamp.Application.csproj" />
+    <ProjectReference Include="..\Teleperformance.ShoppingList.Infrastructure\Teleperformance.Bootcamp.Infrastructure.csproj" />
   </ItemGroup>
 
 </Project>

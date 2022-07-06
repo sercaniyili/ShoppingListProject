@@ -17,3 +17,5 @@ C:\Users\sercan\Desktop\Bootcamp\BootcampProject\Teleperformance.ShoppingList\sr
 C:\Users\sercan\Desktop\Bootcamp\BootcampProject\Teleperformance.ShoppingList\src\Infrastructure\Teleperformance.ShoppingList.Persistence\obj\Debug\net6.0\Teleperformance.Bootcamp.Persistence.pdb
 C:\Users\sercan\Desktop\Bootcamp\BootcampProject\Teleperformance.ShoppingList\src\Infrastructure\Teleperformance.ShoppingList.Persistence\obj\Debug\net6.0\Teleperformance.Bootcamp.Persistence.genruntimeconfig.cache
 C:\Users\sercan\Desktop\Bootcamp\BootcampProject\Teleperformance.ShoppingList\src\Infrastructure\Teleperformance.ShoppingList.Persistence\obj\Debug\net6.0\ref\Teleperformance.Bootcamp.Persistence.dll
+C:\Users\sercan\Desktop\Bootcamp\BootcampProject\Teleperformance.ShoppingList\src\Infrastructure\Teleperformance.ShoppingList.Persistence\bin\Debug\net6.0\Teleperformance.Bootcamp.Infrastructure.dll
+C:\Users\sercan\Desktop\Bootcamp\BootcampProject\Teleperformance.ShoppingList\src\Infrastructure\Teleperformance.ShoppingList.Persistence\bin\Debug\net6.0\Teleperformance.Bootcamp.Infrastructure.pdb
