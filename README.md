@@ -56,3 +56,103 @@ Projeyi build ederek gerekli veritabanları aşağıdaki komut ile oluşturulabi
 ```
  update-database
 ```
+<br/>
+
+
+- API Endpoints
+
+<img src="https://github.com/186-Teleperformans-Net-Bootcamp/ShoppingListProject-sercan-iyili/blob/main/Teleperformance.ShoppingList/images/Endpoints.png" />
+
+
+- Veri tabanı dizayn
+
+<img src="https://github.com/186-Teleperformans-Net-Bootcamp/ShoppingListProject-sercan-iyili/blob/main/Teleperformance.ShoppingList/images/DbDiagram.png" />
+
+
+- Docker'da Redis ve RAbbitmq aktif ediliyor
+
+<img src="https://github.com/186-Teleperformans-Net-Bootcamp/ShoppingListProject-sercan-iyili/blob/main/Teleperformance.ShoppingList/images/dockerps.png" />
+
+
+- Kullanıcı giriş yapıyor
+
+<img src="https://github.com/186-Teleperformans-Net-Bootcamp/ShoppingListProject-sercan-iyili/blob/main/Teleperformance.ShoppingList/images/Register.png" />
+
+
+- Kullanıcı liste ekliyor
+
+<img src="https://github.com/186-Teleperformans-Net-Bootcamp/ShoppingListProject-sercan-iyili/blob/main/Teleperformance.ShoppingList/images/CreateList.png" />
+
+
+- Oluşturulmuş listeler
+
+<img src="https://github.com/186-Teleperformans-Net-Bootcamp/ShoppingListProject-sercan-iyili/blob/main/Teleperformance.ShoppingList/images/DbLists.png" />
+
+
+- Ürün ekleniyor
+
+<img src="https://github.com/186-Teleperformans-Net-Bootcamp/ShoppingListProject-sercan-iyili/blob/main/Teleperformance.ShoppingList/images/AddProduct.png" />
+
+
+- Id'ye göre listeler
+
+<img src="https://github.com/186-Teleperformans-Net-Bootcamp/ShoppingListProject-sercan-iyili/blob/main/Teleperformance.ShoppingList/images/GetByIdShopingList.png" />
+
+
+- Liste adı,ürün adına, oluşturulma tarihine göre arama
+
+<img src="https://github.com/186-Teleperformans-Net-Bootcamp/ShoppingListProject-sercan-iyili/blob/main/Teleperformance.ShoppingList/images/Search.png" />
+
+
+- Kullanıcı yetki kısıtlanması nedeniyle bütün listeleri göremiyor
+
+<img src="https://github.com/186-Teleperformans-Net-Bootcamp/ShoppingListProject-sercan-iyili/blob/main/Teleperformance.ShoppingList/images/401.png" />
+
+
+ - Admin role ve yetkilendirilmiş JWT token ile giriş yapıyor 
+ 
+<img src="https://github.com/186-Teleperformans-Net-Bootcamp/ShoppingListProject-sercan-iyili/blob/main/Teleperformance.ShoppingList/images/AdminLogin.png" />
+
+
+- JWT token çözümlenmesi
+
+<img src="https://github.com/186-Teleperformans-Net-Bootcamp/ShoppingListProject-sercan-iyili/blob/main/Teleperformance.ShoppingList/images/jwt.png" />
+
+
+- Admin bütün listeleri görebilyor
+
+<img src="https://github.com/186-Teleperformans-Net-Bootcamp/ShoppingListProject-sercan-iyili/blob/main/Teleperformance.ShoppingList/images/AdminAllList.png" />
+
+
+- Liste tamamlanıyor
+
+<img src="https://github.com/186-Teleperformans-Net-Bootcamp/ShoppingListProject-sercan-iyili/blob/main/Teleperformance.ShoppingList/images/IsComplete.png" />
+
+
+- Tamamlanan liste Rabbitmq'da kuyruğa ekleniyor
+
+<img src="https://github.com/186-Teleperformans-Net-Bootcamp/ShoppingListProject-sercan-iyili/blob/main/Teleperformance.ShoppingList/images/IsComplete.png" />
+
+
+- Tamamlanan listeler WorkerService üzerinden Rabbitmq'ya orayadan MongoDb'ye kayıt ediliyor
+
+<img src="https://github.com/186-Teleperformans-Net-Bootcamp/ShoppingListProject-sercan-iyili/blob/main/Teleperformance.ShoppingList/images/Mongo.png" />
+
+
+- Tamamlanan listelerin bulunduğu endpoint'i Sadece Admin görüntüleybiliyor
+
+<img src="https://github.com/186-Teleperformans-Net-Bootcamp/ShoppingListProject-sercan-iyili/blob/main/Teleperformance.ShoppingList/images/CompletedListsAdmin.png" />
+
+
+- Proje Log'ları dış bir klasörde text dosyaları içinde tutuluyor
+
+<img src="https://github.com/186-Teleperformans-Net-Bootcamp/ShoppingListProject-sercan-iyili/blob/main/Teleperformance.ShoppingList/images/Logs.png" />
+
+
+
+
+
+
+
+
+
