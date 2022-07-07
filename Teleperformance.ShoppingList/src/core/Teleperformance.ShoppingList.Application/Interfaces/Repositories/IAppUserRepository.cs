@@ -7,7 +7,5 @@ using Teleperformance.Bootcamp.Domain.Entities.Identity;
 
 namespace Teleperformance.Bootcamp.Application.Interfaces.Repositories
 {
-    public interface IAppUserRepository: IGenericRepository<AppUser>
-    {
-    }
+    public interface IAppUserRepository: IGenericRepository<AppUser>  {}
 }

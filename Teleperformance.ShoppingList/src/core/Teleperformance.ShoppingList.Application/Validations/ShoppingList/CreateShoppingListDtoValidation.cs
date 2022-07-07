@@ -1,9 +1,4 @@
 ﻿using FluentValidation;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Teleperformance.Bootcamp.Application.DTOs.ShoppingList;
 
 namespace Teleperformance.Bootcamp.Application.Validations.ShoppingList
@@ -22,6 +17,6 @@ namespace Teleperformance.Bootcamp.Application.Validations.ShoppingList
             RuleFor(x => x.CategoryId)
                 .NotEmpty().WithMessage("Kategori Id boş geçilemez");
         }
-    
+
     }
 }

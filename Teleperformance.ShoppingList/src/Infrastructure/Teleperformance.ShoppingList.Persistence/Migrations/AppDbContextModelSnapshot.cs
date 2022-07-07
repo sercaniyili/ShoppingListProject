@@ -52,14 +52,14 @@ namespace Teleperformance.Bootcamp.Persistence.Migrations
                         new
                         {
                             Id = "1",
-                            ConcurrencyStamp = "026fd50c-119f-42be-a237-aa5cb4caad84",
+                            ConcurrencyStamp = "5f9e774f-2d63-448f-9043-dc7a8e3daf39",
                             Name = "Admin",
                             NormalizedName = "ADMIN"
                         },
                         new
                         {
                             Id = "2",
-                            ConcurrencyStamp = "ae07a105-3eea-42a3-825b-097e08f1ee7a",
+                            ConcurrencyStamp = "c158ca71-032f-453b-a6d6-9f0ea92071e5",
                             Name = "User",
                             NormalizedName = "USER"
                         });
@@ -195,6 +195,32 @@ namespace Teleperformance.Bootcamp.Persistence.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Categories");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = "1",
+                            CreateDate = new DateTime(2022, 7, 7, 3, 8, 20, 376, DateTimeKind.Local).AddTicks(5421),
+                            Name = "Market Alışverişi"
+                        },
+                        new
+                        {
+                            Id = "2",
+                            CreateDate = new DateTime(2022, 7, 7, 3, 8, 20, 376, DateTimeKind.Local).AddTicks(5422),
+                            Name = "Pazar Alışverişi"
+                        },
+                        new
+                        {
+                            Id = "3",
+                            CreateDate = new DateTime(2022, 7, 7, 3, 8, 20, 376, DateTimeKind.Local).AddTicks(5423),
+                            Name = "Teknoloji Alışverişi"
+                        },
+                        new
+                        {
+                            Id = "4",
+                            CreateDate = new DateTime(2022, 7, 7, 3, 8, 20, 376, DateTimeKind.Local).AddTicks(5424),
+                            Name = "Okul Alışverişi"
+                        });
                 });
 
             modelBuilder.Entity("Teleperformance.Bootcamp.Domain.Entities.Identity.AppUser", b =>
@@ -275,17 +301,17 @@ namespace Teleperformance.Bootcamp.Persistence.Migrations
                         {
                             Id = "8e445865-a24d-4543-a6c6-9443d048cdb9",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "bf3f8aee-6181-4ade-a70c-f4a4fa786ecc",
-                            CreateDate = new DateTime(2022, 7, 6, 19, 44, 9, 39, DateTimeKind.Local).AddTicks(6503),
+                            ConcurrencyStamp = "a770c182-c8d1-4532-a021-c45307bb3f16",
+                            CreateDate = new DateTime(2022, 7, 7, 3, 8, 20, 375, DateTimeKind.Local).AddTicks(2041),
                             Email = "admin@gmail.com",
                             EmailConfirmed = false,
                             LockoutEnabled = false,
                             Name = "System",
                             NormalizedEmail = "ADMIN@GMAIL.COM",
                             NormalizedUserName = "ADMINISTRATOR",
-                            PasswordHash = "AQAAAAEAACcQAAAAEByC4+1c/dz4L4E4H0J2GwKe0c666AyB6rg5YE3PKJ5YVTtYsAOjiGWx7fjcEVUpMg==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEJfpA5i5plF3d06AsRxV8OQgVIqMY0EIVKgsfFzehobg64+LpHk6jX1ZxM/1PGB3Og==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "e0572278-ea8b-4a12-b0b8-91e9574a4781",
+                            SecurityStamp = "8daa9511-99ad-4d7e-83bd-8ce8da78f1e8",
                             Surname = "Admin",
                             TwoFactorEnabled = false,
                             UserName = "Admınıstrator"

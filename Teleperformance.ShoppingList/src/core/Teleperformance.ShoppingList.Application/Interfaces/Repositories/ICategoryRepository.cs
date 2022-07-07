@@ -7,7 +7,5 @@ using Teleperformance.Bootcamp.Domain.Entities;
 
 namespace Teleperformance.Bootcamp.Application.Interfaces.Repositories
 {
-    public interface ICategoryRepository:IGenericRepository<Category>
-    {
-    }
+    public interface ICategoryRepository:IGenericRepository<Category> {}
 }

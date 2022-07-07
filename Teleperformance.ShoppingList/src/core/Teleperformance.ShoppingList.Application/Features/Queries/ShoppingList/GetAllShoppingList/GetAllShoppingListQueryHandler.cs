@@ -1,11 +1,6 @@
 ﻿using AutoMapper;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Teleperformance.Bootcamp.Application.DTOs.ShoppingList;
 using Teleperformance.Bootcamp.Application.Interfaces.Repositories;
 
@@ -28,7 +23,7 @@ namespace Teleperformance.Bootcamp.Application.Features.Queries.ShoppingList.Get
                 .Take(request.PageSize)
                 .Include(x => x.Products)
                 .Include(y => y.AppUser)
-                .Include(z=>z.Category)
+                .Include(z => z.Category)
                 .ToListAsync();
 
             return _mapper.Map<List<GetAllShoppingListDto>>(result);

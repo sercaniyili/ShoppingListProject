@@ -6,7 +6,6 @@ using Teleperformance.Bootcamp.Application.Interfaces.MessageBrokers;
 using Teleperformance.Bootcamp.Application.Interfaces.Repositories;
 using Teleperformance.Bootcamp.Application.Validations.ShoppingList;
 using Teleperformance.Bootcamp.Domain.Common.Response;
-using Teleperformance.Bootcamp.Domain.Entities;
 
 namespace Teleperformance.Bootcamp.Application.Features.Commands.ShoppingList.ShoppingListUpdateIsComplete
 {
@@ -49,7 +48,7 @@ namespace Teleperformance.Bootcamp.Application.Features.Commands.ShoppingList.Sh
                     CompleteDate = entity.CompleteDate,
                     CategoryId = entity.CategoryId,
                     AppUserId = entity.AppUserId,
-                    Products=entity.Products,
+                    Products = entity.Products,
 
                 }, "direct", "direct.test", "direct.queuName", "direct.test.key");
 

@@ -22,6 +22,7 @@ namespace Teleperformance.Bootcamp.Persistence.Context
             builder.ApplyConfiguration(new RoleConfiguration());
             builder.ApplyConfiguration(new UserConfiguration());
             builder.ApplyConfiguration(new UserRoleConfiguration());
+            builder.ApplyConfiguration(new CategoryConfiguration());
 
 
             builder.Entity<Category>().Property(x => x.Id).HasDefaultValueSql("NEWID()");

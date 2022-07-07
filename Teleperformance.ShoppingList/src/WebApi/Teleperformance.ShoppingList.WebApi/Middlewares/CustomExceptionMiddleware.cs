@@ -10,8 +10,7 @@ namespace Teleperformance.Bootcamp.WebApi.Middlewares
         private static readonly Serilog.ILogger _logger = Log.ForContext<CustomExceptionMiddleware>();
         private readonly RequestDelegate _next;
         public CustomExceptionMiddleware(RequestDelegate next) => _next = next;
-            
-        
+
         public async Task InvokeAsync(HttpContext httpContext)
         {
 
@@ -25,11 +24,11 @@ namespace Teleperformance.Bootcamp.WebApi.Middlewares
                 message = "[Request] HTTP " + httpContext.Request.Method + " " + " reponded " + httpContext.Response.StatusCode;
                 _logger.Error(message);
             }
-            catch (Exception ex )
+            catch (Exception ex)
             {
                 await HandleExceptionAsync(httpContext, ex);
 
-            }    
+            }
         }
 
 
@@ -46,9 +45,6 @@ namespace Teleperformance.Bootcamp.WebApi.Middlewares
             return httpContext.Response.WriteAsync(result);
 
         }
-
-
-
 
     }
 }

@@ -14,10 +14,7 @@ namespace Teleperformance.Bootcamp.WebApi.Controllers
         private readonly IMediator _mediator;
 
         public ProductController(IMediator mediator, IProductRepository productRepository)
-        {
-            _mediator = mediator;
-            _productRepository = productRepository;
-        }
+            =>(_mediator, _productRepository)=(mediator, productRepository);
 
         [HttpPost]
         public async Task<IActionResult> CreateShoppingList([FromBody] AddProductCommandRequest request)

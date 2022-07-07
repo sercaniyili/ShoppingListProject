@@ -1,20 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Teleperformance.Bootcamp.Domain.Common;
+﻿using Teleperformance.Bootcamp.Domain.Common;
 using Teleperformance.Bootcamp.Domain.Entities.Identity;
 
 namespace Teleperformance.Bootcamp.Domain.Entities
 {
-    public class ShoppingList: IBaseEntity
+    public class ShoppingList : IBaseEntity
     {
         public string Id { get; set; }
         public string Title { get; set; }
         public string? Description { get; set; }
         public bool IsComplete { get; set; }
-        public DateTime CreateDate { get; set; }=DateTime.Now;
+        public DateTime CreateDate { get; set; } = DateTime.Now;
         public DateTime? CompleteDate { get; set; }
         public virtual List<Product> Products { get; set; }
 
@@ -24,6 +19,6 @@ namespace Teleperformance.Bootcamp.Domain.Entities
 
         public string AppUserId { get; set; }
         public AppUser AppUser { get; set; }
-      
+
     }
 }

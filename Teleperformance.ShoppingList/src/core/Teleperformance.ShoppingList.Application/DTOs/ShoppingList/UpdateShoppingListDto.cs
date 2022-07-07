@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Teleperformance.Bootcamp.Application.DTOs.ShoppingList
+﻿namespace Teleperformance.Bootcamp.Application.DTOs.ShoppingList
 {
     public class UpdateShoppingListDto
     {

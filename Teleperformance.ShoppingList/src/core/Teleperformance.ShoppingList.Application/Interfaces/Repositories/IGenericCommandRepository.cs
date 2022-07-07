@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Teleperformance.Bootcamp.Domain.Common;
+﻿using Teleperformance.Bootcamp.Domain.Common;
 
 namespace Teleperformance.Bootcamp.Application.Interfaces.Repositories
 {
@@ -14,6 +9,4 @@ namespace Teleperformance.Bootcamp.Application.Interfaces.Repositories
         void Update(T entity);
         Task DeleteAsync(string id);
     }
-    
-    
 }

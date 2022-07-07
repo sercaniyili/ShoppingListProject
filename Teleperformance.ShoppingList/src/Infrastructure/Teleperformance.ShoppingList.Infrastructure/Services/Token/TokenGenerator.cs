@@ -1,13 +1,9 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
-using System;
-using System.Collections.Generic;
 using System.IdentityModel.Tokens.Jwt;
-using System.Linq;
 using System.Security.Claims;
 using System.Text;
-using System.Threading.Tasks;
 using Teleperformance.Bootcamp.Application.Interfaces.Token;
 using Teleperformance.Bootcamp.Domain.Entities.Identity;
 
@@ -18,14 +14,11 @@ namespace Teleperformance.Bootcamp.Infrastructure.Services.Token
         private readonly IConfiguration _configuration;
         private readonly UserManager<AppUser> _userManager;
         public TokenGenerator(IConfiguration configuration, UserManager<AppUser> UserManager)
-        {
-            _configuration = configuration;
-            _userManager = UserManager;
-        }
+            => (_configuration, _userManager) = (configuration, UserManager);
+
 
         public async Task<string> GenerateToken(AppUser user)
-        {                      
-
+        {
             var userClaims = new List<Claim>
             {
                 new Claim(ClaimTypes.Name,user.UserName),
@@ -44,12 +37,12 @@ namespace Teleperformance.Bootcamp.Infrastructure.Services.Token
             var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_configuration["JWT:Secret"]));
 
             var token = new JwtSecurityToken(
-           issuer: _configuration["JWT:ValidIssuer"],
-           audience: _configuration["JWT:ValidAudience"],
-           expires: DateTime.Now.AddHours(1),
-           claims: userClaims,
-           signingCredentials: new SigningCredentials(key, SecurityAlgorithms.HmacSha256)
-           );
+            issuer: _configuration["JWT:ValidIssuer"],
+            audience: _configuration["JWT:ValidAudience"],
+            expires: DateTime.Now.AddHours(1),
+            claims: userClaims,
+            signingCredentials: new SigningCredentials(key, SecurityAlgorithms.HmacSha256)
+            );
 
             var tokenHandler = new JwtSecurityTokenHandler();
             var jwt = tokenHandler.WriteToken(token);
@@ -57,6 +50,6 @@ namespace Teleperformance.Bootcamp.Infrastructure.Services.Token
             return jwt;
         }
 
-      
+
     }
 }

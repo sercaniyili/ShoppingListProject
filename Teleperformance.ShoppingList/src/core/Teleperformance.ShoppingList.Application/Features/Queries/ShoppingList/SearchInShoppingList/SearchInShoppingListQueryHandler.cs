@@ -1,13 +1,7 @@
 ﻿using AutoMapper;
 using MediatR;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Teleperformance.Bootcamp.Application.DTOs.ShoppingList;
 using Teleperformance.Bootcamp.Application.Interfaces.Repositories;
-using Teleperformance.Bootcamp.Domain.Common.Response;
 
 namespace Teleperformance.Bootcamp.Application.Features.Queries.ShoppingList.SearchInShoppingList
 {
@@ -23,9 +17,9 @@ namespace Teleperformance.Bootcamp.Application.Features.Queries.ShoppingList.Sea
 
         public async Task<IEnumerable<GetByParameterShoppingListDto>> Handle(SearchInShoppingListQueryRequest request, CancellationToken cancellationToken)
         {
-           var result= await _shoppingListRepository.Search(request.Parameters);               
-       
-           return _mapper.Map<List<GetByParameterShoppingListDto>>(result);
+            var result = await _shoppingListRepository.Search(request.Parameters);
+
+            return _mapper.Map<List<GetByParameterShoppingListDto>>(result);
 
         }
     }

@@ -3741,9 +3741,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\sercan\\Desktop\\Bootcamp\\BootcampProject\\Teleperformance.ShoppingList\\src\\ShoppingListConsumer\\ShoppingListConsumer.csproj",
-      "projectName": "ShoppingListConsumer",
-      "projectPath": "C:\\Users\\sercan\\Desktop\\Bootcamp\\BootcampProject\\Teleperformance.ShoppingList\\src\\ShoppingListConsumer\\ShoppingListConsumer.csproj",
+      "projectUniqueName": "C:\\Users\\sercan\\Desktop\\Bootcamp\\BootcampProject\\Teleperformance.ShoppingList\\src\\ShoppingListConsumer\\ShoppingListConsumerWorker.csproj",
+      "projectName": "ShoppingListConsumerWorker",
+      "projectPath": "C:\\Users\\sercan\\Desktop\\Bootcamp\\BootcampProject\\Teleperformance.ShoppingList\\src\\ShoppingListConsumer\\ShoppingListConsumerWorker.csproj",
       "packagesPath": "C:\\Users\\sercan\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\sercan\\Desktop\\Bootcamp\\BootcampProject\\Teleperformance.ShoppingList\\src\\ShoppingListConsumer\\obj\\",
       "projectStyle": "PackageReference",

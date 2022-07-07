@@ -1,11 +1,6 @@
 ﻿using AutoMapper;
 using FluentValidation;
 using MediatR;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Teleperformance.Bootcamp.Application.Interfaces.Repositories;
 using Teleperformance.Bootcamp.Application.Validations.ShoppingList;
 using Teleperformance.Bootcamp.Domain.Common.Response;
@@ -43,8 +38,8 @@ namespace Teleperformance.Bootcamp.Application.Features.Commands.ShoppingList.Sh
                 return new BaseResponse("Liste başarıyla eklendi", true);
             }
             else
-                return new BaseResponse("Liste ekleme başarısız", false);        
-           
+                return new BaseResponse("Liste ekleme başarısız", false);
+
         }
     }
 }

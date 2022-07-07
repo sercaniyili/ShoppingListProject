@@ -1,6 +1,4 @@
-﻿using Teleperformance.Bootcamp.Domain.Entities;
-
-namespace Teleperformance.Bootcamp.Application.DTOs.ShoppingList
+﻿namespace Teleperformance.Bootcamp.Application.DTOs.ShoppingList
 {
     public class UpdateIsCompleteDto
     {

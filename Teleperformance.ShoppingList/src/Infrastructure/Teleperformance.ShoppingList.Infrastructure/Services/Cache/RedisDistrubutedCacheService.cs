@@ -19,18 +19,15 @@ namespace Teleperformance.Bootcamp.Infrastructure.Services.Cache
 
             if (cachedValue != null)
                 serializedValues = Encoding.UTF8.GetString(cachedValue);
-                          
+
             return JsonSerializer.Deserialize<T>(serializedValues);
         }
 
 
         public async Task SetObjectAsync<T>(string key, T value, int absoluteExpirationMinute = 1, int slidingExpirationSecond = 30)
         {
-
             if (string.IsNullOrWhiteSpace(key))
                 throw new ArgumentNullException(nameof(key));
-
-            await GetObjectAsync<T>(key);
 
             var distributedCacheEntryOptions = new DistributedCacheEntryOptions
             {

@@ -1,19 +1,14 @@
 ﻿using FluentValidation;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Teleperformance.Bootcamp.Application.DTOs.User;
 
 namespace Teleperformance.Bootcamp.Application.Validations.User
 {
-    public class UserCreateDtoValidation:AbstractValidator<UserCreateDto>
+    public class UserCreateDtoValidation : AbstractValidator<UserCreateDto>
     {
         public UserCreateDtoValidation()
         {
             RuleFor(x => x.Name)
-                .Length(2,30);
+                .Length(2, 30);
             RuleFor(x => x.Surname)
                 .Length(2, 30);
             RuleFor(x => x.Username)
@@ -26,7 +21,7 @@ namespace Teleperformance.Bootcamp.Application.Validations.User
                 .WithMessage("Kullanıcı adını lütfen kurallara uygun giriniz");
             RuleFor(x => x.Password)
                 .NotEmpty()
-                .WithMessage("Şifre boş geçilemez");        
+                .WithMessage("Şifre boş geçilemez");
         }
     }
 }

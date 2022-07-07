@@ -21,6 +21,7 @@ namespace Teleperformance.Bootcamp.WebApi.Controllers
     public class ShoppingListController : ControllerBase
     {
         const string key = "shoppingList";
+        public const string ShoppingListCollection = "CompletedLists";
 
         private readonly IMediator _mediator;
         private readonly IShoppingListRepository _shoppingListRepository;
@@ -34,15 +35,13 @@ namespace Teleperformance.Bootcamp.WebApi.Controllers
 
 
         [HttpGet]
-       // [Authorize(Roles = "Admin")]
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> GetAllShoppingLists([FromQuery] GetAllShoppingListQueryRequest request)
         {         
             var result = await _mediator.Send(request);
 
-           // var cachedResult = await _redisDistrubutedCache.GetObjectAsync<GetAllShoppingListQueryRequest>(key);
             await _redisDistrubutedCache.SetObjectAsync(key, result,2,60);      
-            
-
+           
             return Ok(result);
         }
 
@@ -73,7 +72,6 @@ namespace Teleperformance.Bootcamp.WebApi.Controllers
         [HttpPost]
         public async Task<IActionResult> CreateShoppingList([FromBody] ShoppingListCreateCommandRequest request)
         {
-
             var result = await _mediator.Send(request);
 
             if (result.IsSuccess)
@@ -85,7 +83,6 @@ namespace Teleperformance.Bootcamp.WebApi.Controllers
         [HttpDelete]
         public async Task<IActionResult> DeleteShoppingList([FromQuery] ShoppingListDeleteCommandRequest request)
         {
-
             var result = await _mediator.Send(request);
 
             if (result.IsSuccess)
@@ -93,7 +90,6 @@ namespace Teleperformance.Bootcamp.WebApi.Controllers
             else
                 return BadRequest(result);
         }
-
 
         [HttpPut]
         public async Task<IActionResult> UpdateShoppingList([FromBody] ShoppingListUpdateCommandRequest request)
@@ -110,10 +106,10 @@ namespace Teleperformance.Bootcamp.WebApi.Controllers
 
             return Ok(result);
         }
-        public const string ShoppingListCollection = "CompletedLists";
+        
 
         [HttpGet("comletedList")]
-        //[Authorize(Roles = "Admin")]
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> GetAllComletedShoppingList()
         {
             var collection = _mongoDbConnect.ConnectToMongo<ShoppingListToBsonDto>(ShoppingListCollection);

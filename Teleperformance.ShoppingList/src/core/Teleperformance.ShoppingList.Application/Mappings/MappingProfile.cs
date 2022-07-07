@@ -2,8 +2,6 @@
 using Teleperformance.Bootcamp.Application.DTOs.Products;
 using Teleperformance.Bootcamp.Application.DTOs.ShoppingList;
 using Teleperformance.Bootcamp.Application.DTOs.User;
-using Teleperformance.Bootcamp.Application.Features.Commands.User.UserCreate;
-using Teleperformance.Bootcamp.Application.Features.Commands.User.UserLogin;
 using Teleperformance.Bootcamp.Domain.Entities;
 using Teleperformance.Bootcamp.Domain.Entities.Identity;
 
@@ -13,7 +11,7 @@ namespace Teleperformance.Bootcamp.Application.Mappings
     {
         public MappingProfile()
         {
-            
+
 
             #region User
 
