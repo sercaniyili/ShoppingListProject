@@ -26,7 +26,6 @@ namespace ShoppingListProject.Test.ShoppingList
             _mockShoppingListRepository = new();
             _mockCategoryRepository = new();
             _mockAppUserRepository = new();
-
         }
 
 
@@ -59,7 +58,6 @@ namespace ShoppingListProject.Test.ShoppingList
             result.ShouldHaveValidationErrorFor(x => x.AppUserId);
             result.ShouldHaveValidationErrorFor(x => x.CategoryId);
             result.ShouldHaveValidationErrorFor(x => x.Description);
-
         }
         [Fact]
         public async Task Handle_CategoryIdDoesNotEqual_ReturnFails()
@@ -152,9 +150,9 @@ namespace ShoppingListProject.Test.ShoppingList
             Teleperformance.Bootcamp.Domain.Entities.ShoppingList shoppingList =
              new Teleperformance.Bootcamp.Domain.Entities.ShoppingList
              {
-                 Title = "Loremİpsum",
+                 Title = "LoremIpsum",
                  Id="1",
-                 Description = "Loremİpsum",
+                 Description = "LoremIpsum",
                  IsComplete = true,
                  CompleteDate = DateTime.Now,
                  CategoryId = "1", 
@@ -167,7 +165,7 @@ namespace ShoppingListProject.Test.ShoppingList
                 {
                     CategoryId = "1",
                     AppUserId = "1",
-                    Description = "Loremİpsum",
+                    Description = "LoremIpsum",
                     CreateDate = DateTime.Now,
                     Title = "Lorem"
                 }
