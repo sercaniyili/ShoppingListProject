@@ -26,7 +26,7 @@ namespace Teleperformance.Bootcamp.Application.Features.Commands.ShoppingList.Sh
         {
 
             var result = _mapper.Map<Teleperformance.Bootcamp.Domain.Entities.ShoppingList>(request.CreateShoppingListDto);
-
+           
             CreateShoppingListDtoValidation validation = new CreateShoppingListDtoValidation();
             validation.ValidateAndThrow(request.CreateShoppingListDto);
 

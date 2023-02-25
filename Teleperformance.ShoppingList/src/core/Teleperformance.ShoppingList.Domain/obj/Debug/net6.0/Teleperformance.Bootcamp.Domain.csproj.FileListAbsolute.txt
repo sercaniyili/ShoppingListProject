@@ -10,3 +10,15 @@ C:\Users\sercan\Desktop\Bootcamp\BootcampProject\Teleperformance.ShoppingList\sr
 C:\Users\sercan\Desktop\Bootcamp\BootcampProject\Teleperformance.ShoppingList\src\core\Teleperformance.ShoppingList.Domain\obj\Debug\net6.0\refint\Teleperformance.Bootcamp.Domain.dll
 C:\Users\sercan\Desktop\Bootcamp\BootcampProject\Teleperformance.ShoppingList\src\core\Teleperformance.ShoppingList.Domain\obj\Debug\net6.0\Teleperformance.Bootcamp.Domain.pdb
 C:\Users\sercan\Desktop\Bootcamp\BootcampProject\Teleperformance.ShoppingList\src\core\Teleperformance.ShoppingList.Domain\obj\Debug\net6.0\ref\Teleperformance.Bootcamp.Domain.dll
+C:\Users\sercan\Desktop\Yazılım\Bootcamp\BootcampProject\Teleperformance.ShoppingList\src\core\Teleperformance.ShoppingList.Domain\bin\Debug\net6.0\Teleperformance.Bootcamp.Domain.deps.json
+C:\Users\sercan\Desktop\Yazılım\Bootcamp\BootcampProject\Teleperformance.ShoppingList\src\core\Teleperformance.ShoppingList.Domain\bin\Debug\net6.0\Teleperformance.Bootcamp.Domain.dll
+C:\Users\sercan\Desktop\Yazılım\Bootcamp\BootcampProject\Teleperformance.ShoppingList\src\core\Teleperformance.ShoppingList.Domain\bin\Debug\net6.0\Teleperformance.Bootcamp.Domain.pdb
+C:\Users\sercan\Desktop\Yazılım\Bootcamp\BootcampProject\Teleperformance.ShoppingList\src\core\Teleperformance.ShoppingList.Domain\obj\Debug\net6.0\Teleperformance.Bootcamp.Domain.csproj.AssemblyReference.cache
+C:\Users\sercan\Desktop\Yazılım\Bootcamp\BootcampProject\Teleperformance.ShoppingList\src\core\Teleperformance.ShoppingList.Domain\obj\Debug\net6.0\Teleperformance.Bootcamp.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\sercan\Desktop\Yazılım\Bootcamp\BootcampProject\Teleperformance.ShoppingList\src\core\Teleperformance.ShoppingList.Domain\obj\Debug\net6.0\Teleperformance.Bootcamp.Domain.AssemblyInfoInputs.cache
+C:\Users\sercan\Desktop\Yazılım\Bootcamp\BootcampProject\Teleperformance.ShoppingList\src\core\Teleperformance.ShoppingList.Domain\obj\Debug\net6.0\Teleperformance.Bootcamp.Domain.AssemblyInfo.cs
+C:\Users\sercan\Desktop\Yazılım\Bootcamp\BootcampProject\Teleperformance.ShoppingList\src\core\Teleperformance.ShoppingList.Domain\obj\Debug\net6.0\Teleperformance.Bootcamp.Domain.csproj.CoreCompileInputs.cache
+C:\Users\sercan\Desktop\Yazılım\Bootcamp\BootcampProject\Teleperformance.ShoppingList\src\core\Teleperformance.ShoppingList.Domain\obj\Debug\net6.0\Teleperformance.Bootcamp.Domain.dll
+C:\Users\sercan\Desktop\Yazılım\Bootcamp\BootcampProject\Teleperformance.ShoppingList\src\core\Teleperformance.ShoppingList.Domain\obj\Debug\net6.0\refint\Teleperformance.Bootcamp.Domain.dll
+C:\Users\sercan\Desktop\Yazılım\Bootcamp\BootcampProject\Teleperformance.ShoppingList\src\core\Teleperformance.ShoppingList.Domain\obj\Debug\net6.0\Teleperformance.Bootcamp.Domain.pdb
+C:\Users\sercan\Desktop\Yazılım\Bootcamp\BootcampProject\Teleperformance.ShoppingList\src\core\Teleperformance.ShoppingList.Domain\obj\Debug\net6.0\ref\Teleperformance.Bootcamp.Domain.dll

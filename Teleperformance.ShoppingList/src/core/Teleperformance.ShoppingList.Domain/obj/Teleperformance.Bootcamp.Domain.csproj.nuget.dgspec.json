@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\sercan\\Desktop\\Bootcamp\\BootcampProject\\Teleperformance.ShoppingList\\src\\core\\Teleperformance.ShoppingList.Domain\\Teleperformance.Bootcamp.Domain.csproj": {}
+    "C:\\Users\\sercan\\Desktop\\Yazılım\\Bootcamp\\BootcampProject\\Teleperformance.ShoppingList\\src\\core\\Teleperformance.ShoppingList.Domain\\Teleperformance.Bootcamp.Domain.csproj": {}
   },
   "projects": {
-    "C:\\Users\\sercan\\Desktop\\Bootcamp\\BootcampProject\\Teleperformance.ShoppingList\\src\\core\\Teleperformance.ShoppingList.Domain\\Teleperformance.Bootcamp.Domain.csproj": {
+    "C:\\Users\\sercan\\Desktop\\Yazılım\\Bootcamp\\BootcampProject\\Teleperformance.ShoppingList\\src\\core\\Teleperformance.ShoppingList.Domain\\Teleperformance.Bootcamp.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\sercan\\Desktop\\Bootcamp\\BootcampProject\\Teleperformance.ShoppingList\\src\\core\\Teleperformance.ShoppingList.Domain\\Teleperformance.Bootcamp.Domain.csproj",
+        "projectUniqueName": "C:\\Users\\sercan\\Desktop\\Yazılım\\Bootcamp\\BootcampProject\\Teleperformance.ShoppingList\\src\\core\\Teleperformance.ShoppingList.Domain\\Teleperformance.Bootcamp.Domain.csproj",
         "projectName": "Teleperformance.Bootcamp.Domain",
-        "projectPath": "C:\\Users\\sercan\\Desktop\\Bootcamp\\BootcampProject\\Teleperformance.ShoppingList\\src\\core\\Teleperformance.ShoppingList.Domain\\Teleperformance.Bootcamp.Domain.csproj",
+        "projectPath": "C:\\Users\\sercan\\Desktop\\Yazılım\\Bootcamp\\BootcampProject\\Teleperformance.ShoppingList\\src\\core\\Teleperformance.ShoppingList.Domain\\Teleperformance.Bootcamp.Domain.csproj",
         "packagesPath": "C:\\Users\\sercan\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\sercan\\Desktop\\Bootcamp\\BootcampProject\\Teleperformance.ShoppingList\\src\\core\\Teleperformance.ShoppingList.Domain\\obj\\",
+        "outputPath": "C:\\Users\\sercan\\Desktop\\Yazılım\\Bootcamp\\BootcampProject\\Teleperformance.ShoppingList\\src\\core\\Teleperformance.ShoppingList.Domain\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\sercan\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -51,7 +51,8 @@
             "net47",
             "net471",
             "net472",
-            "net48"
+            "net48",
+            "net481"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -60,7 +61,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.301\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.401\\RuntimeIdentifierGraph.json"
         }
       }
     }

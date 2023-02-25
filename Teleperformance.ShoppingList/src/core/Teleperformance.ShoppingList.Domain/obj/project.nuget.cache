@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "+lRZlY1LuNW53Q5A8QNZ3FD3ozGiUZ7wZ04ZDAdO38gudpluVxZfSVUt/PiBmcB3W5hpZ5VfDfONilzmdSRF7g==",
+  "dgSpecHash": "SxKhmEBw5edAiJinMEoh5ugPxAbRoN1AjD8aov6FpIy+qrFlZTy9Ycqjcb8a751/kawXAZ+yInvqV5zAn6QmKQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\sercan\\Desktop\\Bootcamp\\BootcampProject\\Teleperformance.ShoppingList\\src\\core\\Teleperformance.ShoppingList.Domain\\Teleperformance.Bootcamp.Domain.csproj",
+  "projectFilePath": "C:\\Users\\sercan\\Desktop\\Yazılım\\Bootcamp\\BootcampProject\\Teleperformance.ShoppingList\\src\\core\\Teleperformance.ShoppingList.Domain\\Teleperformance.Bootcamp.Domain.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\sercan\\.nuget\\packages\\microsoft.aspnetcore.cryptography.internal\\6.0.6\\microsoft.aspnetcore.cryptography.internal.6.0.6.nupkg.sha512",
     "C:\\Users\\sercan\\.nuget\\packages\\microsoft.aspnetcore.cryptography.keyderivation\\6.0.6\\microsoft.aspnetcore.cryptography.keyderivation.6.0.6.nupkg.sha512",

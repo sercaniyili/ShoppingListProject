@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "N6h3/sN+lclNiHJEYw13DyZF7CVn5dDly42Wr03wTkGWnIlgWOS+Ep1A75zd+gafi4YMfsemf6QGg3Nwm6ug7g==",
+  "dgSpecHash": "tujUxdJQptFlHcaE4+oJCMBFn1mE3NRcuYZNG3zKociM52Mj5RafOx3tVhjz4rDVReZyyW9BedeIXPBS3+ADcA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\sercan\\Desktop\\Bootcamp\\BootcampProject\\Teleperformance.ShoppingList\\src\\Infrastructure\\Teleperformance.ShoppingList.Infrastructure\\Teleperformance.Bootcamp.Infrastructure.csproj",
+  "projectFilePath": "C:\\Users\\sercan\\Desktop\\Yazılım\\Bootcamp\\BootcampProject\\Teleperformance.ShoppingList\\src\\Infrastructure\\Teleperformance.ShoppingList.Infrastructure\\Teleperformance.Bootcamp.Infrastructure.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\sercan\\.nuget\\packages\\automapper\\11.0.1\\automapper.11.0.1.nupkg.sha512",
     "C:\\Users\\sercan\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\11.0.0\\automapper.extensions.microsoft.dependencyinjection.11.0.0.nupkg.sha512",
