@@ -40,6 +40,7 @@ namespace Teleperformance.Bootcamp.Application.Features.Commands.ShoppingList.Sh
 
             return new BaseResponse("Liste başarıyla eklendi", true);
         }
+
     }
 }
 

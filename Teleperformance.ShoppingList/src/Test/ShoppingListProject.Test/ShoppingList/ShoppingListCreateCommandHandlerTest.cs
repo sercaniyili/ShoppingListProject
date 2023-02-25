@@ -6,6 +6,7 @@ using Teleperformance.Bootcamp.Application.Features.Commands.ShoppingList.Shoppi
 using Teleperformance.Bootcamp.Application.Interfaces.Repositories;
 using Teleperformance.Bootcamp.Application.Mappings;
 using Teleperformance.Bootcamp.Application.Validations.ShoppingList;
+using Teleperformance.Bootcamp.Domain.Common.Response;
 
 namespace ShoppingListProject.Test.ShoppingList
 {
@@ -60,7 +61,6 @@ namespace ShoppingListProject.Test.ShoppingList
             result.ShouldHaveValidationErrorFor(x => x.Description);
 
         }
-
         [Fact]
         public async Task Handle_CategoryIdDoesNotEqual_ReturnFails()
         {
@@ -99,7 +99,6 @@ namespace ShoppingListProject.Test.ShoppingList
             Assert.NotSame(shoppingList.CategoryId, categoryId);
 
         }
-
         [Fact]
         public async Task Handle_AppUseIdDoesNotEqual_ReturnFails()
         {
@@ -138,10 +137,57 @@ namespace ShoppingListProject.Test.ShoppingList
             Assert.NotSame(shoppingList.AppUserId, appUserId);
 
         }
+      [Fact]
+        public async Task Handle_AddListExecuted_ReturnsBaseResponseSucces()
+        {
+            //Arrange
 
+            var handler = new ShoppingListCreateCommandHandler(
+              _mockShoppingListRepository.Object,
+              _mapper,
+              _mockCategoryRepository.Object,
+              _mockAppUserRepository.Object
+               );
 
+            Teleperformance.Bootcamp.Domain.Entities.ShoppingList shoppingList =
+             new Teleperformance.Bootcamp.Domain.Entities.ShoppingList
+             {
+                 Title = "Loremİpsum",
+                 Id="1",
+                 Description = "Loremİpsum",
+                 IsComplete = true,
+                 CompleteDate = DateTime.Now,
+                 CategoryId = "1", 
+                 AppUserId = "1"
+             };
 
+            ShoppingListCreateCommandRequest request = new ShoppingListCreateCommandRequest
+            {
+                CreateShoppingListDto = new CreateShoppingListDto
+                {
+                    CategoryId = "1",
+                    AppUserId = "1",
+                    Description = "Loremİpsum",
+                    CreateDate = DateTime.Now,
+                    Title = "Lorem"
+                }
+            }; ;
 
+            _mockShoppingListRepository.Setup
+                (x => x.AddAsync(It.IsAny<Teleperformance.Bootcamp.Domain.Entities.ShoppingList>()));
 
+            //Act
+
+            BaseResponse response = await handler.Handle(request, default);
+
+            //Assert
+
+            _mockShoppingListRepository.Verify
+                (x => x.AddAsync(It.IsAny<Teleperformance.Bootcamp.Domain.Entities.ShoppingList>()), Times.Once);
+
+            Assert.True(response.IsSuccess);
+            Assert.NotNull(response.Message);
+
+        }
     }
 }
