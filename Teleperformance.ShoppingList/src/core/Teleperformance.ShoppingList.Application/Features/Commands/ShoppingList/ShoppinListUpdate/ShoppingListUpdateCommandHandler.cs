@@ -35,10 +35,10 @@ namespace Teleperformance.Bootcamp.Application.Features.Commands.ShoppingList.Sh
             if (entity != null)
             {
                 _shoppingListRepsitory.Update(entity);
-                return new BaseResponse("Liste başarıyla eklendi", true);
+                return new BaseResponse("Liste başarıyla güncellendi", true);
             }
             else
-                return new BaseResponse("Liste ekleme başarısız", false);
+                return new BaseResponse("Liste güncelleme başarısız", false);
 
         }
     }

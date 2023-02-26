@@ -66,7 +66,7 @@ namespace ShoppingListProject.Test.ShoppingList
             Teleperformance.Bootcamp.Domain.Entities.ShoppingList shoppingList =
                 new Teleperformance.Bootcamp.Domain.Entities.ShoppingList
                 {
-                    CategoryId = "1"
+                    CategoryId = "0"
                 };
 
             var handler = new ShoppingListCreateCommandHandler(
@@ -98,7 +98,7 @@ namespace ShoppingListProject.Test.ShoppingList
 
         }
         [Fact]
-        public async Task Handle_AppUseIdDoesNotEqual_ReturnFails()
+        public async Task Handle_AppUserIdDoesNotEqual_ReturnFails()
         {
             //Arrange
             Teleperformance.Bootcamp.Domain.Entities.ShoppingList shoppingList =
@@ -169,7 +169,7 @@ namespace ShoppingListProject.Test.ShoppingList
                     CreateDate = DateTime.Now,
                     Title = "Lorem"
                 }
-            }; ;
+            }; 
 
             _mockShoppingListRepository.Setup
                 (x => x.AddAsync(It.IsAny<Teleperformance.Bootcamp.Domain.Entities.ShoppingList>()));

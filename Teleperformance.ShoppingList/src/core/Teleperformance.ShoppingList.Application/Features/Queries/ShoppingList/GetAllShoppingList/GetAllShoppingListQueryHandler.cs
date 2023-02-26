@@ -19,7 +19,8 @@ namespace Teleperformance.Bootcamp.Application.Features.Queries.ShoppingList.Get
 
         public async Task<List<GetAllShoppingListDto>> Handle(GetAllShoppingListQueryRequest request, CancellationToken cancellationToken)
         {
-            var result = await _shoppingListRepository.GetAll().Skip((request.PageNumber - 1) * request.PageSize)
+            var result = await _shoppingListRepository
+                .GetAll().Skip((request.PageNumber - 1) * request.PageSize)
                 .Take(request.PageSize)
                 .Include(x => x.Products)
                 .Include(y => y.AppUser)
