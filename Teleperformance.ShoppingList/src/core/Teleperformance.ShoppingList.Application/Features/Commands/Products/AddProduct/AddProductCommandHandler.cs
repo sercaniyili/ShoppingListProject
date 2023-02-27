@@ -28,6 +28,8 @@ namespace Teleperformance.Bootcamp.Application.Features.Commands.Products.AddPro
             validation.ValidateAndThrow(request.AddProductDto);
 
             var shoppingList = await _shoppingListRepsitory.GetByIdAsync(request.AddProductDto.ShoppingListId);
+            if (shoppingList == null)
+                return new BaseResponse ("Liste bulunamadı", false);
 
             result.ShoppingListId = shoppingList.Id;
 
@@ -35,5 +37,5 @@ namespace Teleperformance.Bootcamp.Application.Features.Commands.Products.AddPro
 
             return new BaseResponse("Ürün başarıyla eklendi", true);
         }
-    }
+    }                  
 }

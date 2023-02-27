@@ -49,14 +49,14 @@ namespace ShoppingListProject.Test.Product
         }
 
         [Fact]
-        public async Task Handle_ShoppingListIdDoesNotEqual_ReturnsFail()
+        public async Task Handle_ShoppingListDoesNotExist_ReturnsFail()
         {
             //Arrange
             Teleperformance.Bootcamp.Domain.Entities.Product product = new Teleperformance.Bootcamp.Domain.Entities.Product
             {
                 Id = "1",
                 Name = "Lorem",
-                ShoppingListId = "1",
+                ShoppingListId = "0",
                 CreateDate = DateTime.Now
             };
 
@@ -71,7 +71,7 @@ namespace ShoppingListProject.Test.Product
             {
                 AddProductDto = new AddProductDto
                 {
-                    ShoppingListId = "2",
+                    ShoppingListId = "1",
                     Name = "Loremİpsum",
                     Quantity = 1,
                     IsBuy = true,
@@ -79,13 +79,21 @@ namespace ShoppingListProject.Test.Product
                 }
             };
 
-            var shoppingListId = _mockProductRepository.Setup(x => x.GetByIdAsync(request.AddProductDto.ShoppingListId));
+            _mockShoppingListRepository
+             .Setup(x => x.GetByIdAsync(product.ShoppingListId))
+             .ReturnsAsync(new Teleperformance.Bootcamp.Domain.Entities.ShoppingList
+             { Id = product.ShoppingListId, Title = "Lorem" });
+
+            _mockShoppingListRepository
+             .Setup(x => x.GetByIdAsync(It.IsNotIn<string>(new string[] { product.ShoppingListId })))
+             .Returns(Task.FromResult((Teleperformance.Bootcamp.Domain.Entities.ShoppingList)null));
 
             //Act
             var result = await handler.Handle(request, default);
 
             //Asset
-            Assert.NotSame(product.ShoppingListId, shoppingListId);
+            Assert.False(result.IsSuccess);
+            Assert.Equal("Liste bulunamadı", result.Message);
 
         }
 
@@ -121,8 +129,10 @@ namespace ShoppingListProject.Test.Product
                 }
             };
 
-            _mockProductRepository.Setup
-                (x => x.AddAsync(It.IsAny<Teleperformance.Bootcamp.Domain.Entities.Product>()));
+            _mockShoppingListRepository
+                 .Setup(x => x.GetByIdAsync(product.ShoppingListId))
+                 .ReturnsAsync(new Teleperformance.Bootcamp.Domain.Entities.ShoppingList
+                 { Id = product.ShoppingListId, Title = "Lorem" });
 
             //Act
 
@@ -131,10 +141,11 @@ namespace ShoppingListProject.Test.Product
             //Assert
 
             _mockProductRepository.Verify
-                (x => x.AddAsync(It.IsAny<Teleperformance.Bootcamp.Domain.Entities.Product>()), Times.Once);
+                (x => x.AddAsync(It.Is<Teleperformance.Bootcamp.Domain.Entities.Product>
+                (s=> s.ShoppingListId == product.ShoppingListId)),Times.Once);
 
             Assert.True(response.IsSuccess);
-            Assert.NotNull(response.Message);
+            Assert.Equal("Ürün başarıyla eklendi", response.Message);
 
         }
 

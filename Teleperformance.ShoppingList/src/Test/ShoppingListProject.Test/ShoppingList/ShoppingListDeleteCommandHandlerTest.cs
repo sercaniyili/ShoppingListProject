@@ -46,8 +46,6 @@ namespace ShoppingListProject.Test.ShoppingList
                 Id = "1"
             };
 
-            _mockShoppingListRepository.Setup(x => x.DeleteAsync(request.Id));
-
             //Act
 
             BaseResponse response = await handler.Handle(request, default);
@@ -58,7 +56,7 @@ namespace ShoppingListProject.Test.ShoppingList
                 (x => x.DeleteAsync(request.Id), Times.Once);
 
             Assert.True(response.IsSuccess);
-            Assert.NotNull(response.Message);
+            Assert.Equal("Silme işlemi başarılı", response.Message);
 
         }
 

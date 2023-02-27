@@ -10,7 +10,7 @@ namespace Teleperformance.Bootcamp.Application.Validations.User
             RuleFor(x => x.Email)
                 .NotEmpty()
                 .EmailAddress().MinimumLength(3).MaximumLength(30)
-                .WithMessage("Kullanıcı adını lütfen kurallara uygun giriniz");
+                .WithMessage("Kullanıcı e-posta adresinizi lütfen kurallara uygun giriniz");
             RuleFor(x => x.Password)
                 .NotEmpty()
                 .WithMessage("Şifre boş geçilemez");

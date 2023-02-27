@@ -23,25 +23,20 @@ namespace Teleperformance.Bootcamp.Application.Features.Commands.ShoppingList.Sh
 
         public async Task<BaseResponse> Handle(ShoppingListUpdateIsCompleteCommandRequest request, CancellationToken cancellationToken)
         {
-            var entity = _shoppingListRepsitory.GetAll()
-             .Where(x => x.Id == request.UpdateIsCompleteDto.Id)
-             .Include(x => x.Products)
-             .Include(y => y.AppUser)
-             .Include(z => z.Category)
-             .FirstOrDefault();
+            var entity = await _shoppingListRepsitory.GetShoppingListById(request.UpdateIsCompleteDto.Id);
+
+            if (entity == null)
+                return new BaseResponse("Liste tamamlama başarısız", false);
 
             var result = _mapper.Map(request.UpdateIsCompleteDto, entity);
-
 
             UpdateIsCompleteDtoValidation validation = new UpdateIsCompleteDtoValidation();
             validation.ValidateAndThrow(request.UpdateIsCompleteDto);
 
-            if (result != null)
-            {
                 _shoppingListRepsitory.Update(result);
 
                 _rabbitmqService.Publish(new
-                {
+                { 
                     Title = entity.Title,
                     Description = entity.Description,
                     CreateDate = entity.CreateDate,
@@ -53,10 +48,9 @@ namespace Teleperformance.Bootcamp.Application.Features.Commands.ShoppingList.Sh
 
                 }, "direct", "direct.test", "direct.queuName", "direct.test.key");
 
-                return new BaseResponse("liste başarıyla tamalandı", true);
-            }
-            else
-                return new BaseResponse("Liste tamamlama başarısız", false);
+            return new BaseResponse("Liste başarıyla tamamlandı", true);
+           
+               
         }
     }
 }

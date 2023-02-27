@@ -7,6 +7,8 @@ using Teleperformance.Bootcamp.Application.Interfaces.Repositories;
 using Teleperformance.Bootcamp.Application.Mappings;
 using Teleperformance.Bootcamp.Application.Validations.ShoppingList;
 using Teleperformance.Bootcamp.Domain.Common.Response;
+using Teleperformance.Bootcamp.Domain.Entities;
+using Teleperformance.Bootcamp.Domain.Entities.Identity;
 
 namespace ShoppingListProject.Test.ShoppingList
 {
@@ -20,7 +22,6 @@ namespace ShoppingListProject.Test.ShoppingList
         public ShoppingListCreateCommandHandlerTest()
         {
             var mapperConfig = new MapperConfiguration(c => { c.AddProfile<MappingProfile>(); });
-            //mapperConfig.AssertConfigurationIsValid();
             _mapper = mapperConfig.CreateMapper();
 
             _mockShoppingListRepository = new();
@@ -29,13 +30,7 @@ namespace ShoppingListProject.Test.ShoppingList
         }
 
 
-        //[Fact]
-        //public async void Handle_Mapping_ReturnsTrue()
-        //{
-        //    var mapperMock = new Mock<IMapper>();
-        //    await mapperMock.Setup
-        //         (m => m.Map<Teleperformance.Bootcamp.Domain.Entities.ShoppingList, GetAllShoppingListDto>(It.IsAny<GetAllShoppingListDto>()))
-        //}
+
 
         [Fact]
         public void Handle_Validations_ReturnsFails()
@@ -60,51 +55,13 @@ namespace ShoppingListProject.Test.ShoppingList
             result.ShouldHaveValidationErrorFor(x => x.Description);
         }
         [Fact]
-        public async Task Handle_CategoryIdDoesNotEqual_ReturnFails()
+        public async Task Handle_CategoryDoesNotExist_ReturnFails()
         {
             //Arrange
             Teleperformance.Bootcamp.Domain.Entities.ShoppingList shoppingList =
                 new Teleperformance.Bootcamp.Domain.Entities.ShoppingList
                 {
                     CategoryId = "0"
-                };
-
-            var handler = new ShoppingListCreateCommandHandler(
-               _mockShoppingListRepository.Object,
-               _mapper,
-               _mockCategoryRepository.Object,
-               _mockAppUserRepository.Object
-                );
-
-            ShoppingListCreateCommandRequest request = new ShoppingListCreateCommandRequest
-            {
-                 CreateShoppingListDto = new CreateShoppingListDto
-                 {
-                     CategoryId = "1",
-                     AppUserId = "1",
-                     Description = "Loremİpsum",
-                     CreateDate = DateTime.Now,
-                     Title = "Lorem"
-                 }
-            };
-
-            var categoryId = _mockCategoryRepository.Setup(x => x.GetByIdAsync(request.CreateShoppingListDto.CategoryId));
-
-            //Act
-            var result = await handler.Handle(request, default);
-
-            //Assert
-            Assert.NotSame(shoppingList.CategoryId, categoryId);
-
-        }
-        [Fact]
-        public async Task Handle_AppUserIdDoesNotEqual_ReturnFails()
-        {
-            //Arrange
-            Teleperformance.Bootcamp.Domain.Entities.ShoppingList shoppingList =
-                new Teleperformance.Bootcamp.Domain.Entities.ShoppingList
-                {
-                    AppUserId = "1"
                 };
 
             var handler = new ShoppingListCreateCommandHandler(
@@ -126,17 +83,75 @@ namespace ShoppingListProject.Test.ShoppingList
                 }
             };
 
-            var appUserId = _mockCategoryRepository.Setup(x => x.GetByIdAsync(request.CreateShoppingListDto.AppUserId));
+            _mockCategoryRepository
+               .Setup(x => x.GetByIdAsync(shoppingList.CategoryId))
+               .ReturnsAsync(new Category { Id = shoppingList.CategoryId, Name = "Lorem" });
+
+            _mockCategoryRepository
+                .Setup(x => x.GetByIdAsync(It.IsNotIn<string>(new string[] { shoppingList.CategoryId })))
+                .Returns(Task.FromResult((Category)null));
 
             //Act
             var result = await handler.Handle(request, default);
 
             //Assert
-            Assert.NotSame(shoppingList.AppUserId, appUserId);
+            Assert.False(result.IsSuccess);
+            Assert.Equal("Kategori bulunamadı", result.Message);
 
         }
-      [Fact]
-        public async Task Handle_AddListExecuted_ReturnsBaseResponseSucces()
+        [Fact]
+        public async Task Handle_AppUserDoesNotExist_ReturnFails()
+        {
+            //Arrange
+            Teleperformance.Bootcamp.Domain.Entities.ShoppingList shoppingList =
+                new Teleperformance.Bootcamp.Domain.Entities.ShoppingList
+                {
+                    AppUserId = "0"
+                };
+
+            var handler = new ShoppingListCreateCommandHandler(
+               _mockShoppingListRepository.Object,
+               _mapper,
+               _mockCategoryRepository.Object,
+               _mockAppUserRepository.Object
+                );
+
+            ShoppingListCreateCommandRequest request = new ShoppingListCreateCommandRequest
+            {
+                CreateShoppingListDto = new CreateShoppingListDto
+                {
+                    CategoryId = "1",
+                    AppUserId = "1",
+                    Description = "Loremİpsum",
+                    CreateDate = DateTime.Now,
+                    Title = "Lorem"
+                }
+            };
+
+            _mockCategoryRepository
+                                 .Setup(x => x.GetByIdAsync(It.IsAny<string>()))
+                                .ReturnsAsync(new Category { Id = "1", Name = "Lorem" });
+
+            _mockAppUserRepository
+                                 .Setup(x => x.GetByIdAsync(shoppingList.AppUserId))
+                                 .ReturnsAsync(new AppUser { Id = shoppingList.AppUserId, Name = "Lorem" });
+
+            _mockAppUserRepository
+                .Setup(x => x.GetByIdAsync(It.IsNotIn<string>(new string[] { shoppingList.AppUserId })))
+                .Returns(Task.FromResult((AppUser)null));
+
+
+
+            //Act
+            var result = await handler.Handle(request, default);
+
+            //Assert
+            Assert.False(result.IsSuccess);
+            Assert.Equal("Kullanıcı bulunamadı", result.Message);
+
+        }
+        [Fact]
+        public async Task Handle_AddListExecuted_ReturnsBaseResponseSuccess()
         {
             //Arrange
 
@@ -151,11 +166,11 @@ namespace ShoppingListProject.Test.ShoppingList
              new Teleperformance.Bootcamp.Domain.Entities.ShoppingList
              {
                  Title = "LoremIpsum",
-                 Id="1",
+                 Id = "1",
                  Description = "LoremIpsum",
                  IsComplete = true,
                  CompleteDate = DateTime.Now,
-                 CategoryId = "1", 
+                 CategoryId = "1",
                  AppUserId = "1"
              };
 
@@ -169,10 +184,15 @@ namespace ShoppingListProject.Test.ShoppingList
                     CreateDate = DateTime.Now,
                     Title = "Lorem"
                 }
-            }; 
+            };
 
-            _mockShoppingListRepository.Setup
-                (x => x.AddAsync(It.IsAny<Teleperformance.Bootcamp.Domain.Entities.ShoppingList>()));
+            _mockCategoryRepository
+                         .Setup(x => x.GetByIdAsync(It.IsAny<string>()))
+                        .ReturnsAsync(new Category { Id = shoppingList.CategoryId, Name = "Lorem" });
+
+            _mockAppUserRepository
+                                 .Setup(x => x.GetByIdAsync(shoppingList.AppUserId))
+                                 .ReturnsAsync(new AppUser { Id = shoppingList.AppUserId, Name = "Lorem" });
 
             //Act
 
@@ -181,10 +201,11 @@ namespace ShoppingListProject.Test.ShoppingList
             //Assert
 
             _mockShoppingListRepository.Verify
-                (x => x.AddAsync(It.IsAny<Teleperformance.Bootcamp.Domain.Entities.ShoppingList>()), Times.Once);
+                (x => x.AddAsync(It.Is<Teleperformance.Bootcamp.Domain.Entities.ShoppingList>(s=>s.CategoryId == shoppingList.CategoryId && s.AppUserId == shoppingList.AppUserId)), Times.Once);
+            
 
             Assert.True(response.IsSuccess);
-            Assert.NotNull(response.Message);
+            Assert.Equal("Liste başarıyla eklendi", response.Message);
 
         }
     }

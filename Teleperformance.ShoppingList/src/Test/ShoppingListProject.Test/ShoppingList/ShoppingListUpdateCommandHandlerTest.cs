@@ -19,7 +19,6 @@ namespace ShoppingListProject.Test.ShoppingList
         public ShoppingListUpdateCommandHandlerTest()
         {
             var mapperConfig = new MapperConfiguration(c => { c.AddProfile<MappingProfile>(); });
-            //mapperConfig.AssertConfigurationIsValid();
             _mapper = mapperConfig.CreateMapper();
 
             _mockShoppingListRepository = new();
@@ -111,8 +110,6 @@ namespace ShoppingListProject.Test.ShoppingList
         public async Task Handle_EntityIsNull_ReturnBaseResponseFalse()
         {
             //Arrange
-
-            Teleperformance.Bootcamp.Domain.Entities.ShoppingList shoppingList = null;
 
             var handler = new ShoppingListUpdateCommandHandler(
                 _mockShoppingListRepository.Object,

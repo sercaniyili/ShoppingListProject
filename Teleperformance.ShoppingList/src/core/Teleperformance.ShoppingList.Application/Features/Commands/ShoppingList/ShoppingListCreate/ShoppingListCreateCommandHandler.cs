@@ -31,7 +31,12 @@ namespace Teleperformance.Bootcamp.Application.Features.Commands.ShoppingList.Sh
             validation.ValidateAndThrow(request.CreateShoppingListDto);
 
             var category = await _categoryRepository.GetByIdAsync(request.CreateShoppingListDto.CategoryId);
+            if (category == null)
+                return new BaseResponse("Kategori bulunamadı", false);
+
             var user = await _appUserRepository.GetByIdAsync(request.CreateShoppingListDto.AppUserId);
+            if (user == null)
+                return new BaseResponse("Kullanıcı bulunamadı", false);
 
             result.Category = category;
             result.AppUser = user;

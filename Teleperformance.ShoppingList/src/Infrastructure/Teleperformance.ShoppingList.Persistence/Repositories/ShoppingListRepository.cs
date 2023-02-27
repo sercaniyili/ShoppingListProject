@@ -1,4 +1,6 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using MediatR;
+using Microsoft.EntityFrameworkCore;
+using StackExchange.Redis;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -47,15 +49,14 @@ namespace Teleperformance.Bootcamp.Persistence.Repositories
             return query.ToList();
         }
 
-
-
-
-
-
-
-
-
-
-
+        public async Task<ShoppingList?> GetShoppingListById(string id)
+        {
+          return GetAll()
+             .Where(x => x.Id == id)
+             .Include(x => x.Products)
+             .Include(y => y.AppUser)
+             .Include(z => z.Category)
+             .FirstOrDefault();
+        }
     }
 }
