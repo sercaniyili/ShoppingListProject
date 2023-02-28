@@ -128,19 +128,15 @@ namespace ShoppingListProject.Test.ShoppingList
                 }
             };
 
-            _mockCategoryRepository
-                                 .Setup(x => x.GetByIdAsync(It.IsAny<string>()))
+            _mockCategoryRepository.Setup(x => x.GetByIdAsync(It.IsAny<string>()))
                                 .ReturnsAsync(new Category { Id = "1", Name = "Lorem" });
 
-            _mockAppUserRepository
-                                 .Setup(x => x.GetByIdAsync(shoppingList.AppUserId))
+            _mockAppUserRepository.Setup(x => x.GetByIdAsync(shoppingList.AppUserId))
                                  .ReturnsAsync(new AppUser { Id = shoppingList.AppUserId, Name = "Lorem" });
 
             _mockAppUserRepository
                 .Setup(x => x.GetByIdAsync(It.IsNotIn<string>(new string[] { shoppingList.AppUserId })))
                 .Returns(Task.FromResult((AppUser)null));
-
-
 
             //Act
             var result = await handler.Handle(request, default);

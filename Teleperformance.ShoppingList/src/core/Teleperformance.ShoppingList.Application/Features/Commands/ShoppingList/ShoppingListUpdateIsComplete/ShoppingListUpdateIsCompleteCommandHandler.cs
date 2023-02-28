@@ -24,16 +24,15 @@ namespace Teleperformance.Bootcamp.Application.Features.Commands.ShoppingList.Sh
         public async Task<BaseResponse> Handle(ShoppingListUpdateIsCompleteCommandRequest request, CancellationToken cancellationToken)
         {
             var entity = await _shoppingListRepsitory.GetShoppingListById(request.UpdateIsCompleteDto.Id);
-
             if (entity == null)
-                return new BaseResponse("Liste tamamlama başarısız", false);
+                return new BaseResponse("Liste bulunamadı", false);
 
             var result = _mapper.Map(request.UpdateIsCompleteDto, entity);
 
             UpdateIsCompleteDtoValidation validation = new UpdateIsCompleteDtoValidation();
             validation.ValidateAndThrow(request.UpdateIsCompleteDto);
 
-                _shoppingListRepsitory.Update(result);
+            _shoppingListRepsitory.Update(result);
 
                 _rabbitmqService.Publish(new
                 { 

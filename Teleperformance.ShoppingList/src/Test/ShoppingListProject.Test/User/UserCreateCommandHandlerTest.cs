@@ -20,9 +20,7 @@ namespace ShoppingListProject.Test.User
         public UserCreateCommandHandlerTest()
         {
             var mapperConfig = new MapperConfiguration(c => { c.AddProfile<MappingProfile>(); });
-            //mapperConfig.AssertConfigurationIsValid();
             _mapper = mapperConfig.CreateMapper();
-
             _mockUserManager =
                 new Mock<UserManager<AppUser>>(Mock.Of<IUserStore<AppUser>>(), null, null, null, null, null, null, null, null);
         }

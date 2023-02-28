@@ -2,11 +2,13 @@
 using FluentValidation.TestHelper;
 using Moq;
 using Teleperformance.Bootcamp.Application.DTOs.ShoppingList;
+using Teleperformance.Bootcamp.Application.Features.Commands.ShoppingList.ShoppingListUpdateIsComplete;
 using Teleperformance.Bootcamp.Application.Features.Commands.ShoppingList.ShoppinListUpdate;
 using Teleperformance.Bootcamp.Application.Interfaces.Repositories;
 using Teleperformance.Bootcamp.Application.Mappings;
 using Teleperformance.Bootcamp.Application.Validations.ShoppingList;
 using Teleperformance.Bootcamp.Domain.Common.Response;
+using Teleperformance.Bootcamp.Domain.Entities;
 
 namespace ShoppingListProject.Test.ShoppingList
 {
@@ -20,7 +22,6 @@ namespace ShoppingListProject.Test.ShoppingList
         {
             var mapperConfig = new MapperConfiguration(c => { c.AddProfile<MappingProfile>(); });
             _mapper = mapperConfig.CreateMapper();
-
             _mockShoppingListRepository = new();
             _mockCategoryRepository = new();
         }
@@ -70,85 +71,32 @@ namespace ShoppingListProject.Test.ShoppingList
         }
 
         [Fact]
-        public async Task Handle_CategoryIdDoesNotEqual_ReturnFails()
-        {
-            //Arrange
-            Teleperformance.Bootcamp.Domain.Entities.ShoppingList shoppingList =
-                  new Teleperformance.Bootcamp.Domain.Entities.ShoppingList
-                  {
-                      CategoryId = "0"
-                  };
-
-            var handler = new ShoppingListUpdateCommandHandler(
-          _mockShoppingListRepository.Object,
-          _mapper,
-          _mockCategoryRepository.Object
-           );
-
-            ShoppingListUpdateCommandRequest request = new ShoppingListUpdateCommandRequest
-            {
-                UpdateShoppingListDto = new UpdateShoppingListDto
-                {
-                    Id = "1",
-                    CategoryId = "1",
-                    Title = "Lorem",
-                    Description = "LoremIpsum"
-                }
-            };
-
-            var categoryId = _mockCategoryRepository.Setup(x => x.GetByIdAsync(request.UpdateShoppingListDto.CategoryId));
-
-            //Act
-            var result = await handler.Handle(request, default);
-
-            //Assert
-            Assert.NotSame(shoppingList.CategoryId, categoryId);
-
-        }
-
-        [Fact]
-        public async Task Handle_EntityIsNull_ReturnBaseResponseFalse()
-        {
-            //Arrange
-
-            var handler = new ShoppingListUpdateCommandHandler(
-                _mockShoppingListRepository.Object,
-                _mapper,
-                _mockCategoryRepository.Object
-                );
-
-            ShoppingListUpdateCommandRequest request = new ShoppingListUpdateCommandRequest
-            {
-                UpdateShoppingListDto = null
-            };
-
-
-            //Act
-
-            BaseResponse response = await handler.Handle(request, default);
-
-            //Assert
-
-            Assert.Equal("Liste güncelleme başarısız", response.Message);
-            Assert.False(response.IsSuccess);
-        }
-
-        [Fact]
-        public async Task Handle_UpdateListExecuted_ReturnsBaseResponseSucces()
+        public async Task Handle_ShoppingListDoesNotExist_ReturnsBaseResponseFail()
         {
             //Arrange
 
             Teleperformance.Bootcamp.Domain.Entities.ShoppingList shoppingList =
-                 new Teleperformance.Bootcamp.Domain.Entities.ShoppingList
-                 {
-                     Title = "LoremIpsum",
-                     Id = "1",
-                     Description = "LoremIpsum",
-                     IsComplete = true,
-                     CompleteDate = DateTime.Now,
-                     CategoryId = "1",
-                     AppUserId = "1"
-                 };
+              new Teleperformance.Bootcamp.Domain.Entities.ShoppingList
+              {
+                  Title = "LoremIpsum",
+                  Id = "0",
+                  Description = "LoremIpsum",
+                  IsComplete = true,
+                  CompleteDate = DateTime.Now,
+                  CategoryId = "1",
+                  AppUserId = "1",
+                  AppUser = new Teleperformance.Bootcamp.Domain.Entities.Identity.AppUser { },
+                  Category = new Teleperformance.Bootcamp.Domain.Entities.Category { Id = "1", Name = "Lorem" },
+                  CreateDate = DateTime.Now
+              };
+
+
+            var handler = new ShoppingListUpdateCommandHandler(
+                    _mockShoppingListRepository.Object,
+                    _mapper,
+                    _mockCategoryRepository.Object
+                   );
+
 
             ShoppingListUpdateCommandRequest request = new ShoppingListUpdateCommandRequest
             {
@@ -161,14 +109,122 @@ namespace ShoppingListProject.Test.ShoppingList
                 }
             };
 
-            var handler = new ShoppingListUpdateCommandHandler(
-                _mockShoppingListRepository.Object,
-                _mapper,
-                _mockCategoryRepository.Object
-                );
+            _mockShoppingListRepository.Setup(x => x.GetByIdAsync(shoppingList.Id))
+                .ReturnsAsync(shoppingList);
 
-            _mockShoppingListRepository.Setup
-            (x => x.Update(It.IsAny<Teleperformance.Bootcamp.Domain.Entities.ShoppingList>()));
+            //Act
+
+            BaseResponse response = await handler.Handle(request, default);
+
+            //Assert
+
+            Assert.False(response.IsSuccess);
+            Assert.Equal("Liste bulunamadı", response.Message);
+
+        }
+
+        [Fact]
+        public async Task Handle_CategoryDoesNotExist_ReturnsBaseResponseFail()
+        {
+            //Arrange
+
+            Teleperformance.Bootcamp.Domain.Entities.ShoppingList shoppingList =
+              new Teleperformance.Bootcamp.Domain.Entities.ShoppingList
+              {
+                  Title = "LoremIpsum",
+                  Id = "1",
+                  Description = "LoremIpsum",
+                  IsComplete = true,
+                  CompleteDate = DateTime.Now,
+                  CategoryId = "0",
+                  AppUserId = "1",
+                  AppUser = new Teleperformance.Bootcamp.Domain.Entities.Identity.AppUser { },
+                  Category = new Teleperformance.Bootcamp.Domain.Entities.Category { Id = "1", Name = "Lorem" },
+                  CreateDate = DateTime.Now
+              };
+
+
+            var handler = new ShoppingListUpdateCommandHandler(
+                    _mockShoppingListRepository.Object,
+                    _mapper,
+                    _mockCategoryRepository.Object
+                   );
+
+
+            ShoppingListUpdateCommandRequest request = new ShoppingListUpdateCommandRequest
+            {
+                UpdateShoppingListDto = new UpdateShoppingListDto
+                {
+                    Id = "1",
+                    CategoryId = "1",
+                    Title = "Lorem",
+                    Description = "LoremeIpsum"
+                }
+            };
+
+            _mockShoppingListRepository.Setup(x => x.GetByIdAsync(shoppingList.Id))
+                .ReturnsAsync(shoppingList);
+
+            _mockCategoryRepository
+              .Setup(x => x.GetByIdAsync(It.IsNotIn<string>(new string[] { shoppingList.CategoryId })))
+              .Returns(Task.FromResult((Category)null));
+
+            //Act
+
+            BaseResponse response = await handler.Handle(request, default);
+
+            //Assert
+
+            Assert.False(response.IsSuccess);
+            Assert.Equal("Kategori bulunamadı", response.Message);
+
+        }
+
+        [Fact]
+        public async Task Handle_UpdateListExecuted_ReturnsBaseResponseSuccess()
+        {
+            //Arrange
+
+            Teleperformance.Bootcamp.Domain.Entities.ShoppingList shoppingList =
+              new Teleperformance.Bootcamp.Domain.Entities.ShoppingList
+              {
+                  Title = "LoremIpsum",
+                  Id = "1",
+                  Description = "LoremIpsum",
+                  IsComplete = true,
+                  CompleteDate = DateTime.Now,
+                  CategoryId = "1",
+                  AppUserId = "1",
+                  AppUser = new Teleperformance.Bootcamp.Domain.Entities.Identity.AppUser { },
+                  Category = new Teleperformance.Bootcamp.Domain.Entities.Category { Id = "1", Name = "Lorem" },
+                  CreateDate = DateTime.Now
+              };
+
+
+            var handler = new ShoppingListUpdateCommandHandler(
+                    _mockShoppingListRepository.Object,
+                    _mapper,
+                    _mockCategoryRepository.Object
+                   );
+
+
+            ShoppingListUpdateCommandRequest request = new ShoppingListUpdateCommandRequest
+            {
+                UpdateShoppingListDto = new UpdateShoppingListDto
+                {
+                    Id = "1",
+                    CategoryId = "1",
+                    Title = "Lorem",
+                    Description = "LoremeIpsum"
+                }
+            };
+
+            _mockShoppingListRepository.Setup(x => x.GetByIdAsync(shoppingList.Id))
+                .ReturnsAsync(shoppingList);
+
+            _mockCategoryRepository
+              .Setup(x => x.GetByIdAsync(shoppingList.CategoryId))
+              .ReturnsAsync(new Category { Id = shoppingList.CategoryId, Name = "Lorem" });
 
             //Act
 
@@ -177,12 +233,11 @@ namespace ShoppingListProject.Test.ShoppingList
             //Assert
 
             _mockShoppingListRepository.Verify
-                (x => x.Update(It.IsAny<Teleperformance.Bootcamp.Domain.Entities.ShoppingList>()), Times.Once);
+                 (x => x.Update(It.Is<Teleperformance.Bootcamp.Domain.Entities.ShoppingList>(s => s.Id == shoppingList.Id)), Times.Once);
 
             Assert.True(response.IsSuccess);
-            Assert.NotNull(response.Message);
+            Assert.Equal("Liste başarıyla güncellendi", response.Message);
 
         }
-
     }
 }

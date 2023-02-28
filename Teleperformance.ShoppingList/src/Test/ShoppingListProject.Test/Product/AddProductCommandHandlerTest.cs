@@ -20,9 +20,7 @@ namespace ShoppingListProject.Test.Product
         public AddProductCommandHandlerTest()
         {
             var mapperConfig = new MapperConfiguration(c => { c.AddProfile<MappingProfile>(); });
-            //mapperConfig.AssertConfigurationIsValid();
             _mapper = mapperConfig.CreateMapper();
-
             _mockProductRepository = new();
             _mockShoppingListRepository = new();
         }

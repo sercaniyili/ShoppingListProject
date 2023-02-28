@@ -36,8 +36,8 @@ namespace Teleperformance.Bootcamp.Application.Features.Commands.ShoppingList.Sh
 
             shoppingList.Category = category;
 
-                _shoppingListRepsitory.Update(shoppingList);
-                return new BaseResponse("Liste başarıyla güncellendi", true);              
+            _shoppingListRepsitory.Update(shoppingList);
+            return new BaseResponse("Liste başarıyla güncellendi", true);              
         }
     }
 }

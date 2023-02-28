@@ -19,7 +19,6 @@ namespace ShoppingListProject.Test.ShoppingList
         {
             var mapperConfig = new MapperConfiguration(c => { c.AddProfile<MappingProfile>(); });
             _mapper = mapperConfig.CreateMapper();
-
             _mockShoppingListRepository = new();
             _mockRabbitmqService = new();
         }
@@ -82,7 +81,7 @@ namespace ShoppingListProject.Test.ShoppingList
             //Assert
 
             Assert.False(response.IsSuccess);
-            Assert.Equal("Liste tamamlama başarısız",response.Message);
+            Assert.Equal("Liste bulunamadı",response.Message);
 
         }
 
