@@ -57,7 +57,7 @@ Local klasöre projeyi klonlamak için :
 
 - API Endpoints
 
-<img src="https://github.com/186-Teleperformans-Net-Bootcamp/ShoppingListProject-sercan-iyili/blob/main/Teleperformance.ShoppingList/images/Endpoints.png" />
+<img src="https://github.com/sercaniyili/ShoppingListProject/blob/main/Teleperformance.ShoppingList/images/Endpoints.png" />
 
 
 - Veri tabanı dizayn
@@ -139,6 +139,9 @@ Local klasöre projeyi klonlamak için :
 
 <img src="https://github.com/186-Teleperformans-Net-Bootcamp/ShoppingListProject-sercan-iyili/blob/main/Teleperformance.ShoppingList/images/CompletedListsAdmin.png" />
 
+- Command Handler Unit Testleri
+
+<img src="https://github.com/sercaniyili/ShoppingListProject/blob/main/Teleperformance.ShoppingList/images/Tests.png" />
 
 - Proje Log'ları dış bir klasörde text dosyaları içinde tutuluyor
 
