@@ -19,8 +19,8 @@ namespace Teleperformance.Bootcamp.Application.Features.Commands.User.UserLogin
     {
         private readonly IMapper _mapper;
         private readonly UserManager<AppUser> _userManager;
-        private readonly IConfiguration _configuration;
-        private readonly ITokenGenerator _tokenGenerator;
+       private readonly IConfiguration _configuration;
+        private readonly ITokenGenerator _tokenGenerator;   
         public UserLoginCommandHandler(UserManager<AppUser> userManager, IMapper mapper, IConfiguration configuration, ITokenGenerator tokenGenerator)
         {
             _mapper = mapper;
@@ -33,21 +33,21 @@ namespace Teleperformance.Bootcamp.Application.Features.Commands.User.UserLogin
         {
             var user = await _userManager.FindByEmailAsync(request.UserLoginDto.Email);
 
-            if (user == null) new ServiceResponse<string>(string.Empty, "Kullanıcı bulunamadı", false);
+            if (user == null) 
+              return  new ServiceResponse<string>(string.Empty, "Kullanıcı bulunamadı", false);
 
             var result = await _userManager.CheckPasswordAsync(user, request.UserLoginDto.Password.Trim());
-
+            if (!result)
+                return new ServiceResponse<string>(string.Empty,"Giriş Başarısız", false);
+            
             var newUser = _mapper.Map<AppUser>(request.UserLoginDto);
 
             UserLoginDtoValidation validation = new UserLoginDtoValidation();
             validation.ValidateAndThrow(request.UserLoginDto);
 
-            if (result)
-            {
-                var token = await _tokenGenerator.GenerateToken(user);
-                return new ServiceResponse<string>(token ,"Giriş Başarılı", true);
-            }
-            return new ServiceResponse<string>(string.Empty,"Giriş Başarısız", true);
+            var token = await _tokenGenerator.GenerateToken(user);
+            return new ServiceResponse<string>(token ,"Giriş Başarılı", true);
+            
         }
     }
 }

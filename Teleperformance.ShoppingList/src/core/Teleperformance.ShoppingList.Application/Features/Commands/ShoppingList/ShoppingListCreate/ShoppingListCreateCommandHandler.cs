@@ -26,12 +26,17 @@ namespace Teleperformance.Bootcamp.Application.Features.Commands.ShoppingList.Sh
         {
 
             var result = _mapper.Map<Teleperformance.Bootcamp.Domain.Entities.ShoppingList>(request.CreateShoppingListDto);
-
+           
             CreateShoppingListDtoValidation validation = new CreateShoppingListDtoValidation();
             validation.ValidateAndThrow(request.CreateShoppingListDto);
 
             var category = await _categoryRepository.GetByIdAsync(request.CreateShoppingListDto.CategoryId);
+            if (category == null)
+                return new BaseResponse("Kategori bulunamadı", false);
+
             var user = await _appUserRepository.GetByIdAsync(request.CreateShoppingListDto.AppUserId);
+            if (user == null)
+                return new BaseResponse("Kullanıcı bulunamadı", false);
 
             result.Category = category;
             result.AppUser = user;
@@ -40,6 +45,7 @@ namespace Teleperformance.Bootcamp.Application.Features.Commands.ShoppingList.Sh
 
             return new BaseResponse("Liste başarıyla eklendi", true);
         }
+
     }
 }
 

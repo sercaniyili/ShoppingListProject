@@ -32,7 +32,7 @@ namespace ShoppingListConsumer
 
             while (!stoppingToken.IsCancellationRequested)
             {
-         
+
                 var connectioFactory = new ConnectionFactory()
                 {
                     HostName = "localhost",

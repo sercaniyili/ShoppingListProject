@@ -37,13 +37,12 @@ namespace Teleperformance.Bootcamp.Application.Features.Commands.User.UserCreate
             validation.ValidateAndThrow(request.UserCreateDto);
 
             var result = await _userManager.CreateAsync(newUser, request.UserCreateDto.Password);
-
-            await _userManager.AddToRoleAsync(newUser, "User");
-
             if (!result.Succeeded)
                 return new BaseResponse("Kullanıcı oluşturulamadı", false);
-            else
-                return new BaseResponse("Kullanıcı başarıyla oluşturuldu", true);
+
+            await _userManager.AddToRoleAsync(newUser, "User");
+   
+            return new BaseResponse("Kullanıcı başarıyla oluşturuldu", true);
         }
     }
 }
