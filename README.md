@@ -1,7 +1,5 @@
 
-#  TELEPERFORMANCE & Patika.Dev .NET Bootcamp Bitirme Projesi
-
-Bu Proje 183. Teleperformance & Patika.Dev .Net Bootcamp sonunda verilen Shopping List  projesini içermektedir.
+#  Shopping List Proje
 
 
 ### Proje Tanımı
@@ -14,20 +12,21 @@ kullanılmıştır. *Admin* kullanıcısı *Kategoriler* ve *Roller* *seed data*
 Tamamlanma durumları *ısComplete* endpoint'i üzerinden *true* olarak güncellenen listeler ***Rabbitmq*** kuyruk sistemine eklenmektedir.
 ***Worker service*** üzerinden sürekli dinlenen kuyruk yapımız tamamlanan listeleri ***MongoDb*** veri tabanına eklenmektedir. Ayrıca *global exception custom middleware* üzerinden ayrı bir *Logs* klasöründe *text* dosyaları halinde günlük olarak tutulmaktadır. 
 
-Projede *distrubuted cache* için ***Redis***, *rol tabanlı yetkilendirme ve kısıtlama yetkilendirme için ***Identity ve JWT bearer***,  *validation* için ***FluentValidation***,
+Projede *distrubuted cache* için ***Redis***, *rol tabanlı yetkilendirme ve kısıtlama yetkilendirme için ***Identity ve JWT bearer***,  *validation* için ***FluentValidation***, *unit test*ler için ***Xunit***,  ***Moq*** ve ***Fluent Assertions*** kütüphaneleri,
 *log* için ***SeriLog*** kütüphanleri , *Redis* ve *Rabbitmq* ***Docker image*** üzeriden, *Ms Sql* ve *Mongodb* lokal olarak kullanılmıştır.
 
 Kurumsal mimari ve Clean Architecture için Onion Architecture mimarisi , CQRS ve MediatR kütüphaneleri kullanılmıştır.
 
 ___
 ## Kullanılan Yöntem ve Teknolojiler
-* ***.NET 6.0 Web API***
+ * ***.NET 6.0 Web API***
  * ***Microsoft SQL***
- * ***MongoDb***
  * ***Entity Framework***
  * ***Rabbitmq***
  * ***Redis***
+ * ***MongoDb***
  * ***Automapper***
+ * ***XUnit***
  * ***Fluent Validation***
  * ***Identity & JWT Bearer Tokens***
  * ***SeriLogger***
@@ -50,12 +49,9 @@ ___
 ### Çalıştırılması
 Local klasöre projeyi klonlamak için :
 ```
- git clone https://github.com/186-Teleperformans-Net-Bootcamp/ShoppingListProject-sercan-iyili
+ git clone https://github.com/sercaniyili/ShoppingListProject
 ```
-Projeyi build ederek gerekli veritabanları aşağıdaki komut ile oluşturulabilir.
-```
- update-database
-```
+
 <br/>
 
 
