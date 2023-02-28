@@ -10,7 +10,7 @@ using Teleperformance.Bootcamp.Persistence.Repositories;
 
 namespace Teleperformance.Bootcamp.WebApi.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/users")]
     [ApiController]
     public class UserController : ControllerBase
     {
@@ -20,7 +20,7 @@ namespace Teleperformance.Bootcamp.WebApi.Controllers
 
 
         [HttpPost]
-        [Route("Register")]
+        [Route("register")]
         public async Task<IActionResult> Register([FromBody] UserCreateCommandRequest request)
         {
              var result = await _mediator.Send(request);
@@ -31,7 +31,7 @@ namespace Teleperformance.Bootcamp.WebApi.Controllers
         }
 
         [HttpPost]
-        [Route("Login")]
+        [Route("login")]
         public async Task<IActionResult> Login([FromBody] UserLoginCommandRequest request)
         {
             var result = await _mediator.Send(request);

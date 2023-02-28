@@ -55,8 +55,7 @@ namespace ShoppingListProject.Test.ShoppingList
             var shoppingListId = _mockShoppingListRepository.Setup(x => x.GetByIdAsync(request.UpdateShoppingListDto.Id));
 
             //Act
-
-            // var result = await handler.Handle(request, default);
+                 var result = await handler.Handle(request, default);
 
             UpdateShoppingListDtoValidation validator = new UpdateShoppingListDtoValidation();
             var validate = validator.TestValidate(updateShoppingListDto);

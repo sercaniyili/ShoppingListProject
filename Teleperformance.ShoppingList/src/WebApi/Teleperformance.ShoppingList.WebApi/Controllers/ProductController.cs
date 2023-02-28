@@ -6,7 +6,7 @@ using Teleperformance.Bootcamp.Application.Interfaces.Repositories;
 
 namespace Teleperformance.Bootcamp.WebApi.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/products")]
     [ApiController]
     public class ProductController : ControllerBase
     {

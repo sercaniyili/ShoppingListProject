@@ -16,7 +16,7 @@ using Teleperformance.Bootcamp.Application.Interfaces.Repositories;
 
 namespace Teleperformance.Bootcamp.WebApi.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/lists")]
     [ApiController]
     public class ShoppingListController : ControllerBase
     {
@@ -99,7 +99,7 @@ namespace Teleperformance.Bootcamp.WebApi.Controllers
             return Ok(result);
         }
 
-        [HttpPut("ısComplete")]
+        [HttpPut("ıscomplete")]
         public async Task<IActionResult> UpdateShoppingListIsComplete([FromBody] ShoppingListUpdateIsCompleteCommandRequest request)
         {
             var result = await _mediator.Send(request);
@@ -108,7 +108,7 @@ namespace Teleperformance.Bootcamp.WebApi.Controllers
         }
         
 
-        [HttpGet("comletedList")]
+        [HttpGet("comletedlist")]
         [Authorize(Roles = "Admin")]
         public async Task<IActionResult> GetAllComletedShoppingList()
         {
